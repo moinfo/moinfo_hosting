@@ -8,4 +8,4 @@ export const navLinks = [
 
 export const WHMCS_BASE = "https://moinfo.co.tz/portal/index.php?rp=";
 export const CLIENT_LOGIN = `${WHMCS_BASE}/login`;
-export const DOMAIN_SEARCH_URL = "https://moinfo.co.tz/domain-search/?domain=";
+export const DOMAIN_SEARCH_URL = "https://moinfo.co.tz/portal/cart.php?a=add&domain=register&query=";

@@ -1,0 +1,101 @@
+.section {
+  padding: 60px 0;
+  background: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
+}
+
+.searchWrapper {
+  max-width: 680px;
+  margin: 0 auto var(--mantine-spacing-xl);
+}
+
+.searchBox {
+  display: flex;
+  gap: 0;
+  background: light-dark(var(--mantine-color-white), var(--mantine-color-dark-6));
+  border-radius: var(--mantine-radius-lg);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  border: 2px solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-4));
+  transition: border-color 200ms ease;
+}
+
+.searchBox:focus-within {
+  border-color: var(--mantine-color-brand-blue-5);
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 16px 20px;
+  font-size: var(--mantine-font-size-md);
+  outline: none;
+  color: light-dark(var(--mantine-color-dark-8), var(--mantine-color-white));
+  font-family: inherit;
+}
+
+.searchInput::placeholder {
+  color: light-dark(var(--mantine-color-gray-5), var(--mantine-color-dark-3));
+}
+
+.searchButton {
+  border: none;
+  background: linear-gradient(135deg, var(--mantine-color-brand-blue-5), var(--mantine-color-brand-green-5));
+  color: white;
+  padding: 16px 28px;
+  font-size: var(--mantine-font-size-md);
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: opacity 150ms ease;
+  white-space: nowrap;
+}
+
+.searchButton:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 36em) {
+  .searchBox {
+    flex-direction: column;
+    border-radius: var(--mantine-radius-md);
+  }
+
+  .searchButton {
+    border-radius: 0;
+  }
+}
+
+.pills {
+  display: flex;
+  justify-content: center;
+  gap: var(--mantine-spacing-md);
+  flex-wrap: wrap;
+}
+
+.pill {
+  display: flex;
+  align-items: center;
+  gap: var(--mantine-spacing-xs);
+  background: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+  padding: 10px 20px;
+  border-radius: var(--mantine-radius-xl);
+  border: 1px solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-4));
+  transition: border-color 200ms ease, transform 200ms ease;
+}
+
+.pill:hover {
+  border-color: var(--mantine-color-brand-blue-5);
+  transform: translateY(-2px);
+}
+
+.pillTld {
+  font-weight: 700;
+  color: var(--mantine-color-brand-blue-5);
+  font-size: var(--mantine-font-size-md);
+}
+
+.pillPrice {
+  font-size: var(--mantine-font-size-sm);
+  color: light-dark(var(--mantine-color-gray-6), var(--mantine-color-gray-5));
+}

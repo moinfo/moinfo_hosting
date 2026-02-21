@@ -1,0 +1,38 @@
+.section {
+  background: linear-gradient(135deg, var(--mantine-color-dark-8), var(--mantine-color-dark-9));
+  padding: 50px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--mantine-spacing-xl);
+}
+
+@media (max-width: 48em) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--mantine-spacing-lg);
+  }
+}
+
+.stat {
+  text-align: center;
+}
+
+.number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--mantine-color-white);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.suffix {
+  color: var(--mantine-color-brand-green-4);
+}
+
+.label {
+  font-size: var(--mantine-font-size-sm);
+  color: var(--mantine-color-gray-5);
+}

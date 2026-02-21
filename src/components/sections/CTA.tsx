@@ -1,20 +1,23 @@
+"use client";
+
 import { Container } from "@mantine/core";
 import { company } from "@/data/company";
+import { useLanguage } from "@/i18n/LanguageContext";
 import classes from "./CTA.module.css";
 
 export function CTA() {
+  const { t } = useLanguage();
+
   return (
     <section className={classes.section}>
       <Container size="md">
-        <h2 className={classes.title}>Ready to Get Started?</h2>
+        <h2 className={classes.title}>{t("cta.title")}</h2>
         <p className={classes.description}>
-          Join hundreds of Tanzanian businesses who trust Moinfo Hosting for
-          their online presence. Get started today with our reliable hosting
-          solutions.
+          {t("cta.description")}
         </p>
         <div className={classes.buttons}>
           <a href="#pricing" className={classes.primaryBtn}>
-            View Hosting Plans
+            {t("cta.viewPlans")}
           </a>
           <a
             href={company.whatsapp}
@@ -22,7 +25,7 @@ export function CTA() {
             rel="noopener noreferrer"
             className={classes.secondaryBtn}
           >
-            Chat on WhatsApp
+            {t("cta.whatsapp")}
           </a>
         </div>
       </Container>

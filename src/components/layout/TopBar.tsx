@@ -3,12 +3,13 @@
 import { Container } from "@mantine/core";
 import { IconPhone, IconBrandWhatsapp, IconMail } from "@tabler/icons-react";
 import { company, } from "@/data/company";
-import { CLIENT_LOGIN } from "@/data/navigation";
 import { useScrolled } from "@/hooks/useScrolled";
+import { useLanguage } from "@/i18n/LanguageContext";
 import classes from "./TopBar.module.css";
 
 export function TopBar() {
   const scrolled = useScrolled(100);
+  const { t } = useLanguage();
 
   return (
     <div className={`${classes.topBar} ${scrolled ? classes.hidden : ""}`}>
@@ -25,7 +26,7 @@ export function TopBar() {
             className={classes.contactItem}
           >
             <IconBrandWhatsapp size={14} />
-            <span>WhatsApp</span>
+            <span>{t("topbar.whatsapp")}</span>
           </a>
           <a href={`mailto:${company.email}`} className={classes.contactItem}>
             <IconMail size={14} />
@@ -35,7 +36,7 @@ export function TopBar() {
 
         <div className={classes.rightGroup}>
           <span className={classes.promoBadge}>
-            {company.promoCode} — {company.promoDiscount}
+            {t("topbar.promo")}
           </span>
         </div>
       </Container>

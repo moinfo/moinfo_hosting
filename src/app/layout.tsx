@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 import { theme } from "@/theme";
+import { LanguageProvider } from "@/i18n/LanguageContext";
 import { TopBar } from "@/components/layout/TopBar";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -43,11 +44,13 @@ export default function RootLayout({
       </head>
       <body>
         <MantineProvider theme={theme} defaultColorScheme="light">
-          <TopBar />
-          <Header />
-          <main>{children}</main>
-          <Footer />
-          <TawkTo />
+          <LanguageProvider>
+            <TopBar />
+            <Header />
+            <main>{children}</main>
+            <Footer />
+            <TawkTo />
+          </LanguageProvider>
         </MantineProvider>
       </body>
     </html>

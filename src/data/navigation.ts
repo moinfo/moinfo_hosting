@@ -1,9 +1,9 @@
 export const navLinks = [
-  { label: "Home", href: "#" },
-  { label: "Hosting", href: "#pricing" },
-  { label: "Domains", href: "#domains" },
-  { label: "Features", href: "#features" },
-  { label: "Contact", href: "#footer" },
+  { labelKey: "nav.home", href: "#" },
+  { labelKey: "nav.hosting", href: "#pricing" },
+  { labelKey: "nav.domains", href: "#domains" },
+  { labelKey: "nav.features", href: "#features" },
+  { labelKey: "nav.contact", href: "#footer" },
 ];
 
 export const WHMCS_BASE = "https://moinfo.co.tz/portal/index.php?rp=";

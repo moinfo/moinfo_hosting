@@ -1,6 +1,9 @@
+"use client";
+
 import { Button } from "@mantine/core";
 import { IconCheck } from "@tabler/icons-react";
 import type { PricingPlan } from "@/data/pricing";
+import { useLanguage } from "@/i18n/LanguageContext";
 import classes from "./PricingCard.module.css";
 
 interface PricingCardProps {
@@ -10,23 +13,24 @@ interface PricingCardProps {
 
 export function PricingCard({ plan, isYearly }: PricingCardProps) {
   const price = isYearly ? plan.yearlyPrice : plan.monthlyPrice;
+  const { t } = useLanguage();
 
   return (
     <div className={`${classes.card} ${plan.popular ? classes.popular : ""}`}>
       {plan.popular && (
-        <div className={classes.popularBadge}>Most Popular</div>
+        <div className={classes.popularBadge}>{t("pricing.mostPopular")}</div>
       )}
       <div className={classes.planName}>{plan.name}</div>
       <div className={classes.price}>{price}</div>
       <div className={classes.period}>
-        {isYearly ? "per year" : "per month"}
+        {isYearly ? t("pricing.perYear") : t("pricing.perMonth")}
       </div>
 
       <ul className={classes.features}>
-        {plan.features.map((feature) => (
-          <li key={feature} className={classes.featureItem}>
+        {plan.featureKeys.map((key) => (
+          <li key={key} className={classes.featureItem}>
             <IconCheck size={16} className={classes.featureIcon} />
-            {feature}
+            {t(key)}
           </li>
         ))}
       </ul>
@@ -45,7 +49,7 @@ export function PricingCard({ plan, isYearly }: PricingCardProps) {
         }
         size="md"
       >
-        Order Now
+        {t("pricing.orderNow")}
       </Button>
     </div>
   );

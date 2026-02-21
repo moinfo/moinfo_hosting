@@ -9,45 +9,39 @@ import {
 
 export interface Feature {
   icon: typeof IconCloudUpload;
-  title: string;
-  description: string;
+  titleKey: string;
+  descriptionKey: string;
 }
 
 export const features: Feature[] = [
   {
     icon: IconCloudUpload,
-    title: "99.9% Uptime Guarantee",
-    description:
-      "Our infrastructure ensures your website stays online with enterprise-grade reliability and redundant systems.",
+    titleKey: "features.uptimeTitle",
+    descriptionKey: "features.uptimeDesc",
   },
   {
     icon: IconWorld,
-    title: "Free Domain Name",
-    description:
-      "Get a free .co.tz or .com domain with any annual hosting plan. TCRA accredited registrar.",
+    titleKey: "features.domainTitle",
+    descriptionKey: "features.domainDesc",
   },
   {
     icon: IconArrowsMaximize,
-    title: "Unlimited Bandwidth",
-    description:
-      "No bandwidth limits or hidden charges. Your website can handle traffic spikes without extra costs.",
+    titleKey: "features.bandwidthTitle",
+    descriptionKey: "features.bandwidthDesc",
   },
   {
     icon: IconServer,
-    title: "cPanel Control Panel",
-    description:
-      "Manage your hosting with the industry-standard cPanel. Easy file management, databases, and email setup.",
+    titleKey: "features.cpanelTitle",
+    descriptionKey: "features.cpanelDesc",
   },
   {
     icon: IconHeadset,
-    title: "24/7 Expert Support",
-    description:
-      "Our Tanzanian support team is available around the clock via phone, WhatsApp, and email.",
+    titleKey: "features.supportTitle",
+    descriptionKey: "features.supportDesc",
   },
   {
     icon: IconLock,
-    title: "Free SSL Certificate",
-    description:
-      "Every hosting plan includes a free SSL certificate to secure your website and boost SEO rankings.",
+    titleKey: "features.sslTitle",
+    descriptionKey: "features.sslDesc",
   },
 ];

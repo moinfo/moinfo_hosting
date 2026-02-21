@@ -5,17 +5,19 @@ import { Container, Tabs, SegmentedControl } from "@mantine/core";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { PricingCard } from "@/components/ui/PricingCard";
 import { pricingCategories } from "@/data/pricing";
+import { useLanguage } from "@/i18n/LanguageContext";
 import classes from "./PricingPlans.module.css";
 
 export function PricingPlans() {
   const [isYearly, setIsYearly] = useState(true);
+  const { t } = useLanguage();
 
   return (
     <section className={classes.section} id="pricing">
       <Container size="xl">
         <SectionHeader
-          title="Hosting Plans & Pricing"
-          description="Choose the perfect hosting plan for your needs. All plans include free SSL, 24/7 support, and a 30-day money-back guarantee."
+          title={t("pricing.title")}
+          description={t("pricing.description")}
         />
 
         <div className={classes.controls}>
@@ -23,8 +25,8 @@ export function PricingPlans() {
             value={isYearly ? "yearly" : "monthly"}
             onChange={(val) => setIsYearly(val === "yearly")}
             data={[
-              { label: "Monthly", value: "monthly" },
-              { label: "Yearly", value: "yearly" },
+              { label: t("pricing.monthly"), value: "monthly" },
+              { label: t("pricing.yearly"), value: "yearly" },
             ]}
             size="md"
           />
@@ -34,7 +36,7 @@ export function PricingPlans() {
           <Tabs.List justify="center" mb="xl">
             {pricingCategories.map((cat) => (
               <Tabs.Tab key={cat.key} value={cat.key}>
-                {cat.label}
+                {t(cat.labelKey)}
               </Tabs.Tab>
             ))}
           </Tabs.List>

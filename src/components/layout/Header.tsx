@@ -12,12 +12,15 @@ import {
 import { useDisclosure } from "@mantine/hooks";
 import { navLinks, CLIENT_LOGIN } from "@/data/navigation";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { LanguageToggle } from "@/components/ui/LanguageToggle";
 import { useScrolled } from "@/hooks/useScrolled";
+import { useLanguage } from "@/i18n/LanguageContext";
 import classes from "./Header.module.css";
 
 export function Header() {
   const [opened, { toggle, close }] = useDisclosure(false);
   const scrolled = useScrolled(50);
+  const { t } = useLanguage();
 
   return (
     <header
@@ -38,13 +41,14 @@ export function Header() {
 
         <nav className={classes.nav}>
           {navLinks.map((link) => (
-            <a key={link.label} href={link.href} className={classes.navLink}>
-              {link.label}
+            <a key={link.labelKey} href={link.href} className={classes.navLink}>
+              {t(link.labelKey)}
             </a>
           ))}
         </nav>
 
         <div className={classes.rightGroup}>
+          <LanguageToggle />
           <ThemeToggle />
           <Button
             component="a"
@@ -53,7 +57,7 @@ export function Header() {
             size="sm"
             visibleFrom="sm"
           >
-            Client Area
+            {t("nav.clientArea")}
           </Button>
           <Burger
             opened={opened}
@@ -68,7 +72,7 @@ export function Header() {
       <Drawer
         opened={opened}
         onClose={close}
-        title="Menu"
+        title={t("nav.menu")}
         padding="md"
         size="xs"
         position="right"
@@ -77,12 +81,12 @@ export function Header() {
         <Stack gap="xs">
           {navLinks.map((link) => (
             <a
-              key={link.label}
+              key={link.labelKey}
               href={link.href}
               className={classes.drawerLink}
               onClick={close}
             >
-              {link.label}
+              {t(link.labelKey)}
             </a>
           ))}
           <Button
@@ -92,7 +96,7 @@ export function Header() {
             fullWidth
             mt="sm"
           >
-            Client Area
+            {t("nav.clientArea")}
           </Button>
         </Stack>
       </Drawer>

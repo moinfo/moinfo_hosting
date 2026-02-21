@@ -5,10 +5,12 @@ import { Container } from "@mantine/core";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { tldPrices } from "@/data/domains";
 import { DOMAIN_SEARCH_URL } from "@/data/navigation";
+import { useLanguage } from "@/i18n/LanguageContext";
 import classes from "./DomainSearch.module.css";
 
 export function DomainSearch() {
   const [domain, setDomain] = useState("");
+  const { t } = useLanguage();
 
   const handleSearch = () => {
     if (domain.trim()) {
@@ -24,8 +26,8 @@ export function DomainSearch() {
     <section className={classes.section} id="domains">
       <Container size="xl">
         <SectionHeader
-          title="Find Your Perfect Domain"
-          description="Search for your ideal domain name. We're a TCRA accredited .tz domain registrar with the best prices in Tanzania."
+          title={t("domain.title")}
+          description={t("domain.description")}
         />
 
         <div className={classes.searchWrapper}>
@@ -33,7 +35,7 @@ export function DomainSearch() {
             <input
               className={classes.searchInput}
               type="text"
-              placeholder="Enter your domain name (e.g. mybusiness.co.tz)"
+              placeholder={t("domain.placeholder")}
               value={domain}
               onChange={(e) => setDomain(e.target.value)}
               onKeyDown={handleKeyDown}
@@ -43,7 +45,7 @@ export function DomainSearch() {
               onClick={handleSearch}
               type="button"
             >
-              Search Domain
+              {t("domain.searchButton")}
             </button>
           </div>
         </div>

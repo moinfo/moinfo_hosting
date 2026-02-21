@@ -2,16 +2,18 @@
 
 import { Container } from "@mantine/core";
 import { useAnimatedCounter } from "@/hooks/useAnimatedCounter";
+import { useLanguage } from "@/i18n/LanguageContext";
 import classes from "./Stats.module.css";
 
 interface StatItemProps {
   end: number;
   suffix: string;
-  label: string;
+  labelKey: string;
 }
 
-function StatItem({ end, suffix, label }: StatItemProps) {
+function StatItem({ end, suffix, labelKey }: StatItemProps) {
   const { count, ref } = useAnimatedCounter(end);
+  const { t } = useLanguage();
 
   return (
     <div className={classes.stat} ref={ref}>
@@ -19,16 +21,16 @@ function StatItem({ end, suffix, label }: StatItemProps) {
         {count}
         <span className={classes.suffix}>{suffix}</span>
       </div>
-      <div className={classes.label}>{label}</div>
+      <div className={classes.label}>{t(labelKey)}</div>
     </div>
   );
 }
 
 const stats = [
-  { end: 100, suffix: "+", label: "Websites Hosted" },
-  { end: 500, suffix: "+", label: "Domains Managed" },
-  { end: 200, suffix: "+", label: "Happy Clients" },
-  { end: 99.9, suffix: "%", label: "Uptime Guarantee" },
+  { end: 100, suffix: "+", labelKey: "stats.websites" },
+  { end: 500, suffix: "+", labelKey: "stats.domains" },
+  { end: 200, suffix: "+", labelKey: "stats.clients" },
+  { end: 99.9, suffix: "%", labelKey: "stats.uptime" },
 ];
 
 export function Stats() {
@@ -37,7 +39,7 @@ export function Stats() {
       <Container size="xl">
         <div className={classes.grid}>
           {stats.map((stat) => (
-            <StatItem key={stat.label} {...stat} />
+            <StatItem key={stat.labelKey} {...stat} />
           ))}
         </div>
       </Container>

@@ -1,0 +1,31 @@
+.toggle {
+  display: flex;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid var(--mantine-color-default-border);
+}
+
+.option {
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--mantine-color-dimmed);
+  transition: background 0.2s, color 0.2s;
+  line-height: 1.4;
+}
+
+.option:hover {
+  background: var(--mantine-color-default-hover);
+}
+
+.active {
+  background: var(--mantine-color-brand-blue-5);
+  color: white;
+}
+
+.active:hover {
+  background: var(--mantine-color-brand-blue-6);
+}

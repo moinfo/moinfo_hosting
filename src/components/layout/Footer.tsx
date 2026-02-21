@@ -13,9 +13,12 @@ import {
   IconMapPin,
 } from "@tabler/icons-react";
 import { company, footerLinks } from "@/data/company";
+import { useLanguage } from "@/i18n/LanguageContext";
 import classes from "./Footer.module.css";
 
 export function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className={classes.footer} id="footer">
       <Container size="xl">
@@ -37,8 +40,7 @@ export function Footer() {
               </div>
             </div>
             <p className={classes.brandDescription}>
-              Your trusted partner for comprehensive IT solutions in Tanzania.
-              Web hosting, custom systems, and professional web design.
+              {t("footer.brandDescription")}
             </p>
             <div className={classes.socialGroup}>
               <a
@@ -87,11 +89,11 @@ export function Footer() {
                 className={classes.columnDot}
                 style={{ background: "var(--mantine-color-brand-blue-5)" }}
               />
-              Hosting Services
+              {t("footer.hostingServices")}
             </h4>
             {footerLinks.hosting.map((link) => (
-              <a key={link.label} href={link.href} className={classes.columnLink}>
-                {link.label}
+              <a key={link.labelKey} href={link.href} className={classes.columnLink}>
+                {t(link.labelKey)}
               </a>
             ))}
           </div>
@@ -103,11 +105,11 @@ export function Footer() {
                 className={classes.columnDot}
                 style={{ background: "var(--mantine-color-brand-green-5)" }}
               />
-              Resources
+              {t("footer.resources")}
             </h4>
             {footerLinks.resources.map((link) => (
-              <a key={link.label} href={link.href} className={classes.columnLink}>
-                {link.label}
+              <a key={link.labelKey} href={link.href} className={classes.columnLink}>
+                {t(link.labelKey)}
               </a>
             ))}
           </div>
@@ -119,7 +121,7 @@ export function Footer() {
                 className={classes.columnDot}
                 style={{ background: "var(--mantine-color-brand-orange-5)" }}
               />
-              Contact Us
+              {t("footer.contactUs")}
             </h4>
             <div className={classes.contactItem}>
               <div className={classes.contactIcon}>
@@ -159,21 +161,21 @@ export function Footer() {
               style={{ borderRadius: "50%" }}
             />
             <div>
-              <div className={classes.tcraText}>TCRA Accredited</div>
-              <div className={classes.tcraSubtext}>.tz Domain Registrar</div>
+              <div className={classes.tcraText}>{t("footer.tcra")}</div>
+              <div className={classes.tcraSubtext}>{t("footer.tzRegistrar")}</div>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className={classes.bottom}>
-          <span>&copy; {new Date().getFullYear()} MoinfoTech. All rights reserved.</span>
+          <span>&copy; {new Date().getFullYear()} {t("footer.copyright")}</span>
           <div className={classes.bottomLinks}>
             <a href="#" className={classes.bottomLink}>
-              Privacy Policy
+              {t("footer.privacyPolicy")}
             </a>
             <a href="#" className={classes.bottomLink}>
-              Terms of Service
+              {t("footer.termsOfService")}
             </a>
           </div>
         </div>

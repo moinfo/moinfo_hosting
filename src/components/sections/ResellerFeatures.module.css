@@ -3,14 +3,14 @@
 }
 
 .accordionControl {
-  background: var(--mantine-color-dark-7);
+  background: var(--mantine-color-brand-blue-7);
   color: white;
   font-weight: 700;
   border-radius: var(--mantine-radius-md);
 }
 
 .accordionControl:hover {
-  background: var(--mantine-color-dark-6);
+  background: var(--mantine-color-brand-blue-8);
 }
 
 .tableWrapper {

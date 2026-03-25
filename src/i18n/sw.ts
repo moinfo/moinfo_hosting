@@ -4,11 +4,22 @@ export const sw: Translations = {
   // Navigation
   "nav.home": "Nyumbani",
   "nav.hosting": "Hosting",
+  "nav.hosting.web": "Web Hosting",
+  "nav.hosting.email": "Email Hosting",
+  "nav.hosting.reseller": "Linux Reseller",
   "nav.domains": "Vikoa",
   "nav.features": "Huduma",
   "nav.contact": "Wasiliana",
   "nav.clientArea": "Eneo la Mteja",
   "nav.menu": "Menyu",
+
+  // Web Hosting Page
+  "webHosting.title": "Mipango ya Web Hosting",
+  "webHosting.description": "Web hosting ya kuaminika na bei nafuu kwa biashara za Tanzania. SSL bure, msaada 24/7, na dhamana ya kurudisha pesa.",
+
+  // Email Hosting Page
+  "emailHosting.title": "Business Email Hosting",
+  "emailHosting.description": "Email hosting ya kitaalamu na uokoaji wa maafa, msaada 24/7, na dhamana ya kurudisha pesa siku 30.",
 
   // TopBar
   "topbar.whatsapp": "WhatsApp",

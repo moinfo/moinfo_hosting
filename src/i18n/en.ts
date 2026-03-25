@@ -4,11 +4,22 @@ export const en: Translations = {
   // Navigation
   "nav.home": "Home",
   "nav.hosting": "Hosting",
+  "nav.hosting.web": "Web Hosting",
+  "nav.hosting.email": "Email Hosting",
+  "nav.hosting.reseller": "Linux Reseller",
   "nav.domains": "Domains",
   "nav.features": "Features",
   "nav.contact": "Contact",
   "nav.clientArea": "Client Area",
   "nav.menu": "Menu",
+
+  // Web Hosting Page
+  "webHosting.title": "Web Hosting Plans",
+  "webHosting.description": "Reliable and affordable web hosting for Tanzanian businesses. Free SSL, 24/7 support, and money-back guarantee.",
+
+  // Email Hosting Page
+  "emailHosting.title": "Business Email Hosting",
+  "emailHosting.description": "Professional email hosting with disaster recovery backups, 24/7 support, and 30-day money-back guarantee.",
 
   // TopBar
   "topbar.whatsapp": "WhatsApp",

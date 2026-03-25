@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ResellerHero } from "@/components/sections/ResellerHero";
+import { LinuxResellerContent } from "./LinuxResellerContent";
 import { ResellerFeatures } from "@/components/sections/ResellerFeatures";
 
 export const metadata: Metadata = {
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function LinuxResellerPage() {
   return (
     <>
-      <ResellerHero />
+      <LinuxResellerContent />
       <ResellerFeatures />
     </>
   );

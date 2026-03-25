@@ -42,6 +42,8 @@
 }
 
 .navLink {
+  display: flex;
+  align-items: center;
   padding: 8px 14px;
   border-radius: var(--mantine-radius-md);
   text-decoration: none;

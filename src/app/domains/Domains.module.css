@@ -1,0 +1,106 @@
+.hero {
+  padding: 60px 0 40px;
+  background: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-8));
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--mantine-spacing-sm);
+}
+
+.heroTitle {
+  text-align: center;
+  max-width: 700px;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 650px;
+  margin-top: var(--mantine-spacing-lg);
+  background: light-dark(var(--mantine-color-white), var(--mantine-color-dark-6));
+  border: 2px solid var(--mantine-color-brand-blue-5);
+  border-radius: var(--mantine-radius-lg);
+  overflow: hidden;
+  padding: 4px;
+}
+
+.searchIcon {
+  margin-left: 12px;
+  color: var(--mantine-color-gray-5);
+  flex-shrink: 0;
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 12px;
+  font-size: var(--mantine-font-size-md);
+  background: transparent;
+  color: inherit;
+}
+
+.searchButton {
+  padding: 12px 24px;
+  background: var(--mantine-color-brand-blue-6);
+  color: white;
+  border: none;
+  border-radius: var(--mantine-radius-md);
+  font-weight: 600;
+  font-size: var(--mantine-font-size-sm);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 150ms ease;
+}
+
+.searchButton:hover {
+  background: var(--mantine-color-brand-blue-7);
+}
+
+.pricing {
+  padding: 60px 0;
+}
+
+.features {
+  padding: 60px 0;
+  background: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-8));
+}
+
+.included {
+  padding: 60px 0;
+}
+
+.faq {
+  padding: 60px 0;
+  background: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-8));
+}
+
+.cta {
+  padding: 60px 0;
+  background: linear-gradient(135deg, var(--mantine-color-brand-blue-7), var(--mantine-color-brand-green-7));
+}
+
+@media (max-width: 36em) {
+  .searchBox {
+    flex-direction: column;
+    border-radius: var(--mantine-radius-md);
+  }
+
+  .searchIcon {
+    display: none;
+  }
+
+  .searchInput {
+    width: 100%;
+    text-align: center;
+  }
+
+  .searchButton {
+    width: 100%;
+    border-radius: 0 0 var(--mantine-radius-md) var(--mantine-radius-md);
+  }
+}

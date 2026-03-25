@@ -37,7 +37,7 @@ export const footerLinks = {
     { labelKey: "footer.webDesign", href: "/website-design" },
   ],
   resources: [
-    { labelKey: "footer.domainSearch", href: "/#domains" },
+    { labelKey: "footer.domainSearch", href: "/domains" },
     { labelKey: "footer.knowledgeBase", href: "https://moinfo.co.tz/portal/index.php?rp=/knowledgebase" },
     { labelKey: "footer.transfer", href: "/transfer" },
     { labelKey: "footer.privacyPolicy", href: "/privacy" },

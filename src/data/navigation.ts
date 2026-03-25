@@ -12,6 +12,7 @@ export const navLinks: NavLink[] = [
     children: [
       { labelKey: "nav.hosting.web", href: "/web-hosting" },
       { labelKey: "nav.hosting.email", href: "/email-hosting" },
+      { labelKey: "nav.hosting.vps", href: "/vps" },
       { labelKey: "nav.hosting.reseller", href: "/linux-reseller" },
     ],
   },

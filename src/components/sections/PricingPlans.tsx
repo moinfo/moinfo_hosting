@@ -50,7 +50,7 @@ export function PricingPlans() {
                     variant="outline"
                     size="md"
                   >
-                    {t("pricing.readMore")}
+                    {t(cat.readMoreKey ?? "pricing.readMore")}
                   </Button>
                 </div>
               )}

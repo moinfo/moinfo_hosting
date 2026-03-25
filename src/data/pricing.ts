@@ -13,6 +13,7 @@ export interface PricingCategory {
   hidden?: boolean;
   columns?: number;
   readMoreUrl?: string;
+  readMoreKey?: string;
 }
 
 const STORE = "https://moinfo.co.tz/portal/index.php?rp=/store";
@@ -222,50 +223,54 @@ export const pricingCategories: PricingCategory[] = [
   {
     key: "vps",
     labelKey: "pricing.cat.vps",
-    hidden: true,
+    readMoreUrl: "/vps",
+    readMoreKey: "pricing.readMore.vps",
     plans: [
       {
-        name: "VPS Basic",
-        yearlyPrice: "TSh 20,600",
+        name: "MIT 500",
+        yearlyPrice: "TSh 2,150,000",
         featureKeys: [
-          "pf.vcpu2",
+          "pf.vpsSsd50gb",
+          "pf.vpsBw5tb",
           "pf.ram2gb",
-          "pf.ssd40gb",
-          "pf.bw1tb",
-          "pf.fullRootAccess",
+          "pf.freeLetsEncryptSsl",
+          "pf.freeDomain",
           "pf.ip1",
+          "pf.vpsCpanelWhm5",
+          "pf.fullRootAccess",
         ],
-        orderUrl: `${STORE}/vps`,
+        orderUrl: `${STORE}/linux-vps/linux-m-500`,
       },
       {
-        name: "VPS Pro",
-        yearlyPrice: "TSh 41,200",
+        name: "MIT 600",
+        yearlyPrice: "TSh 2,850,000",
         popular: true,
         featureKeys: [
-          "pf.vcpu4",
+          "pf.vpsSsd100gb",
+          "pf.unlimitedBandwidth",
           "pf.ram4gb",
-          "pf.ssd80gb",
-          "pf.bw2tb",
+          "pf.freeLetsEncryptSsl",
+          "pf.freeDomainCom",
+          "pf.ip1",
+          "pf.vpsCpanelWhm5",
           "pf.fullRootAccess",
-          "pf.ip2",
-          "pf.freeCpanel",
         ],
-        orderUrl: `${STORE}/vps`,
+        orderUrl: `${STORE}/linux-vps/linux-m-600`,
       },
       {
-        name: "VPS Elite",
-        yearlyPrice: "TSh 82,400",
+        name: "MIT 700",
+        yearlyPrice: "TSh 3,600,000",
         featureKeys: [
-          "pf.vcpu8",
-          "pf.ram8gb",
-          "pf.ssd160gb",
+          "pf.vpsSsd160gb",
           "pf.unlimitedBandwidth",
+          "pf.ram8gb",
+          "pf.freeLetsEncryptSsl",
+          "pf.freeDomain",
+          "pf.ip1",
+          "pf.vpsCpanelWhm5",
           "pf.fullRootAccess",
-          "pf.ip3",
-          "pf.freeCpanel",
-          "pf.ddosProtection",
         ],
-        orderUrl: `${STORE}/vps`,
+        orderUrl: `${STORE}/linux-vps/linux-mit-700`,
       },
     ],
   },
@@ -274,6 +279,7 @@ export const pricingCategories: PricingCategory[] = [
     labelKey: "pricing.cat.reseller",
     columns: 2,
     readMoreUrl: "/linux-reseller",
+    readMoreKey: "pricing.readMore.reseller",
     plans: [
       {
         name: "Linux Reseller Starter",

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Container, Button } from "@mantine/core";
 import { IconCheck, IconPalette } from "@tabler/icons-react";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -45,10 +46,8 @@ export function WebDesignPromo() {
             </ul>
 
             <Button
-              component="a"
-              href="https://moinfotech.co.tz"
-              target="_blank"
-              rel="noopener noreferrer"
+              component={Link}
+              href="/website-design"
               size="lg"
               variant="gradient"
               gradient={{ from: "brand-blue", to: "brand-green", deg: 135 }}
@@ -71,7 +70,7 @@ export function WebDesignPromo() {
               <div className={classes.priceHighlight}>
                 <div>
                   <div className={classes.priceLabel}>{t("webDesign.from")}</div>
-                  <div className={classes.priceAmount}>TSh 25,750</div>
+                  <div className={classes.priceAmount}>TSh 250,000</div>
                   <div className={classes.priceUnit}>{t("webDesign.perMonth")}</div>
                 </div>
               </div>

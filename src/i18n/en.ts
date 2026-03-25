@@ -8,6 +8,7 @@ export const en: Translations = {
   "nav.hosting.email": "Email Hosting",
   "nav.hosting.vps": "VPS Hosting",
   "nav.hosting.reseller": "Linux Reseller",
+  "nav.webDesign": "Web Design",
   "nav.domains": "Domains",
   "nav.features": "Features",
   "nav.contact": "Contact",

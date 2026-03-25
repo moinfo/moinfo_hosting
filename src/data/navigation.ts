@@ -17,6 +17,7 @@ export const navLinks: NavLink[] = [
     ],
   },
   { labelKey: "nav.domains", href: "/#domains" },
+  { labelKey: "nav.webDesign", href: "/website-design" },
   { labelKey: "nav.features", href: "/#features" },
   { labelKey: "nav.contact", href: "/#footer" },
 ];

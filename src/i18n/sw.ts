@@ -8,6 +8,7 @@ export const sw: Translations = {
   "nav.hosting.email": "Email Hosting",
   "nav.hosting.vps": "VPS Hosting",
   "nav.hosting.reseller": "Linux Reseller",
+  "nav.webDesign": "Ubunifu wa Tovuti",
   "nav.domains": "Vikoa",
   "nav.features": "Huduma",
   "nav.contact": "Wasiliana",

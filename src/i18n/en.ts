@@ -7,6 +7,7 @@ export const en: Translations = {
   "nav.hosting.web": "Web Hosting",
   "nav.hosting.email": "Email Hosting",
   "nav.hosting.vps": "VPS Hosting",
+  "nav.hosting.dedicated": "Dedicated Server",
   "nav.hosting.reseller": "Linux Reseller",
   "nav.webDesign": "Web Design",
   "nav.domains": "Domains",
@@ -72,6 +73,7 @@ export const en: Translations = {
   "pricing.readMore": "Read More",
   "pricing.readMore.reseller": "Read More Linux Reseller",
   "pricing.readMore.vps": "Read More VPS Hosting",
+  "pricing.readMore.dedicated": "Read More Dedicated Server",
   "pricing.perYear": "per year",
   "pricing.perMonth": "per month",
 
@@ -80,6 +82,7 @@ export const en: Translations = {
   "pricing.cat.wordpress": "WordPress",
   "pricing.cat.email": "Email",
   "pricing.cat.vps": "Linux VPS",
+  "pricing.cat.dedicated": "Dedicated Server",
   "pricing.cat.reseller": "Linux Reseller",
   "pricing.cat.ssl": "SSL",
 
@@ -165,6 +168,15 @@ export const en: Translations = {
   "pf.vpsSsd160gb": "160 GB SSD Disk Space",
   "pf.vpsBw5tb": "5 TB Monthly Bandwidth",
   "pf.vpsCpanelWhm5": "cPanel/WHM for 5 Accounts",
+  "pf.dsSsd120gb": "1×1 120 GB SSD Disk Space",
+  "pf.dsSsd480gb": "1×1 480 GB SSD Disk Space",
+  "pf.dsSsd960gb": "1×1 960 GB SSD Disk Space",
+  "pf.ram24gb": "24 GB RAM",
+  "pf.ram64gb": "64 GB RAM",
+
+  // Dedicated Server Page
+  "dedicatedHosting.title": "Linux Dedicated Server",
+  "dedicatedHosting.description": "Maximum power and control with dedicated hardware, unlimited bandwidth, free SSL, and full root access.",
 
   // VPS Hosting Page
   "vpsHosting.title": "VPS Hosting Plans",

@@ -7,6 +7,7 @@ export const sw: Translations = {
   "nav.hosting.web": "Web Hosting",
   "nav.hosting.email": "Email Hosting",
   "nav.hosting.vps": "VPS Hosting",
+  "nav.hosting.dedicated": "Dedicated Server",
   "nav.hosting.reseller": "Linux Reseller",
   "nav.webDesign": "Ubunifu wa Tovuti",
   "nav.domains": "Vikoa",
@@ -72,6 +73,7 @@ export const sw: Translations = {
   "pricing.readMore": "Soma Zaidi",
   "pricing.readMore.reseller": "Soma Zaidi Linux Reseller",
   "pricing.readMore.vps": "Soma Zaidi VPS Hosting",
+  "pricing.readMore.dedicated": "Soma Zaidi Dedicated Server",
   "pricing.perYear": "kwa mwaka",
   "pricing.perMonth": "kwa mwezi",
 
@@ -80,6 +82,7 @@ export const sw: Translations = {
   "pricing.cat.wordpress": "WordPress",
   "pricing.cat.email": "Barua Pepe",
   "pricing.cat.vps": "Linux VPS",
+  "pricing.cat.dedicated": "Dedicated Server",
   "pricing.cat.reseller": "Linux Reseller",
   "pricing.cat.ssl": "SSL",
 
@@ -165,6 +168,15 @@ export const sw: Translations = {
   "pf.vpsSsd160gb": "160 GB SSD Disk Space",
   "pf.vpsBw5tb": "5 TB Monthly Bandwidth",
   "pf.vpsCpanelWhm5": "cPanel/WHM kwa Akaunti 5",
+  "pf.dsSsd120gb": "1×1 120 GB SSD Disk Space",
+  "pf.dsSsd480gb": "1×1 480 GB SSD Disk Space",
+  "pf.dsSsd960gb": "1×1 960 GB SSD Disk Space",
+  "pf.ram24gb": "24 GB RAM",
+  "pf.ram64gb": "64 GB RAM",
+
+  // Dedicated Server Page
+  "dedicatedHosting.title": "Linux Dedicated Server",
+  "dedicatedHosting.description": "Nguvu na udhibiti wa juu zaidi na vifaa maalum, bandwidth isiyo na kikomo, SSL bure, na ufikiaji kamili wa root.",
 
   // VPS Hosting Page
   "vpsHosting.title": "Mipango ya VPS Hosting",

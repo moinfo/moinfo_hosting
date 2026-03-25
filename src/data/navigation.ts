@@ -13,6 +13,7 @@ export const navLinks: NavLink[] = [
       { labelKey: "nav.hosting.web", href: "/web-hosting" },
       { labelKey: "nav.hosting.email", href: "/email-hosting" },
       { labelKey: "nav.hosting.vps", href: "/vps" },
+      { labelKey: "nav.hosting.dedicated", href: "/dedicated-server" },
       { labelKey: "nav.hosting.reseller", href: "/linux-reseller" },
     ],
   },

@@ -149,7 +149,7 @@ export default function RootLayout({
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-825251119" />
         <script
           dangerouslySetInnerHTML={{
-            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-825251119');`,
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-825251119');gtag('event','conversion',{'send_to':'AW-825251119/az8fCJyu4XoQr6rBiQM'});`,
           }}
         />
         {/* JSON-LD structured data - static trusted content only */}

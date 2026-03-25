@@ -137,6 +137,12 @@ export function Footer() {
             </div>
             <div className={classes.contactItem}>
               <div className={classes.contactIcon}>
+                <IconPhone size={18} color="var(--mantine-color-brand-green-5)" />
+              </div>
+              <span>{company.phone2}</span>
+            </div>
+            <div className={classes.contactItem}>
+              <div className={classes.contactIcon}>
                 <IconWorld size={18} color="var(--mantine-color-brand-green-5)" />
               </div>
               <span>moinfo.co.tz</span>
@@ -171,10 +177,10 @@ export function Footer() {
         <div className={classes.bottom}>
           <span>&copy; {new Date().getFullYear()} {t("footer.copyright")}</span>
           <div className={classes.bottomLinks}>
-            <a href="#" className={classes.bottomLink}>
+            <a href="/privacy" className={classes.bottomLink}>
               {t("footer.privacyPolicy")}
             </a>
-            <a href="#" className={classes.bottomLink}>
+            <a href="/terms" className={classes.bottomLink}>
               {t("footer.termsOfService")}
             </a>
           </div>

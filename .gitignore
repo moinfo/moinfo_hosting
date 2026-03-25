@@ -44,3 +44,6 @@ next-env.d.ts
 
 # WHMCS local dev
 /whmcs/
+.idea/
+.playwright-mcp/
+packages/

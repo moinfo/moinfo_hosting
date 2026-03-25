@@ -19,6 +19,10 @@ export function TopBar() {
             <IconPhone size={14} />
             <span>{company.phone}</span>
           </a>
+          <a href={`tel:${company.phone2}`} className={classes.contactItem}>
+            <IconPhone size={14} />
+            <span>{company.phone2}</span>
+          </a>
           <a
             href={company.whatsapp}
             target="_blank"

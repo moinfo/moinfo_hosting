@@ -251,6 +251,19 @@ export const en: Translations = {
   "stats.uptime": "Uptime Guarantee",
 
   // CTA
+  // Testimonials
+  "testimonials.title": "We Adore Web Hosting and Our Customers!",
+  "testimonials.description": "Moinfo Hosting has received several testimonies and accolades since its launch. We like to check in with our customers from time to time to make sure we're doing a good job, and we've included some of the numerous client testimonials contributed by our customers below.",
+  "testimonials.1.name": "John Massawe",
+  "testimonials.1.location": "Dar es Salaam, Tanzania",
+  "testimonials.1.text": "I have been using Moinfo Hosting for over a year now and I have never experienced any downtime. Their customer support is excellent and always available when I need help. Highly recommended for any business in Tanzania!",
+  "testimonials.2.name": "Amina Kimaro",
+  "testimonials.2.location": "Arusha, Tanzania",
+  "testimonials.2.text": "Moinfo Hosting provides the best hosting services in Tanzania. Their prices are affordable and the service quality is top-notch. My website loads fast and my clients are happy. Thank you Moinfo!",
+  "testimonials.3.name": "Felix Mwanga",
+  "testimonials.3.location": "Mwanza, Tanzania",
+  "testimonials.3.text": "As a web developer, I've tried many hosting providers. Moinfo Hosting stands out with their reliable servers, great support team, and competitive pricing. They truly understand the needs of Tanzanian businesses.",
+
   "cta.title": "Ready to Get Started?",
   "cta.description":
     "Join hundreds of Tanzanian businesses who trust Moinfo Hosting for their online presence. Get started today with our reliable hosting solutions.",

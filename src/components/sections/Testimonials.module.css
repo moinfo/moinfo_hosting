@@ -1,0 +1,74 @@
+.section {
+  padding: 80px 0;
+  background: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-8));
+}
+
+.divider {
+  width: 120px;
+  height: 3px;
+  background: var(--mantine-color-dark-7);
+  margin: 0 auto var(--mantine-spacing-md);
+  border-radius: 2px;
+  position: relative;
+}
+
+.divider::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--mantine-color-dark-7);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.testimonialWrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--mantine-spacing-sm);
+}
+
+.arrow {
+  flex-shrink: 0;
+}
+
+.testimonialCard {
+  flex: 1;
+  position: relative;
+  min-height: 180px;
+}
+
+.quoteIcon {
+  position: absolute;
+  bottom: 16px;
+  right: 20px;
+  color: light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: var(--mantine-color-gray-4);
+  cursor: pointer;
+  padding: 0;
+  transition: background 200ms ease;
+}
+
+.dotActive {
+  background: var(--mantine-color-brand-blue-5);
+}
+
+@media (max-width: 36em) {
+  .arrow {
+    display: none;
+  }
+}

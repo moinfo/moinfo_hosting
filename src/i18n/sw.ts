@@ -251,6 +251,19 @@ export const sw: Translations = {
   "stats.uptime": "Dhamana ya Uptime",
 
   // CTA
+  // Testimonials
+  "testimonials.title": "Tunapenda Web Hosting na Wateja Wetu!",
+  "testimonials.description": "Moinfo Hosting imepokea ushahidi na sifa nyingi tangu kuanzishwa kwake. Tunapenda kuwasiliana na wateja wetu mara kwa mara kuhakikisha tunafanya kazi nzuri, na tumejumuisha baadhi ya ushahidi wa wateja wetu hapa chini.",
+  "testimonials.1.name": "John Massawe",
+  "testimonials.1.location": "Dar es Salaam, Tanzania",
+  "testimonials.1.text": "Nimekuwa nikitumia Moinfo Hosting kwa zaidi ya mwaka mmoja na sijawahi kupata tatizo la mtandao kukatika. Msaada wao wa wateja ni bora na daima unapatikana ninapohitaji msaada. Ninapendekeza sana kwa biashara yoyote Tanzania!",
+  "testimonials.2.name": "Amina Kimaro",
+  "testimonials.2.location": "Arusha, Tanzania",
+  "testimonials.2.text": "Moinfo Hosting inatoa huduma bora za hosting Tanzania. Bei zao ni nafuu na ubora wa huduma ni wa hali ya juu. Tovuti yangu inapakia haraka na wateja wangu wanafurahi. Asante Moinfo!",
+  "testimonials.3.name": "Felix Mwanga",
+  "testimonials.3.location": "Mwanza, Tanzania",
+  "testimonials.3.text": "Kama mtengenezaji wa tovuti, nimejaribu watoa huduma wengi wa hosting. Moinfo Hosting inajitokeza na seva zao za kuaminika, timu nzuri ya msaada, na bei shindani. Wanaelewa kweli mahitaji ya biashara za Tanzania.",
+
   "cta.title": "Uko Tayari Kuanza?",
   "cta.description":
     "Jiunge na mamia ya biashara za Tanzania wanaoamini Moinfo Hosting kwa uwepo wao mtandaoni. Anza leo na suluhisho zetu za hosting zinazotegemewa.",

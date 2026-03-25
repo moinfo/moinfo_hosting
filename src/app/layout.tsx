@@ -145,6 +145,13 @@ export default function RootLayout({
       <head>
         <ColorSchemeScript defaultColorScheme="light" />
         <link rel="icon" href="/images/logo.png" />
+        {/* Google Ads conversion tracking tag */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-825251119" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-825251119');`,
+          }}
+        />
         {/* JSON-LD structured data - static trusted content only */}
         <script
           type="application/ld+json"

@@ -3,14 +3,15 @@ import { LinuxResellerContent } from "./LinuxResellerContent";
 import { ResellerFeatures } from "@/components/sections/ResellerFeatures";
 
 export const metadata: Metadata = {
-  title: "Linux Reseller Hosting",
+  title: "Linux Reseller Hosting Tanzania",
   description:
-    "Start your own hosting business with our Linux Reseller Hosting plans. WHM/cPanel included, free SSL, and 24/7 support.",
+    "Start your own hosting business in Tanzania with Linux Reseller Hosting. WHM/cPanel included, free SSL, white-label hosting, and 24/7 support. Plans from TSh 450,000/year.",
+  keywords: ["reseller hosting Tanzania", "Linux reseller hosting Tanzania", "start hosting business Tanzania", "WHM cPanel reseller Tanzania", "white label hosting Tanzania", "reseller hosting bei nafuu"],
   alternates: { canonical: "/linux-reseller" },
   openGraph: {
-    title: "Linux Reseller Hosting — Moinfo Hosting",
+    title: "Linux Reseller Hosting Tanzania — Moinfo Hosting",
     description:
-      "Start your own hosting business with our Linux Reseller Hosting plans. WHM/cPanel included, free SSL, and 24/7 support.",
+      "Start your own hosting business in Tanzania. WHM/cPanel included, free SSL, and white-label hosting.",
     url: "https://moinfo.co.tz/linux-reseller",
   },
 };

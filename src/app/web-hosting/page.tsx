@@ -4,12 +4,13 @@ import { WebHostingContent } from "./WebHostingContent";
 export const metadata: Metadata = {
   title: "Web Hosting Plans",
   description:
-    "Reliable and affordable web hosting plans for Tanzanian businesses. Free SSL, 24/7 support, and money-back guarantee.",
+    "Best cheap web hosting in Tanzania from TSh 80,500/year. Free SSL, cPanel, 24/7 support, and money-back guarantee. TCRA accredited hosting provider.",
+  keywords: ["web hosting Tanzania", "cheap web hosting Tanzania", "best web hosting Tanzania", "cPanel hosting Tanzania", "affordable hosting Tanzania", "hosting bei nafuu"],
   alternates: { canonical: "/web-hosting" },
   openGraph: {
-    title: "Web Hosting Plans — Moinfo Hosting",
+    title: "Cheap Web Hosting Plans in Tanzania — Moinfo Hosting",
     description:
-      "Reliable and affordable web hosting plans for Tanzanian businesses. Free SSL, 24/7 support, and money-back guarantee.",
+      "Best cheap web hosting in Tanzania from TSh 80,500/year. Free SSL, cPanel, 24/7 support, and money-back guarantee.",
     url: "https://moinfo.co.tz/web-hosting",
   },
 };

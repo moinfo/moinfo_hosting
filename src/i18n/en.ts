@@ -56,6 +56,7 @@ export const en: Translations = {
   "pricing.yearly": "Yearly",
   "pricing.mostPopular": "Most Popular",
   "pricing.orderNow": "Order Now",
+  "pricing.readMore": "Read More Linux Reseller",
   "pricing.perYear": "per year",
   "pricing.perMonth": "per month",
 
@@ -64,7 +65,7 @@ export const en: Translations = {
   "pricing.cat.wordpress": "WordPress",
   "pricing.cat.email": "Email",
   "pricing.cat.vps": "VPS",
-  "pricing.cat.reseller": "Reseller",
+  "pricing.cat.reseller": "Linux Reseller",
   "pricing.cat.ssl": "SSL",
 
   // Pricing Features — Technical (identical in both languages)
@@ -92,6 +93,7 @@ export const en: Translations = {
   "pf.ssd100gb": "100 GB SSD Storage",
   "pf.emailAccounts20": "20 Email Accounts",
   "pf.emailAccounts40": "40 Email Accounts",
+  "pf.emailAccounts60": "60 Email Accounts",
   "pf.disk8": "8 Disk Space",
   "pf.bw8": "8 Bandwidth",
   "pf.disk50gb": "50 GB Disk Space",
@@ -147,6 +149,13 @@ export const en: Translations = {
   "pf.prioritySupport": "Priority Support",
   "pf.unlimitedAccounts": "Unlimited Accounts",
   "pf.dedicatedIp": "Dedicated IP",
+  "pf.ssd25gb": "25 GB SSD Disk Space",
+  "pf.bw250gb": "250 GB Bandwidth",
+  "pf.cpanel10": "10 cPanel Accounts",
+  "pf.whmCpanelIncluded": "WHM/cPanel Included",
+  "pf.freeDomainCom": "Free Domain .com",
+  "pf.unlimitedSsd": "Unlimited SSD Disk Space",
+  "pf.cpanel100": "100 cPanel Accounts",
   "pf.orgValidated": "Organization Validated",
   "pf.trustSeal": "Browser Trust Seal",
   "pf.greenBar": "Green Address Bar",

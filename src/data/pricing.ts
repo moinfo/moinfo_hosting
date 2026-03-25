@@ -1,6 +1,5 @@
 export interface PricingPlan {
   name: string;
-  monthlyPrice: string;
   yearlyPrice: string;
   featureKeys: string[];
   orderUrl: string;
@@ -11,6 +10,9 @@ export interface PricingCategory {
   key: string;
   labelKey: string;
   plans: PricingPlan[];
+  hidden?: boolean;
+  columns?: number;
+  readMoreUrl?: string;
 }
 
 const STORE = "https://moinfo.co.tz/portal/index.php?rp=/store";
@@ -22,7 +24,6 @@ export const pricingCategories: PricingCategory[] = [
     plans: [
       {
         name: "University",
-        monthlyPrice: "TSh 6,708",
         yearlyPrice: "TSh 80,500",
         featureKeys: [
           "pf.disk4gb",
@@ -37,7 +38,6 @@ export const pricingCategories: PricingCategory[] = [
       },
       {
         name: "Personal",
-        monthlyPrice: "TSh 10,000",
         yearlyPrice: "TSh 120,000",
         featureKeys: [
           "pf.disk8gb",
@@ -52,7 +52,6 @@ export const pricingCategories: PricingCategory[] = [
       },
       {
         name: "Professional",
-        monthlyPrice: "TSh 12,500",
         yearlyPrice: "TSh 150,000",
         popular: true,
         featureKeys: [
@@ -68,7 +67,6 @@ export const pricingCategories: PricingCategory[] = [
       },
       {
         name: "Premier",
-        monthlyPrice: "TSh 16,667",
         yearlyPrice: "TSh 200,000",
         featureKeys: [
           "pf.disk20gb",
@@ -83,7 +81,6 @@ export const pricingCategories: PricingCategory[] = [
       },
       {
         name: "System",
-        monthlyPrice: "TSh 20,833",
         yearlyPrice: "TSh 250,000",
         featureKeys: [
           "pf.disk15gb",
@@ -98,7 +95,6 @@ export const pricingCategories: PricingCategory[] = [
       },
       {
         name: "Plus",
-        monthlyPrice: "TSh 41,667",
         yearlyPrice: "TSh 500,000",
         featureKeys: [
           "pf.disk100gb",
@@ -116,10 +112,10 @@ export const pricingCategories: PricingCategory[] = [
   {
     key: "wordpress",
     labelKey: "pricing.cat.wordpress",
+    hidden: true,
     plans: [
       {
         name: "WP Starter",
-        monthlyPrice: "TSh 7,725",
         yearlyPrice: "TSh 6,180",
         featureKeys: [
           "pf.wp1site",
@@ -133,7 +129,6 @@ export const pricingCategories: PricingCategory[] = [
       },
       {
         name: "WP Business",
-        monthlyPrice: "TSh 15,450",
         yearlyPrice: "TSh 12,360",
         popular: true,
         featureKeys: [
@@ -149,7 +144,6 @@ export const pricingCategories: PricingCategory[] = [
       },
       {
         name: "WP Enterprise",
-        monthlyPrice: "TSh 25,750",
         yearlyPrice: "TSh 20,600",
         featureKeys: [
           "pf.wpUnlimited",
@@ -168,10 +162,10 @@ export const pricingCategories: PricingCategory[] = [
   {
     key: "email",
     labelKey: "pricing.cat.email",
+    columns: 2,
     plans: [
       {
         name: "Starter",
-        monthlyPrice: "TSh 5,000",
         yearlyPrice: "TSh 60,000",
         featureKeys: [
           "pf.disk4gb",
@@ -185,7 +179,6 @@ export const pricingCategories: PricingCategory[] = [
       },
       {
         name: "Medium",
-        monthlyPrice: "TSh 8,333",
         yearlyPrice: "TSh 100,000",
         popular: true,
         featureKeys: [
@@ -200,12 +193,11 @@ export const pricingCategories: PricingCategory[] = [
       },
       {
         name: "Premier",
-        monthlyPrice: "TSh 10,833",
         yearlyPrice: "TSh 130,000",
         featureKeys: [
-          "pf.disk8",
-          "pf.bw8",
-          "pf.emailAccounts40",
+          "pf.disk12gb",
+          "pf.bw12gb",
+          "pf.emailAccounts60",
           "pf.disasterRecovery",
           "pf.onlineSupport247",
           "pf.moneyBack30days",
@@ -214,7 +206,6 @@ export const pricingCategories: PricingCategory[] = [
       },
       {
         name: "Plus",
-        monthlyPrice: "TSh 29,167",
         yearlyPrice: "TSh 350,000",
         featureKeys: [
           "pf.disk50gb",
@@ -231,10 +222,10 @@ export const pricingCategories: PricingCategory[] = [
   {
     key: "vps",
     labelKey: "pricing.cat.vps",
+    hidden: true,
     plans: [
       {
         name: "VPS Basic",
-        monthlyPrice: "TSh 25,750",
         yearlyPrice: "TSh 20,600",
         featureKeys: [
           "pf.vcpu2",
@@ -248,7 +239,6 @@ export const pricingCategories: PricingCategory[] = [
       },
       {
         name: "VPS Pro",
-        monthlyPrice: "TSh 51,500",
         yearlyPrice: "TSh 41,200",
         popular: true,
         featureKeys: [
@@ -264,7 +254,6 @@ export const pricingCategories: PricingCategory[] = [
       },
       {
         name: "VPS Elite",
-        monthlyPrice: "TSh 103,000",
         yearlyPrice: "TSh 82,400",
         featureKeys: [
           "pf.vcpu8",
@@ -283,62 +272,70 @@ export const pricingCategories: PricingCategory[] = [
   {
     key: "reseller",
     labelKey: "pricing.cat.reseller",
+    columns: 2,
+    readMoreUrl: "/linux-reseller",
     plans: [
       {
-        name: "Reseller Starter",
-        monthlyPrice: "TSh 25,750",
-        yearlyPrice: "TSh 20,600",
+        name: "Linux Reseller Starter",
+        yearlyPrice: "TSh 450,000",
         featureKeys: [
-          "pf.cpanel25",
-          "pf.ssd50gb",
-          "pf.whmAccess",
+          "pf.ssd25gb",
+          "pf.bw250gb",
+          "pf.cpanel10",
           "pf.freeSslCerts",
-          "pf.whiteLabel",
-          "pf.whmcsIncluded",
+          "pf.whmCpanelIncluded",
         ],
-        orderUrl: `${STORE}/reseller-hosting`,
+        orderUrl: `${STORE}/linux-reseller-hosting/linux-reseller-starter`,
       },
       {
-        name: "Reseller Pro",
-        monthlyPrice: "TSh 41,200",
-        yearlyPrice: "TSh 32,960",
+        name: "Linux Reseller Medium",
+        yearlyPrice: "TSh 750,000",
         popular: true,
         featureKeys: [
-          "pf.cpanel50",
-          "pf.ssd100gb",
-          "pf.whmAccess",
+          "pf.ssd50gb",
+          "pf.unlimitedBandwidth",
+          "pf.cpanel25",
           "pf.freeSslCerts",
-          "pf.whiteLabel",
-          "pf.whmcsIncluded",
-          "pf.prioritySupport",
+          "pf.freeDomainCom",
+          "pf.whmCpanelIncluded",
         ],
-        orderUrl: `${STORE}/reseller-hosting`,
+        orderUrl: `${STORE}/linux-reseller-hosting/linux-reseller-medium`,
       },
       {
-        name: "Reseller Elite",
-        monthlyPrice: "TSh 72,100",
-        yearlyPrice: "TSh 57,680",
+        name: "Linux Reseller Premium",
+        yearlyPrice: "TSh 950,000",
         featureKeys: [
-          "pf.unlimitedAccounts",
-          "pf.ssd200gb",
-          "pf.whmAccess",
+          "pf.ssd100gb",
+          "pf.unlimitedBandwidth",
+          "pf.cpanel50",
           "pf.freeSslCerts",
-          "pf.whiteLabel",
-          "pf.whmcsIncluded",
-          "pf.prioritySupport",
-          "pf.dedicatedIp",
+          "pf.freeDomainCom",
+          "pf.whmCpanelIncluded",
         ],
-        orderUrl: `${STORE}/reseller-hosting`,
+        orderUrl: `${STORE}/linux-reseller-hosting/linux-reseller-premium`,
+      },
+      {
+        name: "Linux Reseller Business",
+        yearlyPrice: "TSh 1,700,000",
+        featureKeys: [
+          "pf.unlimitedSsd",
+          "pf.unlimitedBandwidth",
+          "pf.cpanel100",
+          "pf.freeSslCerts",
+          "pf.freeDomainCom",
+          "pf.whmCpanelIncluded",
+        ],
+        orderUrl: `${STORE}/linux-reseller-hosting/linux-reseller-business`,
       },
     ],
   },
   {
     key: "ssl",
     labelKey: "pricing.cat.ssl",
+    hidden: true,
     plans: [
       {
         name: "Domain SSL",
-        monthlyPrice: "TSh 5,150",
         yearlyPrice: "TSh 4,120",
         featureKeys: [
           "pf.singleDomain",
@@ -351,7 +348,6 @@ export const pricingCategories: PricingCategory[] = [
       },
       {
         name: "Organization SSL",
-        monthlyPrice: "TSh 15,450",
         yearlyPrice: "TSh 12,360",
         popular: true,
         featureKeys: [
@@ -366,7 +362,6 @@ export const pricingCategories: PricingCategory[] = [
       },
       {
         name: "Wildcard SSL",
-        monthlyPrice: "TSh 30,900",
         yearlyPrice: "TSh 24,720",
         featureKeys: [
           "pf.unlimitedSubdomains",

@@ -3,20 +3,18 @@
   background: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-8));
 }
 
-.controls {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--mantine-spacing-lg);
-  margin-bottom: var(--mantine-spacing-xl);
-}
-
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--mantine-spacing-lg);
   max-width: 1100px;
   margin: 0 auto;
+}
+
+.readMore {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--mantine-spacing-xl);
 }
 
 @media (max-width: 62em) {

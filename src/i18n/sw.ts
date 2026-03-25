@@ -56,6 +56,7 @@ export const sw: Translations = {
   "pricing.yearly": "Kila Mwaka",
   "pricing.mostPopular": "Maarufu Zaidi",
   "pricing.orderNow": "Agiza Sasa",
+  "pricing.readMore": "Soma Zaidi Linux Reseller",
   "pricing.perYear": "kwa mwaka",
   "pricing.perMonth": "kwa mwezi",
 
@@ -64,7 +65,7 @@ export const sw: Translations = {
   "pricing.cat.wordpress": "WordPress",
   "pricing.cat.email": "Barua Pepe",
   "pricing.cat.vps": "VPS",
-  "pricing.cat.reseller": "Muuzaji",
+  "pricing.cat.reseller": "Linux Reseller",
   "pricing.cat.ssl": "SSL",
 
   // Pricing Features — Technical (identical in both languages)
@@ -92,6 +93,7 @@ export const sw: Translations = {
   "pf.ssd100gb": "100 GB SSD Storage",
   "pf.emailAccounts20": "20 Email Accounts",
   "pf.emailAccounts40": "40 Email Accounts",
+  "pf.emailAccounts60": "60 Email Accounts",
   "pf.disk8": "8 Disk Space",
   "pf.bw8": "8 Bandwidth",
   "pf.disk50gb": "50 GB Disk Space",
@@ -147,6 +149,13 @@ export const sw: Translations = {
   "pf.prioritySupport": "Msaada wa Kipaumbele",
   "pf.unlimitedAccounts": "Akaunti Zisizo na Kikomo",
   "pf.dedicatedIp": "IP ya Kipekee",
+  "pf.ssd25gb": "25 GB SSD Disk Space",
+  "pf.bw250gb": "250 GB Bandwidth",
+  "pf.cpanel10": "10 cPanel Accounts",
+  "pf.whmCpanelIncluded": "WHM/cPanel Included",
+  "pf.freeDomainCom": "Free Domain .com",
+  "pf.unlimitedSsd": "Unlimited SSD Disk Space",
+  "pf.cpanel100": "100 cPanel Accounts",
   "pf.orgValidated": "Imethibitishwa na Shirika",
   "pf.trustSeal": "Nembo ya Uaminifu wa Kivinjari",
   "pf.greenBar": "Upau wa Anwani ya Kijani",

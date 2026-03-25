@@ -8,11 +8,9 @@ import classes from "./PricingCard.module.css";
 
 interface PricingCardProps {
   plan: PricingPlan;
-  isYearly: boolean;
 }
 
-export function PricingCard({ plan, isYearly }: PricingCardProps) {
-  const price = isYearly ? plan.yearlyPrice : plan.monthlyPrice;
+export function PricingCard({ plan }: PricingCardProps) {
   const { t } = useLanguage();
 
   return (
@@ -21,10 +19,8 @@ export function PricingCard({ plan, isYearly }: PricingCardProps) {
         <div className={classes.popularBadge}>{t("pricing.mostPopular")}</div>
       )}
       <div className={classes.planName}>{plan.name}</div>
-      <div className={classes.price}>{price}</div>
-      <div className={classes.period}>
-        {isYearly ? t("pricing.perYear") : t("pricing.perMonth")}
-      </div>
+      <div className={classes.price}>{plan.yearlyPrice}</div>
+      <div className={classes.period}>{t("pricing.perYear")}</div>
 
       <ul className={classes.features}>
         {plan.featureKeys.map((key) => (

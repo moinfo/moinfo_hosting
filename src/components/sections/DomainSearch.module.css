@@ -3,6 +3,36 @@
   background: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
 }
 
+.promoBanner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--mantine-spacing-sm);
+  flex-wrap: wrap;
+  max-width: 680px;
+  margin: 0 auto var(--mantine-spacing-lg);
+  padding: 12px 20px;
+  border-radius: var(--mantine-radius-md);
+  background: light-dark(#fff8e1, #2a2200);
+  border: 1.5px solid #f9c846;
+  text-align: center;
+}
+
+.promoTag {
+  font-weight: 700;
+  font-size: var(--mantine-font-size-sm);
+  color: #b37a00;
+  background: #f9c846;
+  padding: 2px 10px;
+  border-radius: var(--mantine-radius-sm);
+  white-space: nowrap;
+}
+
+.promoText {
+  font-size: var(--mantine-font-size-sm);
+  color: light-dark(var(--mantine-color-dark-6), var(--mantine-color-gray-3));
+}
+
 .searchWrapper {
   max-width: 680px;
   margin: 0 auto var(--mantine-spacing-xl);

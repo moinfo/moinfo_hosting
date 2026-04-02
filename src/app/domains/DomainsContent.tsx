@@ -119,7 +119,7 @@ export function DomainsContent() {
               Register Your Domain Name in Tanzania
             </Title>
             <Text size="lg" c="dimmed" maw={700} ta="center">
-              Get your perfect domain name starting from TSh 20,000/year.
+              Get your perfect domain name starting from TSh 19,999/year.
               Register .co.tz, .tz, .com, and more with Tanzania&apos;s trusted
               TCRA accredited domain registrar.
             </Text>

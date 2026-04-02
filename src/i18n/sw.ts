@@ -47,7 +47,7 @@ export const sw: Translations = {
   "hero.cardWebHosting": "Hosting ya Tovuti",
   "hero.cardWebHostingSub": "Kuanzia TSh 80,500/mw",
   "hero.cardDomainNames": "Majina ya Vikoa",
-  "hero.cardDomainNamesSub": ".co.tz kuanzia TSh 20,000",
+  "hero.cardDomainNamesSub": ".co.tz kuanzia TSh 19,999",
   "hero.cardEmailHosting": "Hosting ya Barua Pepe",
   "hero.cardEmailHostingSub": "Kuanzia TSh 60,000/mw",
   "hero.cardVpsServers": "Seva za VPS",

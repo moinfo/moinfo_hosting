@@ -47,7 +47,7 @@ export const en: Translations = {
   "hero.cardWebHosting": "Web Hosting",
   "hero.cardWebHostingSub": "From TSh 80,500/yr",
   "hero.cardDomainNames": "Domain Names",
-  "hero.cardDomainNamesSub": ".co.tz from TSh 20,000",
+  "hero.cardDomainNamesSub": ".co.tz from TSh 19,999",
   "hero.cardEmailHosting": "Email Hosting",
   "hero.cardEmailHostingSub": "From TSh 60,000/yr",
   "hero.cardVpsServers": "VPS Servers",

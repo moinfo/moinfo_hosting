@@ -8,9 +8,18 @@ import { DOMAIN_SEARCH_URL } from "@/data/navigation";
 import { useLanguage } from "@/i18n/LanguageContext";
 import classes from "./DomainSearch.module.css";
 
+const PROMO_START = new Date("2026-04-01T00:00:00");
+const PROMO_END = new Date("2026-06-30T23:59:59");
+
+function isPromoActive() {
+  const now = new Date();
+  return now >= PROMO_START && now <= PROMO_END;
+}
+
 export function DomainSearch() {
   const [domain, setDomain] = useState("");
   const { t } = useLanguage();
+  const showPromo = isPromoActive();
 
   const handleSearch = () => {
     if (domain.trim()) {
@@ -29,6 +38,16 @@ export function DomainSearch() {
           title={t("domain.title")}
           description={t("domain.description")}
         />
+
+        {showPromo && (
+          <div className={classes.promoBanner}>
+            <span className={classes.promoTag}>🎉 Special Offer</span>
+            <span className={classes.promoText}>
+              Register any <strong>.tz domain</strong> at our best price — offer valid{" "}
+              <strong>1 April – 30 June 2026</strong>
+            </span>
+          </div>
+        )}
 
         <div className={classes.searchWrapper}>
           <div className={classes.searchBox}>

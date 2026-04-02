@@ -10,6 +10,7 @@ import { TopBar } from "@/components/layout/TopBar";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { TawkTo } from "@/components/ui/TawkTo";
+import { WhatsAppFloat } from "@/components/ui/WhatsAppFloat";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -217,6 +218,7 @@ export default function RootLayout({
             <main>{children}</main>
             <Footer />
             <TawkTo />
+            <WhatsAppFloat />
           </LanguageProvider>
         </MantineProvider>
       </body>

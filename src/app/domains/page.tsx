@@ -4,7 +4,7 @@ import { DomainsContent } from "./DomainsContent";
 export const metadata: Metadata = {
   title: "Cheap Domain Registration Tanzania",
   description:
-    "Register .co.tz domain from TSh 20,000/year. Cheap .tz, .com, .or.tz, .ac.tz domain registration in Tanzania. TCRA accredited registrar. Free DNS management and domain privacy.",
+    "Register .co.tz domain from TSh 19,999/year. Cheap .tz, .com, .or.tz, .ac.tz domain registration in Tanzania. TCRA accredited registrar. Free DNS management and domain privacy.",
   keywords: [
     "cheap domain Tanzania",
     "domain registration Tanzania",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Cheap Domain Registration Tanzania — Moinfo Hosting",
     description:
-      "Register .co.tz domain from TSh 20,000/year. TCRA accredited registrar. Free DNS management.",
+      "Register .co.tz domain from TSh 19,999/year. TCRA accredited registrar. Free DNS management.",
     url: "https://moinfo.co.tz/domains",
   },
 };

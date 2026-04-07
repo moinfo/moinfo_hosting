@@ -3,6 +3,7 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 import { theme } from "@/theme";
 import { LanguageProvider } from "@/i18n/LanguageContext";
@@ -15,7 +16,7 @@ import { WhatsAppFloat } from "@/components/ui/WhatsAppFloat";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  display: "swap",
+  display: "optional", // "swap" causes CLS when font loads and text reflows; "optional" skips swap entirely
 });
 
 const SITE_URL = "https://moinfo.co.tz";
@@ -146,13 +147,11 @@ export default function RootLayout({
       <head>
         <ColorSchemeScript defaultColorScheme="light" />
         <link rel="icon" href="/images/logo.png" />
-        {/* Google Ads conversion tracking tag */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-825251119" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-825251119');gtag('event','conversion',{'send_to':'AW-825251119/az8fCJyu4XoQr6rBiQM'});`,
-          }}
-        />
+        {/* Preconnect to external origins so TCP/TLS handshakes happen early */}
+        <link rel="preconnect" href="https://embed.tawk.to" />
+        <link rel="preconnect" href="https://www.clarity.ms" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
+        <link rel="dns-prefetch" href="https://embed.tawk.to" />
         {/* JSON-LD structured data - static trusted content only */}
         <script
           type="application/ld+json"
@@ -221,6 +220,18 @@ export default function RootLayout({
             <WhatsAppFloat />
           </LanguageProvider>
         </MantineProvider>
+        {/* Microsoft Clarity — afterInteractive keeps it off the critical render path */}
+        <Script id="clarity" strategy="afterInteractive">{`
+          (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","w60lcf52ej");
+        `}</Script>
+        {/* Google Ads — load after page is interactive, not during render */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-825251119"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads" strategy="afterInteractive">{`
+          window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-825251119');
+        `}</Script>
       </body>
     </html>
   );

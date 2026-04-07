@@ -119,6 +119,7 @@ export function Header() {
             alt="Moinfo Hosting"
             width={36}
             height={36}
+            priority
           />
           <span className={classes.logoText}>
             Moinfo <span className={classes.logoAccent}>Hosting</span>

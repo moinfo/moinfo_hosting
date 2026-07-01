@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Container, Button } from "@mantine/core";
 import {
   IconRocket,
@@ -9,7 +10,10 @@ import {
   IconMail,
   IconWorldWww,
   IconCheck,
+  IconConfetti,
+  IconArrowRight,
 } from "@tabler/icons-react";
+import { isSabaSabaActive } from "@/data/sabaSaba";
 import { useLanguage } from "@/i18n/LanguageContext";
 import classes from "./Hero.module.css";
 
@@ -53,10 +57,21 @@ const floatingCards = [
 
 export function Hero() {
   const { t } = useLanguage();
+  const showSabaSaba = isSabaSabaActive();
 
   return (
     <section className={classes.hero}>
       <Container size="xl">
+        {showSabaSaba && (
+          <Link href="/saba-saba" className={classes.sabaBanner}>
+            <IconConfetti size={20} className={classes.sabaBannerIcon} />
+            <span className={classes.sabaBannerText}>{t("saba.banner")}</span>
+            <span className={classes.sabaBannerCta}>
+              {t("saba.banner.cta")}
+              <IconArrowRight size={16} />
+            </span>
+          </Link>
+        )}
         <div className={classes.heroInner}>
           <div className={classes.content}>
             <div className={classes.badge}>

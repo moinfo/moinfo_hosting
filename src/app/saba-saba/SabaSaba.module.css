@@ -1,0 +1,68 @@
+.hero {
+  padding: 64px 0 48px;
+  background: linear-gradient(
+    135deg,
+    light-dark(#e6f9f1, #092419),
+    light-dark(#e6f2ff, #06172c)
+  );
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--mantine-spacing-sm);
+  text-align: center;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: var(--mantine-radius-xl);
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 700;
+  color: var(--mantine-color-dark-9);
+  background: linear-gradient(135deg, var(--mantine-color-brand-yellow-4), var(--mantine-color-brand-orange-5));
+}
+
+.heroTitle {
+  max-width: 760px;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  line-height: 1.15;
+}
+
+.dates {
+  font-weight: 700;
+  color: var(--mantine-color-brand-orange-6);
+  font-size: var(--mantine-font-size-lg);
+}
+
+.category {
+  padding: 56px 0;
+}
+
+.category:nth-child(even) {
+  background: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-8));
+}
+
+.catTitle {
+  margin-bottom: var(--mantine-spacing-xs);
+}
+
+.catIcon {
+  font-size: 1.4em;
+  vertical-align: middle;
+}
+
+/* Website design has a single wide card — keep it centred and readable. */
+.singleCol {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.cta {
+  padding: 64px 0;
+  background: linear-gradient(135deg, var(--mantine-color-brand-green-7), var(--mantine-color-brand-blue-7));
+}

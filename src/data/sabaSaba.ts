@@ -5,6 +5,9 @@
 export const SABA_SABA_START = new Date("2026-07-01T00:00:00");
 export const SABA_SABA_END = new Date("2026-07-16T23:59:59");
 
+/** Promo code customers enter at WHMCS checkout to unlock the Saba Saba price. */
+export const SABA_SABA_CODE = "MOINFO50";
+
 /** True while the promo window is open. Used by TopBar, Hero banner and the page. */
 export function isSabaSabaActive(now: Date = new Date()): boolean {
   return now >= SABA_SABA_START && now <= SABA_SABA_END;

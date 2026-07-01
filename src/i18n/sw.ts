@@ -26,7 +26,6 @@ export const sw: Translations = {
 
   // TopBar
   "topbar.whatsapp": "WhatsApp",
-  "topbar.promo": "MOINFO10 \u2014 Punguzo la 10% (Feb\u2013Des 2026)",
   "topbar.sabaSaba": "\ud83c\udf89 Saba Saba \u2014 Punguzo hadi 50% (1\u201316 Jul)",
 
   // Saba Saba Offer
@@ -40,6 +39,22 @@ export const sw: Translations = {
   "saba.hero.ended": "Ofa hii imeisha \u2014 wasiliana nasi kupata bei zetu za sasa.",
   "saba.hero.cta": "Agiza kupitia WhatsApp",
   "saba.orderNow": "Agiza Sasa",
+  "saba.promo.label": "Kodi ya ofa:",
+  "saba.promo.apply":
+    "Weka kodi hii wakati wa malipo ili kupata punguzo lako la 50% la Saba Saba.",
+  "saba.how.title": "Jinsi ya kuagiza na kodi yako",
+  "saba.how.subtitle":
+    "Kuweka kodi yako ya ofa ya Saba Saba huchukua chini ya dakika moja.",
+  "saba.how.step1": "Chagua kifurushi hapo juu na bofya Order Now.",
+  "saba.how.step2":
+    "Chagua mipangilio yako (mzunguko wa malipo na nyongeza) kisha endelea hadi Checkout.",
+  "saba.how.step3": "Kwenye ukurasa wa malipo, tafuta kisanduku cha \u201cApply Promo Code\u201d.",
+  "saba.how.step4a": "Weka",
+  "saba.how.step4b": "kisha bofya Validate Code.",
+  "saba.how.step5":
+    "Hakikisha punguzo la 50% linaonekana kwenye jumla, kisha kamilisha malipo.",
+  "saba.how.help":
+    "Ungependa tukufanyie? Tutumie ujumbe WhatsApp na tutaagiza na kuweka punguzo kwa ajili yako.",
   "saba.cat.web.title": "Web Hosting \u2014 Punguzo 50%",
   "saba.cat.web.subtitle": "Punguzo la 50% kwa vifurushi vyote vya web hosting",
   "saba.cat.email.title": "Business Email \u2014 Punguzo 50%",
@@ -69,6 +84,12 @@ export const sw: Translations = {
   "saba.f.mobileResponsive": "Inafanya kazi kwenye simu",
   "saba.f.seoFriendly": "Rafiki wa SEO",
   "saba.f.delivery": "Inakamilika kwa siku 15\u201320",
+
+  // World Cup 2026 support badge
+  "worldcup.title": "Kombe la Dunia 2026",
+  "worldcup.tagline": "Furahia michezo! \u26bd",
+  "worldcup.aria": "Kombe la Dunia 2026 \u2014 furahia michezo",
+  "worldcup.dismiss": "Funga",
 
   // Hero
   "hero.badge": "Msajili wa Kikoa cha .tz Aliyeidhinishwa na TCRA",

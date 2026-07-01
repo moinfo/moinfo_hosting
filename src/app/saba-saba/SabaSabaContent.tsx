@@ -1,9 +1,13 @@
 "use client";
 
 import { Container, Title, Text, Button, SimpleGrid, Group } from "@mantine/core";
-import { IconBrandWhatsapp, IconConfetti } from "@tabler/icons-react";
+import { IconBrandWhatsapp, IconConfetti, IconTicket } from "@tabler/icons-react";
 import { SabaSabaCard } from "@/components/ui/SabaSabaCard";
-import { sabaSabaCategories, isSabaSabaActive } from "@/data/sabaSaba";
+import {
+  sabaSabaCategories,
+  isSabaSabaActive,
+  SABA_SABA_CODE,
+} from "@/data/sabaSaba";
 import { company } from "@/data/company";
 import { useLanguage } from "@/i18n/LanguageContext";
 import classes from "./SabaSaba.module.css";
@@ -34,6 +38,16 @@ export function SabaSabaContent() {
                 {t("saba.hero.ended")}
               </Text>
             )}
+
+            <div className={classes.promoBox}>
+              <IconTicket size={22} className={classes.promoIcon} />
+              <span className={classes.promoLabel}>{t("saba.promo.label")}</span>
+              <span className={classes.promoCode}>{SABA_SABA_CODE}</span>
+            </div>
+            <Text size="sm" c="dimmed" maw={560} ta="center">
+              {t("saba.promo.apply")}
+            </Text>
+
             <Group justify="center" mt="lg">
               <Button
                 component="a"
@@ -74,6 +88,32 @@ export function SabaSabaContent() {
           </Container>
         </section>
       ))}
+
+      {/* How to use the promo code */}
+      <section className={classes.howto}>
+        <Container size="sm">
+          <Title order={2} ta="center" mb="xs">
+            {t("saba.how.title")}
+          </Title>
+          <Text ta="center" c="dimmed" mb="xl">
+            {t("saba.how.subtitle")}
+          </Text>
+          <ol className={classes.steps}>
+            <li className={classes.step}>{t("saba.how.step1")}</li>
+            <li className={classes.step}>{t("saba.how.step2")}</li>
+            <li className={classes.step}>{t("saba.how.step3")}</li>
+            <li className={classes.step}>
+              {t("saba.how.step4a")}{" "}
+              <strong className={classes.inlineCode}>{SABA_SABA_CODE}</strong>{" "}
+              {t("saba.how.step4b")}
+            </li>
+            <li className={classes.step}>{t("saba.how.step5")}</li>
+          </ol>
+          <Text ta="center" size="sm" c="dimmed" mt="lg">
+            {t("saba.how.help")}
+          </Text>
+        </Container>
+      </section>
 
       {/* CTA */}
       <section className={classes.cta}>

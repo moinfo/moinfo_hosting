@@ -12,6 +12,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { TawkTo } from "@/components/ui/TawkTo";
 import { WhatsAppFloat } from "@/components/ui/WhatsAppFloat";
+import { WorldCupBadge } from "@/components/ui/WorldCupBadge";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -218,6 +219,7 @@ export default function RootLayout({
             <Footer />
             <TawkTo />
             <WhatsAppFloat />
+            <WorldCupBadge />
           </LanguageProvider>
         </MantineProvider>
         {/* Microsoft Clarity — afterInteractive keeps it off the critical render path */}

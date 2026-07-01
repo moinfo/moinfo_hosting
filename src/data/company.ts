@@ -7,8 +7,6 @@ export const company = {
   email: "info@moinfo.co.tz",
   website: "https://moinfo.co.tz",
   address: "Njuweni Hotel, 1st Floor, Room 134, Mail Moja, Kibaha, Tanzania",
-  promoCode: "MOINFO10",
-  promoDiscount: "10% OFF (Feb–Dec 2026)",
   social: {
     facebook: "https://facebook.com/moinfotech",
     instagram: "https://instagram.com/moinfotech",

@@ -47,9 +47,6 @@ export function TopBar() {
               {t("topbar.sabaSaba")}
             </Link>
           )}
-          <span className={classes.promoBadge}>
-            {t("topbar.promo")}
-          </span>
         </div>
       </Container>
     </div>

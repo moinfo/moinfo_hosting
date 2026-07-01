@@ -59,15 +59,6 @@
   filter: brightness(1.1);
 }
 
-.promoBadge {
-  background: linear-gradient(135deg, var(--mantine-color-brand-yellow-4), var(--mantine-color-brand-orange-5));
-  color: var(--mantine-color-dark-9);
-  padding: 2px 10px;
-  border-radius: var(--mantine-radius-sm);
-  font-weight: 700;
-  font-size: 11px;
-}
-
 .rightGroup {
   display: flex;
   align-items: center;

@@ -1,0 +1,96 @@
+.badge {
+  position: fixed;
+  right: 24px;
+  /* Sit above the Tawk.to chat bubble (bottom-right) and clear of it. */
+  bottom: 96px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: var(--mantine-radius-xl);
+  color: #fff;
+  background: linear-gradient(135deg, #1a6fc4, #2eb67d 55%, #f9c846);
+  background-size: 200% 200%;
+  box-shadow: 0 6px 22px rgba(26, 111, 196, 0.4);
+  animation: sheen 6s ease infinite, pop 300ms ease-out;
+}
+
+/* Slow gradient drift for a lively, celebratory feel. */
+@keyframes sheen {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Entrance. */
+@keyframes pop {
+  from { transform: scale(0.6); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.ball {
+  font-size: 26px;
+  line-height: 1;
+  display: inline-block;
+  animation: bounce 1.1s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(180deg); }
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.tagline {
+  font-size: 11px;
+  opacity: 0.9;
+  white-space: nowrap;
+}
+
+.close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-left: 2px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+
+.close:hover {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+@media (max-width: 36em) {
+  .badge {
+    right: 16px;
+    bottom: 84px;
+    padding: 8px 12px;
+  }
+}
+
+/* Respect users who prefer reduced motion — keep it static but visible. */
+@media (prefers-reduced-motion: reduce) {
+  .badge,
+  .ball {
+    animation: none;
+  }
+}

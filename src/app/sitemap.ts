@@ -1,5 +1,8 @@
 import type { MetadataRoute } from "next";
 
+// Required for `output: "export"` — the sitemap is generated at build time.
+export const dynamic = "force-static";
+
 const SITE_URL = "https://moinfo.co.tz";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -9,6 +12,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
+    },
+    {
+      url: `${SITE_URL}/saba-saba`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.95,
     },
     {
       url: `${SITE_URL}/domains`,

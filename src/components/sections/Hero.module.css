@@ -8,6 +8,47 @@
   );
 }
 
+.sabaBanner {
+  display: flex;
+  align-items: center;
+  gap: var(--mantine-spacing-sm);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: var(--mantine-spacing-xl);
+  padding: 12px 20px;
+  border-radius: var(--mantine-radius-md);
+  background: linear-gradient(135deg, var(--mantine-color-brand-green-6), var(--mantine-color-brand-blue-6));
+  color: var(--mantine-color-white);
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(46, 182, 125, 0.25);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.sabaBanner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(46, 182, 125, 0.35);
+}
+
+.sabaBannerIcon {
+  flex-shrink: 0;
+}
+
+.sabaBannerText {
+  font-weight: 700;
+  font-size: var(--mantine-font-size-sm);
+}
+
+.sabaBannerCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 700;
+  font-size: var(--mantine-font-size-sm);
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 12px;
+  border-radius: var(--mantine-radius-xl);
+}
+
 .heroInner {
   display: grid;
   grid-template-columns: 1fr 1fr;

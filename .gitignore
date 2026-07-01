@@ -42,6 +42,9 @@ next-env.d.ts
 *.png
 *.jpeg
 
+# but keep real site image assets (override the *.png/*.jpeg rule above)
+!/public/images/**
+
 # WHMCS local dev
 /whmcs/
 .idea/

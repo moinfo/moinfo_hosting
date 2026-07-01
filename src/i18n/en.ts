@@ -26,7 +26,69 @@ export const en: Translations = {
 
   // TopBar
   "topbar.whatsapp": "WhatsApp",
-  "topbar.promo": "MOINFO10 — 10% OFF (Feb–Dec 2026)",
+  "topbar.sabaSaba": "🎉 Saba Saba — up to 50% OFF (1–16 Jul)",
+
+  // Saba Saba Offer
+  "saba.banner": "Saba Saba Offer — up to 50% OFF hosting, email & domains",
+  "saba.banner.cta": "See offers",
+  "saba.badge": "Saba Saba Offer 2026",
+  "saba.hero.title": "Saba Saba Offer — Up to 50% OFF",
+  "saba.hero.dates": "1–16 July 2026",
+  "saba.hero.subtitle":
+    "Celebrate Saba Saba with Moinfo: 50% OFF web hosting & business email, discounted .tz domains, and a professional website design at an unbeatable price. Limited time only.",
+  "saba.hero.ended": "This offer has ended — contact us for our current prices.",
+  "saba.hero.cta": "Order via WhatsApp",
+  "saba.orderNow": "Order Now",
+  "saba.promo.label": "Promo code:",
+  "saba.promo.apply":
+    "Enter this code at checkout to unlock your 50% Saba Saba discount.",
+  "saba.how.title": "How to order with your code",
+  "saba.how.subtitle": "Applying your Saba Saba promo code takes less than a minute.",
+  "saba.how.step1": "Pick your package above and click Order Now.",
+  "saba.how.step2":
+    "Choose your options (billing cycle and any extras) and continue to Checkout.",
+  "saba.how.step3": "On the checkout page, find the “Apply Promo Code” box.",
+  "saba.how.step4a": "Enter",
+  "saba.how.step4b": "and click Validate Code.",
+  "saba.how.step5":
+    "Confirm the 50% discount shows in your total, then complete payment.",
+  "saba.how.help":
+    "Prefer we do it for you? Message us on WhatsApp and we’ll place the order and apply the discount.",
+  "saba.cat.web.title": "Web Hosting — 50% OFF",
+  "saba.cat.web.subtitle": "50% off all web hosting packages",
+  "saba.cat.email.title": "Business Email — 50% OFF",
+  "saba.cat.email.subtitle": "50% off all business email packages",
+  "saba.cat.domain.title": "Domain Offer",
+  "saba.cat.domain.subtitle": "Special Saba Saba prices on .tz domains — registration for 1 year",
+  "saba.cat.webdesign.title": "Professional Website Design",
+  "saba.cat.webdesign.subtitle": "A complete business website, delivered in 15–20 days",
+  "saba.cta.title": "Ready to grab the Saba Saba deal?",
+  "saba.cta.subtitle":
+    "Talk to our team on WhatsApp or call us — this offer runs 1–16 July 2026 only.",
+  "saba.cta.whatsapp": "Chat on WhatsApp",
+  "saba.f.oneYear": "Registration for 1 year",
+  "saba.f.fastReg": "Fast registration",
+  "saba.f.freeTransfer": "Free transfer",
+  "saba.f.dnsEmail": "DNS & Email",
+  "saba.f.support247": "24/7 Support",
+  "saba.f.premiumTz": "Premium .tz domain",
+  "saba.f.pages15": "15-page website design",
+  "saba.f.products15": "15 products integrated",
+  "saba.f.adminPanel": "Admin panel (edit content)",
+  "saba.f.logoDesign": "Logo design included",
+  "saba.f.companyProfile": "Company profile included",
+  "saba.f.emails20": "20 business email accounts",
+  "saba.f.freeDomainYear": "Free .co.tz domain (1 year)",
+  "saba.f.freeHostingYear": "Free hosting (1 year)",
+  "saba.f.mobileResponsive": "Mobile responsive",
+  "saba.f.seoFriendly": "SEO friendly",
+  "saba.f.delivery": "Delivered in 15–20 days",
+
+  // World Cup 2026 support badge
+  "worldcup.title": "World Cup 2026",
+  "worldcup.tagline": "Enjoy the games! ⚽",
+  "worldcup.aria": "World Cup 2026 — enjoy the games",
+  "worldcup.dismiss": "Dismiss",
 
   // Hero
   "hero.badge": "TCRA Accredited .tz Domain Registrar",

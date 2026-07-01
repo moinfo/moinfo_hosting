@@ -26,7 +26,70 @@ export const sw: Translations = {
 
   // TopBar
   "topbar.whatsapp": "WhatsApp",
-  "topbar.promo": "MOINFO10 \u2014 Punguzo la 10% (Feb\u2013Des 2026)",
+  "topbar.sabaSaba": "\ud83c\udf89 Saba Saba \u2014 Punguzo hadi 50% (1\u201316 Jul)",
+
+  // Saba Saba Offer
+  "saba.banner": "Ofa ya Saba Saba \u2014 Punguzo hadi 50% kwa hosting, email na domain",
+  "saba.banner.cta": "Ona ofa",
+  "saba.badge": "Ofa ya Saba Saba 2026",
+  "saba.hero.title": "Ofa ya Saba Saba \u2014 Punguzo hadi 50%",
+  "saba.hero.dates": "Tarehe 1\u201316 Julai 2026",
+  "saba.hero.subtitle":
+    "Sherehekea Saba Saba na Moinfo: Punguzo la 50% kwa web hosting na business email, bei maalum za domain za .tz, na ubunifu wa tovuti ya kitaalamu kwa bei nafuu. Kwa muda mfupi tu.",
+  "saba.hero.ended": "Ofa hii imeisha \u2014 wasiliana nasi kupata bei zetu za sasa.",
+  "saba.hero.cta": "Agiza kupitia WhatsApp",
+  "saba.orderNow": "Agiza Sasa",
+  "saba.promo.label": "Kodi ya ofa:",
+  "saba.promo.apply":
+    "Weka kodi hii wakati wa malipo ili kupata punguzo lako la 50% la Saba Saba.",
+  "saba.how.title": "Jinsi ya kuagiza na kodi yako",
+  "saba.how.subtitle":
+    "Kuweka kodi yako ya ofa ya Saba Saba huchukua chini ya dakika moja.",
+  "saba.how.step1": "Chagua kifurushi hapo juu na bofya Order Now.",
+  "saba.how.step2":
+    "Chagua mipangilio yako (mzunguko wa malipo na nyongeza) kisha endelea hadi Checkout.",
+  "saba.how.step3": "Kwenye ukurasa wa malipo, tafuta kisanduku cha \u201cApply Promo Code\u201d.",
+  "saba.how.step4a": "Weka",
+  "saba.how.step4b": "kisha bofya Validate Code.",
+  "saba.how.step5":
+    "Hakikisha punguzo la 50% linaonekana kwenye jumla, kisha kamilisha malipo.",
+  "saba.how.help":
+    "Ungependa tukufanyie? Tutumie ujumbe WhatsApp na tutaagiza na kuweka punguzo kwa ajili yako.",
+  "saba.cat.web.title": "Web Hosting \u2014 Punguzo 50%",
+  "saba.cat.web.subtitle": "Punguzo la 50% kwa vifurushi vyote vya web hosting",
+  "saba.cat.email.title": "Business Email \u2014 Punguzo 50%",
+  "saba.cat.email.subtitle": "Punguzo la 50% kwa vifurushi vyote vya business email",
+  "saba.cat.domain.title": "Ofa ya Domain",
+  "saba.cat.domain.subtitle": "Bei maalum za Saba Saba kwa domain za .tz \u2014 usajili kwa mwaka 1",
+  "saba.cat.webdesign.title": "Ubunifu wa Tovuti wa Kitaalamu",
+  "saba.cat.webdesign.subtitle": "Tovuti kamili ya biashara, inakamilika kwa siku 15\u201320",
+  "saba.cta.title": "Uko tayari kupata ofa ya Saba Saba?",
+  "saba.cta.subtitle":
+    "Ongea na timu yetu kupitia WhatsApp au tupigie simu \u2014 ofa hii ni tarehe 1\u201316 Julai 2026 tu.",
+  "saba.cta.whatsapp": "Piga soga WhatsApp",
+  "saba.f.oneYear": "Usajili kwa mwaka 1",
+  "saba.f.fastReg": "Usajili wa haraka",
+  "saba.f.freeTransfer": "Uhamishaji bure",
+  "saba.f.dnsEmail": "DNS na Email",
+  "saba.f.support247": "Msaada 24/7",
+  "saba.f.premiumTz": "Domain premium ya .tz",
+  "saba.f.pages15": "Ubunifu wa tovuti ya kurasa 15",
+  "saba.f.products15": "Bidhaa 15 zimewekwa",
+  "saba.f.adminPanel": "Admin panel (badilisha maudhui)",
+  "saba.f.logoDesign": "Ubunifu wa logo umejumuishwa",
+  "saba.f.companyProfile": "Company profile imejumuishwa",
+  "saba.f.emails20": "Akaunti 20 za business email",
+  "saba.f.freeDomainYear": "Domain ya .co.tz bure (mwaka 1)",
+  "saba.f.freeHostingYear": "Hosting bure (mwaka 1)",
+  "saba.f.mobileResponsive": "Inafanya kazi kwenye simu",
+  "saba.f.seoFriendly": "Rafiki wa SEO",
+  "saba.f.delivery": "Inakamilika kwa siku 15\u201320",
+
+  // World Cup 2026 support badge
+  "worldcup.title": "Kombe la Dunia 2026",
+  "worldcup.tagline": "Furahia michezo! \u26bd",
+  "worldcup.aria": "Kombe la Dunia 2026 \u2014 furahia michezo",
+  "worldcup.dismiss": "Funga",
 
   // Hero
   "hero.badge": "Msajili wa Kikoa cha .tz Aliyeidhinishwa na TCRA",

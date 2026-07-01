@@ -2,17 +2,17 @@
 
 import { Container } from "@mantine/core";
 import { IconPhone, IconBrandWhatsapp, IconMail } from "@tabler/icons-react";
+import Link from "next/link";
 import { company, } from "@/data/company";
+import { isSabaSabaActive } from "@/data/sabaSaba";
 import { useScrolled } from "@/hooks/useScrolled";
 import { useLanguage } from "@/i18n/LanguageContext";
 import classes from "./TopBar.module.css";
 
-const DOMAIN_PROMO_END = new Date("2026-06-30T23:59:59");
-
 export function TopBar() {
   const scrolled = useScrolled(100);
   const { t } = useLanguage();
-  const showDomainPromo = new Date() <= DOMAIN_PROMO_END;
+  const showSabaSaba = isSabaSabaActive();
 
   return (
     <div className={`${classes.topBar} ${scrolled ? classes.hidden : ""}`}>
@@ -42,14 +42,11 @@ export function TopBar() {
         </div>
 
         <div className={classes.rightGroup}>
-          {showDomainPromo && (
-            <span className={classes.domainPromoBadge}>
-              🌐 .tz Domain — TSh 19,999/yr (Apr–Jun 2026)
-            </span>
+          {showSabaSaba && (
+            <Link href="/saba-saba" className={classes.sabaSabaBadge}>
+              {t("topbar.sabaSaba")}
+            </Link>
           )}
-          <span className={classes.promoBadge}>
-            {t("topbar.promo")}
-          </span>
         </div>
       </Container>
     </div>

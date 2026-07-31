@@ -3,7 +3,9 @@
 import { HostingHero } from "@/components/sections/HostingHero";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-const STORE = "https://moinfo.co.tz/portal/index.php?rp=/store/email-hosting";
+import { orderUrl } from "@/data/mobilling";
+
+const STORE = orderUrl("email-hosting");
 
 export function EmailHostingContent() {
   const { t } = useLanguage();

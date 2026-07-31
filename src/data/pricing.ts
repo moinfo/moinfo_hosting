@@ -1,3 +1,5 @@
+import { enquiryUrl, orderUrl } from "@/data/mobilling";
+
 export interface PricingPlan {
   name: string;
   yearlyPrice: string;
@@ -16,8 +18,6 @@ export interface PricingCategory {
   readMoreKey?: string;
 }
 
-const STORE = "https://moinfo.co.tz/portal/index.php?rp=/store";
-
 export const pricingCategories: PricingCategory[] = [
   {
     key: "web",
@@ -35,7 +35,7 @@ export const pricingCategories: PricingCategory[] = [
           "pf.moneyBackGuarantee",
           "pf.onlineSupport247",
         ],
-        orderUrl: `${STORE}/web-hosting`,
+        orderUrl: orderUrl("web-hosting", "university"),
       },
       {
         name: "Personal",
@@ -49,7 +49,7 @@ export const pricingCategories: PricingCategory[] = [
           "pf.moneyBackGuarantee",
           "pf.onlineSupport247",
         ],
-        orderUrl: `${STORE}/web-hosting`,
+        orderUrl: orderUrl("web-hosting", "personal"),
       },
       {
         name: "Professional",
@@ -64,7 +64,7 @@ export const pricingCategories: PricingCategory[] = [
           "pf.moneyBackGuarantee",
           "pf.onlineSupport247",
         ],
-        orderUrl: `${STORE}/web-hosting`,
+        orderUrl: orderUrl("web-hosting", "professional"),
       },
       {
         name: "Premier",
@@ -78,7 +78,7 @@ export const pricingCategories: PricingCategory[] = [
           "pf.moneyBackGuarantee",
           "pf.onlineSupport247",
         ],
-        orderUrl: `${STORE}/web-hosting`,
+        orderUrl: orderUrl("web-hosting", "premier"),
       },
       {
         name: "System",
@@ -92,7 +92,9 @@ export const pricingCategories: PricingCategory[] = [
           "pf.moneyBackGuarantee",
           "pf.onlineSupport247",
         ],
-        orderUrl: `${STORE}/web-hosting`,
+        // Not orderable in MoBilling: the portal-visible row is priced 216,000
+        // (site advertises 250,000) and the correct row is portal_visible = 0.
+        orderUrl: enquiryUrl("Web Hosting System"),
       },
       {
         name: "Plus",
@@ -106,7 +108,7 @@ export const pricingCategories: PricingCategory[] = [
           "pf.moneyBackGuarantee",
           "pf.onlineSupport247",
         ],
-        orderUrl: `${STORE}/web-hosting`,
+        orderUrl: orderUrl("web-hosting", "plus"),
       },
     ],
   },
@@ -126,7 +128,9 @@ export const pricingCategories: PricingCategory[] = [
           "pf.dailyBackups",
           "pf.stagingEnv",
         ],
-        orderUrl: `${STORE}/wordpress-hosting`,
+        // WordPress plans are portal_visible = 0 in MoBilling and still hold
+        // unconverted USD prices — enquiry until the catalog is fixed.
+        orderUrl: enquiryUrl("WP Starter"),
       },
       {
         name: "WP Business",
@@ -141,7 +145,7 @@ export const pricingCategories: PricingCategory[] = [
           "pf.stagingEnv",
           "pf.freeDomain",
         ],
-        orderUrl: `${STORE}/wordpress-hosting`,
+        orderUrl: enquiryUrl("WP Business"),
       },
       {
         name: "WP Enterprise",
@@ -156,7 +160,7 @@ export const pricingCategories: PricingCategory[] = [
           "pf.freeDomain",
           "pf.premiumThemes",
         ],
-        orderUrl: `${STORE}/wordpress-hosting`,
+        orderUrl: enquiryUrl("WP Enterprise"),
       },
     ],
   },
@@ -176,7 +180,7 @@ export const pricingCategories: PricingCategory[] = [
           "pf.onlineSupport247",
           "pf.moneyBack30days",
         ],
-        orderUrl: `${STORE}/email-hosting`,
+        orderUrl: orderUrl("email-hosting", "starter"),
       },
       {
         name: "Medium",
@@ -190,7 +194,7 @@ export const pricingCategories: PricingCategory[] = [
           "pf.onlineSupport247",
           "pf.moneyBack30days",
         ],
-        orderUrl: `${STORE}/email-hosting`,
+        orderUrl: orderUrl("email-hosting", "medium"),
       },
       {
         name: "Premier",
@@ -203,7 +207,7 @@ export const pricingCategories: PricingCategory[] = [
           "pf.onlineSupport247",
           "pf.moneyBack30days",
         ],
-        orderUrl: `${STORE}/email-hosting`,
+        orderUrl: orderUrl("email-hosting", "premier"),
       },
       {
         name: "Plus",
@@ -216,7 +220,7 @@ export const pricingCategories: PricingCategory[] = [
           "pf.onlineSupport247",
           "pf.moneyBack30days",
         ],
-        orderUrl: `${STORE}/email-hosting`,
+        orderUrl: orderUrl("email-hosting", "plus"),
       },
     ],
   },
@@ -239,7 +243,7 @@ export const pricingCategories: PricingCategory[] = [
           "pf.vpsCpanelWhm5",
           "pf.fullRootAccess",
         ],
-        orderUrl: `${STORE}/linux-vps/linux-m-500`,
+        orderUrl: orderUrl("vps", "linux-mit-500"),
       },
       {
         name: "MIT 600",
@@ -255,7 +259,7 @@ export const pricingCategories: PricingCategory[] = [
           "pf.vpsCpanelWhm5",
           "pf.fullRootAccess",
         ],
-        orderUrl: `${STORE}/linux-vps/linux-m-600`,
+        orderUrl: orderUrl("vps", "linux-mit-600"),
       },
       {
         name: "MIT 700",
@@ -270,7 +274,7 @@ export const pricingCategories: PricingCategory[] = [
           "pf.vpsCpanelWhm5",
           "pf.fullRootAccess",
         ],
-        orderUrl: `${STORE}/linux-vps/linux-mit-700`,
+        orderUrl: orderUrl("vps", "linux-mit-700"),
       },
     ],
   },
@@ -291,7 +295,7 @@ export const pricingCategories: PricingCategory[] = [
           "pf.ip1",
           "pf.fullRootAccess",
         ],
-        orderUrl: `${STORE}/linux-dedicated-server/linux-server-mit-450`,
+        orderUrl: orderUrl("dedicated-server", "linux-server-mit-450"),
       },
       {
         name: "MIT 550",
@@ -305,7 +309,7 @@ export const pricingCategories: PricingCategory[] = [
           "pf.ip1",
           "pf.fullRootAccess",
         ],
-        orderUrl: `${STORE}/linux-dedicated-server/linux-server-mit-550`,
+        orderUrl: orderUrl("dedicated-server", "linux-server-mit-550"),
       },
       {
         name: "MIT 650",
@@ -319,7 +323,7 @@ export const pricingCategories: PricingCategory[] = [
           "pf.ip1",
           "pf.fullRootAccess",
         ],
-        orderUrl: `${STORE}/linux-dedicated-server/linux-server-mit-650`,
+        orderUrl: orderUrl("dedicated-server", "linux-server-mit-650"),
       },
     ],
   },
@@ -340,7 +344,7 @@ export const pricingCategories: PricingCategory[] = [
           "pf.freeSslCerts",
           "pf.whmCpanelIncluded",
         ],
-        orderUrl: `${STORE}/linux-reseller-hosting/linux-reseller-starter`,
+        orderUrl: orderUrl("reseller-hosting", "linux-reseller-starter"),
       },
       {
         name: "Linux Reseller Medium",
@@ -354,7 +358,7 @@ export const pricingCategories: PricingCategory[] = [
           "pf.freeDomainCom",
           "pf.whmCpanelIncluded",
         ],
-        orderUrl: `${STORE}/linux-reseller-hosting/linux-reseller-medium`,
+        orderUrl: orderUrl("reseller-hosting", "linux-reseller-medium"),
       },
       {
         name: "Linux Reseller Premium",
@@ -367,7 +371,7 @@ export const pricingCategories: PricingCategory[] = [
           "pf.freeDomainCom",
           "pf.whmCpanelIncluded",
         ],
-        orderUrl: `${STORE}/linux-reseller-hosting/linux-reseller-premium`,
+        orderUrl: orderUrl("reseller-hosting", "linux-reseller-premium"),
       },
       {
         name: "Linux Reseller Business",
@@ -380,7 +384,7 @@ export const pricingCategories: PricingCategory[] = [
           "pf.freeDomainCom",
           "pf.whmCpanelIncluded",
         ],
-        orderUrl: `${STORE}/linux-reseller-hosting/linux-reseller-business`,
+        orderUrl: orderUrl("reseller-hosting", "linux-reseller-business"),
       },
     ],
   },
@@ -399,7 +403,9 @@ export const pricingCategories: PricingCategory[] = [
           "pf.issuance10min",
           "pf.warranty10k",
         ],
-        orderUrl: `${STORE}/ssl-certificates`,
+        // SSL products are portal_visible = 0 in MoBilling and still hold
+        // unconverted USD prices — enquiry until the catalog is fixed.
+        orderUrl: enquiryUrl("Domain SSL"),
       },
       {
         name: "Organization SSL",
@@ -413,7 +419,7 @@ export const pricingCategories: PricingCategory[] = [
           "pf.warranty250k",
           "pf.greenBar",
         ],
-        orderUrl: `${STORE}/ssl-certificates`,
+        orderUrl: enquiryUrl("Organization SSL"),
       },
       {
         name: "Wildcard SSL",
@@ -427,7 +433,7 @@ export const pricingCategories: PricingCategory[] = [
           "pf.greenBar",
           "pf.sanSupport",
         ],
-        orderUrl: `${STORE}/ssl-certificates`,
+        orderUrl: enquiryUrl("Wildcard SSL"),
       },
     ],
   },

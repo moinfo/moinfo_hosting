@@ -23,6 +23,5 @@ export const navLinks: NavLink[] = [
   { labelKey: "nav.contact", href: "/#footer" },
 ];
 
-export const WHMCS_BASE = "https://moinfo.co.tz/portal/index.php?rp=";
-export const CLIENT_LOGIN = `${WHMCS_BASE}/login`;
-export const DOMAIN_SEARCH_URL = "https://moinfo.co.tz/portal/cart.php?a=add&domain=register&query=";
+// Portal links now live in @/data/mobilling — import CLIENT_LOGIN, orderUrl()
+// and domainUrl() from there.

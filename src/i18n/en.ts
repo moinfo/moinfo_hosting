@@ -123,6 +123,14 @@ export const en: Translations = {
     "Search for your ideal domain name. We\u2019re a TCRA accredited .tz domain registrar with the best prices in Tanzania.",
   "domain.placeholder": "Enter your domain name (e.g. mybusiness.co.tz)",
   "domain.searchButton": "Search Domain",
+  "domain.checking": "Checking…",
+  "domain.available": "is available!",
+  "domain.taken": "is already taken.",
+  "domain.perYear": "/year",
+  "domain.registerNow": "Register Now",
+  "domain.tryAnother": "Try a different name or extension.",
+  "domain.notOffered": "We don’t offer that extension yet.",
+  "domain.error": "Could not check that domain right now — please try again.",
 
   // Pricing
   "pricing.title": "Hosting Plans & Pricing",

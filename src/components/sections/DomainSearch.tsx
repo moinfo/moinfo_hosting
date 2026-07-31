@@ -4,7 +4,12 @@ import { useState } from "react";
 import { Container } from "@mantine/core";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { tldPrices } from "@/data/domains";
-import { DOMAIN_SEARCH_URL } from "@/data/navigation";
+import {
+  checkDomain,
+  domainUrl,
+  normaliseDomain,
+  type DomainCheckResult,
+} from "@/data/mobilling";
 import { useLanguage } from "@/i18n/LanguageContext";
 import classes from "./DomainSearch.module.css";
 
@@ -18,12 +23,25 @@ function isPromoActive() {
 
 export function DomainSearch() {
   const [domain, setDomain] = useState("");
+  const [result, setResult] = useState<DomainCheckResult | null>(null);
+  const [checking, setChecking] = useState(false);
+  const [error, setError] = useState(false);
   const { t } = useLanguage();
   const showPromo = isPromoActive();
 
-  const handleSearch = () => {
-    if (domain.trim()) {
-      window.open(`${DOMAIN_SEARCH_URL}${encodeURIComponent(domain.trim())}`, "_blank");
+  // Searching is public — no account needed. Signing in only happens on
+  // MoBilling once the visitor decides to register.
+  const handleSearch = async () => {
+    if (!domain.trim() || checking) return;
+    setChecking(true);
+    setError(false);
+    setResult(null);
+    try {
+      setResult(await checkDomain(domain));
+    } catch {
+      setError(true);
+    } finally {
+      setChecking(false);
     }
   };
 
@@ -63,10 +81,55 @@ export function DomainSearch() {
               className={classes.searchButton}
               onClick={handleSearch}
               type="button"
+              disabled={checking || !domain.trim()}
             >
-              {t("domain.searchButton")}
+              {checking ? t("domain.checking") : t("domain.searchButton")}
             </button>
           </div>
+
+          {error && (
+            <div className={`${classes.result} ${classes.resultError}`}>
+              {t("domain.error")}
+            </div>
+          )}
+
+          {result && !result.offered && (
+            <div className={`${classes.result} ${classes.resultError}`}>
+              {result.message ?? t("domain.notOffered")}
+            </div>
+          )}
+
+          {result?.offered && result.available === false && (
+            <div className={`${classes.result} ${classes.resultTaken}`}>
+              <span>
+                <strong>{result.name}</strong> {t("domain.taken")}
+              </span>
+              <span className={classes.resultHint}>{t("domain.tryAnother")}</span>
+            </div>
+          )}
+
+          {result?.offered && result.available === true && (
+            <div className={`${classes.result} ${classes.resultAvailable}`}>
+              <span>
+                <strong>{result.name}</strong> {t("domain.available")}
+                {result.pricing && (
+                  <span className={classes.resultPrice}>
+                    {" — TSh "}
+                    {result.pricing.register_price.toLocaleString("en-US")}
+                    {t("domain.perYear")}
+                  </span>
+                )}
+              </span>
+              <a
+                className={classes.resultCta}
+                href={domainUrl(normaliseDomain(domain))}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("domain.registerNow")}
+              </a>
+            </div>
+          )}
         </div>
 
         <div className={classes.pills}>

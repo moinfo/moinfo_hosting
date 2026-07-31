@@ -37,6 +37,18 @@ npm install
 npm run build
 ```
 
+> **Check your env before building.** The domain search calls the MoBilling API,
+> and `NEXT_PUBLIC_*` values are baked into the static output at build time. Use
+> `.env.development.local` for a local API override — `next build` still reads
+> `.env.local`, so putting `NEXT_PUBLIC_MOBILLING_API=http://localhost:8000/api`
+> there ships a site whose search calls the visitor's own machine. With no
+> override set, it correctly resolves to `https://mobilling.co.tz/api`. Verify
+> with:
+>
+> ```bash
+> grep -r "localhost:8000" out/ && echo "DO NOT DEPLOY" || echo "clean"
+> ```
+
 This creates an `out/` directory containing:
 - `index.html` - Homepage
 - `404.html` - Error page

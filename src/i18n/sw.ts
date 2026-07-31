@@ -124,6 +124,14 @@ export const sw: Translations = {
     "Tafuta jina la kikoa linalofaa. Sisi ni msajili wa kikoa cha .tz aliyeidhinishwa na TCRA wenye bei bora Tanzania.",
   "domain.placeholder": "Ingiza jina la kikoa (mfano: biashara.co.tz)",
   "domain.searchButton": "Tafuta Kikoa",
+  "domain.checking": "Inatafuta…",
+  "domain.available": "kinapatikana!",
+  "domain.taken": "tayari kimechukuliwa.",
+  "domain.perYear": "/mwaka",
+  "domain.registerNow": "Sajili Sasa",
+  "domain.tryAnother": "Jaribu jina au kiendelezi kingine.",
+  "domain.notOffered": "Hatutoi kiendelezi hicho kwa sasa.",
+  "domain.error": "Imeshindikana kuangalia kikoa hiki kwa sasa — tafadhali jaribu tena.",
 
   // Pricing
   "pricing.title": "Mipango na Bei za Hosting",

@@ -8,6 +8,62 @@
 
 export const MOBILLING_BASE = "https://mobilling.co.tz";
 
+/**
+ * MoBilling API root. Override with NEXT_PUBLIC_MOBILLING_API when running the
+ * site against a local backend (e.g. http://localhost:8000/api).
+ */
+export const MOBILLING_API =
+  process.env.NEXT_PUBLIC_MOBILLING_API ?? `${MOBILLING_BASE}/api`;
+
+/** Default extension used when a visitor searches a bare name. */
+export const DEFAULT_TLD = "co.tz";
+
+export interface DomainCheckResult {
+  name: string;
+  /** False when we don't sell that extension — `available` is then null. */
+  offered: boolean;
+  available: boolean | null;
+  pricing?: {
+    tld: string;
+    register_price: number;
+    transfer_price: number;
+    years_min: number;
+    years_max: number;
+  };
+  message?: string;
+}
+
+/**
+ * Check a domain against the registry without signing in.
+ *
+ * Backed by GET /api/public/domains/check, which is unauthenticated so visitors
+ * can search and see prices before creating an account. Ordering still requires
+ * login — that happens on MoBilling, via domainUrl() below.
+ */
+export async function checkDomain(input: string): Promise<DomainCheckResult> {
+  const name = normaliseDomain(input);
+  const res = await fetch(
+    `${MOBILLING_API}/public/domains/check?name=${encodeURIComponent(name)}`,
+    { headers: { Accept: "application/json" } },
+  );
+
+  if (!res.ok && res.status !== 422) {
+    throw new Error(`Domain check failed (${res.status})`);
+  }
+  return res.json();
+}
+
+/** "mybusiness" -> "mybusiness.co.tz"; leaves an explicit extension alone. */
+export function normaliseDomain(input: string): string {
+  const cleaned = input
+    .trim()
+    .toLowerCase()
+    .replace(/^https?:\/\//, "")
+    .replace(/^www\./, "")
+    .replace(/\/.*$/, "");
+  return cleaned.includes(".") ? cleaned : `${cleaned}.${DEFAULT_TLD}`;
+}
+
 /** Digits only, no "+". Used to build wa.me links. */
 export const WHATSAPP_NUMBER = "255689011111";
 

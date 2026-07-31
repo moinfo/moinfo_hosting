@@ -129,3 +129,58 @@
   font-size: var(--mantine-font-size-sm);
   color: light-dark(var(--mantine-color-gray-6), var(--mantine-color-gray-5));
 }
+
+.searchButton:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Inline availability result — searching is public, so this renders in place
+   instead of sending the visitor to the portal to find out. */
+.result {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 14px 18px;
+  border-radius: var(--mantine-radius-md);
+  border: 1px solid transparent;
+  font-size: var(--mantine-font-size-sm);
+}
+
+.resultAvailable {
+  background: light-dark(rgba(46, 182, 125, 0.1), rgba(46, 182, 125, 0.14));
+  border-color: var(--mantine-color-brand-green-5);
+  color: light-dark(var(--mantine-color-dark-7), var(--mantine-color-gray-1));
+}
+
+.resultTaken,
+.resultError {
+  background: light-dark(rgba(245, 130, 32, 0.1), rgba(245, 130, 32, 0.14));
+  border-color: var(--mantine-color-brand-orange-5);
+  color: light-dark(var(--mantine-color-dark-7), var(--mantine-color-gray-1));
+}
+
+.resultPrice {
+  font-weight: 700;
+}
+
+.resultHint {
+  opacity: 0.75;
+}
+
+.resultCta {
+  background: linear-gradient(135deg, var(--mantine-color-brand-blue-5), var(--mantine-color-brand-green-5));
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: var(--mantine-radius-sm);
+  white-space: nowrap;
+  transition: opacity 150ms ease;
+}
+.resultCta:hover {
+  opacity: 0.9;
+}

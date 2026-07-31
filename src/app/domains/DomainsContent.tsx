@@ -13,6 +13,7 @@ import {
   ThemeIcon,
   List,
   Group,
+  Paper,
 } from "@mantine/core";
 import {
   IconCheck,
@@ -25,7 +26,12 @@ import {
   IconHeadset,
 } from "@tabler/icons-react";
 import { tldPrices } from "@/data/domains";
-import { domainUrl } from "@/data/mobilling";
+import {
+  checkDomain,
+  domainUrl,
+  normaliseDomain,
+  type DomainCheckResult,
+} from "@/data/mobilling";
 import classes from "./Domains.module.css";
 
 const features = [
@@ -92,10 +98,23 @@ const faqs = [
 
 export function DomainsContent() {
   const [domain, setDomain] = useState("");
+  const [result, setResult] = useState<DomainCheckResult | null>(null);
+  const [checking, setChecking] = useState(false);
+  const [error, setError] = useState(false);
 
-  const handleSearch = () => {
-    if (domain.trim()) {
-      window.open(domainUrl(domain), "_blank");
+  // Public check — visitors see availability and price before being asked to
+  // sign in. Login happens on MoBilling only when they go to register.
+  const handleSearch = async () => {
+    if (!domain.trim() || checking) return;
+    setChecking(true);
+    setError(false);
+    setResult(null);
+    try {
+      setResult(await checkDomain(domain));
+    } catch {
+      setError(true);
+    } finally {
+      setChecking(false);
     }
   };
 
@@ -135,10 +154,67 @@ export function DomainsContent() {
                 className={classes.searchButton}
                 onClick={handleSearch}
                 type="button"
+                disabled={checking || !domain.trim()}
               >
-                Search Domain
+                {checking ? "Checking…" : "Search Domain"}
               </button>
             </div>
+
+            {(error || result) && (
+              <Paper
+                withBorder
+                radius="md"
+                p="md"
+                mt="md"
+                maw={720}
+                w="100%"
+                style={{
+                  borderColor:
+                    result?.offered && result.available
+                      ? "var(--mantine-color-brand-green-5)"
+                      : "var(--mantine-color-brand-orange-5)",
+                }}
+              >
+                {error && <Text size="sm">Could not check that domain right now — please try again.</Text>}
+
+                {!error && result && !result.offered && (
+                  <Text size="sm">{result.message ?? "We don't offer that extension yet."}</Text>
+                )}
+
+                {!error && result?.offered && result.available === false && (
+                  <Text size="sm">
+                    <strong>{result.name}</strong> is already taken. Try a
+                    different name or extension.
+                  </Text>
+                )}
+
+                {!error && result?.offered && result.available === true && (
+                  <Group justify="space-between" wrap="wrap" gap="sm">
+                    <Text size="sm">
+                      <strong>{result.name}</strong> is available
+                      {result.pricing && (
+                        <>
+                          {" — "}
+                          <strong>
+                            TSh{" "}
+                            {result.pricing.register_price.toLocaleString("en-US")}
+                            /year
+                          </strong>
+                        </>
+                      )}
+                    </Text>
+                    <Button
+                      component="a"
+                      href={domainUrl(normaliseDomain(domain))}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Register Now
+                    </Button>
+                  </Group>
+                )}
+              </Paper>
+            )}
           </div>
         </Container>
       </section>

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Container } from "@mantine/core";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { tldPrices } from "@/data/domains";
-import { DOMAIN_SEARCH_URL } from "@/data/navigation";
+import { domainUrl } from "@/data/mobilling";
 import { useLanguage } from "@/i18n/LanguageContext";
 import classes from "./DomainSearch.module.css";
 
@@ -23,7 +23,7 @@ export function DomainSearch() {
 
   const handleSearch = () => {
     if (domain.trim()) {
-      window.open(`${DOMAIN_SEARCH_URL}${encodeURIComponent(domain.trim())}`, "_blank");
+      window.open(domainUrl(domain), "_blank");
     }
   };
 

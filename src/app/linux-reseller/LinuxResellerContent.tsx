@@ -2,7 +2,9 @@
 
 import { HostingHero } from "@/components/sections/HostingHero";
 
-const STORE = "https://moinfo.co.tz/portal/index.php?rp=/store/linux-reseller-hosting";
+import { orderUrl } from "@/data/mobilling";
+
+const STORE = orderUrl("reseller-hosting");
 
 export function LinuxResellerContent() {
   return (

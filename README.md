@@ -53,7 +53,7 @@ src/
 | TopBar | Contact links (phone, WhatsApp, email), promo badge |
 | Header | Logo, navigation, theme toggle, mobile drawer |
 | Hero | Headline, trust badges, CTAs, floating service cards |
-| Domain Search | Search input → WHMCS, TLD pricing pills |
+| Domain Search | Search input → MoBilling domain order, TLD pricing pills |
 | Pricing Plans | 6 categories with monthly/yearly toggle |
 | Features | 6-card grid (uptime, SSL, cPanel, support, etc.) |
 | Web Design Promo | Service promotion with feature list |
@@ -63,7 +63,11 @@ src/
 
 ## Integrations
 
-- **WHMCS** — Order links and domain search redirect to `moinfo.co.tz/portal`
+- **MoBilling** — Client portal at `mobilling.co.tz`. Login, order and domain
+  links all come from `src/data/mobilling.ts`; nothing else hardcodes a portal
+  URL. Order links are `/order/<category>?plan=<slug>` and the slug → product
+  mapping is documented there in `PLAN_SLUG_TO_PRODUCT`. Replaced WHMCS in
+  July 2026.
 - **Tawk.to** — Live chat widget
 - **TCRA** — Accredited .tz domain registrar badge
 

@@ -15,7 +15,8 @@ import {
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { IconChevronDown } from "@tabler/icons-react";
-import { navLinks, CLIENT_LOGIN } from "@/data/navigation";
+import { navLinks } from "@/data/navigation";
+import { CLIENT_LOGIN } from "@/data/mobilling";
 import type { NavLink } from "@/data/navigation";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { LanguageToggle } from "@/components/ui/LanguageToggle";

@@ -25,7 +25,7 @@ import {
   IconHeadset,
 } from "@tabler/icons-react";
 import { tldPrices } from "@/data/domains";
-import { DOMAIN_SEARCH_URL } from "@/data/navigation";
+import { domainUrl } from "@/data/mobilling";
 import classes from "./Domains.module.css";
 
 const features = [
@@ -95,10 +95,7 @@ export function DomainsContent() {
 
   const handleSearch = () => {
     if (domain.trim()) {
-      window.open(
-        `${DOMAIN_SEARCH_URL}${encodeURIComponent(domain.trim())}`,
-        "_blank"
-      );
+      window.open(domainUrl(domain), "_blank");
     }
   };
 
@@ -302,7 +299,7 @@ export function DomainsContent() {
           <Group justify="center">
             <Button
               component="a"
-              href="https://moinfo.co.tz/portal/cart.php?a=add&domain=register"
+              href={domainUrl(undefined, "register")}
               target="_blank"
               rel="noopener noreferrer"
               size="lg"
@@ -313,7 +310,7 @@ export function DomainsContent() {
             </Button>
             <Button
               component="a"
-              href="https://moinfo.co.tz/portal/cart.php?a=add&domain=transfer"
+              href={domainUrl(undefined, "transfer")}
               target="_blank"
               rel="noopener noreferrer"
               size="lg"

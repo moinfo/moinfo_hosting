@@ -2,10 +2,12 @@
 // Runs 1–16 July 2026 and auto-expires: every surface that shows the promo
 // gates on isSabaSabaActive(), so nothing needs to be removed by hand afterwards.
 
+import { domainUrl, orderUrl, type OrderCategory } from "@/data/mobilling";
+
 export const SABA_SABA_START = new Date("2026-07-01T00:00:00");
 export const SABA_SABA_END = new Date("2026-07-16T23:59:59");
 
-/** Promo code customers enter at WHMCS checkout to unlock the Saba Saba price. */
+/** Promo code that unlocks the Saba Saba price at MoBilling checkout. */
 export const SABA_SABA_CODE = "MOINFO50";
 
 /** True while the promo window is open. Used by TopBar, Hero banner and the page. */
@@ -38,8 +40,14 @@ export interface SabaCategory {
   plans: SabaPlan[];
 }
 
-const STORE = "https://moinfo.co.tz/portal/index.php?rp=/store";
-const DOMAIN_REGISTER = "https://moinfo.co.tz/portal/cart.php?a=add&domain=register";
+/**
+ * Saba Saba order links carry the promo code so MoBilling pre-applies the
+ * discount at checkout instead of asking the customer to retype it.
+ */
+const promoOrder = (category: OrderCategory, plan: string) =>
+  orderUrl(category, plan, SABA_SABA_CODE);
+
+const DOMAIN_REGISTER = domainUrl(undefined, "register", SABA_SABA_CODE);
 
 /** Format a TSh amount the same way the rest of the site does, e.g. "TSh 40,250". */
 export function formatTsh(amount: number): string {
@@ -59,14 +67,14 @@ export const sabaSabaCategories: SabaCategory[] = [
         was: 80500,
         now: 40250,
         featureKeys: ["pf.emails20", "pf.disk4gb", "pf.bw4gb"],
-        orderUrl: `${STORE}/web-hosting`,
+        orderUrl: promoOrder("web-hosting", "university"),
       },
       {
         name: "Personal",
         was: 120000,
         now: 60000,
         featureKeys: ["pf.emails40", "pf.disk8gb", "pf.bw8gb"],
-        orderUrl: `${STORE}/web-hosting`,
+        orderUrl: promoOrder("web-hosting", "personal"),
       },
       {
         name: "Professional",
@@ -74,14 +82,14 @@ export const sabaSabaCategories: SabaCategory[] = [
         now: 75000,
         popular: true,
         featureKeys: ["pf.emails60", "pf.disk12gb", "pf.bw12gb"],
-        orderUrl: `${STORE}/web-hosting`,
+        orderUrl: promoOrder("web-hosting", "professional"),
       },
       {
         name: "Premier",
         was: 200000,
         now: 100000,
         featureKeys: ["pf.emails80", "pf.disk20gb", "pf.unlimitedBandwidth"],
-        orderUrl: `${STORE}/web-hosting`,
+        orderUrl: promoOrder("web-hosting", "premier"),
       },
     ],
   },
@@ -97,7 +105,7 @@ export const sabaSabaCategories: SabaCategory[] = [
         was: 60000,
         now: 30000,
         featureKeys: ["pf.emailAccounts20", "pf.disk4gb", "pf.bw4gb"],
-        orderUrl: `${STORE}/email-hosting`,
+        orderUrl: promoOrder("email-hosting", "starter"),
       },
       {
         name: "Email Medium",
@@ -105,21 +113,21 @@ export const sabaSabaCategories: SabaCategory[] = [
         now: 50000,
         popular: true,
         featureKeys: ["pf.emailAccounts40", "pf.disk8gb", "pf.bw8gb"],
-        orderUrl: `${STORE}/email-hosting`,
+        orderUrl: promoOrder("email-hosting", "medium"),
       },
       {
         name: "Email Premier",
         was: 130000,
         now: 65000,
         featureKeys: ["pf.emailAccounts60", "pf.disk12gb", "pf.bw12gb"],
-        orderUrl: `${STORE}/email-hosting`,
+        orderUrl: promoOrder("email-hosting", "premier"),
       },
       {
         name: "Email Plus",
         was: 350000,
         now: 175000,
         featureKeys: ["pf.emailAccounts100", "pf.disk50gb", "pf.bw50gb"],
-        orderUrl: `${STORE}/email-hosting`,
+        orderUrl: promoOrder("email-hosting", "plus"),
       },
     ],
   },

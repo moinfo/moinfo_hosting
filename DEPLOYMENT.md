@@ -1,3 +1,6 @@
+
+
+
 # Moinfo Hosting - Deployment Guide
 
 ## Overview
@@ -7,11 +10,19 @@ This project has two deployable parts:
 | Component | Technology | Destination on Server |
 |-----------|-----------|----------------------|
 | Landing Page | Next.js (static export) | `public_html/` |
-| WHMCS Template | Smarty templates + CSS | `public_html/portal/templates/moinfo/` |
+| WHMCS Template *(legacy)* | Smarty templates + CSS | `public_html/portal/templates/moinfo/` |
 
 **Production URL:** https://moinfo.co.tz
 **Hosting:** cPanel shared hosting (cPanel File Manager)
 **Server path:** `/home/moinfote/public_html/`
+
+> **Billing moved to MoBilling (July 2026).** The site no longer links to the
+> WHMCS portal — login, ordering and domain search all point at
+> `https://mobilling.co.tz` (see `src/data/mobilling.ts`). MoBilling deploys
+> from its own repo at `~/Development/Moinfotech/billing` via its `deploy.sh`,
+> not from here. Section 2 below is kept only for as long as the old portal is
+> still served at `/portal/`; once it is retired, drop that section and the
+> `whmcs/` directory.
 
 ---
 
@@ -82,7 +93,9 @@ This allows URLs like `/privacy` to serve `privacy.html`, `/vps` to serve `vps.h
 - Visit https://moinfo.co.tz/website-design — Website Design page
 - Visit https://moinfo.co.tz/privacy — Privacy Policy
 - Visit https://moinfo.co.tz/terms — Terms of Service
-- Visit https://moinfo.co.tz/portal/ — WHMCS (should still work, unchanged)
+- Visit https://mobilling.co.tz/login — MoBilling client portal (Header "Client Login")
+- Visit https://mobilling.co.tz/order/web-hosting?plan=university — an "Order Now" target
+- Visit https://moinfo.co.tz/portal/ — legacy WHMCS, only while it is still being served
 
 ### Important notes
 
@@ -93,7 +106,10 @@ This allows URLs like `/privacy` to serve `privacy.html`, `/vps` to serve `vps.h
 
 ---
 
-## 2. Deploy WHMCS Template
+## 2. Deploy WHMCS Template *(legacy — superseded by MoBilling)*
+
+> Retained only for maintaining the old portal while it is still online. New
+> billing work belongs in the MoBilling repo, not here.
 
 The custom `moinfo` template is in `whmcs/portal/templates/moinfo/`. It's based on the WHMCS `twenty-one` template with custom branding, dark mode, and styling.
 

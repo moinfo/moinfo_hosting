@@ -1,9 +1,11 @@
+import { KNOWLEDGEBASE_URL, WHATSAPP_NUMBER } from "@/data/mobilling";
+
 export const company = {
   name: "Moinfo Hosting",
   tagline: "Making Technology work for you",
   phone: "+255 689 011 111",
   phone2: "+255 651 034 582",
-  whatsapp: "https://wa.me/255689011111",
+  whatsapp: `https://wa.me/${WHATSAPP_NUMBER}`,
   email: "info@moinfo.co.tz",
   website: "https://moinfo.co.tz",
   address: "Njuweni Hotel, 1st Floor, Room 134, Mail Moja, Kibaha, Tanzania",
@@ -36,7 +38,7 @@ export const footerLinks = {
   ],
   resources: [
     { labelKey: "footer.domainSearch", href: "/domains" },
-    { labelKey: "footer.knowledgeBase", href: "https://moinfo.co.tz/portal/index.php?rp=/knowledgebase" },
+    { labelKey: "footer.knowledgeBase", href: KNOWLEDGEBASE_URL },
     { labelKey: "footer.transfer", href: "/transfer" },
     { labelKey: "footer.privacyPolicy", href: "/privacy" },
     { labelKey: "footer.termsOfService", href: "/terms" },

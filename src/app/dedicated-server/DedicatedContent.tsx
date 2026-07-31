@@ -3,7 +3,9 @@
 import { HostingHero } from "@/components/sections/HostingHero";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-const STORE = "https://moinfo.co.tz/portal/index.php?rp=/store/linux-dedicated-server";
+import { orderUrl } from "@/data/mobilling";
+
+const STORE = orderUrl("dedicated-server");
 
 export function DedicatedContent() {
   const { t } = useLanguage();

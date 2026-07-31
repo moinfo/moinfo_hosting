@@ -24,7 +24,7 @@ import {
 } from "@tabler/icons-react";
 import classes from "./WebDesign.module.css";
 
-const STORE = "https://moinfo.co.tz/portal/index.php?rp=/store/website-design";
+import { orderUrl } from "@/data/mobilling";
 
 const packages = [
   {
@@ -43,7 +43,7 @@ const packages = [
       "Domain Reseller Integration",
       "Delivery Days 3 to 5",
     ],
-    orderUrl: `${STORE}/reseller-design`,
+    orderUrl: orderUrl("website-design", "reseller-design"),
   },
   {
     name: "Static Website Design",
@@ -62,7 +62,7 @@ const packages = [
       "2 Design Revisions",
       "Delivery Days 5 to 7",
     ],
-    orderUrl: `${STORE}/static-website-design`,
+    orderUrl: orderUrl("website-design", "static-website-design"),
   },
   {
     name: "eCommerce Design",
@@ -80,7 +80,9 @@ const packages = [
       "Logo Included",
       "Delivery Days 15 to 20",
     ],
-    orderUrl: `${STORE}/static-website-design`,
+    // Was pointing at static-website-design under WHMCS; MoBilling has a
+    // matching "Ecommerce Website Design" product at the same 1,800,000 price.
+    orderUrl: orderUrl("website-design", "ecommerce-website-design"),
   },
 ];
 

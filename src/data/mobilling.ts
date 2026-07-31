@@ -67,8 +67,16 @@ export function normaliseDomain(input: string): string {
 /** Digits only, no "+". Used to build wa.me links. */
 export const WHATSAPP_NUMBER = "255689011111";
 
-/** Unified login — routes clients to /portal/dashboard, staff to /dashboard. */
-export const CLIENT_LOGIN = `${MOBILLING_BASE}/login`;
+/**
+ * Client Area login.
+ *
+ * Not /login — that is MoBilling's own SaaS sign-in ("Billing & Statutory
+ * Management Made Simple"), which is the wrong product to show a hosting
+ * customer. /portal/login carries the Moinfotech branding and speaks about
+ * domains, cPanel and invoices. Both accept the same credentials and land a
+ * client on /portal/dashboard.
+ */
+export const CLIENT_LOGIN = `${MOBILLING_BASE}/portal/login`;
 
 /** Client self-registration (email OTP). */
 export const CLIENT_REGISTER = `${MOBILLING_BASE}/portal/register`;

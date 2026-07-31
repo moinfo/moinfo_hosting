@@ -109,7 +109,8 @@ This allows URLs like `/privacy` to serve `privacy.html`, `/vps` to serve `vps.h
 - Visit https://moinfo.co.tz/website-design — Website Design page
 - Visit https://moinfo.co.tz/privacy — Privacy Policy
 - Visit https://moinfo.co.tz/terms — Terms of Service
-- Visit https://mobilling.co.tz/login — MoBilling client portal (Header "Client Login")
+- Visit https://mobilling.co.tz/portal/login — Client Area (Header "Client Area").
+  Note this is *not* `/login`, which is MoBilling's own SaaS sign-in.
 - Visit https://mobilling.co.tz/order/web-hosting?plan=university — an "Order Now" target
 - Visit https://moinfo.co.tz/portal/ — legacy WHMCS, only while it is still being served
 

@@ -60,8 +60,12 @@ This creates an `out/` directory containing:
 
 ```bash
 cd out
-zip -r ../moinfo-hosting-deploy.zip . -x "*.txt" "*.DS_Store"
+zip -r ../moinfo-hosting-deploy.zip . -x "*.DS_Store"
 ```
+
+> Do **not** exclude `*.txt`. That drops `robots.txt`, and the other `.txt`
+> files are the App Router's RSC payloads used for client-side navigation
+> between pages. Ship everything `next build` produced.
 
 ### Upload via cPanel File Manager
 

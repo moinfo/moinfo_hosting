@@ -19,8 +19,8 @@ export const navLinks: NavLink[] = [
   },
   { labelKey: "nav.domains", href: "/domains" },
   { labelKey: "nav.webDesign", href: "/website-design" },
-  { labelKey: "nav.features", href: "/#features" },
-  { labelKey: "nav.contact", href: "/#footer" },
+  { labelKey: "nav.features", href: "/features" },
+  { labelKey: "nav.contact", href: "/contact" },
 ];
 
 // Portal links now live in @/data/mobilling — import CLIENT_LOGIN, orderUrl()

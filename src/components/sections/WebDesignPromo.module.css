@@ -22,12 +22,12 @@
   font-size: clamp(1.5rem, 3vw, 2.2rem);
   font-weight: 800;
   margin-bottom: var(--mantine-spacing-md);
-  color: light-dark(var(--mantine-color-dark-8), var(--mantine-color-white));
+  color: var(--dc-text);
 }
 
 .description {
   font-size: var(--mantine-font-size-md);
-  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-gray-4));
+  color: var(--dc-text-secondary);
   margin-bottom: var(--mantine-spacing-xl);
   line-height: 1.7;
 }
@@ -44,7 +44,7 @@
   gap: var(--mantine-spacing-sm);
   padding: 8px 0;
   font-size: var(--mantine-font-size-md);
-  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-gray-3));
+  color: var(--dc-text-secondary);
 }
 
 @media (max-width: 62em) {
@@ -62,11 +62,11 @@
   display: flex;
   align-items: center;
   gap: var(--mantine-spacing-md);
-  background: light-dark(var(--mantine-color-white), var(--mantine-color-dark-6));
+  background: var(--dc-bg);
   border-radius: var(--mantine-radius-lg);
   padding: var(--mantine-spacing-xl);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-  border: 1px solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-4));
+  border: 1px solid var(--dc-border);
 }
 
 @media (max-width: 62em) {
@@ -78,7 +78,7 @@
 
 .priceLabel {
   font-size: var(--mantine-font-size-sm);
-  color: light-dark(var(--mantine-color-gray-6), var(--mantine-color-gray-5));
+  color: var(--dc-text-secondary);
 }
 
 .priceAmount {
@@ -89,7 +89,7 @@
 
 .priceUnit {
   font-size: var(--mantine-font-size-sm);
-  color: light-dark(var(--mantine-color-gray-6), var(--mantine-color-gray-5));
+  color: var(--dc-text-secondary);
 }
 
 .illustration {
@@ -99,11 +99,11 @@
 }
 
 .illustrationCard {
-  background: light-dark(var(--mantine-color-white), var(--mantine-color-dark-6));
+  background: var(--dc-bg);
   border-radius: var(--mantine-radius-lg);
   padding: 40px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-  border: 1px solid light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-4));
+  border: 1px solid var(--dc-border);
   text-align: center;
   width: 100%;
   max-width: 400px;
@@ -113,12 +113,12 @@
   font-size: var(--mantine-font-size-xl);
   font-weight: 700;
   margin-bottom: var(--mantine-spacing-xs);
-  color: light-dark(var(--mantine-color-dark-7), var(--mantine-color-white));
+  color: var(--dc-text);
 }
 
 .illustrationSub {
   font-size: var(--mantine-font-size-sm);
-  color: light-dark(var(--mantine-color-gray-6), var(--mantine-color-gray-5));
+  color: var(--dc-text-secondary);
   margin-bottom: var(--mantine-spacing-lg);
 }
 

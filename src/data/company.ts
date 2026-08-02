@@ -24,7 +24,7 @@ export const company = {
 export const footerLinks = {
   company: [
     { labelKey: "footer.aboutUs", href: "#" },
-    { labelKey: "footer.contact", href: "#footer" },
+    { labelKey: "footer.contact", href: "/contact" },
     { labelKey: "footer.blog", href: "#" },
     { labelKey: "footer.careers", href: "#" },
   ],

@@ -121,14 +121,14 @@
   padding: 10px 16px;
   border-radius: var(--mantine-radius-md);
   text-decoration: none;
-  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-gray-3));
+  color: var(--dc-text-secondary);
   font-size: var(--mantine-font-size-md);
   font-weight: 500;
   transition: background 150ms ease;
 }
 
 .drawerLink:hover {
-  background: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-5));
+  background: var(--dc-hover-fill);
 }
 
 @media (max-width: 62em) {

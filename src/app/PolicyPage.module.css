@@ -1,37 +1,78 @@
+/*
+ * Shared long-form document layout — the six policy pages and /transfer.
+ *
+ * The handoff wants these consolidated into one tabbed page with a sticky
+ * sidebar. That changes six indexed URLs, so it is left as a separate decision
+ * (see the backlog); this brings the existing routes onto the design's type
+ * and surface treatment in the meantime.
+ */
+
 .section {
-  padding: 60px 0 80px;
+  padding: 76px 0 90px;
+  background: var(--dc-bg);
 }
 
 .title {
-  margin-bottom: var(--mantine-spacing-xs);
+  margin-bottom: 10px;
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  color: var(--dc-text);
 }
 
+/* A date is data — mono, like every other value on the site. */
 .lastUpdated {
-  margin-bottom: var(--mantine-spacing-xl);
+  margin-bottom: 48px;
+  font-family: var(--dc-font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dc-text-label);
 }
 
 .sectionTitle {
-  margin-top: var(--mantine-spacing-xl);
-  margin-bottom: var(--mantine-spacing-sm);
+  margin-top: 44px;
+  margin-bottom: 12px;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--dc-text);
+  padding-top: 20px;
+  border-top: 1px solid var(--dc-hairline);
 }
 
 .subsectionTitle {
-  margin-top: var(--mantine-spacing-md);
-  margin-bottom: var(--mantine-spacing-xs);
+  margin-top: 24px;
+  margin-bottom: 8px;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--dc-text);
 }
 
+/* Prose is Instrument Sans and never mono. 68ch keeps lines readable. */
 .paragraph {
-  margin-bottom: var(--mantine-spacing-sm);
-  line-height: 1.7;
+  margin-bottom: 14px;
+  max-width: 68ch;
+  font-family: var(--dc-font-body);
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: var(--dc-text-secondary);
 }
 
 .list {
-  margin-bottom: var(--mantine-spacing-md);
+  margin-bottom: 20px;
+  max-width: 68ch;
+  font-family: var(--dc-font-body);
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: var(--dc-text-secondary);
 }
 
 .contactBox {
-  margin-top: var(--mantine-spacing-xl);
-  padding: var(--mantine-spacing-lg);
-  border-radius: var(--mantine-radius-md);
-  background: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+  margin-top: 48px;
+  padding: 26px;
+  border: 1px solid var(--dc-border);
+  border-radius: var(--dc-radius-card);
+  background: var(--dc-card-fill);
 }

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #0C1116; }
+  #root { display: flex; justify-content: center; }
+  a { color: #7BE3B4; text-decoration: none; }
+  a:hover { color: #4A9BFF; }
+</style>
+</helmet>
+<div style="width: 1440px; flex-shrink: 0; display: flex; align-items: stretch; background: #0C1116; font-family: 'Space Grotesk', sans-serif">
+  <dc-import name="Portal Sidebar" active="subs" hint-size="244px,100%"></dc-import>
+
+  <div style="flex: 1; min-width: 0; display: flex; flex-direction: column">
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 0 32px; height: 68px; border-bottom: 1px solid rgba(255,255,255,0.08); background: rgba(12,17,22,0.92)">
+      <div style="display: flex; align-items: center; gap: 14px; flex: 1; max-width: 420px; padding: 0 16px; height: 40px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; background: #070A0D">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #4E5A55">⌕</span>
+        <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #5C665F">Search by domain…</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 14px">
+        <a href="./Client Portal.dc.html" style="padding: 9px 16px; border: 1px solid rgba(255,255,255,0.16); border-radius: 7px; color: #DCE3DF; font-size: 13.5px; font-weight: 500">Dashboard</a>
+        <span style="width: 1px; height: 26px; background: rgba(255,255,255,0.1)"></span>
+        <div style="display: flex; align-items: center; gap: 10px">
+          <div style="width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(140deg, #0B5CD5, #0A8F63); display: grid; place-items: center; color: #fff; font-size: 13px; font-weight: 600">KK</div>
+          <div style="display: flex; flex-direction: column; line-height: 1.15">
+            <span style="font-size: 13.5px; font-weight: 600; color: #fff">Kassim Haji Kassim</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; color: #6E7A75">ACCT #10428 · KIBAHA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 24px; padding: 32px">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px">
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #7BE3B4">SERVICES</span>
+          <h1 style="margin: 0; font-size: 34px; font-weight: 600; letter-spacing: -0.03em; color: #fff">Subscriptions</h1>
+        </div>
+        <div style="display: flex; gap: 4px; padding: 4px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px">
+          <sc-for list="{{ filters }}" as="f" hint-placeholder-count="4">
+            <button type="button" onClick="{{ f.on }}" style="padding: 9px 16px; border: 0; border-radius: 5px; background: {{ f.bg }}; color: {{ f.fg }}; font-family: 'Space Grotesk', sans-serif; font-size: 13.5px; font-weight: 600; cursor: pointer">{{ f.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 20px 24px; border: 1px solid rgba(242,163,60,0.35); border-radius: 12px; background: rgba(242,163,60,0.07)">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px">
+          <div style="display: flex; flex-direction: column; gap: 5px">
+            <span style="display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #F2A33C"><span style="width: 6px; height: 6px; border-radius: 50%; background: #F2A33C"></span>RENEWING SOON</span>
+            <span style="font-size: 16.5px; font-weight: 600; color: #fff">2 subscriptions renew within 45 days</span>
+            <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; color: #8B968F">zaifood.co.tz in 36 days · whitestar.co.tz in 93 days. Turn on auto-renew and we take it from the wallet.</span>
+          </div>
+          <a href="#auto" style="padding: 11px 20px; border-radius: 8px; background: #F2A33C; color: #2A1A05; font-size: 13.5px; font-weight: 600; white-space: nowrap">Turn on auto-renew</a>
+        </div>
+      </div>
+
+      <div style="border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden">
+        <div style="display: grid; grid-template-columns: 1.4fr 1.1fr 120px 110px 120px 110px 190px; gap: 14px; padding: 13px 22px; background: rgba(255,255,255,0.03); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #7F8C86">
+          <span>SERVICE</span><span>DOMAIN</span><span style="text-align: right">PRICE / YR</span><span>NEXT DUE</span><span>DAYS LEFT</span><span>STATUS</span><span style="text-align: right">ACTIONS</span>
+        </div>
+        <sc-for list="{{ rows }}" as="r" hint-placeholder-count="8">
+          <div style="display: grid; grid-template-columns: 1.4fr 1.1fr 120px 110px 120px 110px 190px; gap: 14px; align-items: center; padding: 15px 22px; border-top: 1px solid rgba(255,255,255,0.08); background: {{ r.rowBg }}">
+            <span style="font-size: 14.5px; font-weight: 600; color: #fff">{{ r.service }}</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #9AA6A1">{{ r.domain }}</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #fff; text-align: right">{{ r.price }}</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #8B968F">{{ r.due }}</span>
+            <span style="display: flex; flex-direction: column; gap: 6px">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: {{ r.daysColor }}">{{ r.days }}</span>
+              <span style="height: 4px; border-radius: 3px; background: rgba(255,255,255,0.08); overflow: hidden"><span style="display: block; height: 4px; width: {{ r.pct }}; background: {{ r.daysColor }}"></span></span>
+            </span>
+            <span style="padding: 4px 9px; width: fit-content; border-radius: 20px; background: {{ r.tagBg }}; color: {{ r.tagFg }}; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em">{{ r.status }}</span>
+            <span style="display: flex; justify-content: flex-end; gap: 8px">
+              <sc-if value="{{ r.live }}" hint-placeholder-val="{{ true }}">
+                <a href="#cpanel" style="padding: 7px 13px; border-radius: 7px; background: rgba(74,155,255,0.14); border: 1px solid rgba(74,155,255,0.4); color: #7FB4FF; font-size: 12.5px; font-weight: 600">cPanel</a>
+              </sc-if>
+              <a href="./Invoices.dc.html" style="padding: 7px 13px; border: 1px solid rgba(255,255,255,0.16); border-radius: 7px; color: #B6C0BB; font-size: 12.5px">{{ r.action }}</a>
+            </span>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px">
+        <div style="display: flex; flex-direction: column; gap: 6px; padding: 22px 24px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #7F8C86">ANNUAL COMMITMENT</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 26px; color: #fff; letter-spacing: -0.02em">1,661,000</span><span style="font-family: 'Instrument Sans', sans-serif; font-size: 13px; color: #7F8C86">TSh across 8 subscriptions</span></div>
+        <div style="display: flex; flex-direction: column; gap: 6px; padding: 22px 24px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #7F8C86">NEXT 90 DAYS</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 26px; color: #F2A33C; letter-spacing: -0.02em">250,000</span><span style="font-family: 'Instrument Sans', sans-serif; font-size: 13px; color: #7F8C86">TSh falling due</span></div>
+        <div style="display: flex; flex-direction: column; gap: 6px; padding: 22px 24px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #7F8C86">AUTO-RENEW</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 26px; color: #fff; letter-spacing: -0.02em">0 of 8</span><span style="font-family: 'Instrument Sans', sans-serif; font-size: 13px; color: #7F8C86">Everything renews manually today</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:950}}">
+class Component extends DCLogic {
+  state = { filter: "current" };
+  renderVals() {
+    const s = this.state;
+    const T = {
+      active: { tagBg: "rgba(41,208,138,0.14)", tagFg: "#7BE3B4", status: "ACTIVE", live: true, action: "Renew" },
+      pending: { tagBg: "rgba(242,163,60,0.16)", tagFg: "#F2A33C", status: "PENDING", live: false, action: "Pay now" },
+      suspended: { tagBg: "rgba(255,123,114,0.14)", tagFg: "#FF7B72", status: "SUSPENDED", live: false, action: "Reactivate" }
+    };
+    const row = (service, domain, price, due, days, state) => {
+      const t = T[state];
+      const n = parseInt(days, 10) || 0;
+      const color = n === 0 ? "#7F8C86" : n <= 45 ? "#F2A33C" : "#7BE3B4";
+      return {
+        service, domain, price, due,
+        days: n ? n + " days" : "—",
+        pct: n ? Math.min(100, Math.round((n / 365) * 100)) + "%" : "0%",
+        daysColor: color,
+        rowBg: n && n <= 45 ? "rgba(242,163,60,0.05)" : "transparent",
+        key: state, ...t
+      };
+    };
+    const all = [
+      row("System Web Hosting", "lerumalogistics.co.tz", "250,000", "25 JAN 2027", "177", "active"),
+      row("System Web Hosting", "loliondoshop.co.tz", "250,000", "27 JUN 2027", "330", "active"),
+      row("System Web Hosting", "mailmojashop.co.tz", "250,000", "02 NOV 2026", "93", "active"),
+      row("System Web Hosting", "mazao.co.tz", "250,000", "08 JUN 2027", "311", "active"),
+      row("System Web Hosting", "whitestar.co.tz", "250,000", "02 NOV 2026", "93", "active"),
+      row("System Web Hosting", "zaifood.co.tz", "250,000", "06 SEP 2026", "36", "active"),
+      row("Web Hosting University", "moinfo2.co.tz", "80,500", "—", "0", "pending"),
+      row("Web Hosting University", "muddy.co.tz", "80,500", "—", "0", "pending")
+    ];
+    const match = (r) => s.filter === "all" || (s.filter === "current" && r.key !== "suspended") || (s.filter === "active" && r.key === "active") || (s.filter === "pending" && r.key === "pending");
+    return {
+      filters: [["current", "Current"], ["active", "Active (6)"], ["pending", "Pending (2)"], ["all", "All"]].map(([k, label]) => ({
+        label, on: () => this.setState({ filter: k }),
+        bg: s.filter === k ? "#fff" : "transparent",
+        fg: s.filter === k ? "#0C1116" : "#9AA6A1"
+      })),
+      rows: all.filter(match)
+    };
+  }
+}
+</script>
+</body>
+</html>

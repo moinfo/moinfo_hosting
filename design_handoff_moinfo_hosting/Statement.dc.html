@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #0C1116; }
+  #root { display: flex; justify-content: center; }
+  a { color: #7BE3B4; text-decoration: none; }
+  a:hover { color: #4A9BFF; }
+</style>
+</helmet>
+<div style="width: 1440px; flex-shrink: 0; display: flex; align-items: stretch; background: #0C1116; font-family: 'Space Grotesk', sans-serif">
+  <dc-import name="Portal Sidebar" active="statement" hint-size="244px,100%"></dc-import>
+
+  <div style="flex: 1; min-width: 0; display: flex; flex-direction: column">
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 0 32px; height: 68px; border-bottom: 1px solid rgba(255,255,255,0.08); background: rgba(12,17,22,0.92)">
+      <div style="display: flex; align-items: center; gap: 14px; flex: 1; max-width: 420px; padding: 0 16px; height: 40px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; background: #070A0D">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #4E5A55">⌕</span>
+        <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #5C665F">Search the statement…</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 14px">
+        <a href="./Client Portal.dc.html" style="padding: 9px 16px; border: 1px solid rgba(255,255,255,0.16); border-radius: 7px; color: #DCE3DF; font-size: 13.5px; font-weight: 500">Dashboard</a>
+        <span style="width: 1px; height: 26px; background: rgba(255,255,255,0.1)"></span>
+        <div style="display: flex; align-items: center; gap: 10px">
+          <div style="width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(140deg, #0B5CD5, #0A8F63); display: grid; place-items: center; color: #fff; font-size: 13px; font-weight: 600">KK</div>
+          <div style="display: flex; flex-direction: column; line-height: 1.15">
+            <span style="font-size: 13.5px; font-weight: 600; color: #fff">Kassim Haji Kassim</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; color: #6E7A75">ACCT #10428 · KIBAHA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 24px; padding: 32px">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px">
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #7BE3B4">BILLING</span>
+          <h1 style="margin: 0; font-size: 34px; font-weight: 600; letter-spacing: -0.03em; color: #fff">Account statement</h1>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px">
+          <div style="display: flex; gap: 4px; padding: 4px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px">
+            <sc-for list="{{ ranges }}" as="r" hint-placeholder-count="3">
+              <button type="button" onClick="{{ r.on }}" style="padding: 9px 15px; border: 0; border-radius: 5px; background: {{ r.bg }}; color: {{ r.fg }}; font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer">{{ r.label }}</button>
+            </sc-for>
+          </div>
+          <a href="#pdf" style="padding: 11px 20px; border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; color: #fff; font-size: 13.5px; font-weight: 600">Download PDF</a>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden">
+        <div style="display: flex; flex-direction: column; gap: 6px; padding: 22px 24px; background: #0C1116"><span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #7F8C86">PERIOD</span><span style="font-size: 19px; font-weight: 600; color: #fff">{{ periodLabel }}</span><span style="font-family: 'Instrument Sans', sans-serif; font-size: 13px; color: #7F8C86">{{ periodNote }}</span></div>
+        <div style="display: flex; flex-direction: column; gap: 6px; padding: 22px 24px; background: #0C1116"><span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #7F8C86">TOTAL DEBITS</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 28px; color: #fff; letter-spacing: -0.02em">12,279,197</span><span style="font-family: 'Instrument Sans', sans-serif; font-size: 13px; color: #7F8C86">TSh invoiced</span></div>
+        <div style="display: flex; flex-direction: column; gap: 6px; padding: 22px 24px; background: #0C1116"><span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #7F8C86">TOTAL CREDITS</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 28px; color: #7BE3B4; letter-spacing: -0.02em">11,240,199</span><span style="font-family: 'Instrument Sans', sans-serif; font-size: 13px; color: #7F8C86">TSh paid</span></div>
+        <div style="display: flex; flex-direction: column; gap: 6px; padding: 22px 24px; background: #0C1116"><span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #7F8C86">CLOSING BALANCE</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 28px; color: #F2A33C; letter-spacing: -0.02em">1,038,998</span><span style="font-family: 'Instrument Sans', sans-serif; font-size: 13px; color: #7F8C86">TSh owing</span></div>
+      </div>
+
+      <div style="border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden">
+        <div style="display: grid; grid-template-columns: 120px 100px 1fr 160px 140px 140px 150px; gap: 16px; padding: 13px 22px; background: rgba(255,255,255,0.03); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #7F8C86">
+          <span>DATE</span><span>TYPE</span><span>DESCRIPTION</span><span>REFERENCE</span><span style="text-align: right">DEBIT</span><span style="text-align: right">CREDIT</span><span style="text-align: right">BALANCE</span>
+        </div>
+        <sc-for list="{{ rows }}" as="r" hint-placeholder-count="14">
+          <div style="display: grid; grid-template-columns: 120px 100px 1fr 160px 140px 140px 150px; gap: 16px; align-items: center; padding: 13px 22px; border-top: 1px solid rgba(255,255,255,0.08)">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #8B968F">{{ r.date }}</span>
+            <span style="padding: 4px 9px; width: fit-content; border-radius: 20px; background: {{ r.tagBg }}; color: {{ r.tagFg }}; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em">{{ r.type }}</span>
+            <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; color: #DCE3DF">{{ r.desc }}</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #7F8C86">{{ r.ref }}</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: {{ r.debitColor }}; text-align: right">{{ r.debit }}</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: {{ r.creditColor }}; text-align: right">{{ r.credit }}</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #fff; text-align: right">{{ r.balance }}</span>
+          </div>
+        </sc-for>
+        <div style="display: grid; grid-template-columns: 120px 100px 1fr 160px 140px 140px 150px; gap: 16px; align-items: center; padding: 18px 22px; border-top: 1px solid rgba(255,255,255,0.16); background: rgba(255,255,255,0.03); font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #7F8C86">
+          <span></span><span></span><span>CLOSING BALANCE</span><span></span>
+          <span style="text-align: right; color: #fff">12,279,197</span>
+          <span style="text-align: right; color: #7BE3B4">11,240,199</span>
+          <span style="text-align: right; font-size: 17px; letter-spacing: -0.02em; color: #F2A33C">1,038,998</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:950}}">
+class Component extends DCLogic {
+  state = { range: "ytd" };
+  renderVals() {
+    const s = this.state;
+    const inv = { tagBg: "rgba(74,155,255,0.14)", tagFg: "#7FB4FF", type: "INVOICE" };
+    const pay = { tagBg: "rgba(41,208,138,0.14)", tagFg: "#7BE3B4", type: "PAYMENT" };
+    const d = (date, desc, ref, debit, balance) => ({ date, desc, ref, debit, credit: "—", balance, debitColor: "#fff", creditColor: "#4E5A55", ...inv });
+    const c = (date, desc, ref, credit, balance) => ({ date, desc, ref, debit: "—", credit, balance, debitColor: "#4E5A55", creditColor: "#7BE3B4", ...pay });
+    return {
+      ranges: [["ytd", "This year"], ["12m", "Last 12 months"], ["all", "All time"]].map(([k, label]) => ({
+        label, on: () => this.setState({ range: k }),
+        bg: s.range === k ? "#fff" : "transparent",
+        fg: s.range === k ? "#0C1116" : "#9AA6A1"
+      })),
+      periodLabel: s.range === "ytd" ? "1 Jan – 1 Aug 2026" : s.range === "12m" ? "Aug 2025 – Aug 2026" : "Since Mar 2023",
+      periodNote: s.range === "all" ? "Full account history" : "Opening balance 0.00",
+      rows: [
+        d("18 JAN 2026", "Invoice WHMCS-690 — annual hosting", "WHMCS-690", "1,430,000", "1,430,000"),
+        d("18 JAN 2026", "Invoice WHMCS-692 — domain renewals", "WHMCS-692", "792,000", "2,222,000"),
+        d("09 FEB 2026", "Invoice WHMCS-716 — hosting renewal", "WHMCS-716", "342,000", "2,564,000"),
+        d("09 FEB 2026", "Invoice WHMCS-717 — SSL certificate", "WHMCS-717", "40,000", "2,604,000"),
+        d("09 FEB 2026", "Invoice WHMCS-718 — hosting renewal", "WHMCS-718", "327,000", "2,931,000"),
+        d("09 FEB 2026", "Invoice WHMCS-719 — hosting renewal", "WHMCS-719", "390,000", "3,321,000"),
+        d("09 FEB 2026", "Invoice WHMCS-720 — annual bundle", "WHMCS-720", "1,666,000", "4,987,000"),
+        d("10 FEB 2026", "Invoice WHMCS-721 — hosting renewal", "WHMCS-721", "620,000", "5,607,000"),
+        d("10 FEB 2026", "Invoice WHMCS-722 — hosting renewal", "WHMCS-722", "500,000", "6,107,000"),
+        c("04 MAR 2026", "Payment received — Pesapal", "WHMCS-690", "1,430,000", "4,677,000"),
+        c("04 MAR 2026", "Payment received — Pesapal", "WHMCS-692", "792,000", "3,885,000"),
+        c("04 MAR 2026", "Payment received — Pesapal", "WHMCS-716", "342,000", "3,543,000"),
+        c("04 MAR 2026", "Payment received — Pesapal", "WHMCS-717", "40,000", "3,503,000"),
+        c("17 MAR 2026", "Payment received — bank transfer", "INV-2026-0068", "261,600", "3,241,400"),
+        c("02 JUL 2026", "Payment received — Pesapal", "WHMCS-1245", "550,000", "1,038,998")
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

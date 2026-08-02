@@ -114,6 +114,8 @@ export function Header() {
       className={`${classes.header} ${scrolled ? classes.headerScrolled : ""}`}
     >
       <Container size="xl" className={classes.inner}>
+        {/* Design uses a placeholder gradient "M"; we keep the real mark and
+            add the registrar micro-line beneath the wordmark. */}
         <Link href="/" className={classes.logoGroup}>
           <Image
             src="/images/logo.png"
@@ -122,8 +124,11 @@ export function Header() {
             height={36}
             priority
           />
-          <span className={classes.logoText}>
-            Moinfo <span className={classes.logoAccent}>Hosting</span>
+          <span className={classes.logoLockup}>
+            <span className={classes.logoText}>
+              Moinfo <span className={classes.logoAccent}>Hosting</span>
+            </span>
+            <span className={classes.logoKicker}>TCRA REGISTRAR · TZ</span>
           </span>
         </Link>
 
@@ -139,11 +144,21 @@ export function Header() {
           <Button
             component="a"
             href={CLIENT_LOGIN}
-            variant="filled"
+            variant="default"
             size="sm"
             visibleFrom="sm"
+            className={classes.clientAreaBtn}
           >
             {t("nav.clientArea")}
+          </Button>
+          <Button
+            component="a"
+            href="/#pricing"
+            size="sm"
+            visibleFrom="md"
+            className={classes.getStartedBtn}
+          >
+            {t("nav.getStarted")}
           </Button>
           <Burger
             opened={opened}

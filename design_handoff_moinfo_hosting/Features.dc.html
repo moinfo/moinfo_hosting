@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #0C1116; }
+  #root { display: flex; justify-content: center; }
+  a { color: #7BE3B4; text-decoration: none; }
+  a:hover { color: #4A9BFF; }
+</style>
+</helmet>
+<div style="width: 1440px; flex-shrink: 0; background: #0C1116; font-family: 'Space Grotesk', sans-serif">
+  <dc-import name="Site Header" active="features" crumb="Features" hint-size="1440px,170px"></dc-import>
+
+  <div style="position: relative; padding: 76px 40px; background: radial-gradient(900px 420px at 20% 0%, rgba(11,92,213,0.28), transparent 70%), radial-gradient(720px 400px at 88% 30%, rgba(10,143,99,0.22), transparent 70%), #0C1116">
+    <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 80px 80px; pointer-events: none"></div>
+    <div style="position: relative; display: grid; grid-template-columns: 1fr 380px; gap: 64px; align-items: end">
+      <div style="display: flex; flex-direction: column; gap: 26px">
+        <div style="display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4"><span style="width: 22px; height: 1px; background: #29D08A"></span>EVERYTHING INCLUDED · NO TIERS ON THE BASICS</div>
+        <h1 style="margin: 0; font-size: 62px; line-height: 1.0; letter-spacing: -0.035em; font-weight: 600; color: #fff; max-width: 15ch; text-wrap: pretty">What you get, in full.</h1>
+        <p style="margin: 0; max-width: 54ch; font-family: 'Instrument Sans', sans-serif; font-size: 17.5px; line-height: 1.6; color: #9AA6A1">The list below applies to the cheapest plan and the largest one alike. Tiers differ in capacity, never in capability.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden">
+        <div style="padding: 18px 20px; border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1)"><div style="font-size: 24px; font-weight: 600; color: #29D08A">99.9%</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86; margin-top: 4px">UPTIME SLA</div></div>
+        <div style="padding: 18px 20px; border-bottom: 1px solid rgba(255,255,255,0.1)"><div style="font-size: 24px; font-weight: 600; color: #fff">30 days</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86; margin-top: 4px">MONEY BACK</div></div>
+        <div style="padding: 18px 20px; border-right: 1px solid rgba(255,255,255,0.1)"><div style="font-size: 24px; font-weight: 600; color: #fff">0 TSh</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86; margin-top: 4px">MIGRATION</div></div>
+        <div style="padding: 18px 20px"><div style="font-size: 24px; font-weight: 600; color: #fff">24/7</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86; margin-top: 4px">LOCAL SUPPORT</div></div>
+      </div>
+    </div>
+  </div>
+
+  <sc-for list="{{ groups }}" as="g" hint-placeholder-count="4">
+    <div style="padding: 76px 40px; background: {{ g.bg }}; border-top: 1px solid rgba(255,255,255,0.08)">
+      <div style="display: grid; grid-template-columns: 340px 1fr; gap: 64px; align-items: start">
+        <div style="display: flex; flex-direction: column; gap: 14px">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4">{{ g.n }}</span>
+          <h2 style="margin: 0; font-size: 36px; font-weight: 600; letter-spacing: -0.03em; color: #fff; line-height: 1.05">{{ g.title }}</h2>
+          <p style="margin: 0; font-family: 'Instrument Sans', sans-serif; font-size: 15.5px; line-height: 1.65; color: #8B968F">{{ g.intro }}</p>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px">
+          <sc-for list="{{ g.items }}" as="i" hint-placeholder-count="8">
+            <div style="display: flex; gap: 14px; padding: 16px 0; border-top: 1px solid rgba(255,255,255,0.09)">
+              <span style="color: #29D08A; font-family: 'JetBrains Mono', monospace; font-size: 13px; padding-top: 2px">✓</span>
+              <span><span style="display: block; font-size: 15.5px; font-weight: 600; color: #fff">{{ i.t }}</span><span style="display: block; margin-top: 5px; font-family: 'Instrument Sans', sans-serif; font-size: 14px; line-height: 1.6; color: #8B968F">{{ i.d }}</span></span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </sc-for>
+
+  <div style="padding: 76px 40px; background: #0C1116; border-top: 1px solid rgba(255,255,255,0.08)">
+    <div style="display: flex; flex-direction: column; gap: 24px">
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4">05 · WHERE TO GO NEXT</span>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px">
+        <a href="./Web Hosting.dc.html" style="display: flex; flex-direction: column; gap: 8px; padding: 24px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; color: inherit"><span style="font-size: 17px; font-weight: 600; color: #fff">Web Hosting</span><span style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; color: #8B968F">Six shared tiers, from 80,500/yr</span></a>
+        <a href="./Email Hosting.dc.html" style="display: flex; flex-direction: column; gap: 8px; padding: 24px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; color: inherit"><span style="font-size: 17px; font-weight: 600; color: #fff">Email Hosting</span><span style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; color: #8B968F">Mailboxes on your own domain</span></a>
+        <a href="./VPS Hosting.dc.html" style="display: flex; flex-direction: column; gap: 8px; padding: 24px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; color: inherit"><span style="font-size: 17px; font-weight: 600; color: #fff">VPS Hosting</span><span style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; color: #8B968F">Root access on NVMe, from 25,750/mo</span></a>
+        <a href="./Domains.dc.html" style="display: flex; flex-direction: column; gap: 8px; padding: 24px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; color: inherit"><span style="font-size: 17px; font-weight: 600; color: #fff">Domains</span><span style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; color: #8B968F">.tz registered directly, from 19,999/yr</span></a>
+      </div>
+    </div>
+  </div>
+
+  <dc-import name="Site Footer" hint-size="1440px,620px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:1000}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      groups: [
+        { n: "01 · PLATFORM", bg: "#0A0E12", title: "The stack under your site", intro: "Standard, well-understood tooling — nothing proprietary you would have to unlearn if you left.",
+          items: [
+            { t: "cPanel control panel", d: "Files, databases, mail, cron and subdomains in one place." },
+            { t: "One-click installers", d: "WordPress, Joomla, Laravel and more, installed in a minute." },
+            { t: "PHP version switching", d: "Pick the PHP version per site, and change it back if a plugin objects." },
+            { t: "MySQL &amp; phpMyAdmin", d: "Create databases and users yourself, with a browser-based client." },
+            { t: "NVMe storage", d: "Solid-state throughout, so database-heavy sites stay quick." },
+            { t: "Cron jobs", d: "Schedule scripts on your own timetable without asking us." },
+            { t: "SSH on request", d: "Shell access for developers who need it, on approval." },
+            { t: "Git deployment", d: "Push to deploy where your workflow calls for it." }
+          ] },
+        { n: "02 · SECURITY", bg: "#0C1116", title: "Kept safe by default", intro: "Security that is on when the account is created, not sold as an upsell later.",
+          items: [
+            { t: "Free SSL certificates", d: "Let's Encrypt issued and renewed automatically on every domain." },
+            { t: "Firewall &amp; brute-force protection", d: "Repeated failed logins are blocked at the server edge." },
+            { t: "Anti-spam and anti-virus", d: "Inbound and outbound mail scanned before it reaches a mailbox." },
+            { t: "Account isolation", d: "One compromised site on the server cannot reach yours." },
+            { t: "Two-factor authentication", d: "Available on cPanel and the client area." },
+            { t: "Automatic backups", d: "Restore points you can roll back yourself from the panel." },
+            { t: "DDoS filtering", d: "Volumetric attacks absorbed upstream of our network." },
+            { t: "Paid SSL when you need it", d: "DV, OV and wildcard certificates for regulated or e-commerce sites." }
+          ] },
+        { n: "03 · SUPPORT", bg: "#0A0E12", title: "People, in your time zone", intro: "Our own team in Kibaha — no outsourced first line reading from a script.",
+          items: [
+            { t: "24/7/366 availability", d: "Phone, WhatsApp and email, including public holidays." },
+            { t: "Swahili or English", d: "Whichever you are more comfortable explaining the problem in." },
+            { t: "Free migration", d: "We move sites, databases and mail from your old host at no charge." },
+            { t: "Same-day setup", d: "Accounts are usually live within an hour of payment clearing." },
+            { t: "Escalation to engineers", d: "Complex problems reach the people who run the servers, not a queue." },
+            { t: "Knowledge base", d: "Written guides for the questions that come up most often." },
+            { t: "Status page", d: "Published incident history, so you are never guessing." },
+            { t: "Named account contact", d: "For reseller and enterprise customers." }
+          ] },
+        { n: "04 · COMMERCIAL", bg: "#0C1116", title: "Terms without surprises", intro: "Billed in shillings, paid the way Tanzanian businesses actually pay.",
+          items: [
+            { t: "Mobile money accepted", d: "M-Pesa, Tigo Pesa and Airtel Money, as well as card and bank transfer." },
+            { t: "No renewal price jump", d: "The price you sign up at is the price you renew at." },
+            { t: "30-day money back", d: "Cancel within the first month for a full refund of the hosting fee." },
+            { t: "Free domain, year one", d: "Annual plans from Professional up include .co.tz or .com." },
+            { t: "Upgrade any time", d: "Move up a tier mid-term and pay only the difference." },
+            { t: "VAT-inclusive pricing", d: "The number on the page is the number on the invoice." },
+            { t: "TCRA accredited registrar", d: "Your .tz domains are registered by us, not resold through a third party." },
+            { t: "Written SLA", d: "99.9% uptime commitment, with service credits if we miss it." }
+          ] }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

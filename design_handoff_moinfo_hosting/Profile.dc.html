@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #0C1116; }
+  #root { display: flex; justify-content: center; }
+  a { color: #7BE3B4; text-decoration: none; }
+  a:hover { color: #4A9BFF; }
+</style>
+</helmet>
+<div style="width: 1440px; flex-shrink: 0; display: flex; align-items: stretch; background: #0C1116; font-family: 'Space Grotesk', sans-serif">
+  <dc-import name="Portal Sidebar" active="{{ activeKey }}" hint-size="244px,100%"></dc-import>
+
+  <div style="flex: 1; min-width: 0; display: flex; flex-direction: column">
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 0 32px; height: 68px; border-bottom: 1px solid rgba(255,255,255,0.08); background: rgba(12,17,22,0.92)">
+      <div style="display: flex; align-items: center; gap: 14px; flex: 1; max-width: 420px; padding: 0 16px; height: 40px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; background: #070A0D">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #4E5A55">⌕</span>
+        <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #5C665F">Search the portal…</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 14px">
+        <a href="./Client Portal.dc.html" style="padding: 9px 16px; border: 1px solid rgba(255,255,255,0.16); border-radius: 7px; color: #DCE3DF; font-size: 13.5px; font-weight: 500">Dashboard</a>
+        <span style="width: 1px; height: 26px; background: rgba(255,255,255,0.1)"></span>
+        <div style="display: flex; align-items: center; gap: 10px">
+          <div style="width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(140deg, #0B5CD5, #0A8F63); display: grid; place-items: center; color: #fff; font-size: 13px; font-weight: 600">KK</div>
+          <div style="display: flex; flex-direction: column; line-height: 1.15">
+            <span style="font-size: 13.5px; font-weight: 600; color: #fff">Kassim Haji Kassim</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; color: #6E7A75">ACCT #10428 · KIBAHA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 24px; padding: 32px">
+
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px">
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #7BE3B4">ACCOUNT</span>
+          <h1 style="margin: 0; font-size: 34px; font-weight: 600; letter-spacing: -0.03em; color: #fff">{{ heading }}</h1>
+        </div>
+        <div style="display: flex; gap: 4px; padding: 4px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px">
+          <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="2">
+            <button type="button" onClick="{{ t.on }}" style="padding: 9px 16px; border: 0; border-radius: 5px; background: {{ t.bg }}; color: {{ t.fg }}; font-family: 'Space Grotesk', sans-serif; font-size: 13.5px; font-weight: 600; cursor: pointer">{{ t.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+
+      <sc-if value="{{ isProfile }}" hint-placeholder-val="{{ true }}">
+        <div style="display: grid; grid-template-columns: 1fr 360px; gap: 24px; align-items: start">
+          <div style="display: flex; flex-direction: column; gap: 24px">
+            <div style="border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden">
+              <div style="padding: 18px 22px; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 17px; font-weight: 600; color: #fff">Your details</div>
+              <div style="display: flex; flex-direction: column; gap: 18px; padding: 24px">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px">
+                  <div style="display: flex; flex-direction: column; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #7F8C86">FULL NAME</span><div style="display: flex; align-items: center; padding: 0 16px; height: 48px; border: 1px solid rgba(255,255,255,0.16); border-radius: 9px; background: #070A0D; font-family: 'Instrument Sans', sans-serif; font-size: 15px; color: #fff">Kassim Haji Kassim</div></div>
+                  <div style="display: flex; flex-direction: column; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #7F8C86">PHONE</span><div style="display: flex; align-items: center; padding: 0 16px; height: 48px; border: 1px solid rgba(255,255,255,0.16); border-radius: 9px; background: #070A0D; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #fff">+255 714 232 827</div></div>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 8px">
+                  <span style="display: flex; align-items: center; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #7F8C86"><span>EMAIL</span><span style="color: #4E5A55">CONTACT SUPPORT TO CHANGE</span></span>
+                  <div style="display: flex; align-items: center; padding: 0 16px; height: 48px; border: 1px solid rgba(255,255,255,0.1); border-radius: 9px; background: rgba(255,255,255,0.02); font-family: 'Instrument Sans', sans-serif; font-size: 15px; color: #7F8C86">info@lerumaenterprises.co.tz</div>
+                </div>
+                <a href="#save" style="align-self: flex-start; padding: 12px 22px; border-radius: 8px; background: #29D08A; color: #06231A; font-size: 14px; font-weight: 600">Save changes</a>
+              </div>
+            </div>
+
+            <div style="border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden">
+              <div style="padding: 18px 22px; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 17px; font-weight: 600; color: #fff">Company information</div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.1)">
+                <sc-for list="{{ company }}" as="c" hint-placeholder-count="6">
+                  <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 15px 22px; background: #0C1116">
+                    <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86">{{ c.k }}</span>
+                    <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: {{ c.color }}">{{ c.v }}</span>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+
+            <div style="border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden">
+              <div style="padding: 18px 22px; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 17px; font-weight: 600; color: #fff">Notifications</div>
+              <sc-for list="{{ notifications }}" as="n" hint-placeholder-count="4">
+                <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 16px 22px; border-bottom: 1px solid rgba(255,255,255,0.07)">
+                  <span style="display: flex; flex-direction: column; gap: 3px">
+                    <span style="font-size: 15px; font-weight: 600; color: #fff">{{ n.t }}</span>
+                    <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13px; color: #8B968F">{{ n.d }}</span>
+                  </span>
+                  <button type="button" onClick="{{ n.on }}" style="width: 50px; height: 28px; padding: 3px; border: 1px solid {{ n.border }}; border-radius: 20px; background: {{ n.track }}; cursor: pointer; display: flex; justify-content: {{ n.justify }}">
+                    <span style="width: 20px; height: 20px; border-radius: 50%; background: {{ n.knob }}; display: block"></span>
+                  </button>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 20px">
+            <div style="display: flex; flex-direction: column; gap: 14px; padding: 24px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #7F8C86">SECURITY</span>
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px">
+                <span style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 15px; font-weight: 600; color: #fff">Password</span><span style="font-family: 'Instrument Sans', sans-serif; font-size: 13px; color: #8B968F">Changed 4 months ago</span></span>
+                <a href="#pwd" style="padding: 9px 16px; border: 1px solid rgba(255,255,255,0.16); border-radius: 7px; color: #fff; font-size: 13px; font-weight: 600">Change</a>
+              </div>
+              <div style="height: 1px; background: rgba(255,255,255,0.09)"></div>
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px">
+                <span style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 15px; font-weight: 600; color: #fff">Two-factor auth</span><span style="font-family: 'Instrument Sans', sans-serif; font-size: 13px; color: #F2A33C">Not enabled</span></span>
+                <a href="#2fa" style="padding: 9px 16px; border-radius: 7px; background: #29D08A; color: #06231A; font-size: 13px; font-weight: 600">Set up</a>
+              </div>
+            </div>
+
+            <div style="border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden">
+              <div style="padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #7F8C86">RECENT ACTIVITY</div>
+              <sc-for list="{{ activity }}" as="a" hint-placeholder-count="4">
+                <div style="display: flex; flex-direction: column; gap: 4px; padding: 14px 20px; border-bottom: 1px solid rgba(255,255,255,0.07)">
+                  <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; color: #DCE3DF">{{ a.t }}</span>
+                  <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #7F8C86">{{ a.when }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isUsers }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-direction: column; gap: 20px">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 24px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; background: rgba(255,255,255,0.02)">
+            <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14.5px; line-height: 1.6; color: #8B968F">Portal users can log in with their own password. Give each person their own login rather than sharing one — you can revoke a single user without changing everyone's password.</span>
+            <a href="#add" style="padding: 11px 20px; border-radius: 8px; background: #29D08A; color: #06231A; font-size: 13.5px; font-weight: 600; white-space: nowrap">Add a user</a>
+          </div>
+
+          <div style="border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden">
+            <div style="display: grid; grid-template-columns: 1.2fr 1.4fr 130px 1fr 120px 110px; gap: 16px; padding: 13px 22px; background: rgba(255,255,255,0.03); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #7F8C86">
+              <span>NAME</span><span>EMAIL</span><span>ROLE</span><span>LAST LOGIN</span><span>STATUS</span><span style="text-align: right">ACTION</span>
+            </div>
+            <sc-for list="{{ users }}" as="u" hint-placeholder-count="3">
+              <div style="display: grid; grid-template-columns: 1.2fr 1.4fr 130px 1fr 120px 110px; gap: 16px; align-items: center; padding: 15px 22px; border-top: 1px solid rgba(255,255,255,0.08)">
+                <span style="display: flex; align-items: center; gap: 11px">
+                  <span style="width: 30px; height: 30px; border-radius: 50%; background: rgba(255,255,255,0.07); display: grid; place-items: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #B6C0BB">{{ u.initials }}</span>
+                  <span style="font-size: 14.5px; font-weight: 600; color: #fff">{{ u.name }}</span>
+                </span>
+                <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; color: #9AA6A1">{{ u.email }}</span>
+                <span style="padding: 4px 10px; width: fit-content; border-radius: 20px; background: {{ u.roleBg }}; color: {{ u.roleFg }}; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em">{{ u.role }}</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #8B968F">{{ u.last }}</span>
+                <span style="padding: 4px 10px; width: fit-content; border-radius: 20px; background: {{ u.stateBg }}; color: {{ u.stateFg }}; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em">{{ u.state }}</span>
+                <span style="display: flex; justify-content: flex-end"><a href="#edit" style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em">EDIT →</a></span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:950}}">
+class Component extends DCLogic {
+  state = { tab: "profile", notify: { invoices: true, expiry: true, tickets: true, offers: false } };
+  renderVals() {
+    const s = this.state;
+    const isProfile = s.tab === "profile";
+    const toggle = (key, t, d) => {
+      const on = s.notify[key];
+      return {
+        t, d,
+        on: () => this.setState({ notify: { ...s.notify, [key]: !on } }),
+        border: on ? "rgba(41,208,138,0.45)" : "rgba(255,255,255,0.14)",
+        track: on ? "rgba(41,208,138,0.35)" : "rgba(255,255,255,0.08)",
+        knob: on ? "#29D08A" : "#7F8C86",
+        justify: on ? "flex-end" : "flex-start"
+      };
+    };
+    return {
+      activeKey: isProfile ? "profile" : "users",
+      heading: isProfile ? "Profile" : "Portal users",
+      isProfile,
+      isUsers: !isProfile,
+      tabs: [["profile", "Profile"], ["users", "Portal users (3)"]].map(([k, label]) => ({
+        label, on: () => this.setState({ tab: k }),
+        bg: s.tab === k ? "#fff" : "transparent",
+        fg: s.tab === k ? "#0C1116" : "#9AA6A1"
+      })),
+      company: [
+        { k: "COMPANY", v: "Leruma Enterprises Ltd", color: "#fff" },
+        { k: "ACCOUNT", v: "#10428", color: "#fff" },
+        { k: "ADDRESS", v: "Kibaha, Pwani", color: "#fff" },
+        { k: "COUNTRY", v: "Tanzania", color: "#fff" },
+        { k: "TIN", v: "Not on file", color: "#F2A33C" },
+        { k: "CUSTOMER SINCE", v: "March 2023", color: "#fff" }
+      ],
+      notifications: [
+        toggle("invoices", "Invoice and payment emails", "New invoices, receipts and overdue reminders"),
+        toggle("expiry", "Expiry warnings", "60, 30 and 7 days before a domain or plan expires"),
+        toggle("tickets", "Ticket replies", "When our team responds to a support ticket"),
+        toggle("offers", "Offers and announcements", "Occasional promotions such as Saba Saba")
+      ],
+      activity: [
+        { t: "Signed in from Dar es Salaam", when: "31 JUL 2026, 18:42 · 41.86.x.x" },
+        { t: "Paid INV-2026-0121 by bank transfer", when: "26 JUN 2026, 09:14" },
+        { t: "Changed nameservers on mazao.co.tz", when: "12 JUN 2026, 11:05" },
+        { t: "Password changed", when: "02 APR 2026, 15:30" }
+      ],
+      users: [
+        { initials: "KK", name: "Kassim Haji Kassim", email: "info@lerumaenterprises.co.tz", role: "OWNER", roleBg: "rgba(74,155,255,0.14)", roleFg: "#7FB4FF", last: "01 AUG, 03:41", state: "ACTIVE", stateBg: "rgba(41,208,138,0.14)", stateFg: "#7BE3B4" },
+        { initials: "AM", name: "Amina Mwakyusa", email: "accounts@lerumaenterprises.co.tz", role: "BILLING", roleBg: "rgba(255,255,255,0.08)", roleFg: "#B6C0BB", last: "28 JUL, 10:12", state: "ACTIVE", stateBg: "rgba(41,208,138,0.14)", stateFg: "#7BE3B4" },
+        { initials: "JS", name: "Juma Salum", email: "it@lerumaenterprises.co.tz", role: "TECHNICAL", roleBg: "rgba(255,255,255,0.08)", roleFg: "#B6C0BB", last: "Never", state: "INVITED", stateBg: "rgba(242,163,60,0.16)", stateFg: "#F2A33C" }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

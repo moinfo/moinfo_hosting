@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="width: 244px; flex-shrink: 0; align-self: stretch; display: flex; flex-direction: column; background: #070A0D; border-right: 1px solid rgba(255,255,255,0.08); font-family: 'Space Grotesk', sans-serif">
+  <div style="display: flex; align-items: center; gap: 11px; padding: 0 20px; height: 68px; border-bottom: 1px solid rgba(255,255,255,0.08)">
+    <div style="display: grid; place-items: center; width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(140deg, #0B5CD5, #0A8F63); color: #fff; font-size: 17px; font-weight: 700; letter-spacing: -0.04em">M</div>
+    <div style="display: flex; flex-direction: column; line-height: 1.1">
+      <span style="font-size: 15px; font-weight: 600; color: #fff">Client Portal</span>
+      <span style="font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.14em; color: #6E7A75">MOINFOTECH</span>
+    </div>
+  </div>
+
+  <div style="flex: 1; display: flex; flex-direction: column; gap: 24px; padding: 22px 12px">
+    <sc-for list="{{ navGroups }}" as="g" hint-placeholder-count="5">
+      <div style="display: flex; flex-direction: column; gap: 3px">
+        <span style="padding: 0 10px 8px; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.16em; color: #4E5A55">{{ g.label }}</span>
+        <sc-for list="{{ g.items }}" as="i" hint-placeholder-count="5">
+          <a href="{{ i.href }}" style="display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 10px; border-radius: 7px; background: {{ i.bg }}; color: {{ i.fg }}; font-size: 14px; font-weight: {{ i.weight }}">
+            <span style="display: flex; align-items: center; gap: 10px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: {{ i.dot }}">▸</span>{{ i.label }}</span>
+            <sc-if value="{{ i.hasBadge }}" hint-placeholder-val="{{ false }}">
+              <span style="padding: 2px 7px; border-radius: 20px; background: {{ i.badgeBg }}; color: {{ i.badgeFg }}; font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600">{{ i.badge }}</span>
+            </sc-if>
+          </a>
+        </sc-for>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 10px; padding: 18px 20px; border-top: 1px solid rgba(255,255,255,0.08)">
+    <div style="display: flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #7F8C86"><span style="width: 6px; height: 6px; border-radius: 50%; background: #29D08A"></span>ALL SYSTEMS OPERATIONAL</div>
+    <a href="./Client Area Login.dc.html" style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86">LOG OUT →</a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:244,&quot;height&quot;:900},&quot;active&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;dashboard&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const active = this.props.active || "dashboard";
+    const item = (key, label, href, opts = {}) => {
+      const on = key === active;
+      return {
+        label, href,
+        bg: on ? "rgba(74,155,255,0.14)" : "transparent",
+        fg: on ? "#fff" : "#9AA6A1",
+        weight: on ? "600" : "400",
+        dot: on ? "#4A9BFF" : "#3D453F",
+        hasBadge: !!opts.badge,
+        badge: opts.badge || "",
+        badgeBg: opts.warn ? "rgba(242,163,60,0.18)" : "rgba(255,255,255,0.08)",
+        badgeFg: opts.warn ? "#F2A33C" : "#9AA6A1"
+      };
+    };
+    const P = "./Client Portal.dc.html";
+    const O = "./Order Services.dc.html";
+    return {
+      navGroups: [
+        { label: "OVERVIEW", items: [item("dashboard", "Dashboard", P), item("news", "News", "./News.dc.html")] },
+        { label: "SERVICES", items: [item("hosting", "My Hosting", "./My Hosting.dc.html", { badge: "6" }), item("domains", "My Domains", "./My Domains.dc.html", { badge: "11" }), item("products", "Products & Services", "./Order Services.dc.html"), item("subs", "Subscriptions", "./Subscriptions.dc.html"), item("order", "Order Services", O)] },
+        { label: "BILLING", items: [item("invoices", "Invoices", "./Invoices.dc.html", { badge: "5", warn: true }), item("payments", "Payments", "./Payments.dc.html"), item("quotes", "Quotations", "./Quotations.dc.html"), item("credit", "Credit Notes", "./Quotations.dc.html"), item("statement", "Statement", "./Statement.dc.html")] },
+        { label: "SUPPORT", items: [item("tickets", "Support Tickets", "./Support Tickets.dc.html"), item("kb", "Knowledgebase", "./Knowledge Base.dc.html")] },
+        { label: "ACCOUNT", items: [item("profile", "Profile", "./Profile.dc.html"), item("users", "Portal Users", "./Profile.dc.html")] }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

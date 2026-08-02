@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="width: 1440px; flex-shrink: 0; font-family: 'Space Grotesk', sans-serif">
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 0 40px; height: 40px; background: #070A0D; border-bottom: 1px solid rgba(255,255,255,0.07); font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #7F8C86">
+    <div style="display: flex; align-items: center; gap: 28px; white-space: nowrap">
+      <span style="display: flex; align-items: center; gap: 8px"><span style="width: 6px; height: 6px; border-radius: 50%; background: #29D08A; box-shadow: 0 0 0 3px rgba(41,208,138,0.18)"></span>ALL SYSTEMS OPERATIONAL · 99.98% / 30d</span>
+      <span>DAR ES SALAAM 22:56</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 24px; white-space: nowrap">
+      <a href="tel:+255689011111" style="color: #A8B4AE">+255 689 011 111</a>
+      <a href="https://wa.me/255689011111" style="color: #A8B4AE">WhatsApp</a>
+      <a href="mailto:info@moinfo.co.tz" style="color: #A8B4AE">info@moinfo.co.tz</a>
+    </div>
+  </div>
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 0 40px; height: 76px; background: rgba(12,17,22,0.92); border-bottom: 1px solid rgba(255,255,255,0.08)">
+    <div style="display: flex; align-items: center; gap: 44px">
+      <a href="./Moinfo Hosting Redesign.dc.html" style="display: flex; align-items: center; gap: 11px; color: inherit; white-space: nowrap; flex-shrink: 0">
+        <div style="display: grid; place-items: center; width: 34px; height: 34px; border-radius: 8px; background: linear-gradient(140deg, #0B5CD5, #0A8F63); color: #fff; font-size: 18px; font-weight: 700; letter-spacing: -0.04em">M</div>
+        <div style="display: flex; flex-direction: column; line-height: 1.05">
+          <span style="font-size: 17px; font-weight: 600; color: #fff; letter-spacing: -0.02em">Moinfo <span style="color: #4A9BFF">Hosting</span></span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.16em; color: #6E7A75">TCRA REGISTRAR · TZ</span>
+        </div>
+      </a>
+      <div style="display: flex; align-items: center; gap: 30px; font-size: 14.5px; color: #B6C0BB; white-space: nowrap; flex-shrink: 0">
+        <a href="./Moinfo Hosting Redesign.dc.html" style="color: {{ homeColor }}; padding-bottom: 3px; border-bottom: {{ homeLine }}">Home</a>
+        <div onMouseEnter="{{ openMenu }}" onMouseLeave="{{ closeMenu }}" style="position: relative; display: flex; align-items: center; gap: 6px; height: 76px; cursor: pointer">
+          <span style="color: {{ hostingColor }}; padding-bottom: 3px; border-bottom: {{ hostingLine }}">Hosting</span><span style="font-size: 10px; color: #7F8C86">▾</span>
+          <sc-if value="{{ menu }}" hint-placeholder-val="{{ false }}">
+            <div style="position: absolute; top: 76px; left: -24px; z-index: 40; display: grid; grid-template-columns: 264px; gap: 1px; padding: 1px; border: 1px solid rgba(255,255,255,0.14); border-radius: 12px; background: rgba(255,255,255,0.12); box-shadow: 0 24px 60px -20px rgba(0,0,0,0.7); overflow: hidden">
+              <a href="./Web Hosting.dc.html" style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 14px 18px; background: #0F151A; color: inherit"><span style="font-size: 14.5px; color: #fff">Web Hosting</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #7BE3B4">80,500/yr</span></a>
+              <a href="./Email Hosting.dc.html" style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 14px 18px; background: #0F151A; color: inherit"><span style="font-size: 14.5px; color: #fff">Email Hosting</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #7BE3B4">60,000/yr</span></a>
+              <a href="./VPS Hosting.dc.html" style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 14px 18px; background: #0F151A; color: inherit"><span style="font-size: 14.5px; color: #fff">VPS Hosting</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #7BE3B4">25,750/mo</span></a>
+              <a href="./Dedicated Server.dc.html" style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 14px 18px; background: #0F151A; color: inherit"><span style="font-size: 14.5px; color: #fff">Dedicated Server</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #7F8C86">Quote</span></a>
+              <a href="./Linux Reseller.dc.html" style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 14px 18px; background: #0F151A; color: inherit"><span style="font-size: 14.5px; color: #fff">Linux Reseller</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #7F8C86">Quote</span></a>
+            </div>
+          </sc-if>
+        </div>
+        <a href="./Domains.dc.html" style="color: {{ domainsColor }}; padding-bottom: 3px; border-bottom: {{ domainsLine }}">Domains</a>
+        <a href="./Web Design.dc.html" style="color: {{ designColor }}; padding-bottom: 3px; border-bottom: {{ designLine }}">Web Design</a>
+        <a href="./Features.dc.html" style="color: {{ featuresColor }}; padding-bottom: 3px; border-bottom: {{ featuresLine }}">Features</a>
+        <a href="./Contact.dc.html" style="color: {{ contactColor }}; padding-bottom: 3px; border-bottom: {{ contactLine }}">Contact</a>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 14px; white-space: nowrap; flex-shrink: 0">
+      <div style="display: flex; flex-shrink: 0; border: 1px solid rgba(255,255,255,0.14); border-radius: 6px; overflow: hidden; font-family: 'JetBrains Mono', monospace; font-size: 11.5px">
+        <span style="padding: 6px 10px; background: #fff; color: #0C1116; font-weight: 600">EN</span>
+        <span style="padding: 6px 10px; color: #8B968F">SW</span>
+      </div>
+      <a href="./Client Area Login.dc.html" style="padding: 10px 18px; border: 1px solid rgba(255,255,255,0.18); border-radius: 7px; color: #DCE3DF; font-size: 14px; font-weight: 500">Client Area</a>
+      <a href="#order" style="padding: 10px 20px; border-radius: 7px; background: #29D08A; color: #06231A; font-size: 14px; font-weight: 600">Get started</a>
+    </div>
+  </div>
+  <div style="display: flex; align-items: center; gap: 10px; padding: 14px 40px; border-bottom: 1px solid rgba(255,255,255,0.08); font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.12em; color: #6E7A75">
+    <a href="./Moinfo Hosting Redesign.dc.html" style="color: #6E7A75">HOME</a><span>/</span><span style="color: #fff">{{ crumb }}</span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:170},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;hosting&quot;,&quot;domains&quot;,&quot;design&quot;,&quot;features&quot;,&quot;contact&quot;],&quot;default&quot;:&quot;hosting&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;crumb&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Web Hosting&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { menu: false };
+  renderVals() {
+    const a = this.props.active || "";
+    const on = (k) => a === k;
+    const v = {};
+    [["home", "Home"], ["hosting", "Hosting"], ["domains", "Domains"], ["design", "Web Design"], ["features", "Features"], ["contact", "Contact"]].forEach(([k]) => {
+      v[k + "Color"] = on(k) ? "#fff" : "#B6C0BB";
+      v[k + "Line"] = on(k) ? "2px solid #29D08A" : "2px solid transparent";
+    });
+    return {
+      ...v,
+      crumb: (this.props.crumb || "").toUpperCase(),
+      menu: this.state.menu,
+      openMenu: () => this.setState({ menu: true }),
+      closeMenu: () => this.setState({ menu: false })
+    };
+  }
+}
+</script>
+</body>
+</html>

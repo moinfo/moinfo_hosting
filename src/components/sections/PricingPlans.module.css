@@ -1,14 +1,27 @@
+/* Marketing section padding from the handoff: 90px vertical on dark. */
 .section {
-  padding: 80px 0;
-  background: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-8));
+  padding: 90px 0;
+  background: var(--dc-bg);
+  border-top: 1px solid var(--dc-hairline);
+}
+
+/* Numbered mono eyebrow — "01 · SHARED HOSTING". */
+.eyebrow {
+  font-family: var(--dc-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dc-accent-text);
+  margin-bottom: 12px;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--mantine-spacing-lg);
+  gap: 20px;
   max-width: 1100px;
   margin: 0 auto;
+  align-items: stretch;
 }
 
 .readMore {

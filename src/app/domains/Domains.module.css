@@ -1,6 +1,8 @@
 .hero {
-  padding: 60px 0 40px;
-  background: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-8));
+  padding: 76px 0 56px;
+  background: var(--dc-bg);
+  position: relative;
+  overflow: hidden;
 }
 
 .heroContent {
@@ -21,7 +23,7 @@
   width: 100%;
   max-width: 650px;
   margin-top: var(--mantine-spacing-lg);
-  background: light-dark(var(--mantine-color-white), var(--mantine-color-dark-6));
+  background: var(--dc-field-bg);
   border: 2px solid var(--mantine-color-brand-blue-5);
   border-radius: var(--mantine-radius-lg);
   overflow: hidden;
@@ -46,7 +48,7 @@
 
 .searchButton {
   padding: 12px 24px;
-  background: var(--mantine-color-brand-blue-6);
+  background: var(--dc-accent);
   color: white;
   border: none;
   border-radius: var(--mantine-radius-md);
@@ -58,30 +60,36 @@
 }
 
 .searchButton:hover {
-  background: var(--mantine-color-brand-blue-7);
+  background: var(--dc-accent-hover);
 }
 
 .pricing {
-  padding: 60px 0;
+  padding: 90px 0;
+  background: var(--dc-surface-alt);
+  border-top: 1px solid var(--dc-hairline);
 }
 
 .features {
-  padding: 60px 0;
-  background: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-8));
+  padding: 90px 0;
+  background: var(--dc-bg);
+  border-top: 1px solid var(--dc-hairline);
 }
 
 .included {
-  padding: 60px 0;
+  padding: 90px 0;
+  background: var(--dc-surface-alt);
+  border-top: 1px solid var(--dc-hairline);
 }
 
 .faq {
-  padding: 60px 0;
-  background: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-8));
+  padding: 90px 0;
+  background: var(--dc-bg);
+  border-top: 1px solid var(--dc-hairline);
 }
 
 .cta {
-  padding: 60px 0;
-  background: linear-gradient(135deg, var(--mantine-color-brand-blue-7), var(--mantine-color-brand-green-7));
+  padding: 66px 0;
+  background: linear-gradient(100deg, var(--dc-brand-blue), var(--dc-brand-green));
 }
 
 @media (max-width: 36em) {

@@ -14,6 +14,28 @@ export const en: Translations = {
   "nav.features": "Features",
   "nav.contact": "Contact",
   "nav.clientArea": "Client Area",
+  // TLD eligibility (TZNIC restricts most .tz second-levels)
+  "tld.audCommercial": "Businesses & commercial",
+  "tld.audNonProfit": "Non-profits & societies",
+  "tld.audAcademic": "Universities & colleges",
+  "tld.audGovernment": "Government bodies",
+  "tld.audPersonal": "Individuals",
+  "tld.audSchools": "Schools",
+  "tld.audNetwork": "Network operators",
+  "tld.audGlobal": "Anyone, worldwide",
+  "tld.audPremium": "Premium — anyone",
+
+  // Service page template
+  "svc.statUptime": "Uptime",
+  "svc.statSupport": "Support",
+  "svc.statSsl": "SSL",
+  "svc.statMigration": "Migration",
+  "svc.free": "Free",
+  "svc.seePlans": "See plans",
+  "svc.plansEyebrow": "01 · Plans",
+  "svc.plansTitle": "Pick a tier",
+
+  "nav.getStarted": "Get started",
   "nav.menu": "Menu",
 
   // Web Hosting Page
@@ -26,6 +48,7 @@ export const en: Translations = {
 
   // TopBar
   "topbar.whatsapp": "WhatsApp",
+  "topbar.status": "ALL SYSTEMS OPERATIONAL · 99.9% UPTIME GUARANTEE",
   "topbar.sabaSaba": "🎉 Saba Saba — up to 50% OFF (1–16 Jul)",
 
   // Saba Saba Offer
@@ -91,6 +114,35 @@ export const en: Translations = {
   "worldcup.dismiss": "Dismiss",
 
   // Hero
+  // Redesigned hero (Control Room). Copy from the design handoff.
+  "hero.eyebrow": "TCRA Accredited .tz Registrar",
+  "hero.title": "Tanzanian hosting, run like infrastructure.",
+  "hero.lede":
+    "cPanel hosting, .tz domains, business email and VPS — on redundant hardware with a support team in the same time zone as you. Start with the domain.",
+  "hero.domainAvailability": "DOMAIN AVAILABILITY",
+  "hero.registryLive": "REGISTRY: tzNIC · LIVE",
+  "hero.domainPlaceholder": "mybusiness.co.tz",
+  "hero.check": "Check",
+  "hero.moreTlds": "more · TSh/yr",
+  "hero.trustMigration": "Free migration from your current host",
+  "hero.trustMoneyBack": "30-day money back",
+  "hero.trustPay": "Pay by M-Pesa, Tigo Pesa, card",
+
+  // Hero price index — figures derive from pricing.ts, never retyped here.
+  "index.title": "PRICE INDEX · TSh",
+  "index.perYear": "/yr",
+  "index.perYearShort": "/yr",
+  "index.webHosting": "Web Hosting",
+  "index.webHostingDetail": "cPanel · free SSL · 6 tiers",
+  "index.emailHosting": "Business Email",
+  "index.emailHostingDetail": "Webmail · IMAP · anti-spam",
+  "index.vps": "Linux VPS",
+  "index.vpsDetail": "Root access · NVMe · scalable",
+  "index.reseller": "Reseller Hosting",
+  "index.resellerDetail": "WHM · white-label · 4 tiers",
+  "index.ssl": "SSL Certificates",
+  "index.sslDetail": "DV, OV & wildcard",
+
   "hero.badge": "TCRA Accredited .tz Domain Registrar",
   "hero.titleLine1": "Fast & Reliable",
   "hero.titleHighlight": "Web Hosting",
@@ -145,6 +197,19 @@ export const en: Translations = {
   "pricing.readMore.vps": "Read More VPS Hosting",
   "pricing.readMore.dedicated": "Read More Dedicated Server",
   "pricing.perYear": "per year",
+  "pricing.year": "year",
+  "pricing.eyebrow": "01 · SHARED HOSTING",
+
+  // Plan card spec grid + tier tags
+  "spec.disk": "Disk",
+  "spec.bandwidth": "Bandwidth",
+  "spec.mailboxes": "Mailboxes",
+  "tier.entry": "Entry",
+  "tier.personal": "Personal",
+  "tier.sme": "SME",
+  "tier.growing": "Growing",
+  "tier.unlimited": "Unlimited",
+  "tier.highVolume": "High volume",
   "pricing.perMonth": "per month",
 
   // Pricing Category Labels

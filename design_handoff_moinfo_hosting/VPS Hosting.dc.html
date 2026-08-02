@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #0C1116; }
+  #root { display: flex; justify-content: center; }
+  a { color: #7BE3B4; text-decoration: none; }
+  a:hover { color: #4A9BFF; }
+</style>
+</helmet>
+<div style="width: 1440px; flex-shrink: 0; background: #0C1116; font-family: 'Space Grotesk', sans-serif">
+  <dc-import name="Site Header" active="hosting" crumb="Hosting / VPS Hosting" hint-size="1440px,170px"></dc-import>
+
+  <div style="position: relative; padding: 72px 40px; background: radial-gradient(900px 420px at 20% 0%, rgba(11,92,213,0.28), transparent 70%), radial-gradient(720px 400px at 88% 30%, rgba(10,143,99,0.22), transparent 70%), #0C1116">
+    <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 80px 80px; pointer-events: none"></div>
+    <div style="position: relative; display: grid; grid-template-columns: 1fr 380px; gap: 64px; align-items: end">
+      <div style="display: flex; flex-direction: column; gap: 26px">
+        <div style="display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4"><span style="width: 22px; height: 1px; background: #29D08A"></span>LINUX VPS · KVM · NVMe · ROOT ACCESS</div>
+        <h1 style="margin: 0; font-size: 62px; line-height: 1.0; letter-spacing: -0.035em; font-weight: 600; color: #fff; max-width: 16ch; text-wrap: pretty">Your own server, without the hardware.</h1>
+        <p style="margin: 0; max-width: 54ch; font-family: 'Instrument Sans', sans-serif; font-size: 17.5px; line-height: 1.6; color: #9AA6A1">Dedicated CPU and RAM on NVMe storage, with full root. Ubuntu, Debian, AlmaLinux or Rocky — rebuild it whenever you like.</p>
+        <div style="display: flex; gap: 12px"><a href="#plans" style="padding: 14px 24px; border-radius: 8px; background: #29D08A; color: #06231A; font-size: 15px; font-weight: 600">See VPS sizes</a><a href="https://wa.me/255689011111" style="padding: 14px 24px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: #fff; font-size: 15px; font-weight: 500">Ask about a custom spec</a></div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden">
+        <div style="padding: 18px 20px; border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1)"><div style="font-size: 24px; font-weight: 600; color: #29D08A">NVMe</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86; margin-top: 4px">STORAGE</div></div>
+        <div style="padding: 18px 20px; border-bottom: 1px solid rgba(255,255,255,0.1)"><div style="font-size: 24px; font-weight: 600; color: #fff">Root</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86; margin-top: 4px">FULL ACCESS</div></div>
+        <div style="padding: 18px 20px; border-right: 1px solid rgba(255,255,255,0.1)"><div style="font-size: 24px; font-weight: 600; color: #fff">1 Gbps</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86; margin-top: 4px">NETWORK PORT</div></div>
+        <div style="padding: 18px 20px"><div style="font-size: 24px; font-weight: 600; color: #fff">&lt; 1 hr</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86; margin-top: 4px">PROVISIONING</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="plans" style="padding: 90px 40px; background: #0A0E12; border-top: 1px solid rgba(255,255,255,0.08)">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; padding-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.1)">
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4">01 · SIZES</span>
+        <h2 style="margin: 0; font-size: 40px; font-weight: 600; letter-spacing: -0.03em; color: #fff">Four sizes, billed monthly</h2>
+      </div>
+      <p style="margin: 0; max-width: 36ch; font-family: 'Instrument Sans', sans-serif; font-size: 14.5px; line-height: 1.65; color: #8B968F">Resize up at any time without rebuilding. cPanel or WHM licence available as an add-on.</p>
+    </div>
+    <div style="margin-top: 32px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden">
+      <div style="display: grid; grid-template-columns: 1.2fr repeat(5, 1fr) auto; gap: 16px; padding: 14px 24px; background: rgba(255,255,255,0.04); font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86">
+        <span>SIZE</span><span>vCPU</span><span>RAM</span><span>NVMe</span><span>TRANSFER</span><span>PRICE / MO</span><span></span>
+      </div>
+      <sc-for list="{{ plans }}" as="p" hint-placeholder-count="4">
+        <div style="display: grid; grid-template-columns: 1.2fr repeat(5, 1fr) auto; gap: 16px; align-items: center; padding: 18px 24px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 14.5px; color: #B6C0BB; background: {{ p.rowBg }}">
+          <span style="font-weight: 600; color: #fff">{{ p.name }}</span>
+          <span style="font-family: 'JetBrains Mono', monospace">{{ p.cpu }}</span>
+          <span style="font-family: 'JetBrains Mono', monospace">{{ p.ram }}</span>
+          <span style="font-family: 'JetBrains Mono', monospace">{{ p.disk }}</span>
+          <span style="font-family: 'JetBrains Mono', monospace">{{ p.transfer }}</span>
+          <span style="font-family: 'JetBrains Mono', monospace; color: #7BE3B4">{{ p.price }}</span>
+          <a href="#order" style="font-size: 14px">Order →</a>
+        </div>
+      </sc-for>
+    </div>
+    <div style="display: flex; gap: 10px; padding-top: 22px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #7F8C86">
+      <span style="padding: 7px 12px; border: 1px solid rgba(255,255,255,0.12); border-radius: 6px">UBUNTU</span>
+      <span style="padding: 7px 12px; border: 1px solid rgba(255,255,255,0.12); border-radius: 6px">DEBIAN</span>
+      <span style="padding: 7px 12px; border: 1px solid rgba(255,255,255,0.12); border-radius: 6px">ALMALINUX</span>
+      <span style="padding: 7px 12px; border: 1px solid rgba(255,255,255,0.12); border-radius: 6px">ROCKY</span>
+      <span style="padding: 7px 12px; border: 1px solid rgba(255,255,255,0.12); border-radius: 6px">+ cPANEL / WHM ADD-ON</span>
+    </div>
+  </div>
+
+  <div style="padding: 90px 40px; background: #0C1116; border-top: 1px solid rgba(255,255,255,0.08)">
+    <div style="display: grid; grid-template-columns: 340px 1fr; gap: 64px; align-items: start">
+      <div style="display: flex; flex-direction: column; gap: 16px">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4">02 · WHAT'S INCLUDED</span>
+        <h2 style="margin: 0; font-size: 40px; font-weight: 600; letter-spacing: -0.03em; color: #fff; line-height: 1.05">Managed as much or as little as you want</h2>
+        <p style="margin: 0; font-family: 'Instrument Sans', sans-serif; font-size: 16px; line-height: 1.65; color: #8B968F">Run it yourself with full root, or add our managed option and we handle patching, monitoring and backups.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden">
+        <sc-for list="{{ features }}" as="f" hint-placeholder-count="6">
+          <div style="padding: 28px; background: #0C1116; display: flex; flex-direction: column; gap: 9px">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 22px; color: {{ f.color }}; letter-spacing: -0.02em">{{ f.k }}</span>
+            <span style="font-size: 17px; font-weight: 600; color: #fff">{{ f.t }}</span>
+            <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; line-height: 1.65; color: #8B968F">{{ f.d }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <dc-import name="Site Footer" hint-size="1440px,620px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:1000}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      plans: [
+        { name: "VPS 1", cpu: "1", ram: "2 GB", disk: "40 GB", transfer: "1 TB", price: "25,750", rowBg: "transparent" },
+        { name: "VPS 2", cpu: "2", ram: "4 GB", disk: "80 GB", transfer: "2 TB", price: "51,500", rowBg: "rgba(41,208,138,0.06)" },
+        { name: "VPS 4", cpu: "4", ram: "8 GB", disk: "160 GB", transfer: "4 TB", price: "103,000", rowBg: "transparent" },
+        { name: "VPS 8", cpu: "8", ram: "16 GB", disk: "320 GB", transfer: "8 TB", price: "206,000", rowBg: "transparent" }
+      ],
+      features: [
+        { k: "Root", color: "#29D08A", t: "Full administrative access", d: "SSH in as root, install what you need, rebuild the OS from the panel at any time." },
+        { k: "KVM", color: "#4A9BFF", t: "Real virtualisation", d: "Dedicated CPU and RAM, not oversold containers. Your workload isn't someone else's noise." },
+        { k: "Snap", color: "#29D08A", t: "Snapshots &amp; backups", d: "Take a snapshot before a risky change and roll back in minutes." },
+        { k: "IPv4", color: "#4A9BFF", t: "Dedicated IP address", d: "One public IPv4 included, additional addresses on request." },
+        { k: "Mon", color: "#29D08A", t: "Monitoring on request", d: "We watch CPU, disk and service health and call you before your customers do." },
+        { k: "24/7", color: "#4A9BFF", t: "Support from Kibaha", d: "Reach a real engineer on phone or WhatsApp, in Swahili or English." }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

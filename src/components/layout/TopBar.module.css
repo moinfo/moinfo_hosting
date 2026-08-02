@@ -1,13 +1,42 @@
+/* 40px mono utility strip on the deepest surface — see handoff README §2. */
 .topBar {
-  background: var(--mantine-color-dark-7);
-  color: var(--mantine-color-white);
-  font-size: var(--mantine-font-size-xs);
+  background: var(--dc-surface-deep);
+  color: var(--dc-text-label);
+  font-family: var(--dc-font-mono);
+  font-size: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   position: relative;
   z-index: 201;
   overflow: hidden;
   max-height: 60px;
-  padding: 6px 0;
+  padding: 0;
   transition: max-height 200ms ease, opacity 200ms ease, padding 200ms ease;
+}
+
+.statusGroup {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  white-space: nowrap;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--dc-accent);
+  box-shadow: 0 0 0 3px rgba(41, 208, 138, 0.18);
+  flex-shrink: 0;
+}
+
+.clock {
+  color: var(--dc-text-label);
 }
 
 .hidden {
@@ -22,25 +51,25 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 24px;
+  height: 40px;
 }
 
 .contactGroup {
   display: flex;
   align-items: center;
-  gap: var(--mantine-spacing-md);
+  gap: 24px;
+  white-space: nowrap;
 }
 
 .contactItem {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  color: var(--mantine-color-gray-3);
+  color: #a8b4ae;
   text-decoration: none;
   transition: color 150ms ease;
 }
 
 .contactItem:hover {
-  color: var(--mantine-color-white);
+  color: var(--dc-text);
 }
 
 .sabaSabaBadge {

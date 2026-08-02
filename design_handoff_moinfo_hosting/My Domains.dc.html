@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #0C1116; }
+  #root { display: flex; justify-content: center; }
+  a { color: #7BE3B4; text-decoration: none; }
+  a:hover { color: #4A9BFF; }
+</style>
+</helmet>
+<div style="width: 1440px; flex-shrink: 0; display: flex; align-items: stretch; background: #0C1116; font-family: 'Space Grotesk', sans-serif">
+  <dc-import name="Portal Sidebar" active="domains" hint-size="244px,100%"></dc-import>
+
+  <div style="flex: 1; min-width: 0; display: flex; flex-direction: column">
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 0 32px; height: 68px; border-bottom: 1px solid rgba(255,255,255,0.08); background: rgba(12,17,22,0.92)">
+      <div style="display: flex; align-items: center; gap: 14px; flex: 1; max-width: 420px; padding: 0 16px; height: 40px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; background: #070A0D">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #4E5A55">⌕</span>
+        <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #5C665F">Search your domains…</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 14px">
+        <a href="./Client Portal.dc.html" style="padding: 9px 16px; border: 1px solid rgba(255,255,255,0.16); border-radius: 7px; color: #DCE3DF; font-size: 13.5px; font-weight: 500">Dashboard</a>
+        <span style="width: 1px; height: 26px; background: rgba(255,255,255,0.1)"></span>
+        <div style="display: flex; align-items: center; gap: 10px">
+          <div style="width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(140deg, #0B5CD5, #0A8F63); display: grid; place-items: center; color: #fff; font-size: 13px; font-weight: 600">KK</div>
+          <div style="display: flex; flex-direction: column; line-height: 1.15">
+            <span style="font-size: 13.5px; font-weight: 600; color: #fff">Kassim Haji Kassim</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; color: #6E7A75">ACCT #10428 · KIBAHA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 24px; padding: 32px">
+
+      <sc-if value="{{ isList }}" hint-placeholder-val="{{ true }}">
+        <div style="display: flex; flex-direction: column; gap: 24px">
+          <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px">
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #7BE3B4">SERVICES</span>
+              <h1 style="margin: 0; font-size: 34px; font-weight: 600; letter-spacing: -0.03em; color: #fff">My domains</h1>
+            </div>
+            <div style="display: flex; gap: 10px">
+              <a href="./Order Services.dc.html" style="padding: 11px 20px; border-radius: 8px; background: #29D08A; color: #06231A; font-size: 13.5px; font-weight: 600">Register a domain</a>
+              <a href="./Transfer to Us.dc.html" style="padding: 11px 20px; border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; color: #fff; font-size: 13.5px; font-weight: 600">Transfer one in</a>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 12px; padding: 20px 24px; border: 1px solid rgba(242,163,60,0.35); border-radius: 12px; background: rgba(242,163,60,0.07)">
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px">
+              <div style="display: flex; flex-direction: column; gap: 5px">
+                <span style="display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #F2A33C"><span style="width: 6px; height: 6px; border-radius: 50%; background: #F2A33C"></span>ACTION NEEDED</span>
+                <span style="font-size: 16.5px; font-weight: 600; color: #fff">1 domain expired, 1 expiring within 45 days</span>
+                <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; color: #8B968F">reportsanalysis.co.tz expired 20 Apr and is in the grace period · mazao.co.tz renews 6 Aug. Auto-renew is off on all 11 domains.</span>
+              </div>
+              <a href="./Invoices.dc.html" style="padding: 11px 20px; border-radius: 8px; background: #F2A33C; color: #2A1A05; font-size: 13.5px; font-weight: 600; white-space: nowrap">Renew both</a>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden">
+            <div style="display: flex; flex-direction: column; gap: 6px; padding: 20px 24px; background: #0C1116"><span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #7F8C86">ACTIVE</span><span style="font-size: 28px; font-weight: 600; color: #7BE3B4; letter-spacing: -0.02em">9</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px; padding: 20px 24px; background: #0C1116"><span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #7F8C86">PENDING</span><span style="font-size: 28px; font-weight: 600; color: #fff; letter-spacing: -0.02em">2</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px; padding: 20px 24px; background: #0C1116"><span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #7F8C86">EXPIRED</span><span style="font-size: 28px; font-weight: 600; color: #FF7B72; letter-spacing: -0.02em">1</span></div>
+            <div style="display: flex; flex-direction: column; gap: 6px; padding: 20px 24px; background: #0C1116"><span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #7F8C86">EXPIRING SOON</span><span style="font-size: 28px; font-weight: 600; color: #F2A33C; letter-spacing: -0.02em">1</span></div>
+          </div>
+
+          <div style="border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden">
+            <div style="display: grid; grid-template-columns: 1.5fr 1fr 130px 1fr 110px 150px; gap: 14px; padding: 13px 22px; background: rgba(255,255,255,0.03); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #7F8C86">
+              <span>DOMAIN</span><span>REGISTERED</span><span>AUTO-RENEW</span><span>NEXT DUE</span><span>STATUS</span><span style="text-align: right">ACTIONS</span>
+            </div>
+            <sc-for list="{{ rows }}" as="r" hint-placeholder-count="11">
+              <div style="display: grid; grid-template-columns: 1.5fr 1fr 130px 1fr 110px 150px; gap: 14px; align-items: center; padding: 14px 22px; border-top: 1px solid rgba(255,255,255,0.08); background: {{ r.rowBg }}">
+                <span style="display: flex; flex-direction: column; gap: 4px">
+                  <button type="button" onClick="{{ r.open }}" style="padding: 0; border: 0; background: none; text-align: left; font-size: 14.5px; font-weight: 600; color: #fff; cursor: pointer">{{ r.domain }}</button>
+                  <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.08em; color: {{ r.sslColor }}">{{ r.ssl }}</span>
+                </span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #8B968F">{{ r.registered }}</span>
+                <span style="padding: 4px 9px; width: fit-content; border-radius: 20px; background: rgba(255,255,255,0.06); color: #8B968F; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em">OFF</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: {{ r.dueColor }}">{{ r.due }}</span>
+                <span style="padding: 4px 9px; width: fit-content; border-radius: 20px; background: {{ r.tagBg }}; color: {{ r.tagFg }}; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em">{{ r.status }}</span>
+                <span style="display: flex; justify-content: flex-end; gap: 8px">
+                  <sc-if value="{{ r.renewable }}" hint-placeholder-val="{{ true }}">
+                    <a href="./Invoices.dc.html" style="padding: 7px 12px; border-radius: 7px; background: {{ r.btnBg }}; border: 1px solid {{ r.btnBorder }}; color: {{ r.btnFg }}; font-size: 12.5px; font-weight: 600">Renew</a>
+                  </sc-if>
+                  <button type="button" onClick="{{ r.open }}" style="padding: 7px 12px; border: 1px solid rgba(255,255,255,0.16); border-radius: 7px; background: none; color: #B6C0BB; font-family: 'Space Grotesk', sans-serif; font-size: 12.5px; cursor: pointer">Manage</button>
+                </span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isDetail }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-direction: column; gap: 24px">
+          <button type="button" onClick="{{ back }}" style="align-self: flex-start; display: flex; align-items: center; gap: 9px; padding: 0; border: 0; background: none; color: #7BE3B4; font-family: 'Space Grotesk', sans-serif; font-size: 14px; cursor: pointer">← My domains</button>
+
+          <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px">
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <span style="display: flex; align-items: center; gap: 12px">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #7BE3B4">DOMAIN</span>
+                <span style="padding: 3px 10px; border-radius: 20px; background: {{ openTagBg }}; color: {{ openTagFg }}; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em">{{ openStatus }}</span>
+              </span>
+              <h1 style="margin: 0; font-size: 34px; font-weight: 600; letter-spacing: -0.03em; color: #fff">{{ openDomain }}</h1>
+            </div>
+            <div style="display: flex; gap: 10px">
+              <a href="./Invoices.dc.html" style="padding: 13px 22px; border-radius: 8px; background: #29D08A; color: #06231A; font-size: 14.5px; font-weight: 600">Renew — TSh 19,999</a>
+              <a href="#site" style="padding: 13px 20px; border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; color: #fff; font-size: 14px">Visit site</a>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 250px 1fr; gap: 24px; align-items: start">
+            <div style="display: flex; flex-direction: column; gap: 3px; padding: 10px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px">
+              <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="6">
+                <button type="button" onClick="{{ t.on }}" style="display: flex; align-items: center; justify-content: space-between; padding: 11px 14px; border: 0; border-radius: 8px; background: {{ t.bg }}; color: {{ t.fg }}; font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: {{ t.weight }}; text-align: left; cursor: pointer">{{ t.label }}<span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: {{ t.hint }}">›</span></button>
+              </sc-for>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 24px">
+
+              <sc-if value="{{ isOverview }}" hint-placeholder-val="{{ true }}">
+                <div style="display: flex; flex-direction: column; gap: 24px">
+                  <div style="border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden">
+                    <div style="padding: 18px 22px; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 17px; font-weight: 600; color: #fff">Overview</div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.1)">
+                      <sc-for list="{{ facts }}" as="f" hint-placeholder-count="8">
+                        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 15px 22px; background: #0C1116">
+                          <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86">{{ f.k }}</span>
+                          <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: {{ f.color }}">{{ f.v }}</span>
+                        </div>
+                      </sc-for>
+                    </div>
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px 24px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px">
+                    <span style="font-size: 16.5px; font-weight: 600; color: #fff">What would you like to do?</span>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px">
+                      <button type="button" onClick="{{ goNs }}" style="padding: 10px 16px; border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; background: none; color: #B6C0BB; font-family: 'Space Grotesk', sans-serif; font-size: 13.5px; cursor: pointer">Change nameservers</button>
+                      <button type="button" onClick="{{ goContact }}" style="padding: 10px 16px; border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; background: none; color: #B6C0BB; font-family: 'Space Grotesk', sans-serif; font-size: 13.5px; cursor: pointer">Update WHOIS contact</button>
+                      <button type="button" onClick="{{ goRenew }}" style="padding: 10px 16px; border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; background: none; color: #B6C0BB; font-family: 'Space Grotesk', sans-serif; font-size: 13.5px; cursor: pointer">Turn on auto-renew</button>
+                      <button type="button" onClick="{{ goEpp }}" style="padding: 10px 16px; border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; background: none; color: #B6C0BB; font-family: 'Space Grotesk', sans-serif; font-size: 13.5px; cursor: pointer">Get EPP transfer code</button>
+                    </div>
+                  </div>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isRenew }}" hint-placeholder-val="{{ false }}">
+                <div style="display: flex; flex-direction: column; gap: 18px; padding: 26px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px">
+                  <span style="font-size: 18px; font-weight: 600; color: #fff">Auto-renew</span>
+                  <span style="max-width: 62ch; font-family: 'Instrument Sans', sans-serif; font-size: 15px; line-height: 1.65; color: #8B968F">With auto-renew on, we take the renewal from your wallet 30 days before expiry and email the receipt. If the wallet is short we invoice you as usual — nothing lapses silently.</span>
+                  <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 20px; border: 1px solid {{ autoBorder }}; border-radius: 10px; background: {{ autoBg }}">
+                    <span style="display: flex; flex-direction: column; gap: 4px">
+                      <span style="font-size: 15.5px; font-weight: 600; color: #fff">{{ autoTitle }}</span>
+                      <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; color: #8B968F">{{ autoNote }}</span>
+                    </span>
+                    <button type="button" onClick="{{ toggleAuto }}" style="width: 54px; height: 30px; padding: 3px; border: 1px solid {{ autoBorder }}; border-radius: 20px; background: {{ autoTrack }}; cursor: pointer; display: flex; justify-content: {{ autoJustify }}">
+                      <span style="width: 22px; height: 22px; border-radius: 50%; background: {{ autoKnob }}; display: block"></span>
+                    </button>
+                  </div>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isNs }}" hint-placeholder-val="{{ false }}">
+                <div style="border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden">
+                  <div style="display: flex; align-items: center; justify-content: space-between; padding: 18px 22px; border-bottom: 1px solid rgba(255,255,255,0.1)">
+                    <span style="font-size: 17px; font-weight: 600; color: #fff">Nameservers</span>
+                    <a href="#ns" style="padding: 9px 16px; border: 1px solid rgba(255,255,255,0.16); border-radius: 7px; color: #fff; font-size: 13px; font-weight: 600">Change</a>
+                  </div>
+                  <div style="padding: 20px 22px; font-family: 'Instrument Sans', sans-serif; font-size: 14.5px; line-height: 1.65; color: #8B968F; border-bottom: 1px solid rgba(255,255,255,0.08)">Nameservers decide where the domain points — the website and mail follow them. Only change these if you know the nameservers of the new host.</div>
+                  <sc-for list="{{ nameservers }}" as="n" hint-placeholder-count="4">
+                    <div style="display: grid; grid-template-columns: 70px 1fr; gap: 16px; align-items: center; padding: 14px 22px; border-bottom: 1px solid rgba(255,255,255,0.07)">
+                      <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #7F8C86">{{ n.k }}</span>
+                      <span style="font-family: 'JetBrains Mono', monospace; font-size: 13.5px; color: #fff">{{ n.v }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isAddons }}" hint-placeholder-val="{{ false }}">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden">
+                  <sc-for list="{{ addons }}" as="a" hint-placeholder-count="4">
+                    <div style="display: flex; flex-direction: column; gap: 10px; padding: 24px; background: #0C1116">
+                      <div style="display: flex; align-items: center; justify-content: space-between">
+                        <span style="font-size: 16.5px; font-weight: 600; color: #fff">{{ a.t }}</span>
+                        <span style="padding: 4px 10px; border-radius: 20px; background: {{ a.tagBg }}; color: {{ a.tagFg }}; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em">{{ a.state }}</span>
+                      </div>
+                      <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; line-height: 1.6; color: #8B968F">{{ a.d }}</span>
+                      <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #7BE3B4; margin-top: 2px">{{ a.price }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+                <div style="border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden">
+                  <div style="display: flex; align-items: center; justify-content: space-between; padding: 18px 22px; border-bottom: 1px solid rgba(255,255,255,0.1)">
+                    <span style="font-size: 17px; font-weight: 600; color: #fff">WHOIS contact information</span>
+                    <a href="#contact" style="padding: 9px 16px; border: 1px solid rgba(255,255,255,0.16); border-radius: 7px; color: #fff; font-size: 13px; font-weight: 600">Edit</a>
+                  </div>
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.1)">
+                    <sc-for list="{{ contact }}" as="c" hint-placeholder-count="8">
+                      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 15px 22px; background: #0C1116">
+                        <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86">{{ c.k }}</span>
+                        <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #fff">{{ c.v }}</span>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isEpp }}" hint-placeholder-val="{{ false }}">
+                <div style="display: flex; flex-direction: column; gap: 18px; padding: 26px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px">
+                  <span style="font-size: 18px; font-weight: 600; color: #fff">EPP transfer code</span>
+                  <span style="max-width: 62ch; font-family: 'Instrument Sans', sans-serif; font-size: 15px; line-height: 1.65; color: #8B968F">This code is what another registrar needs to take the domain from us. Treat it like a password — anyone holding it can start a transfer.</span>
+                  <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 20px; border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; background: #070A0D">
+                    <span style="font-family: 'JetBrains Mono', monospace; font-size: 16px; letter-spacing: 0.14em; color: #fff">{{ eppValue }}</span>
+                    <button type="button" onClick="{{ toggleEpp }}" style="padding: 9px 16px; border: 1px solid rgba(255,255,255,0.16); border-radius: 7px; background: none; color: #B6C0BB; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; cursor: pointer">{{ eppLabel }}</button>
+                  </div>
+                  <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13px; color: #7F8C86">Every time this code is revealed it is written to the domain's activity log.</span>
+                </div>
+              </sc-if>
+
+            </div>
+          </div>
+        </div>
+      </sc-if>
+
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:950}}">
+class Component extends DCLogic {
+  state = { view: "list", open: "lemuru.co.tz", tab: "overview", auto: false, showEpp: false };
+  data() {
+    const T = {
+      active: { tagBg: "rgba(41,208,138,0.14)", tagFg: "#7BE3B4", status: "ACTIVE", renewable: true },
+      pending: { tagBg: "rgba(74,155,255,0.14)", tagFg: "#7FB4FF", status: "PENDING", renewable: false },
+      expired: { tagBg: "rgba(255,123,114,0.14)", tagFg: "#FF7B72", status: "EXPIRED", renewable: true }
+    };
+    const mk = (domain, registered, due, state, opts = {}) => {
+      const t = T[state];
+      const urgent = opts.urgent;
+      return {
+        domain, registered, due, key: state, ...t,
+        ssl: opts.ssl || "SSL VALID TO 26 OCT 2026",
+        sslColor: opts.ssl ? "#7F8C86" : "#5E8C77",
+        dueColor: state === "expired" ? "#FF7B72" : urgent ? "#F2A33C" : "#8B968F",
+        rowBg: state === "expired" ? "rgba(255,123,114,0.05)" : urgent ? "rgba(242,163,60,0.05)" : "transparent",
+        btnBg: state === "expired" || urgent ? "#F2A33C" : "transparent",
+        btnBorder: state === "expired" || urgent ? "#F2A33C" : "rgba(255,255,255,0.16)",
+        btnFg: state === "expired" || urgent ? "#2A1A05" : "#B6C0BB"
+      };
+    };
+    return [
+      mk("lemuru.co.tz", "31 MAR 2021", "31 MAR 2027", "active"),
+      mk("leruma.co.tz", "22 OCT 2020", "22 OCT 2026", "active"),
+      mk("lerumaenterprises.co.tz", "26 JUN 2021", "26 JUN 2027", "active"),
+      mk("lerumalogistics.co.tz", "25 JAN 2026", "25 JAN 2027", "active"),
+      mk("loliondoshop.co.tz", "01 NOV 2024", "02 NOV 2026", "active"),
+      mk("mailmojashop.co.tz", "27 JUN 2019", "02 NOV 2026", "active"),
+      mk("mainstore.co.tz", "02 NOV 2020", "02 NOV 2026", "active"),
+      mk("mazao.co.tz", "06 AUG 2023", "06 AUG 2026", "active", { urgent: true }),
+      mk("mohamed.co.tz", "—", "—", "pending", { ssl: "AWAITING REGISTRATION" }),
+      mk("moinfo2.co.tz", "—", "—", "pending", { ssl: "AWAITING REGISTRATION" }),
+      mk("reportsanalysis.co.tz", "20 APR 2021", "20 APR 2026", "expired", { ssl: "SSL EXPIRED" })
+    ];
+  }
+  renderVals() {
+    const s = this.state;
+    const all = this.data();
+    const open = all.find((d) => d.domain === s.open) || all[0];
+    const tab = (key, label) => ({
+      label, on: () => this.setState({ tab: key }),
+      bg: s.tab === key ? "rgba(74,155,255,0.14)" : "transparent",
+      fg: s.tab === key ? "#fff" : "#9AA6A1",
+      weight: s.tab === key ? "600" : "400",
+      hint: s.tab === key ? "#7FB4FF" : "#4E5A55"
+    });
+    return {
+      isList: s.view === "list",
+      isDetail: s.view === "detail",
+      back: () => this.setState({ view: "list", tab: "overview" }),
+      rows: all.map((d) => ({ ...d, open: () => this.setState({ view: "detail", open: d.domain, tab: "overview" }) })),
+      openDomain: open.domain,
+      openStatus: open.status,
+      openTagBg: open.tagBg,
+      openTagFg: open.tagFg,
+      tabs: [tab("overview", "Overview"), tab("renew", "Auto-renew"), tab("ns", "Nameservers"), tab("addons", "Add-ons"), tab("contact", "Contact information"), tab("epp", "EPP code")],
+      isOverview: s.tab === "overview",
+      isRenew: s.tab === "renew",
+      isNs: s.tab === "ns",
+      isAddons: s.tab === "addons",
+      isContact: s.tab === "contact",
+      isEpp: s.tab === "epp",
+      goNs: () => this.setState({ tab: "ns" }),
+      goContact: () => this.setState({ tab: "contact" }),
+      goRenew: () => this.setState({ tab: "renew" }),
+      goEpp: () => this.setState({ tab: "epp" }),
+      facts: [
+        { k: "REGISTERED", v: open.registered, color: "#fff" },
+        { k: "NEXT DUE", v: open.due, color: open.dueColor },
+        { k: "REGISTRAR", v: "MoinfoTech (TCRA)", color: "#fff" },
+        { k: "TERM", v: "1 year", color: "#fff" },
+        { k: "RECURRING", v: "TSh 20,000 / yr", color: "#fff" },
+        { k: "AUTO-RENEW", v: s.auto ? "ON" : "OFF", color: s.auto ? "#7BE3B4" : "#F2A33C" },
+        { k: "REGISTRAR LOCK", v: "ENABLED", color: "#7BE3B4" },
+        { k: "SSL", v: "Let's Encrypt, valid to 26 Oct 2026", color: "#7BE3B4" }
+      ],
+      autoTitle: s.auto ? "Auto-renew is on" : "Auto-renew is off",
+      autoNote: s.auto ? "We will renew this domain 30 days before it expires." : "You will get reminders at 60, 30 and 7 days instead.",
+      autoBorder: s.auto ? "rgba(41,208,138,0.45)" : "rgba(255,255,255,0.14)",
+      autoBg: s.auto ? "rgba(41,208,138,0.07)" : "transparent",
+      autoTrack: s.auto ? "rgba(41,208,138,0.35)" : "rgba(255,255,255,0.08)",
+      autoKnob: s.auto ? "#29D08A" : "#7F8C86",
+      autoJustify: s.auto ? "flex-end" : "flex-start",
+      toggleAuto: () => this.setState({ auto: !s.auto }),
+      nameservers: [
+        { k: "NS1", v: "ns1.moinfo.co.tz" },
+        { k: "NS2", v: "ns2.moinfo.co.tz" },
+        { k: "NS3", v: "ns3.moinfo.co.tz" },
+        { k: "NS4", v: "ns4.moinfo.co.tz" }
+      ],
+      addons: [
+        { t: "WHOIS privacy", d: "Hide your name, email and phone from public WHOIS lookups.", state: "AVAILABLE", price: "TSh 12,000 / yr", tagBg: "rgba(255,255,255,0.08)", tagFg: "#9AA6A1" },
+        { t: "DNS management", d: "Full A, CNAME, MX and TXT record control from the portal.", state: "INCLUDED", price: "Free", tagBg: "rgba(41,208,138,0.14)", tagFg: "#7BE3B4" },
+        { t: "Email forwarding", d: "Forward mail on this domain to any address you already use.", state: "INCLUDED", price: "Free", tagBg: "rgba(41,208,138,0.14)", tagFg: "#7BE3B4" },
+        { t: "Domain lock", d: "Blocks transfers away until you unlock it yourself.", state: "ACTIVE", price: "Free", tagBg: "rgba(41,208,138,0.14)", tagFg: "#7BE3B4" }
+      ],
+      contact: [
+        { k: "REGISTRANT", v: "Kassim Haji Kassim" },
+        { k: "ORGANISATION", v: "Leruma Enterprises Ltd" },
+        { k: "EMAIL", v: "info@lerumaenterprises.co.tz" },
+        { k: "PHONE", v: "+255 714 232 827" },
+        { k: "ADDRESS", v: "Kibaha, Pwani" },
+        { k: "COUNTRY", v: "Tanzania" },
+        { k: "ADMIN CONTACT", v: "Same as registrant" },
+        { k: "TECH CONTACT", v: "MoinfoTech support" }
+      ],
+      eppValue: s.showEpp ? "K7m-92Qx-4Lp8" : "••••••••••••",
+      eppLabel: s.showEpp ? "HIDE" : "REVEAL",
+      toggleEpp: () => this.setState({ showEpp: !s.showEpp })
+    };
+  }
+}
+</script>
+</body>
+</html>

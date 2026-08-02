@@ -1,8 +1,9 @@
 import "@mantine/core/styles.css";
+import "@/theme/tokens.css";
 import "./globals.css";
 
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Space_Grotesk, Instrument_Sans, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 import { theme } from "@/theme";
@@ -18,6 +19,31 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "optional", // "swap" causes CLS when font loads and text reflows; "optional" skips swap entirely
+});
+
+// Redesign type system. The mono/sans split is the core of it: headings and UI
+// in Space Grotesk, prose in Instrument Sans, and every value that is *data* —
+// a price, date, quota, domain, invoice number — in JetBrains Mono.
+// self-hosted by next/font, so no Google Fonts request at runtime.
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-display",
+  display: "optional",
+});
+
+const instrumentSans = Instrument_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-body",
+  display: "optional",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-mono",
+  display: "optional",
 });
 
 const SITE_URL = "https://moinfo.co.tz";
@@ -144,7 +170,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${inter.variable} ${spaceGrotesk.variable} ${instrumentSans.variable} ${jetbrainsMono.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         <ColorSchemeScript defaultColorScheme="light" />
         <link rel="icon" href="/images/logo.png" />

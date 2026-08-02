@@ -1,38 +1,53 @@
 .section {
-  background: linear-gradient(135deg, var(--mantine-color-dark-8), var(--mantine-color-dark-9));
-  padding: 50px 0;
+  background: var(--dc-bg);
+  padding: 0;
+  border-top: 1px solid var(--dc-hairline);
 }
 
+/*
+ * Signature hairline grid — a 1px-gap grid over a light background, each cell
+ * repainted the section colour. Gives exact dividers with no border doubling.
+ */
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--mantine-spacing-xl);
+  gap: 1px;
+  background: var(--dc-grid-line);
 }
 
 @media (max-width: 48em) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--mantine-spacing-lg);
   }
 }
 
 .stat {
-  text-align: center;
+  background: var(--dc-bg);
+  padding: 34px 28px;
+  text-align: left;
 }
 
+/* A stat is data, so it is mono. */
 .number {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--mantine-color-white);
+  font-family: var(--dc-font-mono);
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--dc-text);
   line-height: 1;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  font-variant-numeric: tabular-nums;
 }
 
 .suffix {
-  color: var(--mantine-color-brand-green-4);
+  color: var(--dc-accent-text);
 }
 
+/* Mono eyebrow label, same treatment as every other field label. */
 .label {
-  font-size: var(--mantine-font-size-sm);
-  color: var(--mantine-color-gray-5);
+  font-family: var(--dc-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dc-text-label);
 }

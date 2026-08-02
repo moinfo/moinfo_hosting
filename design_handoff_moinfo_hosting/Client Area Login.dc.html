@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #0C1116; }
+  #root { display: flex; justify-content: center; }
+  a { color: #7BE3B4; text-decoration: none; }
+  a:hover { color: #4A9BFF; }
+  input { font-family: 'Instrument Sans', sans-serif; }
+  input::placeholder { color: #4E5A55; }
+</style>
+</helmet>
+<div style="width: 1440px; min-height: 900px; flex-shrink: 0; display: grid; grid-template-columns: 1fr 1fr; background: #0C1116; font-family: 'Space Grotesk', sans-serif">
+
+  <div style="position: relative; display: flex; flex-direction: column; justify-content: space-between; padding: 44px 56px; background: linear-gradient(165deg, #0B5CD5 0%, #0A4FA8 42%, #0A8F63 100%); overflow: hidden">
+    <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 72px 72px; pointer-events: none"></div>
+    <div style="position: absolute; top: -160px; right: -180px; width: 520px; height: 520px; border-radius: 50%; background: rgba(255,255,255,0.07); pointer-events: none"></div>
+
+    <div style="position: relative; display: flex; align-items: center; gap: 12px">
+      <div style="display: grid; place-items: center; width: 40px; height: 40px; border-radius: 10px; background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.25); color: #fff; font-size: 21px; font-weight: 700; letter-spacing: -0.04em">M</div>
+      <div style="display: flex; flex-direction: column; line-height: 1.1">
+        <span style="font-size: 19px; font-weight: 700; color: #fff; letter-spacing: -0.02em">Moinfo<span style="color: #9FD8FF">Tech</span></span>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.16em; color: rgba(255,255,255,0.62)">TCRA REGISTRAR · TZ</span>
+      </div>
+    </div>
+
+    <div style="position: relative; display: flex; flex-direction: column; gap: 30px; max-width: 30ch">
+      <h1 style="margin: 0; font-size: 50px; line-height: 1.02; letter-spacing: -0.035em; font-weight: 600; color: #fff; text-wrap: pretty">Everything you run with us, in one place.</h1>
+      <div style="display: flex; flex-direction: column">
+        <sc-for list="{{ perks }}" as="p" hint-placeholder-count="4">
+          <div style="display: flex; align-items: flex-start; gap: 16px; padding: 16px 0; border-top: 1px solid rgba(255,255,255,0.18)">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.08em; color: rgba(255,255,255,0.6); padding-top: 4px; width: 46px; flex-shrink: 0">{{ p.k }}</span>
+            <span style="display: flex; flex-direction: column; gap: 4px">
+              <span style="font-size: 16.5px; font-weight: 600; color: #fff">{{ p.t }}</span>
+              <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; line-height: 1.55; color: rgba(255,255,255,0.72)">{{ p.d }}</span>
+            </span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="position: relative; display: flex; flex-direction: column; gap: 18px">
+      <div style="display: flex; gap: 12px">
+        <div style="flex: 1; padding: 14px 16px; border: 1px solid rgba(255,255,255,0.22); border-radius: 10px; background: rgba(255,255,255,0.08)">
+          <div style="display: flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: rgba(255,255,255,0.7)"><span style="width: 6px; height: 6px; border-radius: 50%; background: #7BE3B4"></span>PLATFORM STATUS</div>
+          <div style="margin-top: 7px; font-size: 15px; font-weight: 600; color: #fff">All systems operational</div>
+        </div>
+        <div style="flex: 1; padding: 14px 16px; border: 1px solid rgba(255,255,255,0.22); border-radius: 10px; background: rgba(255,255,255,0.08)">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: rgba(255,255,255,0.7)">UPTIME · 30 DAYS</div>
+          <div style="margin-top: 7px; font-size: 15px; font-weight: 600; color: #fff">99.98%</div>
+        </div>
+      </div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: rgba(255,255,255,0.55)">© 2026 MOINFOTECH COMPANY LIMITED</div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; background: #0C1116">
+    <div style="display: flex; align-items: center; justify-content: space-between; padding: 0 56px; height: 76px; border-bottom: 1px solid rgba(255,255,255,0.08)">
+      <a href="./Moinfo Hosting Redesign.dc.html" style="display: flex; align-items: center; gap: 9px; font-size: 14.5px; color: #9AA6A1">← Back to moinfo.co.tz</a>
+      <div style="display: flex; align-items: center; gap: 12px">
+        <div style="display: flex; border: 1px solid rgba(255,255,255,0.14); border-radius: 6px; overflow: hidden; font-family: 'JetBrains Mono', monospace; font-size: 11.5px">
+          <span style="padding: 6px 10px; background: #fff; color: #0C1116; font-weight: 600">EN</span>
+          <span style="padding: 6px 10px; color: #8B968F">SW</span>
+        </div>
+        <a href="https://wa.me/255689011111" style="padding: 9px 16px; border: 1px solid rgba(255,255,255,0.18); border-radius: 7px; color: #DCE3DF; font-size: 13.5px; font-weight: 500">Need help?</a>
+      </div>
+    </div>
+
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 56px">
+      <div style="display: flex; flex-direction: column; gap: 26px; width: 452px; margin: 0 auto">
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4">CLIENT AREA</span>
+          <h2 style="margin: 0; font-size: 38px; font-weight: 600; letter-spacing: -0.03em; color: #fff; line-height: 1.05">Sign in</h2>
+          <p style="margin: 0; font-family: 'Instrument Sans', sans-serif; font-size: 15.5px; line-height: 1.6; color: #8B968F">Manage domains, hosting, invoices and tickets.</p>
+        </div>
+
+        <div style="display: flex; gap: 4px; padding: 4px; border: 1px solid rgba(255,255,255,0.12); border-radius: 9px">
+          <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="2">
+            <button type="button" onClick="{{ t.on }}" style="flex: 1; padding: 10px 14px; border: 0; border-radius: 6px; background: {{ t.bg }}; color: {{ t.fg }}; font-family: 'Space Grotesk', sans-serif; font-size: 13.5px; font-weight: 600; cursor: pointer">{{ t.label }}</button>
+          </sc-for>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 18px">
+          <div style="display: flex; flex-direction: column; gap: 8px">
+            <label style="display: flex; align-items: center; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #7F8C86"><span>{{ idLabel }}</span><span style="color: #4E5A55">REQUIRED</span></label>
+            <input value="{{ identifier }}" onChange="{{ onIdentifier }}" placeholder="{{ idPlaceholder }}" style="height: 52px; padding: 0 16px; border: 1px solid rgba(255,255,255,0.16); border-radius: 9px; background: #070A0D; color: #fff; font-size: 15.5px; outline: none" style-focus="border-color: #29D08A" />
+          </div>
+
+          <sc-if value="{{ isPassword }}" hint-placeholder-val="{{ true }}">
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <label style="display: flex; align-items: center; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #7F8C86"><span>PASSWORD</span><a href="#reset" style="font-size: 10.5px; letter-spacing: 0.14em; color: #7BE3B4">FORGOT?</a></label>
+              <div style="position: relative; display: flex; align-items: center">
+                <input type="{{ pwType }}" value="{{ password }}" onChange="{{ onPassword }}" placeholder="Your password" style="flex: 1; height: 52px; padding: 0 88px 0 16px; border: 1px solid rgba(255,255,255,0.16); border-radius: 9px; background: #070A0D; color: #fff; font-size: 15.5px; outline: none" />
+                <button type="button" onClick="{{ togglePw }}" style="position: absolute; right: 8px; padding: 8px 12px; border: 1px solid rgba(255,255,255,0.14); border-radius: 6px; background: rgba(255,255,255,0.04); color: #9AA6A1; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; cursor: pointer">{{ pwToggleLabel }}</button>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ isOtp }}" hint-placeholder-val="{{ false }}">
+            <div style="display: flex; gap: 12px; padding: 16px 18px; border: 1px solid rgba(74,155,255,0.35); border-radius: 10px; background: rgba(74,155,255,0.08)">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: #4A9BFF; padding-top: 2px">SMS</span>
+              <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; line-height: 1.6; color: #B6C0BB">We send a six-digit code to the number on your account. It expires after five minutes.</span>
+            </div>
+          </sc-if>
+
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px">
+            <button type="button" onClick="{{ toggleRemember }}" style="display: flex; align-items: center; gap: 10px; padding: 0; border: 0; background: none; cursor: pointer">
+              <span style="width: 18px; height: 18px; border: 1px solid {{ rememberBorder }}; border-radius: 5px; background: {{ rememberBg }}; display: grid; place-items: center; color: #06231A; font-size: 11px; font-weight: 700">{{ rememberMark }}</span>
+              <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #9AA6A1">Keep me signed in</span>
+            </button>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; color: #4E5A55">TLS 1.3 · 2FA READY</span>
+          </div>
+
+          <a href="./Client Portal.dc.html" style="display: grid; place-items: center; height: 52px; border-radius: 9px; background: #29D08A; color: #06231A; font-size: 15.5px; font-weight: 600">{{ submitLabel }}</a>
+
+          <div style="display: flex; align-items: center; gap: 14px">
+            <span style="flex: 1; height: 1px; background: rgba(255,255,255,0.1)"></span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #5C665F">OR GO STRAIGHT TO</span>
+            <span style="flex: 1; height: 1px; background: rgba(255,255,255,0.1)"></span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px">
+            <a href="#top" style="display: flex; flex-direction: column; gap: 4px; padding: 16px 18px; border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; color: inherit"><span style="font-size: 15px; font-weight: 600; color: #fff">cPanel</span><span style="font-family: 'Instrument Sans', sans-serif; font-size: 12.5px; color: #7F8C86">Files, mail, databases</span></a>
+            <a href="#top" style="display: flex; flex-direction: column; gap: 4px; padding: 16px 18px; border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; color: inherit"><span style="font-size: 15px; font-weight: 600; color: #fff">Webmail</span><span style="font-family: 'Instrument Sans', sans-serif; font-size: 12.5px; color: #7F8C86">Read mail in the browser</span></a>
+          </div>
+
+          <div style="display: flex; align-items: center; justify-content: center; gap: 8px; font-family: 'Instrument Sans', sans-serif; font-size: 14.5px; color: #8B968F">
+            New to MoinfoTech? <a href="./Domains.dc.html" style="font-weight: 600">Create an account</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; justify-content: space-between; padding: 0 56px; height: 58px; border-top: 1px solid rgba(255,255,255,0.08); font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5C665F">
+      <span>SUPPORT 24/7 · +255 689 011 111</span>
+      <span style="display: flex; gap: 20px"><a href="./Policies.dc.html" style="color: #5C665F">PRIVACY</a><a href="./Policies.dc.html" style="color: #5C665F">TERMS</a><a href="./Contact.dc.html" style="color: #5C665F">CONTACT</a></span>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { mode: "password", showPw: false, remember: true, identifier: "", password: "" };
+  renderVals() {
+    const s = this.state;
+    const mk = (key, label) => ({
+      label,
+      on: () => this.setState({ mode: key }),
+      bg: s.mode === key ? "#fff" : "transparent",
+      fg: s.mode === key ? "#0C1116" : "#9AA6A1"
+    });
+    return {
+      perks: [
+        { k: ".TZ", t: "Domains", d: "Register, renew and transfer .co.tz, .or.tz, .ac.tz and .go.tz — we are the registrar." },
+        { k: "cPanel", t: "Hosting", d: "One-click panel access, plan upgrades and live disk and bandwidth usage." },
+        { k: "TSh", t: "Billing", d: "Invoices, receipts and mobile-money payments, all in shillings." },
+        { k: "24/7", t: "Support", d: "Open a ticket or reach the Kibaha team directly, any hour." }
+      ],
+      tabs: [mk("password", "Password"), mk("otp", "SMS code")],
+      isPassword: s.mode === "password",
+      isOtp: s.mode === "otp",
+      idLabel: s.mode === "otp" ? "PHONE NUMBER" : "EMAIL OR PHONE",
+      idPlaceholder: s.mode === "otp" ? "0712 345 678" : "you@company.co.tz or 0712345678",
+      submitLabel: s.mode === "otp" ? "Send code" : "Sign in",
+      identifier: s.identifier,
+      onIdentifier: (e) => this.setState({ identifier: e.target.value }),
+      password: s.password,
+      onPassword: (e) => this.setState({ password: e.target.value }),
+      pwType: s.showPw ? "text" : "password",
+      pwToggleLabel: s.showPw ? "HIDE" : "SHOW",
+      togglePw: () => this.setState({ showPw: !s.showPw }),
+      toggleRemember: () => this.setState({ remember: !s.remember }),
+      rememberBg: s.remember ? "#29D08A" : "transparent",
+      rememberBorder: s.remember ? "#29D08A" : "rgba(255,255,255,0.24)",
+      rememberMark: s.remember ? "✓" : ""
+    };
+  }
+}
+</script>
+</body>
+</html>

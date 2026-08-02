@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #0C1116; }
+  #root { display: flex; justify-content: center; }
+  a { color: #7BE3B4; text-decoration: none; }
+  a:hover { color: #4A9BFF; }
+</style>
+</helmet>
+<div style="width: 1440px; flex-shrink: 0; background: #0C1116; font-family: 'Space Grotesk', sans-serif">
+  <dc-import name="Site Header" active="domains" crumb="Domains" hint-size="1440px,170px"></dc-import>
+
+  <div style="position: relative; padding: 76px 40px; background: radial-gradient(900px 420px at 20% 0%, rgba(11,92,213,0.28), transparent 70%), radial-gradient(720px 400px at 88% 30%, rgba(10,143,99,0.22), transparent 70%), #0C1116">
+    <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 80px 80px; pointer-events: none"></div>
+    <div style="position: relative; display: flex; flex-direction: column; gap: 26px; max-width: 900px">
+      <div style="display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4"><span style="width: 22px; height: 1px; background: #29D08A"></span>TCRA ACCREDITED .TZ REGISTRAR</div>
+      <h1 style="margin: 0; font-size: 62px; line-height: 1.0; letter-spacing: -0.035em; font-weight: 600; color: #fff; max-width: 17ch; text-wrap: pretty">Register .tz directly with the registrar.</h1>
+      <p style="margin: 0; max-width: 56ch; font-family: 'Instrument Sans', sans-serif; font-size: 17.5px; line-height: 1.6; color: #9AA6A1">No reseller in the middle, no waiting on a third party for a transfer or a renewal. We hold the accreditation ourselves.</p>
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 20px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; background: rgba(255,255,255,0.035); max-width: 720px">
+        <div style="display: flex; align-items: center; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: #7F8C86"><span>DOMAIN AVAILABILITY</span><span>REGISTRY: tzNIC · LIVE</span></div>
+        <div style="display: flex; gap: 10px">
+          <div style="flex: 1; display: flex; align-items: center; gap: 10px; padding: 0 16px; height: 56px; border: 1px solid rgba(255,255,255,0.16); border-radius: 9px; background: #070A0D">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #4E5A55">$</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 16px; color: #E7EDEA">mybusiness<span style="color: #4A9BFF">.co.tz</span><span style="display: inline-block; width: 8px; height: 18px; margin-left: 3px; background: #29D08A; vertical-align: -3px"></span></span>
+          </div>
+          <a href="#prices" style="display: grid; place-items: center; padding: 0 30px; height: 56px; border-radius: 9px; background: #29D08A; color: #06231A; font-size: 15px; font-weight: 600">Check</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="prices" style="padding: 90px 40px; background: #0A0E12; border-top: 1px solid rgba(255,255,255,0.08)">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; padding-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.1)">
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4">01 · PRICE LIST</span>
+        <h2 style="margin: 0; font-size: 40px; font-weight: 600; letter-spacing: -0.03em; color: #fff">Every extension we register</h2>
+      </div>
+      <p style="margin: 0; max-width: 36ch; font-family: 'Instrument Sans', sans-serif; font-size: 14.5px; line-height: 1.65; color: #8B968F">Registration, transfer and renewal are the same price — no bait-and-switch at year two.</p>
+    </div>
+    <div style="margin-top: 32px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden">
+      <div style="display: grid; grid-template-columns: 1fr 1.6fr 1fr 1fr auto; gap: 16px; padding: 14px 24px; background: rgba(255,255,255,0.04); font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86">
+        <span>EXTENSION</span><span>WHO IT'S FOR</span><span>REGISTER / YR</span><span>RENEW / YR</span><span></span>
+      </div>
+      <sc-for list="{{ tlds }}" as="t" hint-placeholder-count="9">
+        <div style="display: grid; grid-template-columns: 1fr 1.6fr 1fr 1fr auto; gap: 16px; align-items: center; padding: 16px 24px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 14.5px; color: #B6C0BB">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 15px; color: #fff">{{ t.tld }}</span>
+          <span style="font-family: 'Instrument Sans', sans-serif; color: #8B968F">{{ t.who }}</span>
+          <span style="font-family: 'JetBrains Mono', monospace; color: #7BE3B4">{{ t.price }}</span>
+          <span style="font-family: 'JetBrains Mono', monospace">{{ t.price }}</span>
+          <a href="#prices" style="font-size: 14px">Register →</a>
+        </div>
+      </sc-for>
+    </div>
+    <div style="padding-top: 22px; font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #7F8C86">Prices in Tanzanian shillings, VAT inclusive. .ac.tz, .go.tz and .sc.tz require supporting documents from the institution.</div>
+  </div>
+
+  <div style="padding: 90px 40px; background: #0C1116; border-top: 1px solid rgba(255,255,255,0.08)">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start">
+      <div style="display: flex; flex-direction: column; gap: 22px">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4">02 · TRANSFERS</span>
+        <h2 style="margin: 0; font-size: 40px; font-weight: 600; letter-spacing: -0.03em; color: #fff; line-height: 1.05; max-width: 18ch">Move a domain to us in four steps</h2>
+        <div style="display: flex; flex-direction: column">
+          <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+            <div style="display: flex; gap: 18px; padding: 16px 0; border-top: 1px solid rgba(255,255,255,0.09)">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #29D08A; padding-top: 3px">{{ s.n }}</span>
+              <span><span style="display: block; font-size: 16.5px; font-weight: 600; color: #fff">{{ s.t }}</span><span style="display: block; margin-top: 5px; font-family: 'Instrument Sans', sans-serif; font-size: 14px; line-height: 1.6; color: #8B968F">{{ s.d }}</span></span>
+            </div>
+          </sc-for>
+        </div>
+        <a href="https://wa.me/255689011111" style="align-self: flex-start; padding: 14px 24px; border-radius: 8px; background: #29D08A; color: #06231A; font-size: 15px; font-weight: 600">Start a transfer</a>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden; align-self: start">
+        <sc-for list="{{ features }}" as="f" hint-placeholder-count="4">
+          <div style="padding: 28px; background: #0C1116; display: flex; flex-direction: column; gap: 9px">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 22px; color: {{ f.color }}; letter-spacing: -0.02em">{{ f.k }}</span>
+            <span style="font-size: 17px; font-weight: 600; color: #fff">{{ f.t }}</span>
+            <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; line-height: 1.65; color: #8B968F">{{ f.d }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <dc-import name="Site Footer" hint-size="1440px,620px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:1000}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      tlds: [
+        { tld: ".co.tz", who: "Companies and businesses", price: "19,999" },
+        { tld: ".or.tz", who: "NGOs and non-profits", price: "19,999" },
+        { tld: ".ac.tz", who: "Universities and colleges", price: "19,999" },
+        { tld: ".sc.tz", who: "Schools", price: "19,999" },
+        { tld: ".go.tz", who: "Government bodies", price: "19,999" },
+        { tld: ".ne.tz", who: "Network operators", price: "19,999" },
+        { tld: ".me.tz", who: "Individuals", price: "19,999" },
+        { tld: ".tz", who: "Second-level, any registrant", price: "95,000" },
+        { tld: ".com", who: "International presence", price: "55,000" }
+      ],
+      steps: [
+        { n: "01", t: "Unlock the domain", d: "Ask your current registrar to remove the transfer lock and send you the auth code." },
+        { n: "02", t: "Send us the code", d: "Give us the domain and auth code over WhatsApp, email or the client area." },
+        { n: "03", t: "We file the transfer", d: "We submit to the registry and copy your existing DNS records so nothing breaks." },
+        { n: "04", t: "Approve and done", d: "You approve the confirmation email; the domain lands with a year added to it." }
+      ],
+      features: [
+        { k: "DNS", color: "#29D08A", t: "Full DNS control", d: "A, AAAA, CNAME, MX, TXT and SRV records, editable yourself at any time." },
+        { k: "Lock", color: "#4A9BFF", t: "Theft protection", d: "Registrar lock and WHOIS privacy where the registry allows it." },
+        { k: "Auto", color: "#29D08A", t: "Renewal reminders", d: "We warn you 60, 30 and 7 days out — and can auto-renew if you prefer." },
+        { k: "Free", color: "#4A9BFF", t: "Free with hosting", d: "Annual hosting plans from Professional up include the first year of .co.tz or .com." }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

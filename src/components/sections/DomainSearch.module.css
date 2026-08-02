@@ -1,6 +1,7 @@
 .section {
-  padding: 60px 0;
-  background: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
+  padding: 90px 0;
+  background: var(--dc-surface-alt);
+  border-top: 1px solid var(--dc-hairline);
 }
 
 .promoBanner {

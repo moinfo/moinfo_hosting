@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #0C1116; }
+  #root { display: flex; justify-content: center; }
+  a { color: #7BE3B4; text-decoration: none; }
+  a:hover { color: #4A9BFF; }
+</style>
+</helmet>
+<div style="width: 1440px; flex-shrink: 0; display: flex; align-items: stretch; background: #0C1116; font-family: 'Space Grotesk', sans-serif">
+  <dc-import name="Portal Sidebar" active="invoices" hint-size="244px,100%"></dc-import>
+
+  <div style="flex: 1; min-width: 0; display: flex; flex-direction: column">
+
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 0 32px; height: 68px; border-bottom: 1px solid rgba(255,255,255,0.08); background: rgba(12,17,22,0.92)">
+      <div style="display: flex; align-items: center; gap: 14px; flex: 1; max-width: 420px; padding: 0 16px; height: 40px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; background: #070A0D">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #4E5A55">⌕</span>
+        <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #5C665F">Search by invoice number…</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 14px">
+        <a href="./Client Portal.dc.html" style="padding: 9px 16px; border: 1px solid rgba(255,255,255,0.16); border-radius: 7px; color: #DCE3DF; font-size: 13.5px; font-weight: 500">Dashboard</a>
+        <span style="width: 1px; height: 26px; background: rgba(255,255,255,0.1)"></span>
+        <div style="display: flex; align-items: center; gap: 10px">
+          <div style="width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(140deg, #0B5CD5, #0A8F63); display: grid; place-items: center; color: #fff; font-size: 13px; font-weight: 600">KK</div>
+          <div style="display: flex; flex-direction: column; line-height: 1.15">
+            <span style="font-size: 13.5px; font-weight: 600; color: #fff">Kassim Haji Kassim</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; color: #6E7A75">ACCT #10428 · KIBAHA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 24px; padding: 32px">
+
+      <sc-if value="{{ isList }}" hint-placeholder-val="{{ true }}">
+        <div style="display: flex; flex-direction: column; gap: 24px">
+
+          <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px">
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #7BE3B4">BILLING</span>
+              <h1 style="margin: 0; font-size: 34px; font-weight: 600; letter-spacing: -0.03em; color: #fff">Invoices</h1>
+            </div>
+            <a href="#pay-all" style="padding: 12px 22px; border-radius: 8px; background: #F2A33C; color: #2A1A05; font-size: 14px; font-weight: 600">Pay all 5 overdue · TSh 769,998</a>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden">
+            <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+              <div style="display: flex; flex-direction: column; gap: 6px; padding: 22px 24px; background: #0C1116">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #7F8C86">{{ s.label }}</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 28px; color: {{ s.color }}; letter-spacing: -0.02em">{{ s.value }}</span>
+                <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13px; color: #7F8C86">{{ s.note }}</span>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px">
+            <div style="display: flex; gap: 4px; padding: 4px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px">
+              <sc-for list="{{ filters }}" as="f" hint-placeholder-count="4">
+                <button type="button" onClick="{{ f.on }}" style="padding: 9px 16px; border: 0; border-radius: 5px; background: {{ f.bg }}; color: {{ f.fg }}; font-family: 'Space Grotesk', sans-serif; font-size: 13.5px; font-weight: 600; cursor: pointer">{{ f.label }}</button>
+              </sc-for>
+            </div>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #7F8C86">SHOWING {{ shownCount }} OF 100</span>
+          </div>
+
+          <div style="border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden">
+            <div style="display: grid; grid-template-columns: 130px 1fr 110px 150px 130px 100px 120px; gap: 16px; padding: 13px 22px; background: rgba(255,255,255,0.03); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #7F8C86">
+              <span>INVOICE</span><span>DESCRIPTION</span><span>ISSUED</span><span>DUE</span><span style="text-align: right">AMOUNT</span><span>STATUS</span><span></span>
+            </div>
+            <sc-for list="{{ rows }}" as="r" hint-placeholder-count="10">
+              <div style="display: grid; grid-template-columns: 130px 1fr 110px 150px 130px 100px 120px; gap: 16px; align-items: center; padding: 15px 22px; border-top: 1px solid rgba(255,255,255,0.08); background: {{ r.rowBg }}">
+                <button type="button" onClick="{{ r.open }}" style="padding: 0; border: 0; background: none; text-align: left; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #fff; cursor: pointer">{{ r.no }}</button>
+                <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; color: #9AA6A1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{ r.desc }}</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #7F8C86">{{ r.issued }}</span>
+                <span style="display: flex; flex-direction: column; gap: 3px">
+                  <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: {{ r.dueColor }}">{{ r.due }}</span>
+                  <sc-if value="{{ r.hasAge }}" hint-placeholder-val="{{ false }}">
+                    <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.08em; color: {{ r.dueColor }}">{{ r.age }}</span>
+                  </sc-if>
+                </span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: {{ r.amountColor }}; text-align: right">{{ r.amount }}</span>
+                <span style="padding: 4px 9px; border-radius: 20px; background: {{ r.tagBg }}; color: {{ r.tagFg }}; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; text-align: center">{{ r.status }}</span>
+                <span style="display: flex; justify-content: flex-end">
+                  <sc-if value="{{ r.payable }}" hint-placeholder-val="{{ true }}">
+                    <button type="button" onClick="{{ r.open }}" style="padding: 8px 16px; border: 0; border-radius: 7px; background: #29D08A; color: #06231A; font-family: 'Space Grotesk', sans-serif; font-size: 12.5px; font-weight: 600; cursor: pointer">Pay</button>
+                  </sc-if>
+                  <sc-if value="{{ r.settled }}" hint-placeholder-val="{{ false }}">
+                    <button type="button" onClick="{{ r.open }}" style="padding: 8px 16px; border: 1px solid rgba(255,255,255,0.16); border-radius: 7px; background: none; color: #B6C0BB; font-family: 'Space Grotesk', sans-serif; font-size: 12.5px; cursor: pointer">View</button>
+                  </sc-if>
+                </span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isDetail }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-direction: column; gap: 24px">
+
+          <button type="button" onClick="{{ back }}" style="align-self: flex-start; display: flex; align-items: center; gap: 9px; padding: 0; border: 0; background: none; color: #7BE3B4; font-family: 'Space Grotesk', sans-serif; font-size: 14px; cursor: pointer">← All invoices</button>
+
+          <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px">
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <span style="display: flex; align-items: center; gap: 12px">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #7BE3B4">INVOICE</span>
+                <span style="padding: 3px 10px; border-radius: 20px; background: {{ openTagBg }}; color: {{ openTagFg }}; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em">{{ openStatus }}</span>
+              </span>
+              <h1 style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 32px; font-weight: 500; letter-spacing: -0.02em; color: #fff">{{ openNo }}</h1>
+            </div>
+            <div style="display: flex; gap: 10px">
+              <a href="#pay" style="padding: 13px 24px; border-radius: 8px; background: #29D08A; color: #06231A; font-size: 14.5px; font-weight: 600">Pay TSh {{ openAmount }} now</a>
+              <a href="#pdf" style="padding: 13px 20px; border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; color: #fff; font-size: 14px">Download PDF</a>
+              <a href="#email" style="padding: 13px 20px; border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; color: #fff; font-size: 14px">Email a copy</a>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 380px; gap: 24px; align-items: start">
+
+            <div style="display: flex; flex-direction: column; gap: 24px">
+              <div style="border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.1)">
+                  <div style="display: flex; flex-direction: column; gap: 8px; padding: 24px; background: #0C1116">
+                    <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #7F8C86">INVOICED TO</span>
+                    <span style="font-size: 16px; font-weight: 600; color: #fff">Kassim Haji Kassim</span>
+                    <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; line-height: 1.6; color: #8B968F">Leruma Enterprises Ltd<br />Kibaha, Pwani<br />info@lerumaenterprises.co.tz<br />+255 714 232 827</span>
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 8px; padding: 24px; background: #0C1116">
+                    <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #7F8C86">PAY TO</span>
+                    <span style="font-size: 16px; font-weight: 600; color: #fff">Moinfotech Company Limited</span>
+                    <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; line-height: 1.6; color: #8B968F">P.O. Box 30889, Kibaha — Pwani<br />info@moinfo.co.tz<br />+255 652 894 205<br />TIN 172-200-664</span>
+                  </div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.1); border-top: 1px solid rgba(255,255,255,0.1)">
+                  <div style="display: flex; align-items: baseline; justify-content: space-between; padding: 16px 24px; background: #0C1116; font-family: 'JetBrains Mono', monospace; font-size: 12.5px"><span style="color: #7F8C86">ISSUED</span><span style="color: #fff">{{ openIssuedLong }}</span></div>
+                  <div style="display: flex; align-items: baseline; justify-content: space-between; padding: 16px 24px; background: #0C1116; font-family: 'JetBrains Mono', monospace; font-size: 12.5px"><span style="color: #7F8C86">DUE</span><span style="color: {{ openDueColor }}">{{ openDueLong }}</span></div>
+                </div>
+              </div>
+
+              <div style="border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden">
+                <div style="display: grid; grid-template-columns: 1fr 70px 130px 130px; gap: 16px; padding: 13px 22px; background: rgba(255,255,255,0.03); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #7F8C86">
+                  <span>DESCRIPTION</span><span style="text-align: right">QTY</span><span style="text-align: right">PRICE</span><span style="text-align: right">AMOUNT</span>
+                </div>
+                <sc-for list="{{ openItems }}" as="i" hint-placeholder-count="2">
+                  <div style="display: grid; grid-template-columns: 1fr 70px 130px 130px; gap: 16px; align-items: center; padding: 16px 22px; border-top: 1px solid rgba(255,255,255,0.08)">
+                    <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #DCE3DF">{{ i.desc }}</span>
+                    <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #8B968F; text-align: right">{{ i.qty }}</span>
+                    <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #8B968F; text-align: right">{{ i.price }}</span>
+                    <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #fff; text-align: right">{{ i.amount }}</span>
+                  </div>
+                </sc-for>
+                <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 10px; padding: 22px; border-top: 1px solid rgba(255,255,255,0.1)">
+                  <span style="display: flex; justify-content: space-between; gap: 60px; width: 300px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #8B968F">SUBTOTAL<span style="color: #fff">{{ openAmount }}</span></span>
+                  <span style="display: flex; justify-content: space-between; gap: 60px; width: 300px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #8B968F">PAID<span style="color: #7BE3B4">{{ openPaid }}</span></span>
+                  <span style="display: flex; align-items: baseline; justify-content: space-between; gap: 60px; width: 300px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.14); font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #7F8C86">BALANCE DUE<span style="font-size: 22px; letter-spacing: -0.02em; color: {{ openBalanceColor }}">{{ openBalance }}</span></span>
+                </div>
+              </div>
+
+              <div style="border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden">
+                <div style="padding: 18px 22px; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 17px; font-weight: 600; color: #fff">Transactions</div>
+                <div style="padding: 22px; font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #7F8C86">No payments recorded against this invoice yet.</div>
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 20px">
+              <div style="display: flex; flex-direction: column; gap: 14px; padding: 24px; border: 1px solid rgba(41,208,138,0.35); border-radius: 12px; background: rgba(41,208,138,0.05)">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #7BE3B4">PAY NOW</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 30px; color: #fff; letter-spacing: -0.02em">TSh {{ openAmount }}</span>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px">
+                  <sc-for list="{{ payMethods }}" as="m" hint-placeholder-count="5">
+                    <button type="button" onClick="{{ m.on }}" style="padding: 9px 14px; border: 1px solid {{ m.border }}; border-radius: 8px; background: {{ m.bg }}; color: {{ m.fg }}; font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer">{{ m.label }}</button>
+                  </sc-for>
+                </div>
+                <a href="#pay" style="display: grid; place-items: center; height: 46px; border-radius: 8px; background: #29D08A; color: #06231A; font-size: 14.5px; font-weight: 600">Pay with {{ pay }}</a>
+              </div>
+
+              <div style="border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden">
+                <div style="padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #7F8C86">OTHER WAYS TO PAY</div>
+                <div style="display: flex; flex-direction: column; gap: 10px; padding: 20px">
+                  <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; line-height: 1.6; color: #8B968F">Quote <span style="font-family: 'JetBrains Mono', monospace; color: #fff">{{ openNo }}</span> as the reference.</span>
+                  <div style="display: flex; flex-direction: column; font-family: 'JetBrains Mono', monospace; font-size: 12.5px">
+                    <span style="display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-top: 1px solid rgba(255,255,255,0.09); color: #7F8C86">BANK<span style="color: #fff">CRDB</span></span>
+                    <span style="display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-top: 1px solid rgba(255,255,255,0.09); color: #7F8C86">ACCOUNT<span style="color: #fff">0150851484300</span></span>
+                    <span style="display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-top: 1px solid rgba(255,255,255,0.09); color: #7F8C86">BRANCH<span style="color: #fff">KIBAHA</span></span>
+                    <span style="display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-top: 1px solid rgba(255,255,255,0.09); color: #7F8C86">MIX BY YAS<span style="color: #fff">15210089</span></span>
+                    <span style="display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-top: 1px solid rgba(255,255,255,0.09); color: #7F8C86">NAME<span style="color: #fff">MOINFOTECH</span></span>
+                  </div>
+                </div>
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 10px; padding: 20px 24px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px">
+                <span style="font-size: 15.5px; font-weight: 600; color: #fff">Something wrong with this invoice?</span>
+                <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; line-height: 1.6; color: #8B968F">Billing is on billing@moinfo.co.tz, or WhatsApp us and we will look at it today.</span>
+                <a href="https://wa.me/255689011111" style="margin-top: 4px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.1em">QUERY THIS INVOICE →</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </sc-if>
+
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:950}}">
+class Component extends DCLogic {
+  state = { view: "list", filter: "all", open: "WHMCS-1308", pay: "M-Pesa" };
+
+  data() {
+    return [
+      { no: "WHMCS-1308", desc: "Web Hosting System — mazao.co.tz", issued: "07 JUL 2026", issuedLong: "Tuesday, 7 July 2026", due: "06 AUG 2026", dueLong: "Thursday, 6 August 2026", age: "5D LEFT", amount: "270,000", state: "sent",
+        items: [{ desc: "Web Hosting System — mazao.co.tz (06/08/2026 – 05/08/2027)", qty: "1.00", price: "250,000.00", amount: "250,000.00" }, { desc: "Domain renewal — mazao.co.tz, 1 year + DNS management", qty: "1.00", price: "20,000.00", amount: "20,000.00" }] },
+      { no: "INV-2026-0183", desc: "Web Hosting University — mustaqiim.co.tz", issued: "03 JUL 2026", issuedLong: "Friday, 3 July 2026", due: "03 JUL 2026", dueLong: "Friday, 3 July 2026", age: "29D OVERDUE", amount: "80,500", state: "overdue",
+        items: [{ desc: "Web Hosting University — mustaqiim.co.tz (1 year)", qty: "1.00", price: "80,500.00", amount: "80,500.00" }] },
+      { no: "INV-2026-0185", desc: "Register domain mohamed.co.tz", issued: "03 JUL 2026", issuedLong: "Friday, 3 July 2026", due: "10 JUL 2026", dueLong: "Friday, 10 July 2026", age: "22D OVERDUE", amount: "18,999", state: "overdue",
+        items: [{ desc: "Domain registration — mohamed.co.tz (1 year)", qty: "1.00", price: "18,999.00", amount: "18,999.00" }] },
+      { no: "INV-2026-0186", desc: "Web Hosting University — mohamed.co.tz", issued: "03 JUL 2026", issuedLong: "Friday, 3 July 2026", due: "03 JUL 2026", dueLong: "Friday, 3 July 2026", age: "29D OVERDUE", amount: "99,499", state: "overdue",
+        items: [{ desc: "Web Hosting University — mohamed.co.tz (1 year)", qty: "1.00", price: "80,500.00", amount: "80,500.00" }, { desc: "SSL certificate — DV, 1 year", qty: "1.00", price: "18,999.00", amount: "18,999.00" }] },
+      { no: "INV-2026-0187", desc: "Account credit top-up", issued: "03 JUL 2026", issuedLong: "Friday, 3 July 2026", due: "03 JUL 2026", dueLong: "Friday, 3 July 2026", age: "29D OVERDUE", amount: "50,000", state: "overdue",
+        items: [{ desc: "Account credit top-up", qty: "1.00", price: "50,000.00", amount: "50,000.00" }] },
+      { no: "INV-2026-0155", desc: "Plus Web Hosting Package — lerumalogistics.co.tz", issued: "10 JUN 2026", issuedLong: "Wednesday, 10 June 2026", due: "24 JUN 2026", dueLong: "Wednesday, 24 June 2026", age: "38D OVERDUE", amount: "520,000", state: "overdue",
+        items: [{ desc: "Plus Web Hosting Package — lerumalogistics.co.tz (1 year)", qty: "1.00", price: "500,000.00", amount: "500,000.00" }, { desc: "Domain renewal — lerumalogistics.co.tz", qty: "1.00", price: "20,000.00", amount: "20,000.00" }] },
+      { no: "INV-2026-0157", desc: "Kurekebisha attendance system", issued: "10 JUN 2026", issuedLong: "Wednesday, 10 June 2026", due: "12 JUN 2026", dueLong: "Friday, 12 June 2026", age: "", amount: "60,000", state: "paid",
+        items: [{ desc: "Attendance system maintenance", qty: "1.00", price: "60,000.00", amount: "60,000.00" }] },
+      { no: "INV-2026-0140", desc: "System Web Hosting Package — zaifood.co.tz", issued: "28 MAY 2026", issuedLong: "Thursday, 28 May 2026", due: "27 JUN 2026", dueLong: "Saturday, 27 June 2026", age: "", amount: "250,000", state: "paid",
+        items: [{ desc: "System Web Hosting Package — zaifood.co.tz (1 year)", qty: "1.00", price: "250,000.00", amount: "250,000.00" }] },
+      { no: "WHMCS-1250", desc: "Web Hosting System — loliondo.co.tz", issued: "28 MAY 2026", issuedLong: "Thursday, 28 May 2026", due: "27 JUN 2026", dueLong: "Saturday, 27 June 2026", age: "", amount: "594,000", state: "paid",
+        items: [{ desc: "Web Hosting System — loliondo.co.tz (1 year)", qty: "1.00", price: "594,000.00", amount: "594,000.00" }] },
+      { no: "WHMCS-1245", desc: "Web Hosting Plus — lerumaenterprises.co.tz", issued: "27 MAY 2026", issuedLong: "Wednesday, 27 May 2026", due: "26 JUN 2026", dueLong: "Friday, 26 June 2026", age: "", amount: "550,000", state: "paid",
+        items: [{ desc: "Web Hosting Plus — lerumaenterprises.co.tz (1 year)", qty: "1.00", price: "550,000.00", amount: "550,000.00" }] },
+      { no: "INV-2026-0119", desc: "Huduma ya kufanya setup ya mfumo", issued: "07 MAY 2026", issuedLong: "Thursday, 7 May 2026", due: "21 MAY 2026", dueLong: "Thursday, 21 May 2026", age: "", amount: "30,000", state: "paid",
+        items: [{ desc: "System setup service", qty: "1.00", price: "30,000.00", amount: "30,000.00" }] },
+      { no: "INV-2026-0110", desc: "Domain registration TZ — renewal", issued: "27 APR 2026", issuedLong: "Monday, 27 April 2026", due: "27 APR 2026", dueLong: "Monday, 27 April 2026", age: "", amount: "19,999", state: "paid",
+        items: [{ desc: "Domain renewal — .co.tz (1 year)", qty: "1.00", price: "19,999.00", amount: "19,999.00" }] }
+    ];
+  }
+
+  renderVals() {
+    const s = this.state;
+    const all = this.data();
+    const tone = {
+      sent: { tagBg: "rgba(74,155,255,0.14)", tagFg: "#7FB4FF", label: "SENT", due: "#F2A33C", amount: "#fff" },
+      overdue: { tagBg: "rgba(255,123,114,0.14)", tagFg: "#FF7B72", label: "OVERDUE", due: "#FF7B72", amount: "#FF7B72" },
+      paid: { tagBg: "rgba(41,208,138,0.14)", tagFg: "#7BE3B4", label: "PAID", due: "#7F8C86", amount: "#8B968F" }
+    };
+    const match = (i) => s.filter === "all" || (s.filter === "unpaid" && i.state !== "paid") || (s.filter === "paid" && i.state === "paid") || (s.filter === "overdue" && i.state === "overdue");
+    const list = all.filter(match);
+    const open = all.find((i) => i.no === s.open) || all[0];
+    const ot = tone[open.state];
+    const paid = open.state === "paid";
+
+    return {
+      isList: s.view === "list",
+      isDetail: s.view === "detail",
+      back: () => this.setState({ view: "list" }),
+      stats: [
+        { label: "TOTAL INVOICES", value: "100", color: "#fff", note: "Since 2023" },
+        { label: "OUTSTANDING", value: "1,038,998", color: "#F2A33C", note: "TSh across 6 invoices" },
+        { label: "OVERDUE", value: "5", color: "#FF7B72", note: "Oldest 38 days" },
+        { label: "PAID", value: "94", color: "#7BE3B4", note: "TSh 3,221,348 lifetime" }
+      ],
+      filters: [
+        ["all", "All"], ["unpaid", "Unpaid (6)"], ["paid", "Paid"], ["overdue", "Overdue (5)"]
+      ].map(([k, label]) => ({
+        label, on: () => this.setState({ filter: k }),
+        bg: s.filter === k ? "#fff" : "transparent",
+        fg: s.filter === k ? "#0C1116" : "#9AA6A1"
+      })),
+      shownCount: list.length,
+      rows: list.map((i) => {
+        const t = tone[i.state];
+        return {
+          no: i.no, desc: i.desc, issued: i.issued, due: i.due, age: i.age,
+          hasAge: !!i.age, amount: i.amount, status: t.label,
+          dueColor: t.due, amountColor: t.amount, tagBg: t.tagBg, tagFg: t.tagFg,
+          rowBg: i.state === "overdue" ? "rgba(255,123,114,0.04)" : "transparent",
+          payable: i.state !== "paid",
+          settled: i.state === "paid",
+          open: () => this.setState({ view: "detail", open: i.no })
+        };
+      }),
+      openNo: open.no,
+      openStatus: paid ? "PAID" : "UNPAID",
+      openTagBg: paid ? "rgba(41,208,138,0.14)" : "rgba(255,123,114,0.14)",
+      openTagFg: paid ? "#7BE3B4" : "#FF7B72",
+      openAmount: open.amount,
+      openPaid: paid ? open.amount : "0.00",
+      openBalance: paid ? "0.00" : open.amount,
+      openBalanceColor: paid ? "#7BE3B4" : "#FF7B72",
+      openIssuedLong: open.issuedLong,
+      openDueLong: open.dueLong,
+      openDueColor: ot.due,
+      openItems: open.items,
+      pay: s.pay,
+      payMethods: ["M-Pesa", "Tigo Pesa", "Airtel Money", "Card"].map((label) => ({
+        label, on: () => this.setState({ pay: label }),
+        border: s.pay === label ? "#29D08A" : "rgba(255,255,255,0.14)",
+        bg: s.pay === label ? "rgba(41,208,138,0.12)" : "transparent",
+        fg: s.pay === label ? "#7BE3B4" : "#B6C0BB"
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #0C1116; }
+  #root { display: flex; justify-content: center; }
+  a { color: #7BE3B4; text-decoration: none; }
+  a:hover { color: #4A9BFF; }
+</style>
+</helmet>
+<div style="width: 1440px; flex-shrink: 0; display: flex; align-items: stretch; background: #0C1116; font-family: 'Space Grotesk', sans-serif">
+  <dc-import name="Portal Sidebar" active="{{ activeKey }}" hint-size="244px,100%"></dc-import>
+
+  <div style="flex: 1; min-width: 0; display: flex; flex-direction: column">
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 0 32px; height: 68px; border-bottom: 1px solid rgba(255,255,255,0.08); background: rgba(12,17,22,0.92)">
+      <div style="display: flex; align-items: center; gap: 14px; flex: 1; max-width: 420px; padding: 0 16px; height: 40px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; background: #070A0D">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #4E5A55">⌕</span>
+        <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #5C665F">Search by number…</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 14px">
+        <a href="./Client Portal.dc.html" style="padding: 9px 16px; border: 1px solid rgba(255,255,255,0.16); border-radius: 7px; color: #DCE3DF; font-size: 13.5px; font-weight: 500">Dashboard</a>
+        <span style="width: 1px; height: 26px; background: rgba(255,255,255,0.1)"></span>
+        <div style="display: flex; align-items: center; gap: 10px">
+          <div style="width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(140deg, #0B5CD5, #0A8F63); display: grid; place-items: center; color: #fff; font-size: 13px; font-weight: 600">KK</div>
+          <div style="display: flex; flex-direction: column; line-height: 1.15">
+            <span style="font-size: 13.5px; font-weight: 600; color: #fff">Kassim Haji Kassim</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; color: #6E7A75">ACCT #10428 · KIBAHA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 24px; padding: 32px">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px">
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #7BE3B4">BILLING</span>
+          <h1 style="margin: 0; font-size: 34px; font-weight: 600; letter-spacing: -0.03em; color: #fff">{{ title }}</h1>
+        </div>
+        <div style="display: flex; gap: 4px; padding: 4px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px">
+          <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="2">
+            <button type="button" onClick="{{ t.on }}" style="padding: 9px 16px; border: 0; border-radius: 5px; background: {{ t.bg }}; color: {{ t.fg }}; font-family: 'Space Grotesk', sans-serif; font-size: 13.5px; font-weight: 600; cursor: pointer">{{ t.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+
+      <sc-if value="{{ hasRows }}" hint-placeholder-val="{{ true }}">
+        <div style="border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden">
+          <div style="display: grid; grid-template-columns: 150px 1fr 120px 120px 140px 110px 110px; gap: 16px; padding: 13px 22px; background: rgba(255,255,255,0.03); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #7F8C86">
+            <span>{{ colRef }}</span><span>DESCRIPTION</span><span>ISSUED</span><span>{{ colDate2 }}</span><span style="text-align: right">TOTAL</span><span>STATUS</span><span style="text-align: right">ACTION</span>
+          </div>
+          <sc-for list="{{ rows }}" as="r" hint-placeholder-count="4">
+            <div style="display: grid; grid-template-columns: 150px 1fr 120px 120px 140px 110px 110px; gap: 16px; align-items: center; padding: 15px 22px; border-top: 1px solid rgba(255,255,255,0.08)">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #fff">{{ r.no }}</span>
+              <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; color: #9AA6A1">{{ r.desc }}</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #8B968F">{{ r.issued }}</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: {{ r.date2Color }}">{{ r.date2 }}</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: {{ r.totalColor }}; text-align: right">{{ r.total }}</span>
+              <span style="padding: 4px 9px; width: fit-content; border-radius: 20px; background: {{ r.tagBg }}; color: {{ r.tagFg }}; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em">{{ r.status }}</span>
+              <span style="display: flex; justify-content: flex-end"><a href="#view" style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em">{{ r.action }}</a></span>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 72px 40px; border: 1px dashed rgba(255,255,255,0.14); border-radius: 12px; text-align: center">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: #4E5A55">{{ emptyTag }}</span>
+          <span style="font-size: 20px; font-weight: 600; color: #fff">{{ emptyTitle }}</span>
+          <span style="max-width: 46ch; font-family: 'Instrument Sans', sans-serif; font-size: 14.5px; line-height: 1.65; color: #8B968F">{{ emptyBody }}</span>
+          <a href="{{ emptyHref }}" style="margin-top: 6px; padding: 12px 22px; border-radius: 8px; background: #29D08A; color: #06231A; font-size: 14px; font-weight: 600">{{ emptyCta }}</a>
+        </div>
+      </sc-if>
+
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 20px 24px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; background: rgba(255,255,255,0.02)">
+        <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14.5px; color: #8B968F">{{ footNote }}</span>
+        <a href="https://wa.me/255689011111" style="padding: 11px 20px; border: 1px solid rgba(255,255,255,0.18); border-radius: 8px; color: #fff; font-size: 13.5px; font-weight: 600; white-space: nowrap">Talk to billing</a>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { tab: "quotes" };
+  renderVals() {
+    const s = this.state;
+    const isQuotes = s.tab === "quotes";
+    const T = {
+      sent: { tagBg: "rgba(74,155,255,0.14)", tagFg: "#7FB4FF", status: "AWAITING YOU", action: "REVIEW →" },
+      accepted: { tagBg: "rgba(41,208,138,0.14)", tagFg: "#7BE3B4", status: "ACCEPTED", action: "VIEW →" },
+      expired: { tagBg: "rgba(255,255,255,0.08)", tagFg: "#8B968F", status: "EXPIRED", action: "VIEW →" },
+      issued: { tagBg: "rgba(41,208,138,0.14)", tagFg: "#7BE3B4", status: "APPLIED", action: "VIEW →" }
+    };
+    const quotes = [
+      { no: "QUO-2026-0042", desc: "Website redesign — lerumalogistics.co.tz", issued: "24 JUL 2026", date2: "23 AUG 2026", total: "2,400,000", totalColor: "#fff", date2Color: "#F2A33C", ...T.sent },
+      { no: "QUO-2026-0038", desc: "Dedicated server — standard build", issued: "11 JUL 2026", date2: "10 AUG 2026", total: "6,850,000", totalColor: "#fff", date2Color: "#F2A33C", ...T.sent },
+      { no: "QUO-2026-0031", desc: "Reseller 30 migration — 22 accounts", issued: "02 JUN 2026", date2: "02 JUL 2026", total: "750,000", totalColor: "#8B968F", date2Color: "#7F8C86", ...T.accepted },
+      { no: "QUO-2026-0019", desc: "Business Email Enterprise — 3 domains", issued: "14 APR 2026", date2: "14 MAY 2026", total: "420,000", totalColor: "#8B968F", date2Color: "#7F8C86", ...T.expired }
+    ];
+    const credits = [
+      { no: "CRN-2026-0007", desc: "Overpayment on WHMCS-1245", issued: "05 JUL 2026", date2: "05 JUL 2026", total: "30,000", totalColor: "#7BE3B4", date2Color: "#7F8C86", ...T.issued },
+      { no: "CRN-2026-0003", desc: "Service credit — 4h outage, 12 Mar", issued: "18 MAR 2026", date2: "18 MAR 2026", total: "45,000", totalColor: "#7BE3B4", date2Color: "#7F8C86", ...T.issued }
+    ];
+    const rows = isQuotes ? quotes : credits;
+    return {
+      activeKey: isQuotes ? "quotes" : "credit",
+      title: isQuotes ? "Quotations" : "Credit notes",
+      colRef: isQuotes ? "QUOTE" : "CREDIT NOTE",
+      colDate2: isQuotes ? "VALID UNTIL" : "APPLIED",
+      tabs: [["quotes", "Quotations (4)"], ["credits", "Credit notes (2)"]].map(([k, label]) => ({
+        label, on: () => this.setState({ tab: k }),
+        bg: s.tab === k ? "#fff" : "transparent",
+        fg: s.tab === k ? "#0C1116" : "#9AA6A1"
+      })),
+      rows,
+      hasRows: rows.length > 0,
+      isEmpty: rows.length === 0,
+      emptyTag: "NOTHING HERE",
+      emptyTitle: isQuotes ? "No open quotations" : "No credit notes",
+      emptyBody: isQuotes ? "Ask us for a quote on a dedicated server, a reseller plan or a website build and it will appear here to accept." : "Credit notes appear here when we refund or credit something back to your account.",
+      emptyCta: isQuotes ? "Request a quote" : "Back to invoices",
+      emptyHref: isQuotes ? "./Order Services.dc.html" : "./Invoices.dc.html",
+      footNote: isQuotes ? "Accepting a quotation turns it into an invoice straight away — nothing is charged until you pay it." : "Credits are applied against your next invoice automatically, or paid back on request."
+    };
+  }
+}
+</script>
+</body>
+</html>

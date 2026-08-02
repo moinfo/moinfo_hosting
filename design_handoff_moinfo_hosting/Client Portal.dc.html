@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #0C1116; }
+  #root { display: flex; justify-content: center; }
+  a { color: #7BE3B4; text-decoration: none; }
+  a:hover { color: #4A9BFF; }
+</style>
+</helmet>
+<div style="width: 1440px; flex-shrink: 0; display: flex; align-items: stretch; background: #0C1116; font-family: 'Space Grotesk', sans-serif">
+
+  <dc-import name="Portal Sidebar" active="dashboard" hint-size="244px,100%"></dc-import>
+
+  <div id="dash" style="flex: 1; min-width: 0; display: flex; flex-direction: column">
+
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 0 32px; height: 68px; border-bottom: 1px solid rgba(255,255,255,0.08); background: rgba(12,17,22,0.92)">
+      <div style="display: flex; align-items: center; gap: 14px; flex: 1; max-width: 420px; padding: 0 16px; height: 40px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; background: #070A0D">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #4E5A55">⌕</span>
+        <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #5C665F">Search services, domains, invoices…</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 14px">
+        <a href="./Order Services.dc.html" style="padding: 9px 16px; border-radius: 7px; background: #29D08A; color: #06231A; font-size: 13.5px; font-weight: 600">Order services</a>
+        <span style="width: 1px; height: 26px; background: rgba(255,255,255,0.1)"></span>
+        <div style="display: flex; align-items: center; gap: 10px">
+          <div style="width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(140deg, #0B5CD5, #0A8F63); display: grid; place-items: center; color: #fff; font-size: 13px; font-weight: 600">KK</div>
+          <div style="display: flex; flex-direction: column; line-height: 1.15">
+            <span style="font-size: 13.5px; font-weight: 600; color: #fff">Kassim Haji Kassim</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; color: #6E7A75">ACCT #10428 · KIBAHA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 24px; padding: 32px">
+
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px">
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #7BE3B4">DASHBOARD · 01 AUG 2026</span>
+          <h1 style="margin: 0; font-size: 34px; font-weight: 600; letter-spacing: -0.03em; color: #fff">Karibu, Kassim</h1>
+        </div>
+        <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #7F8C86">Last sign-in 31 Jul, 18:42 from Dar es Salaam</span>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px 24px; border: 1px solid rgba(242,163,60,0.35); border-radius: 12px; background: rgba(242,163,60,0.07)">
+        <div style="display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #F2A33C"><span style="width: 6px; height: 6px; border-radius: 50%; background: #F2A33C"></span>NEEDS YOUR ATTENTION</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 18px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: #0C1116">
+            <span style="display: flex; flex-direction: column; gap: 4px">
+              <span style="font-size: 16px; font-weight: 600; color: #fff">5 invoices overdue</span>
+              <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; color: #8B968F">TSh 1,116,000 outstanding · oldest 22 days</span>
+            </span>
+            <a href="./Invoices.dc.html" style="padding: 10px 18px; border-radius: 7px; background: #F2A33C; color: #2A1A05; font-size: 13.5px; font-weight: 600; white-space: nowrap">Pay now</a>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 18px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: #0C1116">
+            <span style="display: flex; flex-direction: column; gap: 4px">
+              <span style="font-size: 16px; font-weight: 600; color: #fff">whitestar.co.tz expires in 12 days</span>
+              <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; color: #8B968F">Renews at TSh 19,999 · auto-renew is off</span>
+            </span>
+            <a href="./Subscriptions.dc.html" style="padding: 10px 18px; border-radius: 7px; background: #29D08A; color: #06231A; font-size: 13.5px; font-weight: 600; white-space: nowrap">Renew</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden">
+        <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+          <a href="#dash" style="display: flex; flex-direction: column; gap: 6px; padding: 22px 24px; background: #0C1116; color: inherit">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #7F8C86">{{ s.label }}</span>
+            <span style="font-size: 32px; font-weight: 600; letter-spacing: -0.03em; color: {{ s.color }}">{{ s.value }}</span>
+            <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13px; color: #7F8C86">{{ s.note }}</span>
+          </a>
+        </sc-for>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 330px; gap: 24px; align-items: start">
+
+        <div style="display: flex; flex-direction: column; gap: 24px">
+
+          <div style="border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden">
+            <div style="display: flex; align-items: center; justify-content: space-between; padding: 18px 22px; border-bottom: 1px solid rgba(255,255,255,0.1)">
+              <span style="font-size: 17px; font-weight: 600; color: #fff">Active services</span>
+              <a href="./Subscriptions.dc.html" style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em">ALL 6 →</a>
+            </div>
+            <div style="display: grid; grid-template-columns: 1.5fr 1fr 1.2fr 150px; gap: 16px; padding: 12px 22px; background: rgba(255,255,255,0.03); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #7F8C86">
+              <span>DOMAIN</span><span>PLAN</span><span>DISK USED</span><span>ACTIONS</span>
+            </div>
+            <sc-for list="{{ services }}" as="s" hint-placeholder-count="4">
+              <div style="display: grid; grid-template-columns: 1.5fr 1fr 1.2fr 150px; gap: 16px; align-items: center; padding: 16px 22px; border-top: 1px solid rgba(255,255,255,0.08)">
+                <span style="display: flex; flex-direction: column; gap: 4px">
+                  <span style="font-size: 15px; font-weight: 600; color: #fff">{{ s.domain }}</span>
+                  <span style="display: flex; align-items: center; gap: 7px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; color: #7BE3B4"><span style="width: 5px; height: 5px; border-radius: 50%; background: #29D08A"></span>ACTIVE · RENEWS {{ s.renews }}</span>
+                </span>
+                <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; color: #9AA6A1">{{ s.plan }}</span>
+                <span style="display: flex; flex-direction: column; gap: 7px">
+                  <span style="display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #8B968F">{{ s.used }}<span style="color: {{ s.barColor }}">{{ s.pct }}</span></span>
+                  <span style="height: 5px; border-radius: 3px; background: rgba(255,255,255,0.08); overflow: hidden"><span style="display: block; height: 5px; width: {{ s.pct }}; background: {{ s.barColor }}"></span></span>
+                </span>
+                <span style="display: flex; gap: 8px">
+                  <a href="#dash" style="padding: 8px 13px; border-radius: 7px; background: rgba(74,155,255,0.14); border: 1px solid rgba(74,155,255,0.4); color: #7FB4FF; font-size: 12.5px; font-weight: 600; white-space: nowrap">cPanel</a>
+                  <a href="./My Hosting.dc.html" style="padding: 8px 13px; border: 1px solid rgba(255,255,255,0.16); border-radius: 7px; color: #B6C0BB; font-size: 12.5px; white-space: nowrap">Details</a>
+                </span>
+              </div>
+            </sc-for>
+          </div>
+
+          <div id="billing" style="border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden">
+            <div style="display: flex; align-items: center; justify-content: space-between; padding: 18px 22px; border-bottom: 1px solid rgba(255,255,255,0.1)">
+              <span style="font-size: 17px; font-weight: 600; color: #fff">Billing</span>
+              <a href="./Invoices.dc.html" style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em">ALL INVOICES →</a>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1)">
+              <sc-for list="{{ billing }}" as="b" hint-placeholder-count="4">
+                <div style="display: flex; flex-direction: column; gap: 5px; padding: 18px 22px; background: #0C1116">
+                  <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #7F8C86">{{ b.label }}</span>
+                  <span style="font-family: 'JetBrains Mono', monospace; font-size: 19px; color: {{ b.color }}">{{ b.value }}</span>
+                  <span style="font-family: 'Instrument Sans', sans-serif; font-size: 12.5px; color: #5C665F">{{ b.unit }}</span>
+                </div>
+              </sc-for>
+            </div>
+            <sc-for list="{{ invoices }}" as="i" hint-placeholder-count="3">
+              <div style="display: grid; grid-template-columns: 1fr 1.4fr 1fr auto; gap: 16px; align-items: center; padding: 15px 22px; border-bottom: 1px solid rgba(255,255,255,0.08)">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #fff">{{ i.no }}</span>
+                <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; color: #9AA6A1">{{ i.what }}</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 13.5px; color: {{ i.color }}">{{ i.amount }}</span>
+                <span style="display: flex; align-items: center; gap: 12px">
+                  <span style="padding: 4px 10px; border-radius: 20px; background: {{ i.tagBg }}; color: {{ i.color }}; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em">{{ i.status }}</span>
+                  <a href="./Invoices.dc.html" style="font-size: 13px">Pay →</a>
+                </span>
+              </div>
+            </sc-for>
+          </div>
+
+          <div id="domains" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px">
+            <div style="display: flex; flex-direction: column; gap: 14px; padding: 22px 24px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px">
+              <span style="font-size: 16.5px; font-weight: 600; color: #fff">Register a new domain</span>
+              <div style="display: flex; gap: 0; border: 1px solid rgba(255,255,255,0.16); border-radius: 9px; overflow: hidden; background: #070A0D">
+                <span style="flex: 1; display: flex; align-items: center; padding: 0 14px; height: 46px; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #4E5A55">yourdomain.co.tz</span>
+                <a href="./My Domains.dc.html" style="display: grid; place-items: center; padding: 0 18px; background: #29D08A; color: #06231A; font-size: 13.5px; font-weight: 600">Check</a>
+              </div>
+              <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13px; color: #7F8C86">Or <a href="#domains">transfer a domain in</a> — free, and we add a year.</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px 24px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px">
+              <span style="font-size: 16.5px; font-weight: 600; color: #fff">Support</span>
+              <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; line-height: 1.6; color: #8B968F">No open tickets. Site down or mail failing? Call — don't wait on a ticket.</span>
+              <div style="display: flex; gap: 10px; margin-top: 2px">
+                <a href="https://wa.me/255689011111" style="padding: 10px 16px; border-radius: 7px; background: #29D08A; color: #06231A; font-size: 13.5px; font-weight: 600">WhatsApp</a>
+                <a href="./Support Tickets.dc.html" style="padding: 10px 16px; border: 1px solid rgba(255,255,255,0.16); border-radius: 7px; color: #fff; font-size: 13.5px">Open a ticket</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 24px">
+          <div style="display: flex; flex-direction: column; gap: 14px; padding: 22px 24px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #7F8C86">ACCOUNT</span>
+            <div style="display: flex; flex-direction: column; gap: 3px">
+              <span style="font-size: 16px; font-weight: 600; color: #fff">Kassim Haji Kassim</span>
+              <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; color: #8B968F">Leruma Enterprises Ltd</span>
+              <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; color: #8B968F">Kibaha, Pwani</span>
+              <a href="#dash" style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; margin-top: 4px">info@lerumaenterprises.co.tz</a>
+            </div>
+            <a href="./Profile.dc.html" style="display: grid; place-items: center; height: 42px; border: 1px solid rgba(255,255,255,0.18); border-radius: 8px; color: #fff; font-size: 13.5px; font-weight: 600">Edit details</a>
+          </div>
+
+          <div style="border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden">
+            <div style="padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #7F8C86">SHORTCUTS</div>
+            <sc-for list="{{ shortcuts }}" as="s" hint-placeholder-count="5">
+              <a href="#dash" style="display: flex; align-items: center; justify-content: space-between; padding: 13px 20px; border-bottom: 1px solid rgba(255,255,255,0.07); color: inherit; font-size: 14px">
+                <span style="color: #B6C0BB">{{ s.label }}</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #7F8C86">{{ s.hint }}</span>
+              </a>
+            </sc-for>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px 24px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px">
+            <div style="display: flex; align-items: center; justify-content: space-between">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #7F8C86">WALLET</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; color: #5C665F">TSh</span>
+            </div>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 28px; color: #fff; letter-spacing: -0.02em">0.00</span>
+            <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13px; line-height: 1.55; color: #7F8C86">Top up by M-Pesa and renewals are paid automatically from the balance.</span>
+            <a href="#billing" style="display: grid; place-items: center; height: 42px; border-radius: 8px; background: rgba(74,155,255,0.14); border: 1px solid rgba(74,155,255,0.4); color: #7FB4FF; font-size: 13.5px; font-weight: 600">Add funds</a>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px 24px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #7F8C86">PLATFORM · LAST 30 DAYS</span>
+            <div style="display: flex; gap: 2px">
+              <sc-for list="{{ bars }}" as="b" hint-placeholder-count="30">
+                <span style="flex: 1; height: 30px; border-radius: 1px; background: {{ b.color }}"></span>
+              </sc-for>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: #7F8C86"><span>30d ago</span><span style="color: #7BE3B4">99.98%</span><span>today</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:1100}}">
+class Component extends DCLogic {
+  renderVals() {
+    const item = (label, opts = {}) => ({
+      label,
+      bg: opts.active ? "rgba(74,155,255,0.14)" : "transparent",
+      fg: opts.active ? "#fff" : "#9AA6A1",
+      weight: opts.active ? "600" : "400",
+      dot: opts.active ? "#4A9BFF" : "#3D453F",
+      hasBadge: !!opts.badge,
+      badge: opts.badge || "",
+      badgeBg: opts.warn ? "rgba(242,163,60,0.18)" : "rgba(255,255,255,0.08)",
+      badgeFg: opts.warn ? "#F2A33C" : "#9AA6A1"
+    });
+    return {
+      navGroups: [
+        { label: "OVERVIEW", items: [item("Dashboard", { active: true }), item("News")] },
+        { label: "SERVICES", items: [item("My Hosting", { badge: "6" }), item("My Domains", { badge: "11" }), item("Products & Services"), item("Subscriptions"), item("Order Services")] },
+        { label: "BILLING", items: [item("Invoices", { badge: "5", warn: true }), item("Payments"), item("Quotations"), item("Credit Notes"), item("Statement")] },
+        { label: "SUPPORT", items: [item("Support Tickets"), item("Knowledgebase")] },
+        { label: "ACCOUNT", items: [item("Profile"), item("Portal Users")] }
+      ],
+      stats: [
+        { label: "SERVICES", value: "6", color: "#fff", note: "All active" },
+        { label: "DOMAINS", value: "11", color: "#fff", note: "1 expiring soon" },
+        { label: "OPEN TICKETS", value: "0", color: "#29D08A", note: "Nothing outstanding" },
+        { label: "UNPAID INVOICES", value: "5", color: "#F2A33C", note: "TSh 1,116,000 due" }
+      ],
+      services: [
+        { domain: "lerumalogistics.co.tz", plan: "System Package", used: "9.2 / 15 GB", pct: "61%", barColor: "#29D08A", renews: "14 MAR 2027" },
+        { domain: "mailmojashop.co.tz", plan: "Professional", used: "10.8 / 12 GB", pct: "90%", barColor: "#F2A33C", renews: "02 DEC 2026" },
+        { domain: "whitestar.co.tz", plan: "Personal", used: "2.4 / 8 GB", pct: "30%", barColor: "#29D08A", renews: "13 AUG 2026" },
+        { domain: "zaifood.co.tz", plan: "Professional", used: "5.1 / 12 GB", pct: "42%", barColor: "#29D08A", renews: "28 JAN 2027" }
+      ],
+      billing: [
+        { label: "TOTAL INVOICED", value: "4,337,348", unit: "TSh, lifetime", color: "#fff" },
+        { label: "TOTAL PAID", value: "3,221,348", unit: "TSh, lifetime", color: "#7BE3B4" },
+        { label: "OUTSTANDING", value: "1,116,000", unit: "TSh, 5 invoices", color: "#F2A33C" },
+        { label: "CREDIT BALANCE", value: "0.00", unit: "TSh in wallet", color: "#fff" }
+      ],
+      invoices: [
+        { no: "INV-4218", what: "System Package renewal · lerumalogistics.co.tz", amount: "250,000", status: "22 DAYS OVERDUE", color: "#FF7B72", tagBg: "rgba(255,123,114,0.14)" },
+        { no: "INV-4231", what: "Professional renewal · mailmojashop.co.tz", amount: "150,000", status: "15 DAYS OVERDUE", color: "#FF7B72", tagBg: "rgba(255,123,114,0.14)" },
+        { no: "INV-4266", what: "Domain renewals × 3", amount: "59,997", status: "DUE 08 AUG", color: "#F2A33C", tagBg: "rgba(242,163,60,0.14)" }
+      ],
+      shortcuts: [
+        { label: "Order new services", hint: "→" },
+        { label: "Register a domain", hint: "→" },
+        { label: "Transfer a domain in", hint: "FREE" },
+        { label: "Add funds", hint: "M-PESA" },
+        { label: "Download statement", hint: "PDF" }
+      ],
+      bars: Array.from({ length: 30 }, (_, i) => ({ color: i === 18 ? "#F2A33C" : "#29D08A" }))
+    };
+  }
+}
+</script>
+</body>
+</html>

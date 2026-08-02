@@ -15,6 +15,7 @@ export function PricingPlans() {
   return (
     <section className={classes.section} id="pricing">
       <Container size="xl">
+        <div className={classes.eyebrow}>{t("pricing.eyebrow")}</div>
         <SectionHeader
           title={t("pricing.title")}
           description={t("pricing.description")}

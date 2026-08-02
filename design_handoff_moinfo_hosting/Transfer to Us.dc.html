@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #0C1116; }
+  #root { display: flex; justify-content: center; }
+  a { color: #7BE3B4; text-decoration: none; }
+  a:hover { color: #4A9BFF; }
+</style>
+</helmet>
+<div style="width: 1440px; flex-shrink: 0; background: #0C1116; font-family: 'Space Grotesk', sans-serif">
+  <dc-import name="Site Header" active="hosting" crumb="Transfer to Us" hint-size="1440px,170px"></dc-import>
+
+  <div style="position: relative; padding: 76px 40px; background: radial-gradient(900px 420px at 20% 0%, rgba(11,92,213,0.28), transparent 70%), radial-gradient(720px 400px at 88% 30%, rgba(10,143,99,0.22), transparent 70%), #0C1116">
+    <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 80px 80px; pointer-events: none"></div>
+    <div style="position: relative; display: grid; grid-template-columns: 1fr 380px; gap: 64px; align-items: end">
+      <div style="display: flex; flex-direction: column; gap: 26px">
+        <div style="display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4"><span style="width: 22px; height: 1px; background: #29D08A"></span>FREE MIGRATION · NO DOWNTIME</div>
+        <h1 style="margin: 0; font-size: 62px; line-height: 1.0; letter-spacing: -0.035em; font-weight: 600; color: #fff; max-width: 16ch; text-wrap: pretty">We move you. You keep working.</h1>
+        <p style="margin: 0; max-width: 54ch; font-family: 'Instrument Sans', sans-serif; font-size: 17.5px; line-height: 1.6; color: #9AA6A1">Site, databases, mailboxes and DNS — copied across, tested, then switched over. Usually the same day, and it costs nothing.</p>
+        <div style="display: flex; gap: 12px"><a href="#form" style="padding: 14px 24px; border-radius: 8px; background: #29D08A; color: #06231A; font-size: 15px; font-weight: 600">Start a migration</a><a href="https://wa.me/255689011111" style="padding: 14px 24px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: #fff; font-size: 15px; font-weight: 500">Ask a question first</a></div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden">
+        <div style="padding: 18px 20px; border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1)"><div style="font-size: 24px; font-weight: 600; color: #29D08A">0 TSh</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86; margin-top: 4px">MIGRATION FEE</div></div>
+        <div style="padding: 18px 20px; border-bottom: 1px solid rgba(255,255,255,0.1)"><div style="font-size: 24px; font-weight: 600; color: #fff">Same day</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86; margin-top: 4px">TYPICAL TURNAROUND</div></div>
+        <div style="padding: 18px 20px; border-right: 1px solid rgba(255,255,255,0.1)"><div style="font-size: 24px; font-weight: 600; color: #fff">0 min</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86; margin-top: 4px">VISITOR DOWNTIME</div></div>
+        <div style="padding: 18px 20px"><div style="font-size: 24px; font-weight: 600; color: #fff">Bulk</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86; margin-top: 4px">RESELLER ACCOUNTS</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding: 90px 40px; background: #0A0E12; border-top: 1px solid rgba(255,255,255,0.08)">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start">
+      <div style="display: flex; flex-direction: column; gap: 22px">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4">01 · HOW IT RUNS</span>
+        <h2 style="margin: 0; font-size: 40px; font-weight: 600; letter-spacing: -0.03em; color: #fff; line-height: 1.05; max-width: 18ch">Five steps, and you approve each one</h2>
+        <div style="display: flex; flex-direction: column">
+          <sc-for list="{{ steps }}" as="s" hint-placeholder-count="5">
+            <div style="display: flex; gap: 18px; padding: 16px 0; border-top: 1px solid rgba(255,255,255,0.09)">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #29D08A; padding-top: 3px">{{ s.n }}</span>
+              <span><span style="display: block; font-size: 16.5px; font-weight: 600; color: #fff">{{ s.t }}</span><span style="display: block; margin-top: 5px; font-family: 'Instrument Sans', sans-serif; font-size: 14px; line-height: 1.6; color: #8B968F">{{ s.d }}</span></span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 22px">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4">02 · WHAT WE MOVE</span>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden">
+          <sc-for list="{{ moves }}" as="m" hint-placeholder-count="6">
+            <div style="padding: 24px 26px; background: #0A0E12; display: flex; flex-direction: column; gap: 7px">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 20px; color: {{ m.color }}">{{ m.k }}</span>
+              <span style="font-size: 16px; font-weight: 600; color: #fff">{{ m.t }}</span>
+              <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; line-height: 1.6; color: #8B968F">{{ m.d }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="padding: 22px 24px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; font-family: 'Instrument Sans', sans-serif; font-size: 14.5px; line-height: 1.65; color: #8B968F">
+          Coming from a reseller account with dozens of sites? We move the whole batch in one scheduled window — tell us on the form and we will plan it with you.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="form" style="padding: 90px 40px; background: #0C1116; border-top: 1px solid rgba(255,255,255,0.08)">
+    <div style="display: grid; grid-template-columns: 1fr 520px; gap: 64px; align-items: start">
+      <div style="display: flex; flex-direction: column; gap: 20px">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4">03 · REQUEST A MIGRATION</span>
+        <h2 style="margin: 0; font-size: 40px; font-weight: 600; letter-spacing: -0.03em; color: #fff; line-height: 1.05; max-width: 18ch">Send the details, we do the rest</h2>
+        <p style="margin: 0; max-width: 46ch; font-family: 'Instrument Sans', sans-serif; font-size: 16.5px; line-height: 1.65; color: #8B968F">We only need enough to log in and copy. If you would rather not send credentials, we will walk you through generating a backup instead.</p>
+        <div style="display: flex; flex-direction: column">
+          <sc-for list="{{ notes }}" as="n" hint-placeholder-count="4">
+            <div style="display: flex; gap: 12px; padding: 12px 0; border-top: 1px solid rgba(255,255,255,0.09); font-family: 'Instrument Sans', sans-serif; font-size: 14.5px; color: #B6C0BB"><span style="color: #29D08A">✓</span>{{ n }}</div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px; padding: 30px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; background: rgba(255,255,255,0.02)">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px">
+          <div style="display: flex; flex-direction: column; gap: 7px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #7F8C86">NAME</span><div style="height: 46px; border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; background: #070A0D"></div></div>
+          <div style="display: flex; flex-direction: column; gap: 7px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #7F8C86">PHONE</span><div style="height: 46px; border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; background: #070A0D"></div></div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 7px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #7F8C86">DOMAIN TO MOVE</span><div style="height: 46px; border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; background: #070A0D"></div></div>
+        <div style="display: flex; flex-direction: column; gap: 7px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #7F8C86">CURRENT HOST</span><div style="height: 46px; border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; background: #070A0D"></div></div>
+        <div style="display: flex; flex-direction: column; gap: 7px">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #7F8C86">WHAT NEEDS MOVING?</span>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px">
+            <span style="padding: 8px 13px; border: 1px solid #29D08A; border-radius: 7px; background: rgba(41,208,138,0.12); font-size: 13.5px; color: #7BE3B4">Website</span>
+            <span style="padding: 8px 13px; border: 1px solid #29D08A; border-radius: 7px; background: rgba(41,208,138,0.12); font-size: 13.5px; color: #7BE3B4">Mailboxes</span>
+            <span style="padding: 8px 13px; border: 1px solid rgba(255,255,255,0.14); border-radius: 7px; font-size: 13.5px; color: #B6C0BB">Databases</span>
+            <span style="padding: 8px 13px; border: 1px solid rgba(255,255,255,0.14); border-radius: 7px; font-size: 13.5px; color: #B6C0BB">Domain itself</span>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 7px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #7F8C86">ANYTHING WE SHOULD KNOW?</span><div style="height: 100px; border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; background: #070A0D"></div></div>
+        <a href="#form" style="display: grid; place-items: center; height: 48px; border-radius: 8px; background: #29D08A; color: #06231A; font-size: 15px; font-weight: 600">Request free migration</a>
+        <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13px; color: #7F8C86; text-align: center">Never send passwords in this form — we will ask securely once we reply.</span>
+      </div>
+    </div>
+  </div>
+
+  <dc-import name="Site Footer" hint-size="1440px,620px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:1000}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      steps: [
+        { n: "01", t: "You send the details", d: "Domain, current host and how we can access it — form below or WhatsApp." },
+        { n: "02", t: "We copy everything", d: "Files, databases and mail are pulled across to our servers, untouched at your old host." },
+        { n: "03", t: "We test on a staging link", d: "You get a preview address to click through before anything changes for visitors." },
+        { n: "04", t: "You give the go-ahead", d: "Nothing switches until you are satisfied the copy works." },
+        { n: "05", t: "DNS switches over", d: "We update the records and watch propagation. Old host stays live until it completes." }
+      ],
+      moves: [
+        { k: "Web", color: "#29D08A", t: "Website files", d: "All public files, permissions and folder structure preserved." },
+        { k: "SQL", color: "#4A9BFF", t: "Databases", d: "MySQL databases and users, with config files updated to match." },
+        { k: "Mail", color: "#29D08A", t: "Mailboxes and mail", d: "Accounts, passwords where possible, and the existing mail with folders intact." },
+        { k: "DNS", color: "#4A9BFF", t: "DNS records", d: "Your existing zone is recreated here before the switch, so nothing is missed." },
+        { k: "SSL", color: "#29D08A", t: "Certificates", d: "New free SSL issued on our side and forced on at cutover." },
+        { k: "Cron", color: "#4A9BFF", t: "Scheduled jobs", d: "Cron entries copied and re-pointed to the new paths." }
+      ],
+      notes: [
+        "No charge, regardless of how many sites or mailboxes",
+        "Your old host stays live until you approve the switch",
+        "Evening and weekend cutovers available on request",
+        "Reseller and bulk migrations planned as a scheduled window"
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

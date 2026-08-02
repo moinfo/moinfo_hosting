@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #0C1116; }
+  #root { display: flex; justify-content: center; }
+  a { color: #7BE3B4; text-decoration: none; }
+  a:hover { color: #4A9BFF; }
+</style>
+</helmet>
+<div style="width: 1440px; flex-shrink: 0; background: #0C1116; font-family: 'Space Grotesk', sans-serif">
+  <dc-import name="Site Header" active="design" crumb="Web Design" hint-size="1440px,170px"></dc-import>
+
+  <div style="position: relative; padding: 76px 40px; background: radial-gradient(900px 420px at 20% 0%, rgba(11,92,213,0.28), transparent 70%), radial-gradient(720px 400px at 88% 30%, rgba(10,143,99,0.22), transparent 70%), #0C1116">
+    <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 80px 80px; pointer-events: none"></div>
+    <div style="position: relative; display: grid; grid-template-columns: 1fr 420px; gap: 64px; align-items: end">
+      <div style="display: flex; flex-direction: column; gap: 26px">
+        <div style="display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4"><span style="width: 22px; height: 1px; background: #29D08A"></span>MOINFOTECH STUDIO · DESIGN &amp; BUILD</div>
+        <h1 style="margin: 0; font-size: 62px; line-height: 1.0; letter-spacing: -0.035em; font-weight: 600; color: #fff; max-width: 16ch; text-wrap: pretty">The site, built by the people who host it.</h1>
+        <p style="margin: 0; max-width: 54ch; font-family: 'Instrument Sans', sans-serif; font-size: 17.5px; line-height: 1.6; color: #9AA6A1">One team for design, build, hosting and maintenance. One invoice, one number to call when something needs changing.</p>
+        <div style="display: flex; gap: 12px"><a href="#quote" style="padding: 14px 24px; border-radius: 8px; background: #4A9BFF; color: #04122A; font-size: 15px; font-weight: 600">Request a quote</a><a href="#work" style="padding: 14px 24px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: #fff; font-size: 15px; font-weight: 500">See our work</a></div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px; padding: 24px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: #7F8C86">PROJECTS START FROM</div>
+        <div style="display: flex; align-items: baseline; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 15px; color: #8B968F">TSh</span><span style="font-size: 36px; font-weight: 600; color: #fff; letter-spacing: -0.03em">250,000</span><span style="font-size: 13px; color: #7F8C86">/ month</span></div>
+        <div style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; line-height: 1.6; color: #8B968F">Includes hosting, SSL, backups and content updates for the life of the retainer.</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 7px; margin-top: 4px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #8B968F">
+          <span style="padding: 6px 11px; border: 1px solid rgba(255,255,255,0.12); border-radius: 6px">WordPress</span>
+          <span style="padding: 6px 11px; border: 1px solid rgba(255,255,255,0.12); border-radius: 6px">React</span>
+          <span style="padding: 6px 11px; border: 1px solid rgba(255,255,255,0.12); border-radius: 6px">Next.js</span>
+          <span style="padding: 6px 11px; border: 1px solid rgba(255,255,255,0.12); border-radius: 6px">PHP</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding: 90px 40px; background: #0A0E12; border-top: 1px solid rgba(255,255,255,0.08)">
+    <div style="display: grid; grid-template-columns: 340px 1fr; gap: 64px; align-items: start">
+      <div style="display: flex; flex-direction: column; gap: 16px">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4">01 · WHAT WE DO</span>
+        <h2 style="margin: 0; font-size: 40px; font-weight: 600; letter-spacing: -0.03em; color: #fff; line-height: 1.05">Eight things in every project</h2>
+        <p style="margin: 0; font-family: 'Instrument Sans', sans-serif; font-size: 16px; line-height: 1.65; color: #8B968F">Whether it is a five-page brochure site or a store with a thousand SKUs, the scope covers the same ground.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden">
+        <sc-for list="{{ services }}" as="s" hint-placeholder-count="8">
+          <div style="padding: 26px 28px; background: #0A0E12; display: flex; gap: 16px">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #29D08A; padding-top: 3px">{{ s.n }}</span>
+            <span><span style="display: block; font-size: 16.5px; font-weight: 600; color: #fff">{{ s.t }}</span><span style="display: block; margin-top: 6px; font-family: 'Instrument Sans', sans-serif; font-size: 14px; line-height: 1.65; color: #8B968F">{{ s.d }}</span></span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <div id="work" style="padding: 90px 40px; background: #0C1116; border-top: 1px solid rgba(255,255,255,0.08)">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; padding-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.1)">
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4">02 · SELECTED WORK</span>
+        <h2 style="margin: 0; font-size: 40px; font-weight: 600; letter-spacing: -0.03em; color: #fff">Recent projects</h2>
+      </div>
+      <p style="margin: 0; max-width: 32ch; font-family: 'Instrument Sans', sans-serif; font-size: 14.5px; line-height: 1.65; color: #8B968F">Screenshot placeholders — drop in the real project images when you have them.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding-top: 32px">
+      <sc-for list="{{ work }}" as="w" hint-placeholder-count="6">
+        <div style="display: flex; flex-direction: column; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden">
+          <div style="height: 190px; background: repeating-linear-gradient(135deg, rgba(255,255,255,0.03) 0 12px, transparent 12px 24px); display: grid; place-items: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #5C665F">PROJECT SCREENSHOT</div>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 20px; border-top: 1px solid rgba(255,255,255,0.1)">
+            <span><span style="display: block; font-size: 15.5px; font-weight: 600; color: #fff">{{ w.name }}</span><span style="display: block; margin-top: 3px; font-family: 'Instrument Sans', sans-serif; font-size: 13px; color: #7F8C86">{{ w.type }}</span></span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #7BE3B4">{{ w.stack }}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div id="quote" style="padding: 90px 40px; background: #0A0E12; border-top: 1px solid rgba(255,255,255,0.08)">
+    <div style="display: grid; grid-template-columns: 1fr 480px; gap: 64px; align-items: start">
+      <div style="display: flex; flex-direction: column; gap: 22px">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4">03 · HOW A PROJECT RUNS</span>
+        <h2 style="margin: 0; font-size: 40px; font-weight: 600; letter-spacing: -0.03em; color: #fff; line-height: 1.05; max-width: 18ch">Five weeks, typically</h2>
+        <div style="display: flex; flex-direction: column">
+          <sc-for list="{{ process }}" as="p" hint-placeholder-count="5">
+            <div style="display: flex; gap: 18px; padding: 16px 0; border-top: 1px solid rgba(255,255,255,0.09)">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #29D08A; padding-top: 3px; white-space: nowrap">{{ p.n }}</span>
+              <span><span style="display: block; font-size: 16.5px; font-weight: 600; color: #fff">{{ p.t }}</span><span style="display: block; margin-top: 5px; font-family: 'Instrument Sans', sans-serif; font-size: 14px; line-height: 1.6; color: #8B968F">{{ p.d }}</span></span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px; padding: 28px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; background: rgba(255,255,255,0.02)">
+        <div style="display: flex; flex-direction: column; gap: 7px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #7F8C86">ORGANISATION</span><div style="height: 46px; border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; background: #070A0D"></div></div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px">
+          <div style="display: flex; flex-direction: column; gap: 7px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #7F8C86">CONTACT NAME</span><div style="height: 46px; border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; background: #070A0D"></div></div>
+          <div style="display: flex; flex-direction: column; gap: 7px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #7F8C86">PHONE</span><div style="height: 46px; border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; background: #070A0D"></div></div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 7px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #7F8C86">WHAT DO YOU NEED BUILT?</span><div style="height: 110px; border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; background: #070A0D"></div></div>
+        <a href="#quote" style="display: grid; place-items: center; height: 48px; border-radius: 8px; background: #4A9BFF; color: #04122A; font-size: 15px; font-weight: 600">Request a quote</a>
+        <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13px; color: #7F8C86; text-align: center">We reply within one working day.</span>
+      </div>
+    </div>
+  </div>
+
+  <dc-import name="Site Footer" hint-size="1440px,620px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:1000}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      services: [
+        { n: "01", t: "Custom responsive design", d: "Laid out for the phone first, because that is where most Tanzanian traffic arrives." },
+        { n: "02", t: "SEO-optimised structure", d: "Clean markup, fast pages, sitemap and metadata set up before launch." },
+        { n: "03", t: "Mobile-first approach", d: "Tested on real handsets over mobile data, not just a desktop browser." },
+        { n: "04", t: "Content management", d: "You edit text and images yourself. We train the person who will do it." },
+        { n: "05", t: "E-commerce integration", d: "Product catalogues, mobile-money and card checkout, delivery options." },
+        { n: "06", t: "Social media integration", d: "Feeds, share targets and WhatsApp click-to-chat wired into the pages." },
+        { n: "07", t: "Analytics &amp; reporting", d: "Analytics installed and a monthly summary of what visitors actually did." },
+        { n: "08", t: "Maintenance plans", d: "Updates, backups and small changes handled on a monthly retainer." }
+      ],
+      work: [
+        { name: "Client project", type: "Corporate website", stack: "WORDPRESS" },
+        { name: "Client project", type: "E-commerce store", stack: "WOOCOMMERCE" },
+        { name: "Client project", type: "School portal", stack: "PHP" },
+        { name: "Client project", type: "NGO campaign site", stack: "NEXT.JS" },
+        { name: "Client project", type: "Booking system", stack: "REACT" },
+        { name: "Client project", type: "Government portal", stack: "WORDPRESS" }
+      ],
+      process: [
+        { n: "WK 1", t: "Discovery", d: "We sit with you, agree the pages, the audience and what success looks like." },
+        { n: "WK 2", t: "Design", d: "Layouts for the key pages, revised with you before a line of code is written." },
+        { n: "WK 3–4", t: "Build", d: "The site is built on our hosting, with a staging link you can review daily." },
+        { n: "WK 5", t: "Content &amp; training", d: "Real content goes in, and we train whoever will maintain it." },
+        { n: "GO LIVE", t: "Launch and after", d: "DNS switches, we monitor for a week, then the maintenance retainer starts." }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

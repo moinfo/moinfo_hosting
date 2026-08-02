@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #0C1116; }
+  #root { display: flex; justify-content: center; }
+  a { color: #7BE3B4; text-decoration: none; }
+  a:hover { color: #4A9BFF; }
+</style>
+</helmet>
+<div style="width: 1440px; flex-shrink: 0; background: #0C1116; font-family: 'Space Grotesk', sans-serif">
+  <dc-import name="Site Header" active="hosting" crumb="Hosting / Email Hosting" hint-size="1440px,170px"></dc-import>
+
+  <div style="position: relative; padding: 72px 40px; background: radial-gradient(900px 420px at 20% 0%, rgba(11,92,213,0.28), transparent 70%), radial-gradient(720px 400px at 88% 30%, rgba(10,143,99,0.22), transparent 70%), #0C1116">
+    <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 80px 80px; pointer-events: none"></div>
+    <div style="position: relative; display: grid; grid-template-columns: 1fr 380px; gap: 64px; align-items: end">
+      <div style="display: flex; flex-direction: column; gap: 26px">
+        <div style="display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4"><span style="width: 22px; height: 1px; background: #29D08A"></span>BUSINESS EMAIL · IMAP &amp; POP3 · WEBMAIL</div>
+        <h1 style="margin: 0; font-size: 62px; line-height: 1.0; letter-spacing: -0.035em; font-weight: 600; color: #fff; max-width: 17ch; text-wrap: pretty">Mail on your own domain, not a free account.</h1>
+        <p style="margin: 0; max-width: 54ch; font-family: 'Instrument Sans', sans-serif; font-size: 17.5px; line-height: 1.6; color: #9AA6A1">jina@kampuniyako.co.tz on every phone and laptop in the office — with anti-spam, anti-virus and mailbox quotas you control.</p>
+        <div style="display: flex; gap: 12px"><a href="#plans" style="padding: 14px 24px; border-radius: 8px; background: #29D08A; color: #06231A; font-size: 15px; font-weight: 600">See mailbox plans</a><a href="https://wa.me/255689011111" style="padding: 14px 24px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: #fff; font-size: 15px; font-weight: 500">Talk to us first</a></div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden">
+        <div style="padding: 18px 20px; border-right: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1)"><div style="font-size: 24px; font-weight: 600; color: #29D08A">99.9%</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86; margin-top: 4px">MAIL UPTIME</div></div>
+        <div style="padding: 18px 20px; border-bottom: 1px solid rgba(255,255,255,0.1)"><div style="font-size: 24px; font-weight: 600; color: #fff">IMAP</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86; margin-top: 4px">SYNC EVERYWHERE</div></div>
+        <div style="padding: 18px 20px; border-right: 1px solid rgba(255,255,255,0.1)"><div style="font-size: 24px; font-weight: 600; color: #fff">0 TSh</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86; margin-top: 4px">MAIL MIGRATION</div></div>
+        <div style="padding: 18px 20px"><div style="font-size: 24px; font-weight: 600; color: #fff">24/7</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86; margin-top: 4px">LOCAL SUPPORT</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="plans" style="padding: 90px 40px; background: #0A0E12; border-top: 1px solid rgba(255,255,255,0.08)">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; padding-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.1)">
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4">01 · PLANS</span>
+        <h2 style="margin: 0; font-size: 40px; font-weight: 600; letter-spacing: -0.03em; color: #fff">Priced by mailbox count</h2>
+      </div>
+      <p style="margin: 0; max-width: 36ch; font-family: 'Instrument Sans', sans-serif; font-size: 14.5px; line-height: 1.65; color: #8B968F">Already on a web hosting plan? Mailboxes are included — this is for mail-only customers.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding-top: 32px">
+      <sc-for list="{{ plans }}" as="p" hint-placeholder-count="3">
+        <div style="display: flex; flex-direction: column; gap: 20px; padding: 26px; border: 1px solid {{ p.border }}; border-radius: 12px; background: {{ p.bg }}">
+          <div style="display: flex; align-items: center; justify-content: space-between"><span style="font-size: 19px; font-weight: 600; color: #fff">{{ p.name }}</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: {{ p.tagColor }}">{{ p.tag }}</span></div>
+          <div style="display: flex; align-items: baseline; gap: 8px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 32px; font-weight: 500; color: #fff; letter-spacing: -0.02em">{{ p.price }}</span><span style="font-size: 13px; color: #7F8C86">TSh / year</span></div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; overflow: hidden">
+            <div style="padding: 12px 14px; background: {{ p.cellBg }}"><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #7F8C86">MAILBOXES</div><div style="font-size: 16px; color: #fff; margin-top: 3px">{{ p.mail }}</div></div>
+            <div style="padding: 12px 14px; background: {{ p.cellBg }}"><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #7F8C86">PER BOX</div><div style="font-size: 16px; color: #fff; margin-top: 3px">{{ p.quota }}</div></div>
+            <div style="padding: 12px 14px; background: {{ p.cellBg }}"><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #7F8C86">DOMAINS</div><div style="font-size: 16px; color: #fff; margin-top: 3px">{{ p.domains }}</div></div>
+            <div style="padding: 12px 14px; background: {{ p.cellBg }}"><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #7F8C86">ALIASES</div><div style="font-size: 16px; color: #fff; margin-top: 3px">{{ p.alias }}</div></div>
+          </div>
+          <div style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; line-height: 1.7; color: #8B968F">{{ p.blurb }}</div>
+          <a href="#order" style="display: grid; place-items: center; height: 46px; border: 1px solid {{ p.btnBorder }}; border-radius: 8px; background: {{ p.btnBg }}; color: {{ p.btnFg }}; font-size: 14.5px; font-weight: 600; margin-top: auto">Order now</a>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding: 90px 40px; background: #0C1116; border-top: 1px solid rgba(255,255,255,0.08)">
+    <div style="display: grid; grid-template-columns: 340px 1fr; gap: 64px; align-items: start">
+      <div style="display: flex; flex-direction: column; gap: 16px">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4">02 · IN EVERY MAILBOX</span>
+        <h2 style="margin: 0; font-size: 40px; font-weight: 600; letter-spacing: -0.03em; color: #fff; line-height: 1.05">Works with the apps you already use</h2>
+        <p style="margin: 0; font-family: 'Instrument Sans', sans-serif; font-size: 16px; line-height: 1.65; color: #8B968F">Outlook, Apple Mail, Gmail app or our webmail — standard IMAP, so nothing is locked in.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden">
+        <sc-for list="{{ features }}" as="f" hint-placeholder-count="6">
+          <div style="padding: 28px; background: #0C1116; display: flex; flex-direction: column; gap: 9px">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 22px; color: {{ f.color }}; letter-spacing: -0.02em">{{ f.k }}</span>
+            <span style="font-size: 17px; font-weight: 600; color: #fff">{{ f.t }}</span>
+            <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; line-height: 1.65; color: #8B968F">{{ f.d }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <dc-import name="Site Footer" hint-size="1440px,620px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:1000}}">
+class Component extends DCLogic {
+  renderVals() {
+    const hi = { border: "rgba(41,208,138,0.45)", bg: "linear-gradient(180deg, rgba(41,208,138,0.08), rgba(255,255,255,0.02))", cellBg: "#0C1216", tagColor: "#7BE3B4", btnBg: "#29D08A", btnBorder: "#29D08A", btnFg: "#06231A" };
+    const std = { border: "rgba(255,255,255,0.12)", bg: "rgba(255,255,255,0.02)", cellBg: "#0A0E12", tagColor: "#7F8C86", btnBg: "transparent", btnBorder: "rgba(255,255,255,0.2)", btnFg: "#fff" };
+    return {
+      plans: [
+        { name: "Starter Mail", tag: "SMALL TEAM", price: "60,000", mail: "10", quota: "2 GB", domains: "1", alias: "Unlimited", blurb: "A handful of named mailboxes for a small office or NGO.", ...std },
+        { name: "Business Mail", tag: "MOST CHOSEN", price: "180,000", mail: "50", quota: "5 GB", domains: "3", alias: "Unlimited", blurb: "Departmental mail for a growing company, with shared aliases and groups.", ...hi },
+        { name: "Enterprise Mail", tag: "LARGE", price: "420,000", mail: "Unlimited", quota: "10 GB", domains: "10", alias: "Unlimited", blurb: "For institutions and schools running mail across several domains.", ...std }
+      ],
+      features: [
+        { k: "Spam", color: "#29D08A", t: "Filtering that learns", d: "Server-side anti-spam and anti-virus scanning on inbound and outbound mail." },
+        { k: "IMAP", color: "#4A9BFF", t: "Synced on every device", d: "Read on the phone, filed on the laptop. IMAP, POP3 and SMTP with TLS throughout." },
+        { k: "Web", color: "#29D08A", t: "Webmail included", d: "Roundcube webmail with contacts, filters and out-of-office replies." },
+        { k: "DKIM", color: "#4A9BFF", t: "Deliverability set up for you", d: "SPF, DKIM and DMARC records configured so your mail reaches the inbox." },
+        { k: "Quota", color: "#29D08A", t: "You control the boxes", d: "Create, resize and suspend mailboxes yourself from cPanel — no ticket needed." },
+        { k: "0 TSh", color: "#4A9BFF", t: "We move the old mail", d: "Existing mail is copied across with folders intact, at no charge." }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,81 +1,196 @@
+/*
+ * Control Room plan card. Values from the handoff: 26px padding, 22px gap,
+ * 12px radius, and a recommended tier that gets a green border plus a top-down
+ * green wash rather than a different shape or a lift on hover.
+ */
 .card {
-  background: light-dark(var(--mantine-color-white), var(--mantine-color-dark-6));
-  border: 1px solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-4));
-  border-radius: var(--mantine-radius-lg);
-  padding: var(--mantine-spacing-xl);
+  position: relative;
   display: flex;
   flex-direction: column;
-  transition: transform 200ms ease, box-shadow 200ms ease;
-  position: relative;
+  gap: 22px;
+  padding: 26px;
+  border: 1px solid var(--dc-border);
+  border-radius: var(--dc-radius-card);
+  background: var(--dc-card-fill);
+  height: 100%;
+  transition: border-color 150ms ease;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  border-color: var(--dc-border-strong);
 }
 
 .popular {
-  border: 2px solid transparent;
-  background-image: linear-gradient(
-      light-dark(var(--mantine-color-white), var(--mantine-color-dark-6)),
-      light-dark(var(--mantine-color-white), var(--mantine-color-dark-6))
-    ),
-    linear-gradient(135deg, var(--mantine-color-brand-blue-5), var(--mantine-color-brand-green-5));
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
+  border-color: var(--dc-accent-line);
+  background: linear-gradient(180deg, var(--dc-accent-fill), transparent);
+}
+
+.popular:hover {
+  border-color: var(--dc-accent);
 }
 
 .popularBadge {
   position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(135deg, var(--mantine-color-brand-blue-5), var(--mantine-color-brand-green-5));
-  color: white;
-  padding: 4px 16px;
-  border-radius: var(--mantine-radius-xl);
-  font-size: var(--mantine-font-size-xs);
-  font-weight: 700;
+  top: -11px;
+  left: 26px;
+  padding: 3px 10px;
+  border-radius: 5px;
+  background: var(--dc-accent);
+  color: var(--dc-accent-deep);
+  font-family: var(--dc-font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  font-weight: 600;
   white-space: nowrap;
 }
 
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
 .planName {
-  font-size: var(--mantine-font-size-lg);
-  font-weight: 700;
-  color: light-dark(var(--mantine-color-dark-7), var(--mantine-color-white));
-  margin-bottom: var(--mantine-spacing-xs);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--dc-text);
+}
+
+/* ENTRY / SME / HIGH VOLUME — mono, wide-tracked, green on the popular tier. */
+.tier {
+  font-family: var(--dc-font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  color: var(--dc-text-label);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.popular .tier {
+  color: var(--dc-accent-text);
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .price {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--mantine-color-brand-blue-5);
-  margin-bottom: 4px;
+  font-family: var(--dc-font-mono);
+  font-size: 34px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--dc-text);
+  font-variant-numeric: tabular-nums;
 }
 
 .period {
-  font-size: var(--mantine-font-size-sm);
-  color: light-dark(var(--mantine-color-gray-6), var(--mantine-color-gray-5));
-  margin-bottom: var(--mantine-spacing-lg);
+  font-size: 13px;
+  color: var(--dc-text-label);
 }
 
+/*
+ * Signature hairline grid — 1px gaps showing through as exact dividers.
+ * The design shows a 2×2 (disk/bandwidth/mailboxes/sites); we run three
+ * columns because the site has no per-plan "sites" figure and inventing one
+ * would put a made-up number on a price card.
+ */
+.specGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--dc-grid-line);
+  border: 1px solid var(--dc-grid-line);
+  border-radius: var(--dc-radius-button);
+  overflow: hidden;
+}
+
+.specCell {
+  padding: 12px 14px;
+  background: var(--dc-grid-cell);
+}
+
+.specLabel {
+  font-family: var(--dc-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--dc-text-label);
+  text-transform: uppercase;
+}
+
+.specValue {
+  font-size: 16px;
+  color: var(--dc-text);
+  margin-top: 3px;
+}
+
+.blurb {
+  margin: 0;
+  font-family: var(--dc-font-body);
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--dc-text-muted);
+}
+
+.popular .blurb {
+  color: var(--dc-text-secondary);
+}
+
+/* Fallback list for categories that have no structured specs yet. */
 .features {
   list-style: none;
+  margin: 0;
   padding: 0;
-  margin: 0 0 var(--mantine-spacing-xl) 0;
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
 }
 
 .featureItem {
   display: flex;
-  align-items: center;
-  gap: var(--mantine-spacing-sm);
-  padding: 6px 0;
-  font-size: var(--mantine-font-size-sm);
-  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-gray-4));
+  align-items: flex-start;
+  gap: 9px;
+  font-family: var(--dc-font-body);
+  font-size: 14px;
+  color: var(--dc-text-secondary);
 }
 
 .featureIcon {
-  color: var(--mantine-color-brand-green-5);
+  color: var(--dc-accent);
   flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.order {
+  display: grid;
+  place-items: center;
+  height: 46px;
+  border: 1px solid var(--dc-outline);
+  border-radius: var(--dc-radius-button);
+  color: var(--dc-text);
+  font-size: 14.5px;
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: auto;
+  transition: background 150ms ease, border-color 150ms ease;
+}
+
+.order:hover {
+  background: var(--dc-chip-fill);
+  border-color: var(--dc-border-strong);
+}
+
+.orderPopular {
+  border-color: transparent;
+  background: var(--dc-accent);
+  color: var(--dc-accent-deep);
+  font-weight: 600;
+}
+
+.orderPopular:hover {
+  background: var(--dc-accent-hover);
+  border-color: transparent;
 }

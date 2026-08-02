@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #0C1116; }
+  #root { display: flex; justify-content: center; }
+  a { color: #7BE3B4; text-decoration: none; }
+  a:hover { color: #4A9BFF; }
+</style>
+</helmet>
+<div style="width: 1440px; flex-shrink: 0; background: #0C1116; font-family: 'Space Grotesk', sans-serif">
+  <dc-import name="Site Header" active="features" crumb="Policies" hint-size="1440px,170px"></dc-import>
+
+  <div style="position: relative; padding: 68px 40px; background: radial-gradient(900px 420px at 20% 0%, rgba(11,92,213,0.24), transparent 70%), #0C1116">
+    <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 80px 80px; pointer-events: none"></div>
+    <div style="position: relative; display: flex; flex-direction: column; gap: 20px; max-width: 820px">
+      <div style="display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4"><span style="width: 22px; height: 1px; background: #29D08A"></span>LAST UPDATED 01 AUGUST 2026</div>
+      <h1 style="margin: 0; font-size: 56px; line-height: 1.0; letter-spacing: -0.035em; font-weight: 600; color: #fff; max-width: 17ch; text-wrap: pretty">Policies, in plain language.</h1>
+      <p style="margin: 0; max-width: 54ch; font-family: 'Instrument Sans', sans-serif; font-size: 17px; line-height: 1.6; color: #9AA6A1">The terms you agree to when you host with us, written so you can actually read them. The signed contract text is available on request.</p>
+    </div>
+  </div>
+
+  <div style="display: flex; gap: 4px; padding: 0 40px; background: #0A0E12; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08)">
+    <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="5">
+      <button type="button" onClick="{{ t.on }}" style="padding: 18px 20px; border: 0; background: none; border-bottom: 2px solid {{ t.line }}; color: {{ t.fg }}; font-family: 'Space Grotesk', sans-serif; font-size: 14.5px; font-weight: 600; cursor: pointer">{{ t.label }}</button>
+    </sc-for>
+  </div>
+
+  <div style="padding: 76px 40px; background: #0A0E12">
+    <div style="display: grid; grid-template-columns: 300px 1fr; gap: 64px; align-items: start">
+      <div style="display: flex; flex-direction: column; gap: 12px; position: sticky; top: 40px">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4">{{ activeKicker }}</span>
+        <h2 style="margin: 0; font-size: 32px; font-weight: 600; letter-spacing: -0.03em; color: #fff; line-height: 1.08">{{ activeTitle }}</h2>
+        <p style="margin: 0; font-family: 'Instrument Sans', sans-serif; font-size: 14.5px; line-height: 1.65; color: #8B968F">{{ activeIntro }}</p>
+        <a href="./Contact.dc.html" style="margin-top: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em">QUESTIONS? CONTACT US →</a>
+      </div>
+      <div style="display: flex; flex-direction: column">
+        <sc-for list="{{ clauses }}" as="c" hint-placeholder-count="7">
+          <div style="display: flex; gap: 24px; padding: 24px 0; border-top: 1px solid rgba(255,255,255,0.09)">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #29D08A; padding-top: 4px; white-space: nowrap">{{ c.n }}</span>
+            <span style="max-width: 70ch">
+              <span style="display: block; font-size: 18px; font-weight: 600; color: #fff">{{ c.t }}</span>
+              <span style="display: block; margin-top: 8px; font-family: 'Instrument Sans', sans-serif; font-size: 15.5px; line-height: 1.7; color: #9AA6A1">{{ c.d }}</span>
+            </span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <dc-import name="Site Footer" hint-size="1440px,620px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:1000}}">
+class Component extends DCLogic {
+  state = { tab: "privacy" };
+  renderVals() {
+    const docs = {
+      privacy: { label: "Privacy Policy", kicker: "01 · PRIVACY POLICY", title: "What we hold about you", intro: "Which data we collect, why we need it, and how long we keep it.", clauses: [
+        { n: "1.1", t: "What we collect", d: "Name, organisation, email, phone and billing address when you open an account; server logs including IP address; and payment references from the mobile-money or card provider. We do not receive or store your full card number." },
+        { n: "1.2", t: "Why we collect it", d: "To provision and support the service, to bill you, to meet registry requirements for .tz domains, and to comply with Tanzanian law. We do not sell customer data to anyone, ever." },
+        { n: "1.3", t: "Registry disclosure", d: "Domain registrations require registrant details to be passed to tzNIC or the relevant registry. Where the registry offers WHOIS privacy, we enable it on request." },
+        { n: "1.4", t: "How long we keep it", d: "Account and invoice records are retained for seven years as required for tax purposes. Server logs are retained for 90 days. Backups roll off within 30 days of deletion." },
+        { n: "1.5", t: "Your content", d: "Files, databases and mail on your account belong to you. We access them only when you ask us to, or when we must to keep the platform safe and available." },
+        { n: "1.6", t: "Your rights", d: "You may ask for a copy of the data we hold, correct it, or ask us to delete it where we are not obliged to retain it. Write to info@moinfo.co.tz and we will respond within 30 days." },
+        { n: "1.7", t: "Cookies", d: "The website uses cookies for session handling and anonymous analytics only. No advertising or cross-site tracking cookies are set." }
+      ] },
+      terms: { label: "Terms of Service", kicker: "02 · TERMS OF SERVICE", title: "The agreement between us", intro: "Billing, renewals, cancellation and the limits of our liability.", clauses: [
+        { n: "2.1", t: "Term and renewal", d: "Services are sold for a fixed term, usually one year for hosting and domains, monthly for VPS. The renewal price is the price you signed up at; we do not apply promotional pricing that jumps at year two." },
+        { n: "2.2", t: "Payment", d: "Invoices are issued in Tanzanian shillings, VAT inclusive, and are payable by M-Pesa, Tigo Pesa, Airtel Money, bank transfer or card. Service begins when payment clears." },
+        { n: "2.3", t: "Money-back guarantee", d: "Cancel a new hosting plan within 30 days for a full refund of the hosting fee. Domain registrations, SSL certificates and setup work are non-refundable once issued." },
+        { n: "2.4", t: "Late payment and suspension", d: "Accounts are suspended 7 days after expiry and deleted 30 days after that. We send reminders at 60, 30 and 7 days before renewal and again on the day of suspension." },
+        { n: "2.5", t: "Uptime commitment", d: "We commit to 99.9% network and server availability per calendar month, excluding announced maintenance. Where we miss it, service credits are applied on request." },
+        { n: "2.6", t: "Maintenance", d: "Planned maintenance is announced at least 48 hours ahead on the status page and by email, and is scheduled overnight East Africa Time wherever possible." },
+        { n: "2.7", t: "Limitation of liability", d: "Our liability in any 12-month period is limited to the fees you paid us in that period. We are not liable for lost profit or for data you did not keep your own copy of." },
+        { n: "2.8", t: "Governing law", d: "These terms are governed by the laws of the United Republic of Tanzania, and disputes fall to the courts of Tanzania." }
+      ] },
+      hosting: { label: "Hosting Policy", kicker: "03 · HOSTING POLICY", title: "How shared resources are shared", intro: "What 'unlimited' means, what we watch, and when we ask you to move up.", clauses: [
+        { n: "3.1", t: "Fair use of CPU and memory", d: "Shared plans allow sustained use of one CPU core and the memory allocated to your tier. Processes that exceed this for long periods are throttled, and we contact you about a VPS rather than cutting you off." },
+        { n: "3.2", t: "Unlimited bandwidth", d: "Where a plan states unlimited bandwidth, that covers normal website traffic. It does not cover using the account as a file-distribution or streaming node." },
+        { n: "3.3", t: "Backups", d: "We take automatic backups and provide self-service restore, but backups are a convenience, not a substitute for your own copy. Keep an independent backup of anything you cannot lose." },
+        { n: "3.4", t: "Software versions", d: "PHP, MySQL and system packages are kept on supported versions. End-of-life versions are removed with at least 60 days' notice." },
+        { n: "3.5", t: "Mail sending limits", d: "Shared accounts may send up to 500 messages per hour. Bulk newsletters should go through a dedicated sending service to protect deliverability for everyone." },
+        { n: "3.6", t: "Compromised accounts", d: "If an account is being used to attack others, we suspend it immediately and tell you why. We then help you clean it and get it back online." }
+      ] },
+      aup: { label: "Acceptable Use", kicker: "04 · ACCEPTABLE USE", title: "What may not be hosted here", intro: "The short list of things that get an account suspended.", clauses: [
+        { n: "4.1", t: "Illegal content", d: "Anything unlawful under Tanzanian law, including child sexual abuse material, incitement to violence, and content that infringes copyright you do not hold." },
+        { n: "4.2", t: "Spam and unsolicited mail", d: "Sending bulk mail to addresses that did not opt in, or hosting a site advertised through spam sent elsewhere." },
+        { n: "4.3", t: "Malware and phishing", d: "Distributing malware, hosting phishing pages, or operating command-and-control infrastructure." },
+        { n: "4.4", t: "Attacks on others", d: "Port scanning, denial-of-service, brute-force attempts or any unauthorised access to systems you do not own." },
+        { n: "4.5", t: "Resource abuse", d: "Cryptocurrency mining, public proxies, torrent trackers and file-dump sites are not permitted on shared plans." },
+        { n: "4.6", t: "Reporting abuse", d: "Report anything hosted by us that breaches this policy to abuse@moinfo.co.tz. We investigate every report and act within 24 hours." },
+        { n: "4.7", t: "Enforcement", d: "First response is normally a warning and a chance to fix it. Serious or repeated breaches lead to immediate suspension without refund." }
+      ] },
+      gdpr: { label: "GDPR Compliance", kicker: "05 · GDPR COMPLIANCE", title: "For customers with EU visitors", intro: "How we act as a processor when your site handles EU personal data.", clauses: [
+        { n: "5.1", t: "Roles", d: "For data your site collects from its visitors, you are the controller and we are the processor. For your own account data, we are the controller." },
+        { n: "5.2", t: "Data processing agreement", d: "A written DPA covering our obligations as processor is available on request at no charge; email info@moinfo.co.tz." },
+        { n: "5.3", t: "Where data lives", d: "Customer data is stored on our infrastructure. Tell us if your compliance position requires data residency in a specific jurisdiction and we will confirm what we can offer." },
+        { n: "5.4", t: "Sub-processors", d: "We use a small number of sub-processors for payment handling, registry services and outbound mail. The current list is provided with the DPA and updated with 30 days' notice." },
+        { n: "5.5", t: "Security measures", d: "Encryption in transit, account isolation, access control on administrative systems, and logging of administrative access to customer environments." },
+        { n: "5.6", t: "Breach notification", d: "If we become aware of a breach affecting your data, we notify you without undue delay and within 72 hours, with what we know and what we are doing about it." },
+        { n: "5.7", t: "Assisting your obligations", d: "We help you respond to access, correction and erasure requests from your own users, and provide exports where you need them." }
+      ] }
+    };
+    const t = this.state.tab;
+    const active = docs[t];
+    return {
+      tabs: Object.keys(docs).map((k) => ({
+        label: docs[k].label,
+        on: () => this.setState({ tab: k }),
+        fg: k === t ? "#fff" : "#8B968F",
+        line: k === t ? "#29D08A" : "transparent"
+      })),
+      activeKicker: active.kicker,
+      activeTitle: active.title,
+      activeIntro: active.intro,
+      clauses: active.clauses
+    };
+  }
+}
+</script>
+</body>
+</html>

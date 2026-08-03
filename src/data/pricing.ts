@@ -1,12 +1,44 @@
 import { enquiryUrl, orderUrl } from "@/data/mobilling";
 
+/**
+ * A headline spec shown in the card's hairline grid.
+ *
+ * `label` is a translation key; `value` is language-neutral on purpose ("4 GB",
+ * "60", "Unlimited" is keyed) so a number never needs translating twice and
+ * cannot drift between EN and SW the way the hero prices did.
+ */
+export interface PlanSpec {
+  labelKey: string;
+  /** Literal value, or a translation key when the value is a word. */
+  value: string;
+  valueKey?: string;
+}
+
 export interface PricingPlan {
   name: string;
   yearlyPrice: string;
   featureKeys: string[];
   orderUrl: string;
   popular?: boolean;
+  /** Short mono tag on the card, e.g. ENTRY / SME / HIGH VOLUME. */
+  tierKey?: string;
+  /**
+   * Headline specs for the redesigned card. Optional — categories without
+   * them fall back to the feature checklist.
+   */
+  specs?: PlanSpec[];
 }
+
+/** Build the three headline specs every shared-hosting tier has. */
+const hostingSpecs = (
+  disk: string,
+  bandwidth: string,
+  mailboxes: string,
+): PlanSpec[] => [
+  { labelKey: "spec.disk", value: disk },
+  { labelKey: "spec.bandwidth", value: bandwidth },
+  { labelKey: "spec.mailboxes", value: mailboxes },
+];
 
 export interface PricingCategory {
   key: string;
@@ -36,6 +68,8 @@ export const pricingCategories: PricingCategory[] = [
           "pf.onlineSupport247",
         ],
         orderUrl: orderUrl("web-hosting", "university"),
+        tierKey: "tier.entry",
+        specs: hostingSpecs("4 GB", "4 GB", "20"),
       },
       {
         name: "Personal",
@@ -50,6 +84,8 @@ export const pricingCategories: PricingCategory[] = [
           "pf.onlineSupport247",
         ],
         orderUrl: orderUrl("web-hosting", "personal"),
+        tierKey: "tier.personal",
+        specs: hostingSpecs("8 GB", "8 GB", "40"),
       },
       {
         name: "Professional",
@@ -65,6 +101,8 @@ export const pricingCategories: PricingCategory[] = [
           "pf.onlineSupport247",
         ],
         orderUrl: orderUrl("web-hosting", "professional"),
+        tierKey: "tier.sme",
+        specs: hostingSpecs("12 GB", "12 GB", "60"),
       },
       {
         name: "Premier",
@@ -79,6 +117,8 @@ export const pricingCategories: PricingCategory[] = [
           "pf.onlineSupport247",
         ],
         orderUrl: orderUrl("web-hosting", "premier"),
+        tierKey: "tier.growing",
+        specs: hostingSpecs("20 GB", "20 GB", "80"),
       },
       {
         name: "System",
@@ -95,6 +135,8 @@ export const pricingCategories: PricingCategory[] = [
         // Not orderable in MoBilling: the portal-visible row is priced 216,000
         // (site advertises 250,000) and the correct row is portal_visible = 0.
         orderUrl: enquiryUrl("Web Hosting System"),
+        tierKey: "tier.unlimited",
+        specs: hostingSpecs("15 GB", "Unlimited", "Unlimited"),
       },
       {
         name: "Plus",
@@ -109,6 +151,8 @@ export const pricingCategories: PricingCategory[] = [
           "pf.onlineSupport247",
         ],
         orderUrl: orderUrl("web-hosting", "plus"),
+        tierKey: "tier.highVolume",
+        specs: hostingSpecs("100 GB", "100 GB", "200"),
       },
     ],
   },

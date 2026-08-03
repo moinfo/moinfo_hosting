@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #0C1116; }
+  #root { display: flex; justify-content: center; }
+  a { color: #7BE3B4; text-decoration: none; }
+  a:hover { color: #4A9BFF; }
+</style>
+</helmet>
+<div style="width: 1440px; flex-shrink: 0; display: flex; align-items: stretch; background: #0C1116; font-family: 'Space Grotesk', sans-serif">
+  <dc-import name="Portal Sidebar" active="tickets" hint-size="244px,100%"></dc-import>
+
+  <div style="flex: 1; min-width: 0; display: flex; flex-direction: column">
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 0 32px; height: 68px; border-bottom: 1px solid rgba(255,255,255,0.08); background: rgba(12,17,22,0.92)">
+      <div style="display: flex; align-items: center; gap: 14px; flex: 1; max-width: 420px; padding: 0 16px; height: 40px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; background: #070A0D">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #4E5A55">⌕</span>
+        <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #5C665F">Search tickets…</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 14px">
+        <a href="./Client Portal.dc.html" style="padding: 9px 16px; border: 1px solid rgba(255,255,255,0.16); border-radius: 7px; color: #DCE3DF; font-size: 13.5px; font-weight: 500">Dashboard</a>
+        <span style="width: 1px; height: 26px; background: rgba(255,255,255,0.1)"></span>
+        <div style="display: flex; align-items: center; gap: 10px">
+          <div style="width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(140deg, #0B5CD5, #0A8F63); display: grid; place-items: center; color: #fff; font-size: 13px; font-weight: 600">KK</div>
+          <div style="display: flex; flex-direction: column; line-height: 1.15">
+            <span style="font-size: 13.5px; font-weight: 600; color: #fff">Kassim Haji Kassim</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; color: #6E7A75">ACCT #10428 · KIBAHA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 24px; padding: 32px">
+
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px">
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #7BE3B4">SUPPORT</span>
+          <h1 style="margin: 0; font-size: 34px; font-weight: 600; letter-spacing: -0.03em; color: #fff">{{ heading }}</h1>
+        </div>
+        <sc-if value="{{ isList }}" hint-placeholder-val="{{ true }}">
+          <button type="button" onClick="{{ openNew }}" style="padding: 12px 22px; border: 0; border-radius: 8px; background: #29D08A; color: #06231A; font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer">Open a new ticket</button>
+        </sc-if>
+        <sc-if value="{{ isNew }}" hint-placeholder-val="{{ false }}">
+          <button type="button" onClick="{{ back }}" style="padding: 12px 22px; border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; background: none; color: #fff; font-family: 'Space Grotesk', sans-serif; font-size: 14px; cursor: pointer">Cancel</button>
+        </sc-if>
+      </div>
+
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 24px; border: 1px solid rgba(41,208,138,0.3); border-radius: 12px; background: rgba(41,208,138,0.05)">
+        <div style="display: flex; flex-direction: column; gap: 5px">
+          <span style="font-size: 16.5px; font-weight: 600; color: #fff">Is the site down right now?</span>
+          <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #8B968F">Don't wait on a ticket — call or WhatsApp. Our team in Kibaha answers 24 hours, in Swahili or English.</span>
+        </div>
+        <div style="display: flex; gap: 10px; white-space: nowrap">
+          <a href="tel:+255689011111" style="padding: 11px 20px; border-radius: 8px; background: #29D08A; color: #06231A; font-size: 13.5px; font-weight: 600">Call +255 689 011 111</a>
+          <a href="https://wa.me/255689011111" style="padding: 11px 20px; border: 1px solid rgba(255,255,255,0.18); border-radius: 8px; color: #fff; font-size: 13.5px; font-weight: 600">WhatsApp</a>
+        </div>
+      </div>
+
+      <sc-if value="{{ isList }}" hint-placeholder-val="{{ true }}">
+        <div style="display: flex; flex-direction: column; gap: 20px">
+          <div style="display: flex; gap: 4px; padding: 4px; width: fit-content; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px">
+            <sc-for list="{{ filters }}" as="f" hint-placeholder-count="4">
+              <button type="button" onClick="{{ f.on }}" style="padding: 9px 16px; border: 0; border-radius: 5px; background: {{ f.bg }}; color: {{ f.fg }}; font-family: 'Space Grotesk', sans-serif; font-size: 13.5px; font-weight: 600; cursor: pointer">{{ f.label }}</button>
+            </sc-for>
+          </div>
+
+          <div style="border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden">
+            <div style="display: grid; grid-template-columns: 120px 1fr 160px 110px 150px 130px; gap: 16px; padding: 13px 22px; background: rgba(255,255,255,0.03); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #7F8C86">
+              <span>TICKET</span><span>SUBJECT</span><span>DEPARTMENT</span><span>PRIORITY</span><span>LAST UPDATED</span><span>STATUS</span>
+            </div>
+            <sc-for list="{{ rows }}" as="r" hint-placeholder-count="5">
+              <a href="#ticket" style="display: grid; grid-template-columns: 120px 1fr 160px 110px 150px 130px; gap: 16px; align-items: center; padding: 15px 22px; border-top: 1px solid rgba(255,255,255,0.08); color: inherit">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #fff">{{ r.no }}</span>
+                <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #DCE3DF">{{ r.subject }}</span>
+                <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; color: #9AA6A1">{{ r.dept }}</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: {{ r.priorityColor }}">{{ r.priority }}</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #8B968F">{{ r.updated }}</span>
+                <span style="padding: 4px 10px; width: fit-content; border-radius: 20px; background: {{ r.tagBg }}; color: {{ r.tagFg }}; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em">{{ r.status }}</span>
+              </a>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isNew }}" hint-placeholder-val="{{ false }}">
+        <div style="display: grid; grid-template-columns: 1fr 340px; gap: 24px; align-items: start">
+          <div style="display: flex; flex-direction: column; gap: 18px; padding: 28px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px">
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #7F8C86">DEPARTMENT</span>
+              <div style="display: flex; flex-wrap: wrap; gap: 9px">
+                <sc-for list="{{ depts }}" as="d" hint-placeholder-count="4">
+                  <button type="button" onClick="{{ d.on }}" style="padding: 10px 16px; border: 1px solid {{ d.border }}; border-radius: 8px; background: {{ d.bg }}; color: {{ d.fg }}; font-family: 'Space Grotesk', sans-serif; font-size: 13.5px; font-weight: 600; cursor: pointer">{{ d.label }}</button>
+                </sc-for>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #7F8C86">WHICH SERVICE?</span>
+              <div style="display: flex; align-items: center; padding: 0 16px; height: 48px; border: 1px solid rgba(255,255,255,0.16); border-radius: 9px; background: #070A0D; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #9AA6A1">lerumalogistics.co.tz — System Web Hosting</div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #7F8C86">SUBJECT</span>
+              <div style="height: 48px; border: 1px solid rgba(255,255,255,0.16); border-radius: 9px; background: #070A0D"></div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #7F8C86">PRIORITY</span>
+              <div style="display: flex; gap: 9px">
+                <sc-for list="{{ priorities }}" as="p" hint-placeholder-count="3">
+                  <button type="button" onClick="{{ p.on }}" style="padding: 10px 18px; border: 1px solid {{ p.border }}; border-radius: 8px; background: {{ p.bg }}; color: {{ p.fg }}; font-family: 'Space Grotesk', sans-serif; font-size: 13.5px; font-weight: 600; cursor: pointer">{{ p.label }}</button>
+                </sc-for>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #7F8C86">WHAT IS HAPPENING?</span>
+              <div style="height: 170px; border: 1px solid rgba(255,255,255,0.16); border-radius: 9px; background: #070A0D"></div>
+              <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13px; color: #7F8C86">Include the exact error text and what you were doing — it saves a round trip.</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px">
+              <a href="#submit" style="padding: 13px 24px; border-radius: 8px; background: #29D08A; color: #06231A; font-size: 14.5px; font-weight: 600">Submit ticket</a>
+              <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; color: #7F8C86">First reply target: {{ slaText }}</span>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 20px">
+            <div style="display: flex; flex-direction: column; gap: 12px; padding: 22px 24px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #7F8C86">RESPONSE TARGETS</span>
+              <span style="display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #8B968F">URGENT<span style="color: #FF7B72">15 minutes</span></span>
+              <span style="display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #8B968F">HIGH<span style="color: #F2A33C">1 hour</span></span>
+              <span style="display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #8B968F">NORMAL<span style="color: #7BE3B4">4 hours</span></span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px; padding: 22px 24px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px">
+              <span style="font-size: 15.5px; font-weight: 600; color: #fff">Check the guides first</span>
+              <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; line-height: 1.6; color: #8B968F">Mail settings, DNS records and cPanel questions are usually answered there in under a minute.</span>
+              <a href="./Knowledge Base.dc.html" style="margin-top: 4px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.1em">OPEN KNOWLEDGE BASE →</a>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { view: "list", filter: "active", dept: "Technical support", priority: "Normal" };
+  renderVals() {
+    const s = this.state;
+    const S = {
+      open: { tagBg: "rgba(74,155,255,0.14)", tagFg: "#7FB4FF", status: "IN PROGRESS" },
+      you: { tagBg: "rgba(242,163,60,0.16)", tagFg: "#F2A33C", status: "AWAITING YOU" },
+      closed: { tagBg: "rgba(255,255,255,0.07)", tagFg: "#8B968F", status: "CLOSED" }
+    };
+    const P = { Urgent: "#FF7B72", High: "#F2A33C", Normal: "#7BE3B4", Low: "#8B968F" };
+    const mk = (no, subject, dept, priority, updated, state) => ({
+      no, subject, dept, priority: priority.toUpperCase(), priorityColor: P[priority], updated, key: state, ...S[state]
+    });
+    const all = [
+      mk("TKT-2841", "Mail from mailmojashop.co.tz landing in spam", "Technical support", "High", "31 JUL, 14:02", "open"),
+      mk("TKT-2836", "Disk usage on mailmojashop is at 90%", "Technical support", "Normal", "29 JUL, 09:41", "you"),
+      mk("TKT-2820", "Confirm bank payment for INV-2026-0121", "Billing", "Normal", "26 JUN, 16:20", "closed"),
+      mk("TKT-2795", "Point mazao.co.tz to new nameservers", "Technical support", "Normal", "12 JUN, 11:05", "closed"),
+      mk("TKT-2770", "Quote for website redesign", "Sales", "Low", "24 MAY, 08:15", "closed")
+    ];
+    const match = (t) => s.filter === "all" || (s.filter === "active" && t.key !== "closed") || (s.filter === "you" && t.key === "you") || (s.filter === "closed" && t.key === "closed");
+    const pick = (list, current, key) => list.map((label) => ({
+      label, on: () => this.setState({ [key]: label }),
+      border: current === label ? "#29D08A" : "rgba(255,255,255,0.14)",
+      bg: current === label ? "rgba(41,208,138,0.12)" : "transparent",
+      fg: current === label ? "#7BE3B4" : "#B6C0BB"
+    }));
+    return {
+      isList: s.view === "list",
+      isNew: s.view === "new",
+      heading: s.view === "new" ? "Open a ticket" : "Support tickets",
+      openNew: () => this.setState({ view: "new" }),
+      back: () => this.setState({ view: "list" }),
+      filters: [["active", "Active (2)"], ["you", "Awaiting you (1)"], ["closed", "Closed (3)"], ["all", "All"]].map(([k, label]) => ({
+        label, on: () => this.setState({ filter: k }),
+        bg: s.filter === k ? "#fff" : "transparent",
+        fg: s.filter === k ? "#0C1116" : "#9AA6A1"
+      })),
+      rows: all.filter(match),
+      depts: pick(["Technical support", "Billing", "Sales", "Web design"], s.dept, "dept"),
+      priorities: pick(["Normal", "High", "Urgent"], s.priority, "priority"),
+      slaText: s.priority === "Urgent" ? "15 minutes" : s.priority === "High" ? "1 hour" : "4 hours"
+    };
+  }
+}
+</script>
+</body>
+</html>

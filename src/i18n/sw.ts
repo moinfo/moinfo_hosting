@@ -14,6 +14,28 @@ export const sw: Translations = {
   "nav.features": "Huduma",
   "nav.contact": "Wasiliana",
   "nav.clientArea": "Eneo la Mteja",
+  // TLD eligibility (TZNIC restricts most .tz second-levels)
+  "tld.audCommercial": "Biashara na kampuni",
+  "tld.audNonProfit": "Mashirika yasiyo ya faida",
+  "tld.audAcademic": "Vyuo vikuu na vyuo",
+  "tld.audGovernment": "Taasisi za serikali",
+  "tld.audPersonal": "Watu binafsi",
+  "tld.audSchools": "Shule",
+  "tld.audNetwork": "Watoa huduma za mtandao",
+  "tld.audGlobal": "Yeyote, duniani kote",
+  "tld.audPremium": "Premium — yeyote",
+
+  // Service page template
+  "svc.statUptime": "Upatikanaji",
+  "svc.statSupport": "Msaada",
+  "svc.statSsl": "SSL",
+  "svc.statMigration": "Uhamishaji",
+  "svc.free": "Bure",
+  "svc.seePlans": "Angalia mipango",
+  "svc.plansEyebrow": "01 · Mipango",
+  "svc.plansTitle": "Chagua kiwango",
+
+  "nav.getStarted": "Anza sasa",
   "nav.menu": "Menyu",
 
   // Web Hosting Page
@@ -26,6 +48,7 @@ export const sw: Translations = {
 
   // TopBar
   "topbar.whatsapp": "WhatsApp",
+  "topbar.status": "MIFUMO YOTE INAFANYA KAZI · DHAMANA 99.9%",
   "topbar.sabaSaba": "\ud83c\udf89 Saba Saba \u2014 Punguzo hadi 50% (1\u201316 Jul)",
 
   // Saba Saba Offer
@@ -92,6 +115,35 @@ export const sw: Translations = {
   "worldcup.dismiss": "Funga",
 
   // Hero
+  // Redesigned hero (Control Room).
+  "hero.eyebrow": "Msajili wa .tz Aliyeidhinishwa na TCRA",
+  "hero.title": "Hosting ya Tanzania, inayoendeshwa kitaalamu.",
+  "hero.lede":
+    "Hosting ya cPanel, vikoa vya .tz, barua pepe za biashara na VPS — kwenye seva imara na timu ya msaada iliyo katika saa moja na wewe. Anza na kikoa.",
+  "hero.domainAvailability": "UPATIKANAJI WA KIKOA",
+  "hero.registryLive": "REJESTA: tzNIC · HAI",
+  "hero.domainPlaceholder": "biashara.co.tz",
+  "hero.check": "Angalia",
+  "hero.moreTlds": "zaidi · TSh/mwaka",
+  "hero.trustMigration": "Uhamishaji bure kutoka kwa mtoa huduma wako",
+  "hero.trustMoneyBack": "Rejesho la siku 30",
+  "hero.trustPay": "Lipa kwa M-Pesa, Tigo Pesa, kadi",
+
+  // Hero price index
+  "index.title": "ORODHA YA BEI · TSh",
+  "index.perYear": "/mwaka",
+  "index.perYearShort": "/mwaka",
+  "index.webHosting": "Hosting ya Tovuti",
+  "index.webHostingDetail": "cPanel · SSL bure · viwango 6",
+  "index.emailHosting": "Barua Pepe za Biashara",
+  "index.emailHostingDetail": "Webmail · IMAP · kinga ya spam",
+  "index.vps": "Linux VPS",
+  "index.vpsDetail": "Root access · NVMe · inakua",
+  "index.reseller": "Hosting ya Muuzaji",
+  "index.resellerDetail": "WHM · jina lako · viwango 4",
+  "index.ssl": "Vyeti vya SSL",
+  "index.sslDetail": "DV, OV na wildcard",
+
   "hero.badge": "Msajili wa Kikoa cha .tz Aliyeidhinishwa na TCRA",
   "hero.titleLine1": "Hosting ya Haraka",
   "hero.titleHighlight": "na ya Kuaminika",
@@ -146,6 +198,19 @@ export const sw: Translations = {
   "pricing.readMore.vps": "Soma Zaidi VPS Hosting",
   "pricing.readMore.dedicated": "Soma Zaidi Dedicated Server",
   "pricing.perYear": "kwa mwaka",
+  "pricing.year": "mwaka",
+  "pricing.eyebrow": "01 · HOSTING YA PAMOJA",
+
+  // Plan card spec grid + tier tags
+  "spec.disk": "Hifadhi",
+  "spec.bandwidth": "Bandwidth",
+  "spec.mailboxes": "Barua pepe",
+  "tier.entry": "Kuanzia",
+  "tier.personal": "Binafsi",
+  "tier.sme": "Biashara ndogo",
+  "tier.growing": "Inayokua",
+  "tier.unlimited": "Bila kikomo",
+  "tier.highVolume": "Kiwango kikubwa",
   "pricing.perMonth": "kwa mwezi",
 
   // Pricing Category Labels

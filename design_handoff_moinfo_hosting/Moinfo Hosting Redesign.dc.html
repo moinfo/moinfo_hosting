@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #E8EAE6; }
+  a { color: #0B5CD5; text-decoration: none; }
+  a:hover { color: #0A8F63; }
+  .om-badge { font-family: "JetBrains Mono", monospace; }
+</style>
+</helmet>
+<section style="display: flex; flex-direction: column; gap: 40px; padding: 56px 56px 120px">
+  <div style="display: flex; align-items: baseline; gap: 16px; font-family: 'JetBrains Mono', monospace; color: #4A5147">
+    <span style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase">Turn 1 · Two directions</span>
+    <span style="font-size: 13px">Moinfo Hosting · full-site redesign</span>
+  </div>
+  <div style="display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+
+    <div id="1a" style="display: flex; flex-direction: column; gap: 14px">
+      <div style="display: flex; align-items: center; gap: 12px">
+        <span class="om-badge" style="display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 24px; border-radius: 5px; background: #0C1116; color: #7BE3B4; font-size: 13px; font-weight: 600">1a</span>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #4A5147">Direction A — Control Room</span>
+        <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13px; color: #6B726A">Dark, instrument-panel density. Domain search is the whole hero.</span>
+      </div>
+      <div style="width: 1440px; background: #0C1116; overflow: hidden; box-shadow: 0 30px 80px -30px rgba(12,17,22,0.55); font-family: 'Space Grotesk', sans-serif">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 0 40px; height: 40px; background: #070A0D; border-bottom: 1px solid rgba(255,255,255,0.07); font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #7F8C86">
+          <div style="display: flex; align-items: center; gap: 28px">
+            <span style="display: flex; align-items: center; gap: 8px"><span style="width: 6px; height: 6px; border-radius: 50%; background: #29D08A; box-shadow: 0 0 0 3px rgba(41,208,138,0.18)"></span>ALL SYSTEMS OPERATIONAL · 99.98% / 30d</span>
+            <span>DAR ES SALAAM 22:56</span>
+            <span style="color: #4E5A55">LON 19:56 · NYC 14:56 · HKG 02:56</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 24px">
+            <a href="tel:+255689011111" style="color: #A8B4AE">+255 689 011 111</a>
+            <a href="https://wa.me/255689011111" style="color: #A8B4AE">WhatsApp</a>
+            <a href="mailto:info@moinfo.co.tz" style="color: #A8B4AE">info@moinfo.co.tz</a>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 0 40px; height: 76px; background: rgba(12,17,22,0.92); border-bottom: 1px solid rgba(255,255,255,0.08)">
+          <div style="display: flex; align-items: center; gap: 44px">
+            <div style="display: flex; align-items: center; gap: 11px">
+              <img src="https://moinfo.co.tz/images/logo.png" alt="Moinfo Hosting" style="width: 36px; height: 36px; object-fit: contain" />
+              <div style="display: flex; flex-direction: column; line-height: 1.05">
+                <span style="font-size: 17px; font-weight: 600; color: #fff; letter-spacing: -0.02em">Moinfo <span style="color: #4A9BFF">Hosting</span></span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.16em; color: #6E7A75">TCRA REGISTRAR · TZ</span>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 30px; font-size: 14.5px; color: #B6C0BB">
+              <a href="#1a" style="color: #fff; padding-bottom: 3px; border-bottom: 2px solid #29D08A">Home</a>
+              <div onMouseEnter="{{ openMenuA }}" onMouseLeave="{{ closeMenuA }}" style="position: relative; display: flex; align-items: center; gap: 6px; height: 76px; cursor: pointer">
+                <span style="color: #fff">Hosting</span><span style="font-size: 10px; color: #7F8C86">▾</span>
+                <sc-if value="{{ menuA }}" hint-placeholder-val="{{ false }}">
+                  <div style="position: absolute; top: 76px; left: -24px; z-index: 20; display: grid; grid-template-columns: 264px; gap: 1px; padding: 1px; border: 1px solid rgba(255,255,255,0.14); border-radius: 12px; background: rgba(255,255,255,0.12); box-shadow: 0 24px 60px -20px rgba(0,0,0,0.7); overflow: hidden">
+                    <a href="./Web Hosting.dc.html" style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 14px 18px; background: #0F151A; color: inherit"><span style="font-size: 14.5px; color: #fff">Web Hosting</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #7BE3B4">80,500/yr</span></a>
+                    <a href="./Email Hosting.dc.html" style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 14px 18px; background: #0F151A; color: inherit"><span style="font-size: 14.5px; color: #fff">Email Hosting</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #7BE3B4">60,000/yr</span></a>
+                    <a href="./VPS Hosting.dc.html" style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 14px 18px; background: #0F151A; color: inherit"><span style="font-size: 14.5px; color: #fff">VPS Hosting</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #7BE3B4">25,750/mo</span></a>
+                    <a href="./Dedicated Server.dc.html" style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 14px 18px; background: #0F151A; color: inherit"><span style="font-size: 14.5px; color: #fff">Dedicated Server</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #7F8C86">Quote</span></a>
+                    <a href="./Linux Reseller.dc.html" style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 14px 18px; background: #0F151A; color: inherit"><span style="font-size: 14.5px; color: #fff">Linux Reseller</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #7F8C86">Quote</span></a>
+                  </div>
+                </sc-if>
+              </div>
+              <a href="./Domains.dc.html" style="color: #B6C0BB">Domains</a>
+              <a href="./Web Design.dc.html" style="color: #B6C0BB">Web Design</a>
+              <a href="./Features.dc.html" style="color: #B6C0BB">Features</a>
+              <a href="./Contact.dc.html" style="color: #B6C0BB">Contact</a>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 14px">
+            <div style="display: flex; border: 1px solid rgba(255,255,255,0.14); border-radius: 6px; overflow: hidden; font-family: 'JetBrains Mono', monospace; font-size: 11.5px">
+              <span style="padding: 6px 10px; background: #fff; color: #0C1116; font-weight: 600">EN</span>
+              <span style="padding: 6px 10px; color: #8B968F">SW</span>
+            </div>
+            <a href="./Client Area Login.dc.html" style="padding: 10px 18px; border: 1px solid rgba(255,255,255,0.18); border-radius: 7px; color: #DCE3DF; font-size: 14px; font-weight: 500">Client Area</a>
+            <a href="#1a" style="padding: 10px 20px; border-radius: 7px; background: #29D08A; color: #06231A; font-size: 14px; font-weight: 600">Get started</a>
+          </div>
+        </div>
+        <sc-if value="{{ promoVisible }}" hint-placeholder-val="{{ true }}">
+        <div style="display: flex; align-items: center; justify-content: center; gap: 14px; height: 38px; background: linear-gradient(90deg, #0B5CD5, #0A8F63); font-size: 13.5px; color: #fff; position: relative">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; padding: 3px 7px; border-radius: 4px; background: rgba(0,0,0,0.22)">SABA SABA</span>
+          <span>Up to <strong style="font-weight: 600">50% off</strong> hosting, email &amp; domains — 1–16 July</span>
+          <a href="#1a" style="color: #fff; text-decoration: underline; text-underline-offset: 3px">See offers</a>
+          <span style="position: absolute; right: 18px; color: rgba(255,255,255,0.7); font-size: 15px">✕</span>
+        </div>
+        </sc-if>
+        <div style="position: relative; padding: 76px 40px 0; background:
+             radial-gradient(900px 420px at 18% 0%, rgba(11,92,213,0.30), transparent 70%),
+             radial-gradient(760px 420px at 88% 20%, rgba(10,143,99,0.24), transparent 70%),
+             #0C1116">
+          <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 80px 80px; pointer-events: none"></div>
+          <div style="position: relative; display: grid; grid-template-columns: 1fr 372px; gap: 64px; align-items: start">
+            <div style="display: flex; flex-direction: column; gap: 30px; padding-bottom: 76px">
+              <div style="display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4">
+                <span style="width: 22px; height: 1px; background: #29D08A"></span>TCRA ACCREDITED .TZ REGISTRAR
+              </div>
+              <h1 style="margin: 0; font-size: 68px; line-height: 0.98; letter-spacing: -0.035em; font-weight: 600; color: #fff; text-wrap: pretty; max-width: 15ch">Tanzanian hosting, run like infrastructure.</h1>
+              <p style="margin: 0; max-width: 52ch; font-size: 17.5px; line-height: 1.6; color: #9AA6A1; font-family: 'Instrument Sans', sans-serif">cPanel hosting, .tz domains, business email and VPS — on redundant hardware with a support team in the same time zone as you. Start with the domain.</p>
+              <div style="display: flex; flex-direction: column; gap: 12px; padding: 20px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; background: rgba(255,255,255,0.035); max-width: 680px">
+                <div style="display: flex; align-items: center; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: #7F8C86">
+                  <span>DOMAIN AVAILABILITY</span><span>REGISTRY: tzNIC · LIVE</span>
+                </div>
+                <div style="display: flex; gap: 10px">
+                  <div style="flex: 1; display: flex; align-items: center; gap: 10px; padding: 0 16px; height: 56px; border: 1px solid rgba(255,255,255,0.16); border-radius: 9px; background: #070A0D">
+                    <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #4E5A55">$</span>
+                    <span style="font-family: 'JetBrains Mono', monospace; font-size: 16px; color: #E7EDEA">mybusiness<span style="color: #4A9BFF">.co.tz</span><span style="display: inline-block; width: 8px; height: 18px; margin-left: 3px; background: #29D08A; vertical-align: -3px"></span></span>
+                  </div>
+                  <a href="#1a" style="display: grid; place-items: center; padding: 0 30px; height: 56px; border-radius: 9px; background: #29D08A; color: #06231A; font-size: 15px; font-weight: 600">Check</a>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 7px">
+                  <span style="display: flex; align-items: baseline; gap: 7px; padding: 6px 11px; border-radius: 6px; background: rgba(41,208,138,0.12); border: 1px solid rgba(41,208,138,0.3); font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #7BE3B4">.co.tz<span style="color: #5C9E85">19,999</span></span>
+                  <span style="display: flex; align-items: baseline; gap: 7px; padding: 6px 11px; border-radius: 6px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A8B4AE">.or.tz<span style="color: #6E7A75">19,999</span></span>
+                  <span style="display: flex; align-items: baseline; gap: 7px; padding: 6px 11px; border-radius: 6px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A8B4AE">.ac.tz<span style="color: #6E7A75">19,999</span></span>
+                  <span style="display: flex; align-items: baseline; gap: 7px; padding: 6px 11px; border-radius: 6px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A8B4AE">.go.tz<span style="color: #6E7A75">19,999</span></span>
+                  <span style="display: flex; align-items: baseline; gap: 7px; padding: 6px 11px; border-radius: 6px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A8B4AE">.com<span style="color: #6E7A75">55,000</span></span>
+                  <span style="display: flex; align-items: baseline; gap: 7px; padding: 6px 11px; border-radius: 6px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A8B4AE">.tz<span style="color: #6E7A75">95,000</span></span>
+                  <span style="display: flex; align-items: center; padding: 6px 11px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #6E7A75">+3 more · TSh/yr</span>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 26px; font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #8B968F">
+                <span>Free migration from your current host</span><span style="color: #37413C">|</span><span>30-day money back</span><span style="color: #37413C">|</span><span>Pay by M-Pesa, Tigo Pesa, card</span>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; border-left: 1px solid rgba(255,255,255,0.1)">
+              <div style="padding: 0 0 18px 24px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: #7F8C86">PRICE INDEX · TSh</div>
+              <a href="#1a" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 20px 18px 24px; border-top: 1px solid rgba(255,255,255,0.09); color: inherit">
+                <span style="display: flex; flex-direction: column; gap: 3px">
+                  <span style="font-size: 15px; font-weight: 500; color: #fff">Web Hosting</span>
+                  <span style="font-family: 'Instrument Sans', sans-serif; font-size: 12.5px; color: #7F8C86">cPanel · free SSL · 6 tiers</span>
+                </span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #7BE3B4">80,500<span style="color: #5C9E85; font-size: 11px">/yr</span></span>
+              </a>
+              <a href="#1a" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 20px 18px 24px; border-top: 1px solid rgba(255,255,255,0.09); color: inherit">
+                <span style="display: flex; flex-direction: column; gap: 3px">
+                  <span style="font-size: 15px; font-weight: 500; color: #fff">Business Email</span>
+                  <span style="font-family: 'Instrument Sans', sans-serif; font-size: 12.5px; color: #7F8C86">Webmail · IMAP · anti-spam</span>
+                </span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #7BE3B4">60,000<span style="color: #5C9E85; font-size: 11px">/yr</span></span>
+              </a>
+              <a href="#1a" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 20px 18px 24px; border-top: 1px solid rgba(255,255,255,0.09); color: inherit">
+                <span style="display: flex; flex-direction: column; gap: 3px">
+                  <span style="font-size: 15px; font-weight: 500; color: #fff">Linux VPS</span>
+                  <span style="font-family: 'Instrument Sans', sans-serif; font-size: 12.5px; color: #7F8C86">Root access · NVMe · scalable</span>
+                </span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #7BE3B4">25,750<span style="color: #5C9E85; font-size: 11px">/mo</span></span>
+              </a>
+              <a href="#1a" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 20px 18px 24px; border-top: 1px solid rgba(255,255,255,0.09); color: inherit">
+                <span style="display: flex; flex-direction: column; gap: 3px">
+                  <span style="font-size: 15px; font-weight: 500; color: #fff">SSL Certificates</span>
+                  <span style="font-family: 'Instrument Sans', sans-serif; font-size: 12.5px; color: #7F8C86">DV, OV &amp; wildcard</span>
+                </span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #7BE3B4">5,150<span style="color: #5C9E85; font-size: 11px">/mo</span></span>
+              </a>
+              <a href="#1a" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 20px 18px 24px; border-top: 1px solid rgba(255,255,255,0.09); border-bottom: 1px solid rgba(255,255,255,0.09); color: inherit">
+                <span style="display: flex; flex-direction: column; gap: 3px">
+                  <span style="font-size: 15px; font-weight: 500; color: #fff">Website Design</span>
+                  <span style="font-family: 'Instrument Sans', sans-serif; font-size: 12.5px; color: #7F8C86">WordPress, React, Next.js</span>
+                </span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #7BE3B4">250,000<span style="color: #5C9E85; font-size: 11px">/mo</span></span>
+              </a>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; margin: 28px 0 0 24px; border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden">
+                <div style="padding: 16px 18px; border-right: 1px solid rgba(255,255,255,0.1)">
+                  <div style="font-size: 24px; font-weight: 600; color: #fff; letter-spacing: -0.02em">100+</div>
+                  <div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86; margin-top: 4px">SITES HOSTED</div>
+                </div>
+                <div style="padding: 16px 18px">
+                  <div style="font-size: 24px; font-weight: 600; color: #fff; letter-spacing: -0.02em">500+</div>
+                  <div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86; margin-top: 4px">DOMAINS MANAGED</div>
+                </div>
+                <div style="padding: 16px 18px; border-top: 1px solid rgba(255,255,255,0.1); border-right: 1px solid rgba(255,255,255,0.1)">
+                  <div style="font-size: 24px; font-weight: 600; color: #fff; letter-spacing: -0.02em">200+</div>
+                  <div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86; margin-top: 4px">CLIENTS</div>
+                </div>
+                <div style="padding: 16px 18px; border-top: 1px solid rgba(255,255,255,0.1)">
+                  <div style="font-size: 24px; font-weight: 600; color: #29D08A; letter-spacing: -0.02em">99.9%</div>
+                  <div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86; margin-top: 4px">UPTIME SLA</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="padding: 96px 40px; background: #0A0E12; border-top: 1px solid rgba(255,255,255,0.08)">
+          <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; padding-bottom: 34px; border-bottom: 1px solid rgba(255,255,255,0.1)">
+            <div style="display: flex; flex-direction: column; gap: 14px">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4">01 · SHARED HOSTING</span>
+              <h2 style="margin: 0; font-size: 40px; font-weight: 600; letter-spacing: -0.03em; color: #fff">Pick a tier by disk and mailboxes</h2>
+            </div>
+            <div style="display: flex; gap: 4px; padding: 4px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; font-size: 13.5px">
+              <span style="padding: 8px 14px; border-radius: 5px; background: #fff; color: #0C1116; font-weight: 600">Web Hosting</span>
+              <span style="padding: 8px 14px; color: #9AA6A1">Email</span>
+              <span style="padding: 8px 14px; color: #9AA6A1">Linux VPS</span>
+              <span style="padding: 8px 14px; color: #9AA6A1">Dedicated</span>
+              <span style="padding: 8px 14px; color: #9AA6A1">Reseller</span>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding-top: 32px">
+            <div style="display: flex; flex-direction: column; gap: 22px; padding: 26px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; background: rgba(255,255,255,0.02)">
+              <div style="display: flex; align-items: center; justify-content: space-between">
+                <span style="font-size: 18px; font-weight: 600; color: #fff">University</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86">ENTRY</span>
+              </div>
+              <div style="display: flex; align-items: baseline; gap: 8px">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 34px; font-weight: 500; color: #fff; letter-spacing: -0.02em">80,500</span>
+                <span style="font-size: 13px; color: #7F8C86">TSh / year</span>
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; overflow: hidden">
+                <div style="padding: 12px 14px; background: #0A0E12"><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #7F8C86">DISK</div><div style="font-size: 16px; color: #fff; margin-top: 3px">4 GB</div></div>
+                <div style="padding: 12px 14px; background: #0A0E12"><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #7F8C86">BANDWIDTH</div><div style="font-size: 16px; color: #fff; margin-top: 3px">4 GB</div></div>
+                <div style="padding: 12px 14px; background: #0A0E12"><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #7F8C86">MAILBOXES</div><div style="font-size: 16px; color: #fff; margin-top: 3px">20</div></div>
+                <div style="padding: 12px 14px; background: #0A0E12"><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #7F8C86">SITES</div><div style="font-size: 16px; color: #fff; margin-top: 3px">1</div></div>
+              </div>
+              <div style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; line-height: 1.7; color: #8B968F">Free Let's Encrypt SSL · free migration · money-back guarantee · 24/7 support</div>
+              <a href="#1a" style="display: grid; place-items: center; height: 46px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: #fff; font-size: 14.5px; font-weight: 500; margin-top: auto">Order</a>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 22px; padding: 26px; border: 1px solid rgba(41,208,138,0.45); border-radius: 12px; background: linear-gradient(180deg, rgba(41,208,138,0.08), rgba(255,255,255,0.02)); position: relative">
+              <span style="position: absolute; top: -11px; left: 26px; padding: 3px 10px; border-radius: 5px; background: #29D08A; color: #06231A; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; font-weight: 600">MOST CHOSEN</span>
+              <div style="display: flex; align-items: center; justify-content: space-between">
+                <span style="font-size: 18px; font-weight: 600; color: #fff">Professional</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #7BE3B4">SME</span>
+              </div>
+              <div style="display: flex; align-items: baseline; gap: 8px">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 34px; font-weight: 500; color: #fff; letter-spacing: -0.02em">150,000</span>
+                <span style="font-size: 13px; color: #7F8C86">TSh / year</span>
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; overflow: hidden">
+                <div style="padding: 12px 14px; background: #0C1216"><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #7F8C86">DISK</div><div style="font-size: 16px; color: #fff; margin-top: 3px">12 GB</div></div>
+                <div style="padding: 12px 14px; background: #0C1216"><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #7F8C86">BANDWIDTH</div><div style="font-size: 16px; color: #fff; margin-top: 3px">12 GB</div></div>
+                <div style="padding: 12px 14px; background: #0C1216"><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #7F8C86">MAILBOXES</div><div style="font-size: 16px; color: #fff; margin-top: 3px">60</div></div>
+                <div style="padding: 12px 14px; background: #0C1216"><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #7F8C86">SITES</div><div style="font-size: 16px; color: #fff; margin-top: 3px">5</div></div>
+              </div>
+              <div style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; line-height: 1.7; color: #A8B4AE">Everything in Personal, plus free .co.tz domain for the first year and priority ticket queue.</div>
+              <a href="#1a" style="display: grid; place-items: center; height: 46px; border-radius: 8px; background: #29D08A; color: #06231A; font-size: 14.5px; font-weight: 600; margin-top: auto">Order</a>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 22px; padding: 26px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; background: rgba(255,255,255,0.02)">
+              <div style="display: flex; align-items: center; justify-content: space-between">
+                <span style="font-size: 18px; font-weight: 600; color: #fff">Plus</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86">HIGH VOLUME</span>
+              </div>
+              <div style="display: flex; align-items: baseline; gap: 8px">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 34px; font-weight: 500; color: #fff; letter-spacing: -0.02em">500,000</span>
+                <span style="font-size: 13px; color: #7F8C86">TSh / year</span>
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; overflow: hidden">
+                <div style="padding: 12px 14px; background: #0A0E12"><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #7F8C86">DISK</div><div style="font-size: 16px; color: #fff; margin-top: 3px">100 GB</div></div>
+                <div style="padding: 12px 14px; background: #0A0E12"><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #7F8C86">BANDWIDTH</div><div style="font-size: 16px; color: #fff; margin-top: 3px">100 GB</div></div>
+                <div style="padding: 12px 14px; background: #0A0E12"><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #7F8C86">MAILBOXES</div><div style="font-size: 16px; color: #fff; margin-top: 3px">200</div></div>
+                <div style="padding: 12px 14px; background: #0A0E12"><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #7F8C86">SITES</div><div style="font-size: 16px; color: #fff; margin-top: 3px">Unlimited</div></div>
+              </div>
+              <div style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; line-height: 1.7; color: #8B968F">For busy e-commerce and portals. Nightly off-site backups included.</div>
+              <a href="#1a" style="display: grid; place-items: center; height: 46px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: #fff; font-size: 14.5px; font-weight: 500; margin-top: auto">Order</a>
+            </div>
+          </div>
+          <sc-if value="{{ allPlansA }}" hint-placeholder-val="{{ false }}">
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding-top: 20px">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 24px; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px">
+                <div><div style="font-size: 16px; font-weight: 600; color: #fff">Personal</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #7F8C86; margin-top: 4px">8 GB · 40 mailboxes</div></div>
+                <div style="text-align: right"><div style="font-family: 'JetBrains Mono', monospace; font-size: 18px; color: #7BE3B4">120,000</div><a href="#1a" style="font-size: 13px; color: #9AA6A1">Order →</a></div>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 24px; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px">
+                <div><div style="font-size: 16px; font-weight: 600; color: #fff">Premier</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #7F8C86; margin-top: 4px">20 GB · 80 mailboxes</div></div>
+                <div style="text-align: right"><div style="font-family: 'JetBrains Mono', monospace; font-size: 18px; color: #7BE3B4">200,000</div><a href="#1a" style="font-size: 13px; color: #9AA6A1">Order →</a></div>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 24px; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px">
+                <div><div style="font-size: 16px; font-weight: 600; color: #fff">System</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #7F8C86; margin-top: 4px">15 GB · unlimited mail</div></div>
+                <div style="text-align: right"><div style="font-family: 'JetBrains Mono', monospace; font-size: 18px; color: #7BE3B4">250,000</div><a href="#1a" style="font-size: 13px; color: #9AA6A1">Order →</a></div>
+              </div>
+            </div>
+          </sc-if>
+          <div style="display: flex; align-items: center; gap: 16px; padding-top: 26px">
+            <button type="button" onClick="{{ toggleA }}" style="padding: 11px 20px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; background: none; color: #fff; font-family: 'Space Grotesk', sans-serif; font-size: 14px; cursor: pointer">
+              <sc-if value="{{ moreA }}" hint-placeholder-val="{{ true }}">Show all 6 plans</sc-if>
+              <sc-if value="{{ allPlansA }}" hint-placeholder-val="{{ false }}">Hide extra plans</sc-if>
+            </button>
+            <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #7F8C86">All plans: free SSL, free migration, 30-day money back, 24/7/366 support.</span>
+          </div>
+        </div>
+        <div style="padding: 96px 40px; background: #0C1116; border-top: 1px solid rgba(255,255,255,0.08)">
+          <div style="display: grid; grid-template-columns: 340px 1fr; gap: 64px; align-items: start">
+            <div style="display: flex; flex-direction: column; gap: 16px; position: sticky; top: 40px">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4">02 · WHAT YOU GET</span>
+              <h2 style="margin: 0; font-size: 40px; font-weight: 600; letter-spacing: -0.03em; color: #fff; line-height: 1.05">Boring where it counts</h2>
+              <p style="margin: 0; font-family: 'Instrument Sans', sans-serif; font-size: 16px; line-height: 1.65; color: #8B968F">Redundant hardware, a standard control panel, and people who answer the phone. No surprises on renewal.</p>
+              <div style="display: flex; align-items: center; gap: 12px; margin-top: 12px; padding: 14px 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(255,255,255,0.03)">
+                <img src="https://moinfo.co.tz/images/tcra-badge.webp" alt="TCRA accredited .tz registrar" style="width: 42px; height: 42px; object-fit: contain; border-radius: 8px; background: rgba(255,255,255,0.9); padding: 2px" />
+                <div><div style="font-size: 14.5px; font-weight: 600; color: #fff">TCRA Accredited</div><div style="font-family: 'Instrument Sans', sans-serif; font-size: 12.5px; color: #7F8C86">Official .tz domain registrar</div></div>
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden">
+              <div style="padding: 30px; background: #0C1116; display: flex; flex-direction: column; gap: 10px">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 24px; color: #29D08A; letter-spacing: -0.02em">99.9%</span>
+                <span style="font-size: 17px; font-weight: 600; color: #fff">Uptime guarantee</span>
+                <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; line-height: 1.65; color: #8B968F">Redundant power, network and storage. Status page and incident history published.</span>
+              </div>
+              <div style="padding: 30px; background: #0C1116; display: flex; flex-direction: column; gap: 10px">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 24px; color: #4A9BFF; letter-spacing: -0.02em">.co.tz</span>
+                <span style="font-size: 17px; font-weight: 600; color: #fff">Free domain, first year</span>
+                <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; line-height: 1.65; color: #8B968F">Any annual plan includes a .co.tz or .com registration, handled in-house as the registrar.</span>
+              </div>
+              <div style="padding: 30px; background: #0C1116; display: flex; flex-direction: column; gap: 10px">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 24px; color: #29D08A; letter-spacing: -0.02em">cPanel</span>
+                <span style="font-size: 17px; font-weight: 600; color: #fff">Standard control panel</span>
+                <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; line-height: 1.65; color: #8B968F">Files, databases, mailboxes, cron and one-click WordPress — nothing proprietary to learn.</span>
+              </div>
+              <div style="padding: 30px; background: #0C1116; display: flex; flex-direction: column; gap: 10px">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 24px; color: #4A9BFF; letter-spacing: -0.02em">24/7</span>
+                <span style="font-size: 17px; font-weight: 600; color: #fff">Support in your time zone</span>
+                <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; line-height: 1.65; color: #8B968F">Phone, WhatsApp and email, answered from Kibaha. Swahili or English.</span>
+              </div>
+              <div style="padding: 30px; background: #0C1116; display: flex; flex-direction: column; gap: 10px">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 24px; color: #29D08A; letter-spacing: -0.02em">SSL</span>
+                <span style="font-size: 17px; font-weight: 600; color: #fff">HTTPS on every plan</span>
+                <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; line-height: 1.65; color: #8B968F">Free Let's Encrypt certificates, auto-renewed. Paid DV/OV and wildcard also available.</span>
+              </div>
+              <div style="padding: 30px; background: #0C1116; display: flex; flex-direction: column; gap: 10px">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 24px; color: #4A9BFF; letter-spacing: -0.02em">0 TSh</span>
+                <span style="font-size: 17px; font-weight: 600; color: #fff">Migration, done for you</span>
+                <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; line-height: 1.65; color: #8B968F">We move sites, databases and mail from your current host at no charge, usually same day.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="padding: 96px 40px; background: #0A0E12; border-top: 1px solid rgba(255,255,255,0.08)">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center">
+            <div style="display: flex; flex-direction: column; gap: 26px">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4">03 · MOINFOTECH STUDIO</span>
+              <h2 style="margin: 0; font-size: 40px; font-weight: 600; letter-spacing: -0.03em; color: #fff; line-height: 1.05; max-width: 20ch">Need the website built too?</h2>
+              <p style="margin: 0; max-width: 48ch; font-family: 'Instrument Sans', sans-serif; font-size: 16.5px; line-height: 1.65; color: #8B968F">Our studio builds and maintains the site that sits on the hosting — from a five-page brochure to an e-commerce store, in WordPress or React.</p>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px 28px; max-width: 560px; font-family: 'Instrument Sans', sans-serif; font-size: 14.5px; color: #B6C0BB">
+                <span style="display: flex; gap: 10px; padding: 8px 0; border-top: 1px solid rgba(255,255,255,0.09)"><span style="font-family: 'JetBrains Mono', monospace; color: #29D08A">01</span>Custom responsive design</span>
+                <span style="display: flex; gap: 10px; padding: 8px 0; border-top: 1px solid rgba(255,255,255,0.09)"><span style="font-family: 'JetBrains Mono', monospace; color: #29D08A">05</span>E-commerce integration</span>
+                <span style="display: flex; gap: 10px; padding: 8px 0; border-top: 1px solid rgba(255,255,255,0.09)"><span style="font-family: 'JetBrains Mono', monospace; color: #29D08A">02</span>SEO-optimised structure</span>
+                <span style="display: flex; gap: 10px; padding: 8px 0; border-top: 1px solid rgba(255,255,255,0.09)"><span style="font-family: 'JetBrains Mono', monospace; color: #29D08A">06</span>Social media integration</span>
+                <span style="display: flex; gap: 10px; padding: 8px 0; border-top: 1px solid rgba(255,255,255,0.09)"><span style="font-family: 'JetBrains Mono', monospace; color: #29D08A">03</span>Mobile-first approach</span>
+                <span style="display: flex; gap: 10px; padding: 8px 0; border-top: 1px solid rgba(255,255,255,0.09)"><span style="font-family: 'JetBrains Mono', monospace; color: #29D08A">07</span>Analytics &amp; reporting</span>
+                <span style="display: flex; gap: 10px; padding: 8px 0; border-top: 1px solid rgba(255,255,255,0.09); border-bottom: 1px solid rgba(255,255,255,0.09)"><span style="font-family: 'JetBrains Mono', monospace; color: #29D08A">04</span>Content management</span>
+                <span style="display: flex; gap: 10px; padding: 8px 0; border-top: 1px solid rgba(255,255,255,0.09); border-bottom: 1px solid rgba(255,255,255,0.09)"><span style="font-family: 'JetBrains Mono', monospace; color: #29D08A">08</span>Maintenance plans</span>
+              </div>
+              <div style="display: flex; gap: 12px">
+                <a href="#1a" style="padding: 13px 22px; border-radius: 8px; background: #4A9BFF; color: #04122A; font-size: 14.5px; font-weight: 600">Request a quote</a>
+                <a href="#1a" style="padding: 13px 22px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: #fff; font-size: 14.5px; font-weight: 500">See our work</a>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 18px">
+              <div style="height: 300px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; background: repeating-linear-gradient(135deg, rgba(255,255,255,0.03) 0 12px, transparent 12px 24px); display: grid; place-items: center">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.14em; color: #5C665F">PORTFOLIO SCREENSHOT · 16:10</span>
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px">
+                <div style="height: 130px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; background: repeating-linear-gradient(135deg, rgba(255,255,255,0.03) 0 12px, transparent 12px 24px); display: grid; place-items: center"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #5C665F">CLIENT SITE</span></div>
+                <div style="height: 130px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; background: repeating-linear-gradient(135deg, rgba(255,255,255,0.03) 0 12px, transparent 12px 24px); display: grid; place-items: center"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #5C665F">CLIENT SITE</span></div>
+              </div>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; padding: 18px 22px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px">
+                <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #8B968F">Projects start from</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 22px; color: #fff">TSh 250,000<span style="font-size: 12px; color: #7F8C86">/mo</span></span>
+              </div>
+              <div style="display: flex; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #8B968F">
+                <span style="padding: 6px 11px; border: 1px solid rgba(255,255,255,0.12); border-radius: 6px">WordPress</span>
+                <span style="padding: 6px 11px; border: 1px solid rgba(255,255,255,0.12); border-radius: 6px">React</span>
+                <span style="padding: 6px 11px; border: 1px solid rgba(255,255,255,0.12); border-radius: 6px">Next.js</span>
+                <span style="padding: 6px 11px; border: 1px solid rgba(255,255,255,0.12); border-radius: 6px">PHP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="padding: 96px 40px; background: #0C1116; border-top: 1px solid rgba(255,255,255,0.08)">
+          <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; padding-bottom: 34px">
+            <div style="display: flex; flex-direction: column; gap: 14px">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4">04 · CUSTOMERS</span>
+              <h2 style="margin: 0; font-size: 40px; font-weight: 600; letter-spacing: -0.03em; color: #fff">200+ businesses, checked in on regularly</h2>
+            </div>
+            <div style="display: flex; gap: 28px; font-family: 'JetBrains Mono', monospace">
+              <div style="text-align: right"><div style="font-size: 22px; color: #fff">4.8<span style="font-size: 12px; color: #7F8C86">/5</span></div><div style="font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86; margin-top: 4px">TRUSTPILOT</div></div>
+              <div style="text-align: right"><div style="font-size: 22px; color: #fff">4.6<span style="font-size: 12px; color: #7F8C86">/5</span></div><div style="font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86; margin-top: 4px">GOOGLE</div></div>
+              <div style="text-align: right"><div style="font-size: 22px; color: #fff">4.5<span style="font-size: 12px; color: #7F8C86">/5</span></div><div style="font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86; margin-top: 4px">FACEBOOK</div></div>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px">
+            <div style="display: flex; flex-direction: column; gap: 20px; padding: 28px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; background: rgba(255,255,255,0.02)">
+              <p style="margin: 0; font-family: 'Instrument Sans', sans-serif; font-size: 16px; line-height: 1.65; color: #DCE3DF">“Over a year with Moinfo and I have never had downtime. Support is excellent and always available when I need help.”</p>
+              <div style="display: flex; align-items: center; gap: 12px; margin-top: auto">
+                <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.08); display: grid; place-items: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A8B4AE">JM</div>
+                <div><div style="font-size: 14px; color: #fff">John Massawe</div><div style="font-family: 'Instrument Sans', sans-serif; font-size: 12.5px; color: #7F8C86">Dar es Salaam</div></div>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 20px; padding: 28px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; background: rgba(255,255,255,0.02)">
+              <p style="margin: 0; font-family: 'Instrument Sans', sans-serif; font-size: 16px; line-height: 1.65; color: #DCE3DF">“They moved our whole site and mailboxes over in an afternoon. Nothing broke, nobody noticed.”</p>
+              <div style="display: flex; align-items: center; gap: 12px; margin-top: auto">
+                <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.08); display: grid; place-items: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A8B4AE">AK</div>
+                <div><div style="font-size: 14px; color: #fff">Client name</div><div style="font-family: 'Instrument Sans', sans-serif; font-size: 12.5px; color: #7F8C86">Placeholder — swap in real quote</div></div>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 20px; padding: 28px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; background: rgba(255,255,255,0.02)">
+              <p style="margin: 0; font-family: 'Instrument Sans', sans-serif; font-size: 16px; line-height: 1.65; color: #DCE3DF">“Being the registrar makes a difference — our .ac.tz renewal was handled in one call.”</p>
+              <div style="display: flex; align-items: center; gap: 12px; margin-top: auto">
+                <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.08); display: grid; place-items: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #A8B4AE">SN</div>
+                <div><div style="font-size: 14px; color: #fff">Client name</div><div style="font-family: 'Instrument Sans', sans-serif; font-size: 12.5px; color: #7F8C86">Placeholder — swap in real quote</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center; padding: 66px 40px; background: linear-gradient(100deg, #0B5CD5, #0A8F63)">
+          <div style="display: flex; flex-direction: column; gap: 12px">
+            <h2 style="margin: 0; font-size: 38px; font-weight: 600; letter-spacing: -0.03em; color: #fff">Start with the domain. We handle the rest.</h2>
+            <p style="margin: 0; font-family: 'Instrument Sans', sans-serif; font-size: 16.5px; color: rgba(255,255,255,0.82)">Free migration, free SSL, 30-day money back. Talk to a human on WhatsApp before you pay.</p>
+          </div>
+          <div style="display: flex; gap: 12px">
+            <a href="#1a" style="padding: 15px 26px; border-radius: 8px; background: #0C1116; color: #fff; font-size: 15px; font-weight: 600">Check a domain</a>
+            <a href="https://wa.me/255689011111" style="padding: 15px 26px; border: 1px solid rgba(255,255,255,0.5); border-radius: 8px; color: #fff; font-size: 15px; font-weight: 500">WhatsApp us</a>
+          </div>
+        </div>
+        <div style="padding: 72px 40px 32px; background: #070A0D; border-top: 1px solid rgba(255,255,255,0.08)">
+          <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 48px">
+            <div style="display: flex; flex-direction: column; gap: 18px">
+              <div style="display: flex; align-items: center; gap: 11px">
+                <img src="https://moinfo.co.tz/images/logo.png" alt="MoinfoTech" style="width: 36px; height: 36px; object-fit: contain" />
+                <div><div style="font-size: 16.5px; font-weight: 600; color: #fff">Moinfo<span style="color: #4A9BFF">Tech</span></div><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #29D08A">MAKING TECHNOLOGY WORK FOR YOU</div></div>
+              </div>
+              <p style="margin: 0; max-width: 34ch; font-family: 'Instrument Sans', sans-serif; font-size: 14px; line-height: 1.7; color: #7F8C86">Your trusted partner for IT solutions in Tanzania — web hosting, custom systems and professional web design.</p>
+              <div style="display: flex; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #8B968F">
+                <span style="width: 34px; height: 34px; border: 1px solid rgba(255,255,255,0.14); border-radius: 7px; display: grid; place-items: center">fb</span>
+                <span style="width: 34px; height: 34px; border: 1px solid rgba(255,255,255,0.14); border-radius: 7px; display: grid; place-items: center">ig</span>
+                <span style="width: 34px; height: 34px; border: 1px solid rgba(255,255,255,0.14); border-radius: 7px; display: grid; place-items: center">in</span>
+                <span style="width: 34px; height: 34px; border: 1px solid rgba(255,255,255,0.14); border-radius: 7px; display: grid; place-items: center">x</span>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 12px">
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #29D08A">SERVICES</div>
+              <a href="./Web Hosting.dc.html" style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #A8B4AE">Web Hosting</a>
+              <a href="#1a" style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #A8B4AE">Email Hosting</a>
+              <a href="#1a" style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #A8B4AE">VPS Hosting</a>
+              <a href="#1a" style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #A8B4AE">Dedicated Server</a>
+              <a href="#1a" style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #A8B4AE">Linux Reseller</a>
+              <a href="#1a" style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #A8B4AE">Website Design</a>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 12px">
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #4A9BFF">RESOURCES</div>
+              <a href="#1a" style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #A8B4AE">Domain Search</a>
+              <a href="#1a" style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #A8B4AE">Knowledge Base</a>
+              <a href="#1a" style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #A8B4AE">Transfer to Us</a>
+              <a href="#1a" style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #A8B4AE">Status Page</a>
+              <a href="#1a" style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #A8B4AE">Policies</a>
+              <a href="#1a" style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #A8B4AE">GDPR Compliance</a>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 12px">
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #F2A33C">CONTACT</div>
+              <a href="mailto:info@moinfo.co.tz" style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #A8B4AE">info@moinfo.co.tz</a>
+              <a href="tel:+255689011111" style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #A8B4AE">+255 689 011 111</a>
+              <a href="tel:+255651034582" style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #A8B4AE">+255 651 034 582</a>
+              <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; line-height: 1.6; color: #7F8C86">Njuweni Hotel, 1st Floor, Room 134,<br />Mail Moja, Kibaha, Tanzania</span>
+              <div style="display: flex; align-items: center; gap: 11px; margin-top: 8px; padding: 12px 14px; border: 1px solid rgba(255,255,255,0.12); border-radius: 9px">
+                <img src="https://moinfo.co.tz/images/tcra-badge.webp" alt="TCRA accredited .tz registrar" style="width: 34px; height: 34px; object-fit: contain; border-radius: 6px; background: rgba(255,255,255,0.9); padding: 2px" />
+                <div><div style="font-size: 13.5px; font-weight: 600; color: #fff">TCRA Accredited</div><div style="font-family: 'Instrument Sans', sans-serif; font-size: 12px; color: #7F8C86">.tz Domain Registrar</div></div>
+              </div>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 44px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.08); font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #5C665F">
+            <span>© 2026 MOINFOTECH · ALL RIGHTS RESERVED</span>
+            <span style="display: flex; gap: 20px"><a href="#1a" style="color: #5C665F">PRIVACY</a><a href="#1a" style="color: #5C665F">TERMS</a><a href="#1a" style="color: #5C665F">ACCEPTABLE USE</a></span>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 40px; background: #0C1116; border-top: 1px solid rgba(255,255,255,0.08); font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5C665F">
+          <span>WORLD CLOCK · LON 19:56 · NYC 14:56 · HKG 02:56 · DAR 22:56</span>
+          <span style="display: flex; align-items: center; gap: 10px">
+            <span style="display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px; border-radius: 100px; background: #29D08A; color: #06231A; font-weight: 600">WHATSAPP</span>
+            <span style="display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.16); color: #A8B4AE">LIVE CHAT · 1</span>
+          </span>
+        </div>
+        <!-- A:BODY -->
+      </div>
+    </div>
+
+    <div id="1b" style="display: flex; flex-direction: column; gap: 14px">
+      <div style="display: flex; align-items: center; gap: 12px">
+        <span class="om-badge" style="display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 24px; border-radius: 5px; background: #0B5CD5; color: #fff; font-size: 13px; font-weight: 600">1b</span>
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #4A5147">Direction B — Registry</span>
+        <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13px; color: #6B726A">Light, ruled, document-like. Reads like an infrastructure spec sheet.</span>
+      </div>
+      <div style="width: 1440px; background: #FBFBF9; overflow: hidden; box-shadow: 0 30px 80px -30px rgba(12,17,22,0.35); font-family: 'Instrument Sans', sans-serif">
+        <sc-if value="{{ promoVisible }}" hint-placeholder-val="{{ true }}">
+        <div style="display: flex; align-items: center; justify-content: center; gap: 14px; height: 40px; background: #0F1A2E; font-size: 13.5px; color: #E8EDF5; position: relative">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: #6BD4A6">SABA SABA</span>
+          <span>Up to <strong style="font-weight: 600">50% off</strong> hosting, email &amp; domains — 1–16 July</span>
+          <a href="#1b" style="color: #7FB4FF; text-decoration: underline; text-underline-offset: 3px">See offers</a>
+          <span style="position: absolute; right: 20px; color: rgba(255,255,255,0.55); font-size: 15px">✕</span>
+        </div>
+        </sc-if>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 0 44px; height: 36px; background: #F2F3EF; border-bottom: 1px solid #DFE1DA; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #6B726A">
+          <div style="display: flex; align-items: center; gap: 24px">
+            <span style="display: flex; align-items: center; gap: 7px; color: #0A7A55"><span style="width: 6px; height: 6px; border-radius: 50%; background: #12A46F"></span>ALL SYSTEMS OPERATIONAL</span>
+            <span>TCRA ACCREDITED .TZ REGISTRAR</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 22px">
+            <a href="tel:+255689011111" style="color: #4A5147">+255 689 011 111</a>
+            <a href="https://wa.me/255689011111" style="color: #4A5147">WhatsApp</a>
+            <a href="mailto:info@moinfo.co.tz" style="color: #4A5147">info@moinfo.co.tz</a>
+            <span>DAR 22:56 · LON 19:56 · NYC 14:56</span>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 0 44px; height: 78px; background: #FBFBF9; border-bottom: 1px solid #DFE1DA">
+          <div style="display: flex; align-items: center; gap: 46px">
+            <div style="display: flex; align-items: center; gap: 11px">
+              <img src="https://moinfo.co.tz/images/logo.png" alt="Moinfo Hosting" style="width: 36px; height: 36px; object-fit: contain" />
+              <span style="font-size: 18px; font-weight: 600; color: #14181C; letter-spacing: -0.02em">Moinfo <span style="color: #0B5CD5">Hosting</span></span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 26px; font-size: 15px; color: #3D443B">
+              <a href="#1b" style="color: #14181C; font-weight: 600; padding-bottom: 3px; border-bottom: 2px solid #0B5CD5">Home</a>
+              <div onMouseEnter="{{ openMenuB }}" onMouseLeave="{{ closeMenuB }}" style="position: relative; display: flex; align-items: center; gap: 6px; height: 78px; cursor: pointer">
+                <span style="color: #14181C">Hosting</span><span style="font-size: 10px; color: #8A9188">▾</span>
+                <sc-if value="{{ menuB }}" hint-placeholder-val="{{ false }}">
+                  <div style="position: absolute; top: 78px; left: -24px; z-index: 20; display: grid; grid-template-columns: 268px; gap: 1px; padding: 1px; border: 1px solid #DFE1DA; border-radius: 12px; background: #DFE1DA; box-shadow: 0 24px 60px -24px rgba(20,24,28,0.35); overflow: hidden">
+                    <a href="./Web Hosting.dc.html" style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 14px 18px; background: #FBFBF9; color: inherit"><span style="font-size: 14.5px; color: #14181C">Web Hosting</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #0B5CD5">80,500/yr</span></a>
+                    <a href="./Email Hosting.dc.html" style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 14px 18px; background: #FBFBF9; color: inherit"><span style="font-size: 14.5px; color: #14181C">Email Hosting</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #0B5CD5">60,000/yr</span></a>
+                    <a href="./VPS Hosting.dc.html" style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 14px 18px; background: #FBFBF9; color: inherit"><span style="font-size: 14.5px; color: #14181C">VPS Hosting</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #0B5CD5">25,750/mo</span></a>
+                    <a href="./Dedicated Server.dc.html" style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 14px 18px; background: #FBFBF9; color: inherit"><span style="font-size: 14.5px; color: #14181C">Dedicated Server</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #8A9188">Quote</span></a>
+                    <a href="./Linux Reseller.dc.html" style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 14px 18px; background: #FBFBF9; color: inherit"><span style="font-size: 14.5px; color: #14181C">Linux Reseller</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #8A9188">Quote</span></a>
+                  </div>
+                </sc-if>
+              </div>
+              <a href="./Domains.dc.html" style="color: #3D443B">Domains</a>
+              <a href="./Web Design.dc.html" style="color: #3D443B">Web Design</a>
+              <a href="./Features.dc.html" style="color: #3D443B">Features</a>
+              <a href="./Contact.dc.html" style="color: #3D443B">Contact</a>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 14px">
+            <div style="display: flex; border: 1px solid #D6D8D0; border-radius: 6px; overflow: hidden; font-family: 'JetBrains Mono', monospace; font-size: 11.5px">
+              <span style="padding: 6px 10px; background: #0F1A2E; color: #fff; font-weight: 600">EN</span>
+              <span style="padding: 6px 10px; color: #6B726A">SW</span>
+            </div>
+            <a href="./Client Area Login.dc.html" style="padding: 10px 18px; border: 1px solid #D6D8D0; border-radius: 7px; color: #14181C; font-size: 14.5px; font-weight: 500">Client Area</a>
+            <a href="#1b" style="padding: 10px 20px; border-radius: 7px; background: #0B5CD5; color: #fff; font-size: 14.5px; font-weight: 600">Get started</a>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 440px; border-bottom: 1px solid #DFE1DA">
+          <div style="display: flex; flex-direction: column; gap: 30px; padding: 78px 56px 66px; border-right: 1px solid #DFE1DA">
+            <div style="display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #0A7A55">
+              <span style="width: 22px; height: 1px; background: #12A46F"></span>TANZANIA · SINCE 2018 · KIBAHA
+            </div>
+            <h1 style="margin: 0; font-size: 66px; line-height: 1.0; letter-spacing: -0.035em; font-weight: 600; color: #14181C; text-wrap: pretty; max-width: 16ch">The .tz registrar that also keeps your site up.</h1>
+            <p style="margin: 0; max-width: 54ch; font-size: 18px; line-height: 1.6; color: #545C52">One provider for the domain, the hosting, the mailboxes and the certificate — accredited by TCRA, supported from Kibaha, billed in shillings.</p>
+            <div style="display: flex; flex-direction: column; gap: 14px; max-width: 720px">
+              <div style="display: flex; align-items: center; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: #6B726A">
+                <span>CHECK A DOMAIN</span><span>REGISTRY LOOKUP · LIVE</span>
+              </div>
+              <div style="display: flex; gap: 0; border: 1px solid #14181C; border-radius: 10px; overflow: hidden; background: #fff">
+                <div style="flex: 1; display: flex; align-items: center; padding: 0 18px; height: 60px; font-family: 'JetBrains Mono', monospace; font-size: 16.5px; color: #14181C">mybusiness<span style="color: #0B5CD5">.co.tz</span><span style="display: inline-block; width: 8px; height: 19px; margin-left: 3px; background: #0B5CD5; vertical-align: -3px"></span></div>
+                <a href="#1b" style="display: grid; place-items: center; padding: 0 32px; background: #14181C; color: #fff; font-size: 15.5px; font-weight: 600">Check availability</a>
+              </div>
+              <div style="display: grid; grid-template-columns: repeat(5, 1fr); border: 1px solid #DFE1DA; border-radius: 8px; overflow: hidden; background: #fff">
+                <div style="padding: 12px 14px; border-right: 1px solid #DFE1DA"><div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #0B5CD5; font-weight: 500">.co.tz</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #6B726A; margin-top: 3px">19,999</div></div>
+                <div style="padding: 12px 14px; border-right: 1px solid #DFE1DA"><div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #14181C; font-weight: 500">.or.tz</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #6B726A; margin-top: 3px">19,999</div></div>
+                <div style="padding: 12px 14px; border-right: 1px solid #DFE1DA"><div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #14181C; font-weight: 500">.ac.tz</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #6B726A; margin-top: 3px">19,999</div></div>
+                <div style="padding: 12px 14px; border-right: 1px solid #DFE1DA"><div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #14181C; font-weight: 500">.com</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #6B726A; margin-top: 3px">55,000</div></div>
+                <div style="padding: 12px 14px"><div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #14181C; font-weight: 500">.tz</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #6B726A; margin-top: 3px">95,000</div></div>
+              </div>
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #8A9188">ALSO .GO.TZ · .ME.TZ · .SC.TZ · .NE.TZ — ALL TSh 19,999/YR</div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 22px; font-size: 14.5px; color: #545C52">
+              <span>Free migration</span><span style="color: #C9CCC4">·</span><span>30-day money back</span><span style="color: #C9CCC4">·</span><span>M-Pesa, Tigo Pesa &amp; card</span>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column">
+            <div style="display: grid; grid-template-columns: 1fr 1fr">
+              <div style="padding: 22px 24px; border-right: 1px solid #DFE1DA; border-bottom: 1px solid #DFE1DA"><div style="font-size: 30px; font-weight: 600; color: #14181C; letter-spacing: -0.03em">99.9%</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #6B726A; margin-top: 5px">UPTIME SLA</div></div>
+              <div style="padding: 22px 24px; border-bottom: 1px solid #DFE1DA"><div style="font-size: 30px; font-weight: 600; color: #14181C; letter-spacing: -0.03em">500+</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #6B726A; margin-top: 5px">DOMAINS MANAGED</div></div>
+              <div style="padding: 22px 24px; border-right: 1px solid #DFE1DA; border-bottom: 1px solid #DFE1DA"><div style="font-size: 30px; font-weight: 600; color: #14181C; letter-spacing: -0.03em">100+</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #6B726A; margin-top: 5px">SITES HOSTED</div></div>
+              <div style="padding: 22px 24px; border-bottom: 1px solid #DFE1DA"><div style="font-size: 30px; font-weight: 600; color: #14181C; letter-spacing: -0.03em">200+</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #6B726A; margin-top: 5px">CLIENTS</div></div>
+            </div>
+            <div style="padding: 18px 24px; border-bottom: 1px solid #DFE1DA; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #6B726A; background: #F2F3EF">SERVICES · FROM (TSh)</div>
+            <a href="#1b" style="display: flex; align-items: center; justify-content: space-between; padding: 17px 24px; border-bottom: 1px solid #DFE1DA; color: inherit">
+              <span style="font-size: 15.5px; font-weight: 500; color: #14181C">Web Hosting</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 13.5px; color: #0B5CD5">80,500/yr</span>
+            </a>
+            <a href="#1b" style="display: flex; align-items: center; justify-content: space-between; padding: 17px 24px; border-bottom: 1px solid #DFE1DA; color: inherit">
+              <span style="font-size: 15.5px; font-weight: 500; color: #14181C">Business Email</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 13.5px; color: #0B5CD5">60,000/yr</span>
+            </a>
+            <a href="#1b" style="display: flex; align-items: center; justify-content: space-between; padding: 17px 24px; border-bottom: 1px solid #DFE1DA; color: inherit">
+              <span style="font-size: 15.5px; font-weight: 500; color: #14181C">Linux VPS</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 13.5px; color: #0B5CD5">25,750/mo</span>
+            </a>
+            <a href="#1b" style="display: flex; align-items: center; justify-content: space-between; padding: 17px 24px; border-bottom: 1px solid #DFE1DA; color: inherit">
+              <span style="font-size: 15.5px; font-weight: 500; color: #14181C">SSL Certificates</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 13.5px; color: #0B5CD5">5,150/mo</span>
+            </a>
+            <a href="#1b" style="display: flex; align-items: center; justify-content: space-between; padding: 17px 24px; border-bottom: 1px solid #DFE1DA; color: inherit">
+              <span style="font-size: 15.5px; font-weight: 500; color: #14181C">Website Design</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 13.5px; color: #0B5CD5">250,000/mo</span>
+            </a>
+            <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-end; gap: 14px; padding: 26px 24px; background: #F2F3EF">
+              <div style="display: flex; align-items: center; gap: 12px">
+                <img src="https://moinfo.co.tz/images/tcra-badge.webp" alt="TCRA accredited .tz registrar" style="width: 46px; height: 46px; object-fit: contain" />
+                <div><div style="font-size: 15px; font-weight: 600; color: #14181C">TCRA Accredited Registrar</div><div style="font-size: 13px; color: #6B726A">Domains registered directly, not resold</div></div>
+              </div>
+              <div style="height: 96px; border: 1px dashed #C9CCC4; border-radius: 8px; display: grid; place-items: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #8A9188">TEAM / OFFICE PHOTO</div>
+            </div>
+          </div>
+        </div>
+        <div style="padding: 88px 56px; border-bottom: 1px solid #DFE1DA">
+          <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; padding-bottom: 30px; border-bottom: 1px solid #14181C">
+            <div style="display: flex; flex-direction: column; gap: 12px">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #6B726A">01 — PLANS</span>
+              <h2 style="margin: 0; font-size: 42px; font-weight: 600; letter-spacing: -0.03em; color: #14181C">Shared hosting, six tiers</h2>
+            </div>
+            <div style="display: flex; gap: 22px; padding-bottom: 6px; font-size: 14.5px">
+              <span style="color: #14181C; font-weight: 600; padding-bottom: 8px; border-bottom: 2px solid #0B5CD5">Web Hosting</span>
+              <span style="color: #6B726A">Email</span>
+              <span style="color: #6B726A">Linux VPS</span>
+              <span style="color: #6B726A">Dedicated</span>
+              <span style="color: #6B726A">Reseller</span>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); border-left: 1px solid #DFE1DA">
+            <div style="display: flex; flex-direction: column; gap: 20px; padding: 30px; border-right: 1px solid #DFE1DA; border-bottom: 1px solid #DFE1DA">
+              <div style="display: flex; align-items: baseline; justify-content: space-between">
+                <span style="font-size: 20px; font-weight: 600; color: #14181C">University</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #8A9188">ENTRY</span>
+              </div>
+              <div style="display: flex; align-items: baseline; gap: 7px"><span style="font-size: 15px; color: #6B726A">TSh</span><span style="font-size: 38px; font-weight: 600; color: #14181C; letter-spacing: -0.03em">80,500</span><span style="font-size: 14px; color: #6B726A">/yr</span></div>
+              <div style="display: flex; flex-direction: column; font-family: 'JetBrains Mono', monospace; font-size: 12.5px">
+                <span style="display: flex; justify-content: space-between; padding: 9px 0; border-top: 1px solid #EAEBE6; color: #6B726A">DISK<span style="color: #14181C">4 GB</span></span>
+                <span style="display: flex; justify-content: space-between; padding: 9px 0; border-top: 1px solid #EAEBE6; color: #6B726A">BANDWIDTH<span style="color: #14181C">4 GB</span></span>
+                <span style="display: flex; justify-content: space-between; padding: 9px 0; border-top: 1px solid #EAEBE6; color: #6B726A">MAILBOXES<span style="color: #14181C">20</span></span>
+                <span style="display: flex; justify-content: space-between; padding: 9px 0; border-top: 1px solid #EAEBE6; border-bottom: 1px solid #EAEBE6; color: #6B726A">WEBSITES<span style="color: #14181C">1</span></span>
+              </div>
+              <p style="margin: 0; font-size: 14px; line-height: 1.65; color: #6B726A">Free SSL, free migration, money-back guarantee, 24/7/366 support.</p>
+              <a href="#1b" style="display: grid; place-items: center; height: 48px; border: 1px solid #14181C; border-radius: 8px; color: #14181C; font-size: 15px; font-weight: 600; margin-top: auto">Order now</a>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 20px; padding: 30px; border-right: 1px solid #DFE1DA; border-bottom: 1px solid #DFE1DA; background: #0F1A2E">
+              <div style="display: flex; align-items: baseline; justify-content: space-between">
+                <span style="font-size: 20px; font-weight: 600; color: #fff">Professional</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #6BD4A6">MOST CHOSEN</span>
+              </div>
+              <div style="display: flex; align-items: baseline; gap: 7px"><span style="font-size: 15px; color: #A9B6C9">TSh</span><span style="font-size: 38px; font-weight: 600; color: #fff; letter-spacing: -0.03em">150,000</span><span style="font-size: 14px; color: #A9B6C9">/yr</span></div>
+              <div style="display: flex; flex-direction: column; font-family: 'JetBrains Mono', monospace; font-size: 12.5px">
+                <span style="display: flex; justify-content: space-between; padding: 9px 0; border-top: 1px solid rgba(255,255,255,0.14); color: #A9B6C9">DISK<span style="color: #fff">12 GB</span></span>
+                <span style="display: flex; justify-content: space-between; padding: 9px 0; border-top: 1px solid rgba(255,255,255,0.14); color: #A9B6C9">BANDWIDTH<span style="color: #fff">12 GB</span></span>
+                <span style="display: flex; justify-content: space-between; padding: 9px 0; border-top: 1px solid rgba(255,255,255,0.14); color: #A9B6C9">MAILBOXES<span style="color: #fff">60</span></span>
+                <span style="display: flex; justify-content: space-between; padding: 9px 0; border-top: 1px solid rgba(255,255,255,0.14); border-bottom: 1px solid rgba(255,255,255,0.14); color: #A9B6C9">WEBSITES<span style="color: #fff">5</span></span>
+              </div>
+              <p style="margin: 0; font-size: 14px; line-height: 1.65; color: #C7D2E0">Everything in Personal, plus a free .co.tz domain for year one and priority tickets.</p>
+              <a href="#1b" style="display: grid; place-items: center; height: 48px; border-radius: 8px; background: #12A46F; color: #04231A; font-size: 15px; font-weight: 600; margin-top: auto">Order now</a>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 20px; padding: 30px; border-right: 1px solid #DFE1DA; border-bottom: 1px solid #DFE1DA">
+              <div style="display: flex; align-items: baseline; justify-content: space-between">
+                <span style="font-size: 20px; font-weight: 600; color: #14181C">Plus</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #8A9188">HIGH VOLUME</span>
+              </div>
+              <div style="display: flex; align-items: baseline; gap: 7px"><span style="font-size: 15px; color: #6B726A">TSh</span><span style="font-size: 38px; font-weight: 600; color: #14181C; letter-spacing: -0.03em">500,000</span><span style="font-size: 14px; color: #6B726A">/yr</span></div>
+              <div style="display: flex; flex-direction: column; font-family: 'JetBrains Mono', monospace; font-size: 12.5px">
+                <span style="display: flex; justify-content: space-between; padding: 9px 0; border-top: 1px solid #EAEBE6; color: #6B726A">DISK<span style="color: #14181C">100 GB</span></span>
+                <span style="display: flex; justify-content: space-between; padding: 9px 0; border-top: 1px solid #EAEBE6; color: #6B726A">BANDWIDTH<span style="color: #14181C">100 GB</span></span>
+                <span style="display: flex; justify-content: space-between; padding: 9px 0; border-top: 1px solid #EAEBE6; color: #6B726A">MAILBOXES<span style="color: #14181C">200</span></span>
+                <span style="display: flex; justify-content: space-between; padding: 9px 0; border-top: 1px solid #EAEBE6; border-bottom: 1px solid #EAEBE6; color: #6B726A">WEBSITES<span style="color: #14181C">Unlimited</span></span>
+              </div>
+              <p style="margin: 0; font-size: 14px; line-height: 1.65; color: #6B726A">For busy e-commerce and portals. Nightly off-site backups included.</p>
+              <a href="#1b" style="display: grid; place-items: center; height: 48px; border: 1px solid #14181C; border-radius: 8px; color: #14181C; font-size: 15px; font-weight: 600; margin-top: auto">Order now</a>
+            </div>
+          </div>
+          <sc-if value="{{ allPlansB }}" hint-placeholder-val="{{ false }}">
+            <div style="display: flex; flex-direction: column; border-left: 1px solid #DFE1DA; border-right: 1px solid #DFE1DA">
+              <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr auto; gap: 16px; padding: 14px 24px; border-bottom: 1px solid #DFE1DA; background: #F2F3EF; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #6B726A">
+                <span>PLAN</span><span>PRICE / YR</span><span>DISK</span><span>BANDWIDTH</span><span>MAILBOXES</span><span></span>
+              </div>
+              <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr auto; gap: 16px; align-items: center; padding: 16px 24px; border-bottom: 1px solid #DFE1DA; font-size: 14.5px; color: #14181C">
+                <span style="font-weight: 600">Personal</span><span style="font-family: 'JetBrains Mono', monospace">120,000</span><span style="font-family: 'JetBrains Mono', monospace">8 GB</span><span style="font-family: 'JetBrains Mono', monospace">8 GB</span><span style="font-family: 'JetBrains Mono', monospace">40</span><a href="#1b" style="font-size: 14px">Order →</a>
+              </div>
+              <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr auto; gap: 16px; align-items: center; padding: 16px 24px; border-bottom: 1px solid #DFE1DA; font-size: 14.5px; color: #14181C">
+                <span style="font-weight: 600">Premier</span><span style="font-family: 'JetBrains Mono', monospace">200,000</span><span style="font-family: 'JetBrains Mono', monospace">20 GB</span><span style="font-family: 'JetBrains Mono', monospace">20 GB</span><span style="font-family: 'JetBrains Mono', monospace">80</span><a href="#1b" style="font-size: 14px">Order →</a>
+              </div>
+              <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr auto; gap: 16px; align-items: center; padding: 16px 24px; border-bottom: 1px solid #DFE1DA; font-size: 14.5px; color: #14181C">
+                <span style="font-weight: 600">System</span><span style="font-family: 'JetBrains Mono', monospace">250,000</span><span style="font-family: 'JetBrains Mono', monospace">15 GB</span><span style="font-family: 'JetBrains Mono', monospace">Unlimited</span><span style="font-family: 'JetBrains Mono', monospace">Unlimited</span><a href="#1b" style="font-size: 14px">Order →</a>
+              </div>
+            </div>
+          </sc-if>
+          <div style="display: flex; align-items: center; gap: 16px; padding-top: 26px">
+            <button type="button" onClick="{{ toggleB }}" style="padding: 11px 20px; border: 1px solid #14181C; border-radius: 8px; background: none; color: #14181C; font-family: 'Instrument Sans', sans-serif; font-size: 14.5px; font-weight: 500; cursor: pointer">
+              <sc-if value="{{ moreB }}" hint-placeholder-val="{{ true }}">Compare all 6 plans</sc-if>
+              <sc-if value="{{ allPlansB }}" hint-placeholder-val="{{ false }}">Hide comparison</sc-if>
+            </button>
+            <span style="font-size: 14.5px; color: #6B726A">Every plan: free SSL, free migration, 30-day money back, 24/7/366 support.</span>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid #DFE1DA">
+          <div style="padding: 88px 56px; border-right: 1px solid #DFE1DA; display: flex; flex-direction: column; gap: 18px">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #6B726A">02 — WHY MOINFO</span>
+            <h2 style="margin: 0; font-size: 42px; font-weight: 600; letter-spacing: -0.03em; color: #14181C; line-height: 1.05; max-width: 18ch">Boring where it counts</h2>
+            <p style="margin: 0; max-width: 40ch; font-size: 16.5px; line-height: 1.65; color: #545C52">Standard tooling, redundant hardware, and a support line that a person picks up. No surprises at renewal.</p>
+            <div style="margin-top: 20px; height: 260px; border: 1px dashed #C9CCC4; border-radius: 10px; display: grid; place-items: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #8A9188">DATA CENTRE / RACK PHOTO</div>
+          </div>
+          <div style="display: flex; flex-direction: column">
+            <div style="padding: 26px 40px; border-bottom: 1px solid #DFE1DA; display: flex; gap: 20px">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #0B5CD5; padding-top: 3px; min-width: 62px">99.9%</span>
+              <span><span style="display: block; font-size: 17px; font-weight: 600; color: #14181C">Uptime guarantee</span><span style="display: block; margin-top: 5px; font-size: 14.5px; line-height: 1.6; color: #6B726A">Redundant power, network and storage, with a public status page and incident history.</span></span>
+            </div>
+            <div style="padding: 26px 40px; border-bottom: 1px solid #DFE1DA; display: flex; gap: 20px">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #0B5CD5; padding-top: 3px; min-width: 62px">.co.tz</span>
+              <span><span style="display: block; font-size: 17px; font-weight: 600; color: #14181C">Free domain for year one</span><span style="display: block; margin-top: 5px; font-size: 14.5px; line-height: 1.6; color: #6B726A">Any annual plan includes a .co.tz or .com registration, handled in-house as the registrar.</span></span>
+            </div>
+            <div style="padding: 26px 40px; border-bottom: 1px solid #DFE1DA; display: flex; gap: 20px">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #0B5CD5; padding-top: 3px; min-width: 62px">cPanel</span>
+              <span><span style="display: block; font-size: 17px; font-weight: 600; color: #14181C">Standard control panel</span><span style="display: block; margin-top: 5px; font-size: 14.5px; line-height: 1.6; color: #6B726A">Files, databases, mailboxes, cron and one-click WordPress. Nothing proprietary to learn.</span></span>
+            </div>
+            <div style="padding: 26px 40px; border-bottom: 1px solid #DFE1DA; display: flex; gap: 20px">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #0B5CD5; padding-top: 3px; min-width: 62px">24/7</span>
+              <span><span style="display: block; font-size: 17px; font-weight: 600; color: #14181C">Support in your time zone</span><span style="display: block; margin-top: 5px; font-size: 14.5px; line-height: 1.6; color: #6B726A">Phone, WhatsApp and email, answered from Kibaha in Swahili or English.</span></span>
+            </div>
+            <div style="padding: 26px 40px; border-bottom: 1px solid #DFE1DA; display: flex; gap: 20px">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #0B5CD5; padding-top: 3px; min-width: 62px">SSL</span>
+              <span><span style="display: block; font-size: 17px; font-weight: 600; color: #14181C">HTTPS on every plan</span><span style="display: block; margin-top: 5px; font-size: 14.5px; line-height: 1.6; color: #6B726A">Free Let's Encrypt certificates, auto-renewed. Paid DV, OV and wildcard available.</span></span>
+            </div>
+            <div style="flex: 1; padding: 26px 40px; display: flex; gap: 20px; background: #F2F3EF">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #0A7A55; padding-top: 3px; min-width: 62px">0 TSh</span>
+              <span><span style="display: block; font-size: 17px; font-weight: 600; color: #14181C">Migration, done for you</span><span style="display: block; margin-top: 5px; font-size: 14.5px; line-height: 1.6; color: #6B726A">We move sites, databases and mail from your current host at no charge — usually same day.</span></span>
+            </div>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid #DFE1DA; background: #F2F3EF">
+          <div style="padding: 88px 56px; display: flex; flex-direction: column; gap: 24px; border-right: 1px solid #DFE1DA">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #6B726A">03 — MOINFOTECH STUDIO</span>
+            <h2 style="margin: 0; font-size: 42px; font-weight: 600; letter-spacing: -0.03em; color: #14181C; line-height: 1.05; max-width: 18ch">Need the website built too?</h2>
+            <p style="margin: 0; max-width: 46ch; font-size: 16.5px; line-height: 1.65; color: #545C52">Our studio builds and maintains the site that sits on the hosting — brochure sites to e-commerce, in WordPress, React or Next.js.</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; max-width: 560px; font-size: 14.5px; color: #3D443B">
+              <span style="padding: 9px 0; border-top: 1px solid #DFE1DA">Custom responsive design</span>
+              <span style="padding: 9px 0; border-top: 1px solid #DFE1DA">E-commerce integration</span>
+              <span style="padding: 9px 0; border-top: 1px solid #DFE1DA">SEO-optimised structure</span>
+              <span style="padding: 9px 0; border-top: 1px solid #DFE1DA">Social media integration</span>
+              <span style="padding: 9px 0; border-top: 1px solid #DFE1DA">Mobile-first approach</span>
+              <span style="padding: 9px 0; border-top: 1px solid #DFE1DA">Analytics &amp; reporting</span>
+              <span style="padding: 9px 0; border-top: 1px solid #DFE1DA; border-bottom: 1px solid #DFE1DA">Content management</span>
+              <span style="padding: 9px 0; border-top: 1px solid #DFE1DA; border-bottom: 1px solid #DFE1DA">Maintenance plans</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 14px; margin-top: 6px">
+              <a href="#1b" style="padding: 14px 24px; border-radius: 8px; background: #0B5CD5; color: #fff; font-size: 15px; font-weight: 600">Request a quote</a>
+              <span style="font-size: 14.5px; color: #6B726A">From <strong style="color: #14181C; font-weight: 600">TSh 250,000/mo</strong></span>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-rows: 1fr auto; background: #FBFBF9">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #DFE1DA; border-bottom: 1px solid #DFE1DA">
+              <div style="background: #FBFBF9; min-height: 200px; display: grid; place-items: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #8A9188">CLIENT SITE 01</div>
+              <div style="background: #FBFBF9; min-height: 200px; display: grid; place-items: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #8A9188">CLIENT SITE 02</div>
+              <div style="background: #FBFBF9; min-height: 200px; display: grid; place-items: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #8A9188">CLIENT SITE 03</div>
+              <div style="background: #FBFBF9; min-height: 200px; display: grid; place-items: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #8A9188">CLIENT SITE 04</div>
+            </div>
+            <div style="display: flex; gap: 8px; padding: 22px 40px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #6B726A">
+              <span style="padding: 6px 11px; border: 1px solid #DFE1DA; border-radius: 6px">WordPress</span>
+              <span style="padding: 6px 11px; border: 1px solid #DFE1DA; border-radius: 6px">React</span>
+              <span style="padding: 6px 11px; border: 1px solid #DFE1DA; border-radius: 6px">Next.js</span>
+              <span style="padding: 6px 11px; border: 1px solid #DFE1DA; border-radius: 6px">PHP</span>
+            </div>
+          </div>
+        </div>
+        <div style="padding: 88px 56px; border-bottom: 1px solid #DFE1DA">
+          <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; padding-bottom: 30px; border-bottom: 1px solid #14181C">
+            <div style="display: flex; flex-direction: column; gap: 12px">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #6B726A">04 — CUSTOMERS</span>
+              <h2 style="margin: 0; font-size: 42px; font-weight: 600; letter-spacing: -0.03em; color: #14181C">What clients tell us</h2>
+            </div>
+            <div style="display: flex; gap: 30px; font-family: 'JetBrains Mono', monospace">
+              <span style="text-align: right"><span style="display: block; font-size: 22px; color: #14181C">4.8<span style="font-size: 12px; color: #8A9188">/5</span></span><span style="display: block; font-size: 10.5px; letter-spacing: 0.12em; color: #6B726A; margin-top: 4px">TRUSTPILOT</span></span>
+              <span style="text-align: right"><span style="display: block; font-size: 22px; color: #14181C">4.6<span style="font-size: 12px; color: #8A9188">/5</span></span><span style="display: block; font-size: 10.5px; letter-spacing: 0.12em; color: #6B726A; margin-top: 4px">GOOGLE</span></span>
+              <span style="text-align: right"><span style="display: block; font-size: 22px; color: #14181C">4.5<span style="font-size: 12px; color: #8A9188">/5</span></span><span style="display: block; font-size: 10.5px; letter-spacing: 0.12em; color: #6B726A; margin-top: 4px">FACEBOOK</span></span>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); border-left: 1px solid #DFE1DA">
+            <div style="display: flex; flex-direction: column; gap: 22px; padding: 30px; border-right: 1px solid #DFE1DA; border-bottom: 1px solid #DFE1DA">
+              <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #14181C">“Over a year with Moinfo and I have never had downtime. Support is excellent and always available when I need help.”</p>
+              <div style="display: flex; align-items: center; gap: 12px; margin-top: auto"><span style="width: 36px; height: 36px; border-radius: 50%; background: #EAEBE6; display: grid; place-items: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #4A5147">JM</span><span><span style="display: block; font-size: 14px; font-weight: 600; color: #14181C">John Massawe</span><span style="display: block; font-size: 13px; color: #6B726A">Dar es Salaam</span></span></div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 22px; padding: 30px; border-right: 1px solid #DFE1DA; border-bottom: 1px solid #DFE1DA">
+              <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #14181C">“They moved our whole site and mailboxes over in an afternoon. Nothing broke, nobody noticed.”</p>
+              <div style="display: flex; align-items: center; gap: 12px; margin-top: auto"><span style="width: 36px; height: 36px; border-radius: 50%; background: #EAEBE6; display: grid; place-items: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #4A5147">AK</span><span><span style="display: block; font-size: 14px; font-weight: 600; color: #14181C">Client name</span><span style="display: block; font-size: 13px; color: #6B726A">Placeholder — swap in real quote</span></span></div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 22px; padding: 30px; border-right: 1px solid #DFE1DA; border-bottom: 1px solid #DFE1DA">
+              <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #14181C">“Being the registrar makes a difference — our .ac.tz renewal was handled in one call.”</p>
+              <div style="display: flex; align-items: center; gap: 12px; margin-top: auto"><span style="width: 36px; height: 36px; border-radius: 50%; background: #EAEBE6; display: grid; place-items: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #4A5147">SN</span><span><span style="display: block; font-size: 14px; font-weight: 600; color: #14181C">Client name</span><span style="display: block; font-size: 13px; color: #6B726A">Placeholder — swap in real quote</span></span></div>
+            </div>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center; padding: 64px 56px; background: #0F1A2E">
+          <div style="display: flex; flex-direction: column; gap: 12px">
+            <h2 style="margin: 0; font-size: 38px; font-weight: 600; letter-spacing: -0.03em; color: #fff">Start with the domain. We handle the rest.</h2>
+            <p style="margin: 0; font-size: 16.5px; color: #A9B6C9">Free migration, free SSL, 30-day money back. Talk to a human on WhatsApp before you pay.</p>
+          </div>
+          <div style="display: flex; gap: 12px">
+            <a href="#1b" style="padding: 15px 26px; border-radius: 8px; background: #12A46F; color: #04231A; font-size: 15px; font-weight: 600">Check a domain</a>
+            <a href="https://wa.me/255689011111" style="padding: 15px 26px; border: 1px solid rgba(255,255,255,0.28); border-radius: 8px; color: #fff; font-size: 15px; font-weight: 500">WhatsApp us</a>
+          </div>
+        </div>
+        <div style="padding: 66px 56px 26px; background: #FBFBF9; border-top: 1px solid #DFE1DA">
+          <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 48px">
+            <div style="display: flex; flex-direction: column; gap: 16px">
+              <div style="display: flex; align-items: center; gap: 11px">
+                <img src="https://moinfo.co.tz/images/logo.png" alt="MoinfoTech" style="width: 36px; height: 36px; object-fit: contain" />
+                <div><div style="font-size: 16.5px; font-weight: 600; color: #14181C">Moinfo<span style="color: #0B5CD5">Tech</span></div><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #0A7A55">MAKING TECHNOLOGY WORK FOR YOU</div></div>
+              </div>
+              <p style="margin: 0; max-width: 34ch; font-size: 14px; line-height: 1.7; color: #6B726A">Your trusted partner for IT solutions in Tanzania — web hosting, custom systems and professional web design.</p>
+              <div style="display: flex; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #4A5147">
+                <span style="width: 34px; height: 34px; border: 1px solid #DFE1DA; border-radius: 7px; display: grid; place-items: center">fb</span>
+                <span style="width: 34px; height: 34px; border: 1px solid #DFE1DA; border-radius: 7px; display: grid; place-items: center">ig</span>
+                <span style="width: 34px; height: 34px; border: 1px solid #DFE1DA; border-radius: 7px; display: grid; place-items: center">in</span>
+                <span style="width: 34px; height: 34px; border: 1px solid #DFE1DA; border-radius: 7px; display: grid; place-items: center">x</span>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 11px">
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #6B726A; padding-bottom: 6px; border-bottom: 1px solid #DFE1DA">SERVICES</div>
+              <a href="./Web Hosting.dc.html" style="font-size: 14px; color: #3D443B">Web Hosting</a>
+              <a href="#1b" style="font-size: 14px; color: #3D443B">Email Hosting</a>
+              <a href="#1b" style="font-size: 14px; color: #3D443B">VPS Hosting</a>
+              <a href="#1b" style="font-size: 14px; color: #3D443B">Dedicated Server</a>
+              <a href="#1b" style="font-size: 14px; color: #3D443B">Linux Reseller</a>
+              <a href="#1b" style="font-size: 14px; color: #3D443B">Website Design</a>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 11px">
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #6B726A; padding-bottom: 6px; border-bottom: 1px solid #DFE1DA">RESOURCES</div>
+              <a href="#1b" style="font-size: 14px; color: #3D443B">Domain Search</a>
+              <a href="#1b" style="font-size: 14px; color: #3D443B">Knowledge Base</a>
+              <a href="#1b" style="font-size: 14px; color: #3D443B">Transfer to Us</a>
+              <a href="#1b" style="font-size: 14px; color: #3D443B">Status Page</a>
+              <a href="#1b" style="font-size: 14px; color: #3D443B">Policies</a>
+              <a href="#1b" style="font-size: 14px; color: #3D443B">GDPR Compliance</a>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 11px">
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #6B726A; padding-bottom: 6px; border-bottom: 1px solid #DFE1DA">CONTACT</div>
+              <a href="mailto:info@moinfo.co.tz" style="font-size: 14px; color: #3D443B">info@moinfo.co.tz</a>
+              <a href="tel:+255689011111" style="font-size: 14px; color: #3D443B">+255 689 011 111</a>
+              <a href="tel:+255651034582" style="font-size: 14px; color: #3D443B">+255 651 034 582</a>
+              <span style="font-size: 14px; line-height: 1.6; color: #6B726A">Njuweni Hotel, 1st Floor, Room 134,<br />Mail Moja, Kibaha, Tanzania</span>
+              <div style="display: flex; align-items: center; gap: 11px; margin-top: 6px; padding: 12px 14px; border: 1px solid #DFE1DA; border-radius: 9px; background: #F2F3EF">
+                <img src="https://moinfo.co.tz/images/tcra-badge.webp" alt="TCRA accredited .tz registrar" style="width: 34px; height: 34px; object-fit: contain" />
+                <div><div style="font-size: 13.5px; font-weight: 600; color: #14181C">TCRA Accredited</div><div style="font-size: 12px; color: #6B726A">.tz Domain Registrar</div></div>
+              </div>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 40px; padding-top: 20px; border-top: 1px solid #DFE1DA; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #8A9188">
+            <span>© 2026 MOINFOTECH · ALL RIGHTS RESERVED</span>
+            <span style="display: flex; gap: 20px"><a href="#1b" style="color: #8A9188">PRIVACY</a><a href="#1b" style="color: #8A9188">TERMS</a><a href="#1b" style="color: #8A9188">ACCEPTABLE USE</a></span>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 56px; background: #F2F3EF; border-top: 1px solid #DFE1DA; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6B726A">
+          <span>WORLD CLOCK · LON 19:56 · NYC 14:56 · HKG 02:56 · DAR 22:56</span>
+          <span style="display: flex; align-items: center; gap: 10px">
+            <span style="display: inline-flex; padding: 6px 12px; border-radius: 100px; background: #12A46F; color: #fff; font-weight: 600">WHATSAPP</span>
+            <span style="display: inline-flex; padding: 6px 12px; border-radius: 100px; border: 1px solid #D6D8D0; color: #4A5147">LIVE CHAT · 1</span>
+          </span>
+        </div>
+        <!-- B:BODY -->
+      </div>
+    </div>
+
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1600,&quot;height&quot;:1000},&quot;expandPlans&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Pricing&quot;},&quot;promoVisible&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Promo banner&quot;}}">
+class Component extends DCLogic {
+  state = { allPlansA: null, allPlansB: null, menuA: false, menuB: false };
+  renderVals() {
+    const p = this.props.expandPlans ?? false;
+    const s = {
+      allPlansA: this.state.allPlansA === null ? p : this.state.allPlansA,
+      allPlansB: this.state.allPlansB === null ? p : this.state.allPlansB
+    };
+    const set = (k, v) => this.setState({ [k]: v });
+    return {
+      promoVisible: this.props.promoVisible ?? true,
+      menuA: this.state.menuA, menuB: this.state.menuB,
+      openMenuA: () => set("menuA", true), closeMenuA: () => set("menuA", false),
+      openMenuB: () => set("menuB", true), closeMenuB: () => set("menuB", false),
+      allPlansA: s.allPlansA, allPlansB: s.allPlansB,
+      moreA: !s.allPlansA, moreB: !s.allPlansB,
+      toggleA: () => set("allPlansA", !s.allPlansA),
+      toggleB: () => set("allPlansB", !s.allPlansB)
+    };
+  }
+}
+</script>
+</body>
+</html>

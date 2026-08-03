@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #0C1116; }
+  #root { display: flex; justify-content: center; }
+  a { color: #7BE3B4; text-decoration: none; }
+  a:hover { color: #4A9BFF; }
+</style>
+</helmet>
+<div style="width: 1440px; flex-shrink: 0; background: #0C1116; font-family: 'Space Grotesk', sans-serif">
+  <dc-import name="Site Header" active="hosting" crumb="Hosting / Dedicated Server" hint-size="1440px,170px"></dc-import>
+
+  <div style="position: relative; padding: 72px 40px; background: radial-gradient(900px 420px at 20% 0%, rgba(11,92,213,0.28), transparent 70%), radial-gradient(720px 400px at 88% 30%, rgba(10,143,99,0.22), transparent 70%), #0C1116">
+    <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 80px 80px; pointer-events: none"></div>
+    <div style="position: relative; display: grid; grid-template-columns: 1fr 380px; gap: 64px; align-items: end">
+      <div style="display: flex; flex-direction: column; gap: 26px">
+        <div style="display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4"><span style="width: 22px; height: 1px; background: #29D08A"></span>SINGLE-TENANT HARDWARE · BY QUOTE</div>
+        <h1 style="margin: 0; font-size: 62px; line-height: 1.0; letter-spacing: -0.035em; font-weight: 600; color: #fff; max-width: 16ch; text-wrap: pretty">A whole machine, nobody else on it.</h1>
+        <p style="margin: 0; max-width: 54ch; font-family: 'Instrument Sans', sans-serif; font-size: 17.5px; line-height: 1.6; color: #9AA6A1">For workloads that outgrew shared hosting or need data kept on hardware you can name — core banking front-ends, ERPs, large databases, media libraries.</p>
+        <div style="display: flex; gap: 12px"><a href="#quote" style="padding: 14px 24px; border-radius: 8px; background: #29D08A; color: #06231A; font-size: 15px; font-weight: 600">Request a quote</a><a href="tel:+255689011111" style="padding: 14px 24px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: #fff; font-size: 15px; font-weight: 500">Call an engineer</a></div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 14px; padding: 24px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; color: #7F8C86">TYPICAL LEAD TIME</div>
+        <div style="font-size: 34px; font-weight: 600; color: #fff; letter-spacing: -0.03em">5–10 days</div>
+        <div style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; line-height: 1.6; color: #8B968F">From signed quote to a racked, tested, handed-over server — including OS, firewall and monitoring setup.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding: 90px 40px; background: #0A0E12; border-top: 1px solid rgba(255,255,255,0.08)">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; padding-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.1)">
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4">01 · STARTING POINTS</span>
+        <h2 style="margin: 0; font-size: 40px; font-weight: 600; letter-spacing: -0.03em; color: #fff">Three builds we quote most often</h2>
+      </div>
+      <p style="margin: 0; max-width: 36ch; font-family: 'Instrument Sans', sans-serif; font-size: 14.5px; line-height: 1.65; color: #8B968F">Every build is configured to the workload — these are reference points, not a fixed menu.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding-top: 32px">
+      <sc-for list="{{ builds }}" as="b" hint-placeholder-count="3">
+        <div style="display: flex; flex-direction: column; gap: 20px; padding: 26px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; background: rgba(255,255,255,0.02)">
+          <div style="display: flex; align-items: center; justify-content: space-between"><span style="font-size: 19px; font-weight: 600; color: #fff">{{ b.name }}</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #7F8C86">{{ b.tag }}</span></div>
+          <div style="display: flex; flex-direction: column; font-family: 'JetBrains Mono', monospace; font-size: 12.5px">
+            <span style="display: flex; justify-content: space-between; padding: 10px 0; border-top: 1px solid rgba(255,255,255,0.09); color: #7F8C86">CPU<span style="color: #fff">{{ b.cpu }}</span></span>
+            <span style="display: flex; justify-content: space-between; padding: 10px 0; border-top: 1px solid rgba(255,255,255,0.09); color: #7F8C86">RAM<span style="color: #fff">{{ b.ram }}</span></span>
+            <span style="display: flex; justify-content: space-between; padding: 10px 0; border-top: 1px solid rgba(255,255,255,0.09); color: #7F8C86">STORAGE<span style="color: #fff">{{ b.disk }}</span></span>
+            <span style="display: flex; justify-content: space-between; padding: 10px 0; border-top: 1px solid rgba(255,255,255,0.09); border-bottom: 1px solid rgba(255,255,255,0.09); color: #7F8C86">UPLINK<span style="color: #fff">{{ b.net }}</span></span>
+          </div>
+          <div style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; line-height: 1.7; color: #8B968F">{{ b.blurb }}</div>
+          <a href="#quote" style="display: grid; place-items: center; height: 46px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: #fff; font-size: 14.5px; font-weight: 600; margin-top: auto">Get a price</a>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div id="quote" style="padding: 90px 40px; background: #0C1116; border-top: 1px solid rgba(255,255,255,0.08)">
+    <div style="display: grid; grid-template-columns: 1fr 480px; gap: 64px; align-items: start">
+      <div style="display: flex; flex-direction: column; gap: 20px">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.16em; color: #7BE3B4">02 · REQUEST A QUOTE</span>
+        <h2 style="margin: 0; font-size: 40px; font-weight: 600; letter-spacing: -0.03em; color: #fff; line-height: 1.05; max-width: 18ch">Tell us the workload, not the part numbers</h2>
+        <p style="margin: 0; max-width: 46ch; font-family: 'Instrument Sans', sans-serif; font-size: 16.5px; line-height: 1.65; color: #8B968F">Describe what the server has to do and how many people use it. We size the hardware and come back with a written quote within two working days.</p>
+        <div style="display: flex; flex-direction: column">
+          <sc-for list="{{ includes }}" as="i" hint-placeholder-count="5">
+            <div style="display: flex; gap: 12px; padding: 12px 0; border-top: 1px solid rgba(255,255,255,0.09); font-family: 'Instrument Sans', sans-serif; font-size: 14.5px; color: #B6C0BB"><span style="color: #29D08A">✓</span>{{ i }}</div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px; padding: 28px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; background: rgba(255,255,255,0.02)">
+        <div style="display: flex; flex-direction: column; gap: 7px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #7F8C86">ORGANISATION</span><div style="height: 46px; border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; background: #070A0D"></div></div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px">
+          <div style="display: flex; flex-direction: column; gap: 7px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #7F8C86">CONTACT NAME</span><div style="height: 46px; border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; background: #070A0D"></div></div>
+          <div style="display: flex; flex-direction: column; gap: 7px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #7F8C86">PHONE</span><div style="height: 46px; border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; background: #070A0D"></div></div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 7px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #7F8C86">EMAIL</span><div style="height: 46px; border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; background: #070A0D"></div></div>
+        <div style="display: flex; flex-direction: column; gap: 7px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #7F8C86">WHAT WILL THE SERVER RUN?</span><div style="height: 110px; border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; background: #070A0D"></div></div>
+        <a href="#quote" style="display: grid; place-items: center; height: 48px; border-radius: 8px; background: #29D08A; color: #06231A; font-size: 15px; font-weight: 600">Send request</a>
+        <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13px; color: #7F8C86; text-align: center">Or WhatsApp +255 689 011 111 for a same-day conversation.</span>
+      </div>
+    </div>
+  </div>
+
+  <dc-import name="Site Footer" hint-size="1440px,620px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:1000}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      builds: [
+        { name: "Entry", tag: "SINGLE APP", cpu: "8 cores", ram: "32 GB", disk: "2 × 960 GB NVMe", net: "1 Gbps", blurb: "One busy application or a database that has outgrown a VPS." },
+        { name: "Standard", tag: "MOST QUOTED", cpu: "16 cores", ram: "64 GB", disk: "4 × 1.92 TB NVMe", net: "1 Gbps", blurb: "Virtualisation host for a company running several internal systems." },
+        { name: "Storage", tag: "DATA HEAVY", cpu: "16 cores", ram: "128 GB", disk: "8 × 8 TB SAS", net: "10 Gbps", blurb: "Archives, media libraries and backup targets where capacity leads." }
+      ],
+      includes: [
+        "Hardware sized to your workload, not a fixed catalogue",
+        "OS install, firewall and hardening before handover",
+        "Monitoring and alerting on CPU, disk and services",
+        "Optional managed patching and backup retention",
+        "Written quote in Tanzanian shillings within two working days"
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

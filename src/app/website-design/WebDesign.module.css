@@ -1,6 +1,6 @@
 .hero {
   padding: 60px 0 40px;
-  background: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-8));
+  background: var(--dc-surface-alt);
 }
 
 .heroContent {
@@ -24,7 +24,7 @@
 
 .packages {
   padding: 40px 0 80px;
-  background: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-8));
+  background: var(--dc-surface-alt);
 }
 
 .popularCard {

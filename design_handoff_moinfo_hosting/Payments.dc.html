@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #0C1116; }
+  #root { display: flex; justify-content: center; }
+  a { color: #7BE3B4; text-decoration: none; }
+  a:hover { color: #4A9BFF; }
+</style>
+</helmet>
+<div style="width: 1440px; flex-shrink: 0; display: flex; align-items: stretch; background: #0C1116; font-family: 'Space Grotesk', sans-serif">
+  <dc-import name="Portal Sidebar" active="payments" hint-size="244px,100%"></dc-import>
+
+  <div style="flex: 1; min-width: 0; display: flex; flex-direction: column">
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 0 32px; height: 68px; border-bottom: 1px solid rgba(255,255,255,0.08); background: rgba(12,17,22,0.92)">
+      <div style="display: flex; align-items: center; gap: 14px; flex: 1; max-width: 420px; padding: 0 16px; height: 40px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; background: #070A0D">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #4E5A55">⌕</span>
+        <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #5C665F">Search by invoice or reference…</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 14px">
+        <a href="./Client Portal.dc.html" style="padding: 9px 16px; border: 1px solid rgba(255,255,255,0.16); border-radius: 7px; color: #DCE3DF; font-size: 13.5px; font-weight: 500">Dashboard</a>
+        <span style="width: 1px; height: 26px; background: rgba(255,255,255,0.1)"></span>
+        <div style="display: flex; align-items: center; gap: 10px">
+          <div style="width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(140deg, #0B5CD5, #0A8F63); display: grid; place-items: center; color: #fff; font-size: 13px; font-weight: 600">KK</div>
+          <div style="display: flex; flex-direction: column; line-height: 1.15">
+            <span style="font-size: 13.5px; font-weight: 600; color: #fff">Kassim Haji Kassim</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; color: #6E7A75">ACCT #10428 · KIBAHA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 24px; padding: 32px">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px">
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #7BE3B4">BILLING</span>
+          <h1 style="margin: 0; font-size: 34px; font-weight: 600; letter-spacing: -0.03em; color: #fff">Payments</h1>
+        </div>
+        <a href="#export" style="padding: 11px 20px; border: 1px solid rgba(255,255,255,0.16); border-radius: 8px; color: #fff; font-size: 13.5px; font-weight: 600">Export CSV</a>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden">
+        <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+          <div style="display: flex; flex-direction: column; gap: 6px; padding: 22px 24px; background: #0C1116">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #7F8C86">{{ s.label }}</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 28px; color: {{ s.color }}; letter-spacing: -0.02em">{{ s.value }}</span>
+            <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13px; color: #7F8C86">{{ s.note }}</span>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="display: flex; gap: 4px; padding: 4px; width: fit-content; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px">
+        <sc-for list="{{ filters }}" as="f" hint-placeholder-count="4">
+          <button type="button" onClick="{{ f.on }}" style="padding: 9px 16px; border: 0; border-radius: 5px; background: {{ f.bg }}; color: {{ f.fg }}; font-family: 'Space Grotesk', sans-serif; font-size: 13.5px; font-weight: 600; cursor: pointer">{{ f.label }}</button>
+        </sc-for>
+      </div>
+
+      <div style="border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; overflow: hidden">
+        <div style="display: grid; grid-template-columns: 120px 150px 1fr 140px 130px 110px; gap: 16px; padding: 13px 22px; background: rgba(255,255,255,0.03); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: #7F8C86">
+          <span>DATE</span><span>INVOICE</span><span>REFERENCE</span><span>METHOD</span><span style="text-align: right">AMOUNT</span><span style="text-align: right">RECEIPT</span>
+        </div>
+        <sc-for list="{{ rows }}" as="r" hint-placeholder-count="12">
+          <div style="display: grid; grid-template-columns: 120px 150px 1fr 140px 130px 110px; gap: 16px; align-items: center; padding: 14px 22px; border-top: 1px solid rgba(255,255,255,0.08)">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #8B968F">{{ r.date }}</span>
+            <a href="./Invoices.dc.html" style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #fff">{{ r.invoice }}</a>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #7F8C86">{{ r.ref }}</span>
+            <span style="padding: 4px 10px; width: fit-content; border-radius: 20px; background: {{ r.tagBg }}; color: {{ r.tagFg }}; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em">{{ r.method }}</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #7BE3B4; text-align: right">{{ r.amount }}</span>
+            <span style="display: flex; justify-content: flex-end"><a href="#receipt" style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em">PDF ↓</a></span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:950}}">
+class Component extends DCLogic {
+  state = { filter: "all" };
+  data() {
+    const M = { pesapal: { tagBg: "rgba(74,155,255,0.14)", tagFg: "#7FB4FF" }, bank: { tagBg: "rgba(255,255,255,0.08)", tagFg: "#B6C0BB" }, mpesa: { tagBg: "rgba(41,208,138,0.14)", tagFg: "#7BE3B4" } };
+    const r = (date, invoice, amount, method, ref) => ({ date, invoice, amount, method: method.toUpperCase(), key: method, ref: ref || "—", ...M[method] });
+    return [
+      r("02 JUL 2026", "WHMCS-1245", "550,000", "pesapal"),
+      r("01 JUL 2026", "WHMCS-1250", "594,000", "pesapal"),
+      r("26 JUN 2026", "INV-2026-0121", "250,000", "bank", "CRDB-88214"),
+      r("25 JUN 2026", "INV-2026-0119", "30,000", "bank", "CRDB-88190"),
+      r("25 JUN 2026", "INV-2026-0140", "250,000", "bank", "CRDB-88191"),
+      r("23 JUN 2026", "INV-2026-0157", "60,000", "mpesa", "QJ4K8T2P1M"),
+      r("15 MAY 2026", "WHMCS-1178", "550,000", "pesapal"),
+      r("08 MAY 2026", "INV-2026-0074", "520,000", "bank", "CRDB-87042"),
+      r("05 MAY 2026", "INV-2026-0110", "19,999", "mpesa", "QH9L2R7X4B"),
+      r("08 APR 2026", "INV-2026-0091", "280,000", "bank", "CRDB-86311"),
+      r("01 APR 2026", "INV-2026-0085", "350,000", "bank", "CRDB-86088"),
+      r("17 MAR 2026", "INV-2026-0068", "261,600", "bank", "19cfa860a50b9a7"),
+      r("04 MAR 2026", "WHMCS-690", "1,430,000", "pesapal"),
+      r("04 MAR 2026", "WHMCS-692", "792,000", "pesapal"),
+      r("04 MAR 2026", "WHMCS-716", "342,000", "pesapal")
+    ];
+  }
+  renderVals() {
+    const s = this.state;
+    const all = this.data();
+    const list = s.filter === "all" ? all : all.filter((r) => r.key === s.filter);
+    return {
+      stats: [
+        { label: "TOTAL PAID", value: "3,221,348", color: "#7BE3B4", note: "TSh lifetime" },
+        { label: "PAYMENTS", value: "94", color: "#fff", note: "Since 2023" },
+        { label: "THIS YEAR", value: "1,876,599", color: "#fff", note: "TSh in 2026" },
+        { label: "AVG. SETTLEMENT", value: "6 days", color: "#fff", note: "From invoice to payment" }
+      ],
+      filters: [["all", "All"], ["pesapal", "Pesapal"], ["bank", "Bank"], ["mpesa", "Mobile money"]].map(([k, label]) => ({
+        label, on: () => this.setState({ filter: k }),
+        bg: s.filter === k ? "#fff" : "transparent",
+        fg: s.filter === k ? "#0C1116" : "#9AA6A1"
+      })),
+      rows: list
+    };
+  }
+}
+</script>
+</body>
+</html>

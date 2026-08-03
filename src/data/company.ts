@@ -1,4 +1,4 @@
-import { KNOWLEDGEBASE_URL, WHATSAPP_NUMBER } from "@/data/mobilling";
+import { WHATSAPP_NUMBER } from "@/data/mobilling";
 
 export const company = {
   name: "Moinfo Hosting",
@@ -24,7 +24,7 @@ export const company = {
 export const footerLinks = {
   company: [
     { labelKey: "footer.aboutUs", href: "#" },
-    { labelKey: "footer.contact", href: "#footer" },
+    { labelKey: "footer.contact", href: "/contact" },
     { labelKey: "footer.blog", href: "#" },
     { labelKey: "footer.careers", href: "#" },
   ],
@@ -38,7 +38,9 @@ export const footerLinks = {
   ],
   resources: [
     { labelKey: "footer.domainSearch", href: "/domains" },
-    { labelKey: "footer.knowledgeBase", href: KNOWLEDGEBASE_URL },
+    // Our own public guides. MoBilling's knowledgebase is behind login, so it
+    // is the wrong target for a footer link a signed-out visitor clicks.
+    { labelKey: "footer.knowledgeBase", href: "/knowledge-base" },
     { labelKey: "footer.transfer", href: "/transfer" },
     { labelKey: "footer.privacyPolicy", href: "/privacy" },
     { labelKey: "footer.termsOfService", href: "/terms" },

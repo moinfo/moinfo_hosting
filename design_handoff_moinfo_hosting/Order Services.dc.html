@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #0C1116; }
+  #root { display: flex; justify-content: center; }
+  a { color: #7BE3B4; text-decoration: none; }
+  a:hover { color: #4A9BFF; }
+</style>
+</helmet>
+<div style="width: 1440px; flex-shrink: 0; display: flex; align-items: stretch; background: #0C1116; font-family: 'Space Grotesk', sans-serif">
+  <dc-import name="Portal Sidebar" active="order" hint-size="244px,100%"></dc-import>
+
+  <div style="flex: 1; display: flex; flex-direction: column; min-width: 0">
+
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 0 32px; height: 68px; border-bottom: 1px solid rgba(255,255,255,0.08); background: rgba(12,17,22,0.92)">
+      <div style="display: flex; align-items: center; gap: 14px; flex: 1; max-width: 420px; padding: 0 16px; height: 40px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; background: #070A0D">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #4E5A55">⌕</span>
+        <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: #5C665F">Search services, domains, invoices…</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 14px">
+        <a href="./Client Portal.dc.html" style="padding: 9px 16px; border: 1px solid rgba(255,255,255,0.16); border-radius: 7px; color: #DCE3DF; font-size: 13.5px; font-weight: 500">Dashboard</a>
+        <span style="width: 1px; height: 26px; background: rgba(255,255,255,0.1)"></span>
+        <div style="display: flex; align-items: center; gap: 10px">
+          <div style="width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(140deg, #0B5CD5, #0A8F63); display: grid; place-items: center; color: #fff; font-size: 13px; font-weight: 600">KK</div>
+          <div style="display: flex; flex-direction: column; line-height: 1.15">
+            <span style="font-size: 13.5px; font-weight: 600; color: #fff">Kassim Haji Kassim</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.1em; color: #6E7A75">ACCT #10428 · KIBAHA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 26px; padding: 32px">
+
+      <sc-if value="{{ isIndex }}" hint-placeholder-val="{{ true }}">
+        <div style="display: flex; flex-direction: column; gap: 26px">
+          <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px">
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #7BE3B4">ORDER SERVICES</span>
+              <h1 style="margin: 0; font-size: 34px; font-weight: 600; letter-spacing: -0.03em; color: #fff">What do you need?</h1>
+              <p style="margin: 0; font-family: 'Instrument Sans', sans-serif; font-size: 15.5px; color: #8B968F">Pick a service and you'll get an invoice to pay by M-Pesa, Tigo Pesa, Airtel Money or card.</p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; padding: 14px 18px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; color: #7F8C86">WALLET</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 17px; color: #fff">TSh 0.00</span>
+              <a href="#top" style="font-size: 13px; margin-left: 6px">Add funds</a>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px">
+            <sc-for list="{{ categories }}" as="c" hint-placeholder-count="7">
+              <button type="button" onClick="{{ c.on }}" style="display: flex; flex-direction: column; gap: 12px; padding: 24px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; background: rgba(255,255,255,0.02); text-align: left; cursor: pointer; font-family: 'Space Grotesk', sans-serif" style-hover="border-color: rgba(41,208,138,0.5)">
+                <div style="display: flex; align-items: center; justify-content: space-between">
+                  <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: {{ c.tone }}">{{ c.tag }}</span>
+                  <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #5C665F">→</span>
+                </div>
+                <span style="font-size: 19px; font-weight: 600; color: #fff; letter-spacing: -0.02em">{{ c.name }}</span>
+                <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14px; line-height: 1.6; color: #8B968F">{{ c.blurb }}</span>
+                <span style="display: flex; align-items: baseline; gap: 7px; margin-top: 4px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.09)">
+                  <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #7F8C86">FROM</span>
+                  <span style="font-family: 'JetBrains Mono', monospace; font-size: 16px; color: #7BE3B4">{{ c.from }}</span>
+                  <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #7F8C86">{{ c.unit }}</span>
+                </span>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isDetail }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-direction: column; gap: 26px">
+          <div style="display: flex; flex-direction: column; gap: 14px">
+            <button type="button" onClick="{{ backToIndex }}" style="align-self: flex-start; display: flex; align-items: center; gap: 9px; padding: 0; border: 0; background: none; color: #7BE3B4; font-family: 'Space Grotesk', sans-serif; font-size: 14px; cursor: pointer">← All services</button>
+            <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px">
+              <div style="display: flex; flex-direction: column; gap: 8px">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #7BE3B4">{{ detailTag }}</span>
+                <h1 style="margin: 0; font-size: 34px; font-weight: 600; letter-spacing: -0.03em; color: #fff">{{ detailName }}</h1>
+                <p style="margin: 0; font-family: 'Instrument Sans', sans-serif; font-size: 15.5px; color: #8B968F">{{ detailBlurb }}</p>
+              </div>
+              <div style="display: flex; gap: 4px; padding: 4px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px">
+                <sc-for list="{{ cycles }}" as="c" hint-placeholder-count="2">
+                  <button type="button" onClick="{{ c.on }}" style="padding: 9px 15px; border: 0; border-radius: 5px; background: {{ c.bg }}; color: {{ c.fg }}; font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer">{{ c.label }}</button>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px">
+            <sc-for list="{{ plans }}" as="p" hint-placeholder-count="6">
+              <div style="display: flex; flex-direction: column; gap: 18px; padding: 24px; border: 1px solid {{ p.border }}; border-radius: 12px; background: {{ p.bg }}">
+                <div style="display: flex; align-items: center; justify-content: space-between">
+                  <span style="font-size: 18px; font-weight: 600; color: #fff">{{ p.name }}</span>
+                  <span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em; color: {{ p.tagColor }}">{{ p.tag }}</span>
+                </div>
+                <div style="display: flex; align-items: baseline; gap: 8px">
+                  <span style="font-family: 'JetBrains Mono', monospace; font-size: 15px; color: #7F8C86">TSh</span>
+                  <span style="font-size: 30px; font-weight: 600; color: #fff; letter-spacing: -0.03em">{{ p.price }}</span>
+                  <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #7F8C86">{{ p.per }}</span>
+                </div>
+                <div style="display: flex; flex-direction: column; font-family: 'JetBrains Mono', monospace; font-size: 12px">
+                  <sc-for list="{{ p.specs }}" as="s" hint-placeholder-count="4">
+                    <span style="display: flex; justify-content: space-between; padding: 8px 0; border-top: 1px solid rgba(255,255,255,0.09); color: #7F8C86">{{ s.k }}<span style="color: #fff">{{ s.v }}</span></span>
+                  </sc-for>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 7px; font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; color: #9AA6A1">
+                  <sc-for list="{{ p.incl }}" as="i" hint-placeholder-count="3">
+                    <span style="display: flex; gap: 9px"><span style="color: #29D08A">✓</span>{{ i }}</span>
+                  </sc-for>
+                </div>
+                <button type="button" onClick="{{ p.choose }}" style="margin-top: auto; height: 46px; border: 1px solid {{ p.btnBorder }}; border-radius: 8px; background: {{ p.btnBg }}; color: {{ p.btnFg }}; font-family: 'Space Grotesk', sans-serif; font-size: 14.5px; font-weight: 600; cursor: pointer">Choose {{ p.name }}</button>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 20px 24px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; background: rgba(255,255,255,0.02)">
+            <span style="font-family: 'Instrument Sans', sans-serif; font-size: 14.5px; color: #8B968F">Not sure which tier fits? Tell us your traffic and mailbox count and we'll size it for you.</span>
+            <a href="https://wa.me/255689011111" style="padding: 11px 20px; border: 1px solid rgba(255,255,255,0.18); border-radius: 8px; color: #fff; font-size: 13.5px; font-weight: 600; white-space: nowrap">Ask on WhatsApp</a>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isCheckout }}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; flex-direction: column; gap: 26px">
+          <div style="display: flex; flex-direction: column; gap: 14px">
+            <button type="button" onClick="{{ backToDetail }}" style="align-self: flex-start; display: flex; align-items: center; gap: 9px; padding: 0; border: 0; background: none; color: #7BE3B4; font-family: 'Space Grotesk', sans-serif; font-size: 14px; cursor: pointer">← Back to plans</button>
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: #7BE3B4">STEP 2 OF 2 · CONFIRM</span>
+              <h1 style="margin: 0; font-size: 34px; font-weight: 600; letter-spacing: -0.03em; color: #fff">{{ chosenName }}</h1>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 400px; gap: 24px; align-items: start">
+            <div style="display: flex; flex-direction: column; gap: 20px; padding: 26px; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px">
+              <span style="font-size: 17px; font-weight: 600; color: #fff">Which domain is this for?</span>
+              <div style="display: flex; flex-direction: column; gap: 10px">
+                <sc-for list="{{ domainOptions }}" as="d" hint-placeholder-count="3">
+                  <button type="button" onClick="{{ d.on }}" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 18px; border: 1px solid {{ d.border }}; border-radius: 10px; background: {{ d.bg }}; text-align: left; cursor: pointer; font-family: 'Space Grotesk', sans-serif">
+                    <span style="display: flex; flex-direction: column; gap: 4px">
+                      <span style="font-size: 15.5px; font-weight: 600; color: #fff">{{ d.title }}</span>
+                      <span style="font-family: 'Instrument Sans', sans-serif; font-size: 13.5px; color: #8B968F">{{ d.note }}</span>
+                    </span>
+                    <span style="width: 18px; height: 18px; flex-shrink: 0; border: 1px solid {{ d.dotBorder }}; border-radius: 50%; background: {{ d.dotBg }}"></span>
+                  </button>
+                </sc-for>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #7F8C86">DOMAIN NAME</span>
+                <div style="display: flex; align-items: center; padding: 0 16px; height: 50px; border: 1px solid rgba(255,255,255,0.16); border-radius: 9px; background: #070A0D; font-family: 'JetBrains Mono', monospace; font-size: 15px; color: #E7EDEA">yourbusiness<span style="color: #4A9BFF">.co.tz</span></div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #7F8C86">PAY WITH</span>
+                <div style="display: flex; flex-wrap: wrap; gap: 9px">
+                  <sc-for list="{{ payMethods }}" as="m" hint-placeholder-count="5">
+                    <button type="button" onClick="{{ m.on }}" style="padding: 10px 16px; border: 1px solid {{ m.border }}; border-radius: 8px; background: {{ m.bg }}; color: {{ m.fg }}; font-family: 'Space Grotesk', sans-serif; font-size: 13.5px; font-weight: 600; cursor: pointer">{{ m.label }}</button>
+                  </sc-for>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 16px; padding: 26px; border: 1px solid rgba(41,208,138,0.35); border-radius: 12px; background: rgba(41,208,138,0.05)">
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.14em; color: #7BE3B4">ORDER SUMMARY</span>
+              <div style="display: flex; flex-direction: column; font-family: 'JetBrains Mono', monospace; font-size: 13px">
+                <span style="display: flex; justify-content: space-between; gap: 12px; padding: 11px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #8B968F">PLAN<span style="color: #fff; text-align: right">{{ chosenName }}</span></span>
+                <span style="display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #8B968F">TERM<span style="color: #fff">{{ chosenTerm }}</span></span>
+                <span style="display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #8B968F">SUBTOTAL<span style="color: #fff">{{ chosenPrice }}</span></span>
+                <span style="display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #8B968F">SETUP<span style="color: #7BE3B4">FREE</span></span>
+                <span style="display: flex; justify-content: space-between; padding: 11px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #8B968F">MIGRATION<span style="color: #7BE3B4">FREE</span></span>
+              </div>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.16)">
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; color: #7F8C86">TOTAL · VAT INCL.</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 24px; color: #fff">{{ chosenPrice }}</span>
+              </div>
+              <a href="./Client Portal.dc.html" style="display: grid; place-items: center; height: 48px; border-radius: 9px; background: #29D08A; color: #06231A; font-size: 15px; font-weight: 600">Create invoice</a>
+              <span style="font-family: 'Instrument Sans', sans-serif; font-size: 12.5px; line-height: 1.55; color: #7F8C86; text-align: center">Account goes live within the hour of payment clearing. 30-day money back.</span>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { view: "index", cat: "web", cycle: "yearly", plan: null, domainMode: "have", pay: "M-Pesa" };
+
+  catalogue() {
+    const std = { border: "rgba(255,255,255,0.12)", bg: "rgba(255,255,255,0.02)", tagColor: "#7F8C86", btnBg: "transparent", btnBorder: "rgba(255,255,255,0.2)", btnFg: "#fff" };
+    const hi = { border: "rgba(41,208,138,0.45)", bg: "linear-gradient(180deg, rgba(41,208,138,0.08), rgba(255,255,255,0.02))", tagColor: "#7BE3B4", btnBg: "#29D08A", btnBorder: "#29D08A", btnFg: "#06231A" };
+    const sp = (a, b, c, d) => [{ k: "DISK", v: a }, { k: "BANDWIDTH", v: b }, { k: "MAILBOXES", v: c }, { k: "WEBSITES", v: d }];
+    const inclWeb = ["Free Let's Encrypt SSL", "Free migration", "30-day money back", "24/7/366 support"];
+    return {
+      web: { tag: "SHARED HOSTING", name: "Web Hosting", blurb: "cPanel hosting with free SSL, daily backups and 24/7 support.", from: "80,500", unit: "/yr", tone: "#7BE3B4", plans: [
+        { name: "University", tag: "ENTRY", price: "80,500", per: "/yr", specs: sp("4 GB", "4 GB", "20", "1"), incl: inclWeb, ...std },
+        { name: "Personal", tag: "STARTER", price: "120,000", per: "/yr", specs: sp("8 GB", "8 GB", "40", "2"), incl: inclWeb, ...std },
+        { name: "Professional", tag: "MOST CHOSEN", price: "150,000", per: "/yr", specs: sp("12 GB", "12 GB", "60", "5"), incl: ["Free .co.tz for year one", ...inclWeb], ...hi },
+        { name: "Premier", tag: "GROWING", price: "200,000", per: "/yr", specs: sp("20 GB", "20 GB", "80", "10"), incl: inclWeb, ...std },
+        { name: "System", tag: "MAIL HEAVY", price: "250,000", per: "/yr", specs: sp("15 GB", "Unlimited", "Unlimited", "10"), incl: inclWeb, ...std },
+        { name: "Plus", tag: "HIGH VOLUME", price: "500,000", per: "/yr", specs: sp("100 GB", "100 GB", "200", "Unlimited"), incl: ["Nightly off-site backups", ...inclWeb], ...std }
+      ] },
+      email: { tag: "BUSINESS EMAIL", name: "Business Email", blurb: "Professional mail on your own domain, with webmail and IMAP.", from: "60,000", unit: "/yr", tone: "#7BE3B4", plans: [
+        { name: "Starter Mail", tag: "SMALL TEAM", price: "60,000", per: "/yr", specs: [{ k: "MAILBOXES", v: "10" }, { k: "PER BOX", v: "2 GB" }, { k: "DOMAINS", v: "1" }, { k: "ALIASES", v: "Unlimited" }], incl: ["Anti-spam & anti-virus", "Webmail included", "Free mail migration"], ...std },
+        { name: "Business Mail", tag: "MOST CHOSEN", price: "180,000", per: "/yr", specs: [{ k: "MAILBOXES", v: "50" }, { k: "PER BOX", v: "5 GB" }, { k: "DOMAINS", v: "3" }, { k: "ALIASES", v: "Unlimited" }], incl: ["Anti-spam & anti-virus", "SPF, DKIM & DMARC set up", "Free mail migration"], ...hi },
+        { name: "Enterprise Mail", tag: "LARGE", price: "420,000", per: "/yr", specs: [{ k: "MAILBOXES", v: "Unlimited" }, { k: "PER BOX", v: "10 GB" }, { k: "DOMAINS", v: "10" }, { k: "ALIASES", v: "Unlimited" }], incl: ["Anti-spam & anti-virus", "Priority ticket queue", "Free mail migration"], ...std }
+      ] },
+      vps: { tag: "LINUX VPS", name: "Linux VPS", blurb: "Dedicated CPU and RAM on NVMe, with full root access.", from: "25,750", unit: "/mo", tone: "#7FB4FF", plans: [
+        { name: "VPS 1", tag: "ENTRY", price: "25,750", per: "/mo", specs: [{ k: "vCPU", v: "1" }, { k: "RAM", v: "2 GB" }, { k: "NVMe", v: "40 GB" }, { k: "TRANSFER", v: "1 TB" }], incl: ["Full root access", "Dedicated IPv4", "Rebuild any time"], ...std },
+        { name: "VPS 2", tag: "MOST CHOSEN", price: "51,500", per: "/mo", specs: [{ k: "vCPU", v: "2" }, { k: "RAM", v: "4 GB" }, { k: "NVMe", v: "80 GB" }, { k: "TRANSFER", v: "2 TB" }], incl: ["Full root access", "Snapshots included", "cPanel add-on available"], ...hi },
+        { name: "VPS 4", tag: "LARGER", price: "103,000", per: "/mo", specs: [{ k: "vCPU", v: "4" }, { k: "RAM", v: "8 GB" }, { k: "NVMe", v: "160 GB" }, { k: "TRANSFER", v: "4 TB" }], incl: ["Full root access", "Snapshots included", "Managed option available"], ...std },
+        { name: "VPS 8", tag: "HEAVY", price: "206,000", per: "/mo", specs: [{ k: "vCPU", v: "8" }, { k: "RAM", v: "16 GB" }, { k: "NVMe", v: "320 GB" }, { k: "TRANSFER", v: "8 TB" }], incl: ["Full root access", "Monitoring on request", "Managed option available"], ...std }
+      ] },
+      dedicated: { tag: "DEDICATED", name: "Dedicated Servers", blurb: "A whole physical machine, tuned for demanding workloads.", from: "Quote", unit: "", tone: "#F2A33C", plans: [
+        { name: "Entry", tag: "SINGLE APP", price: "Quote", per: "", specs: [{ k: "CPU", v: "8 cores" }, { k: "RAM", v: "32 GB" }, { k: "STORAGE", v: "2 × 960 GB" }, { k: "UPLINK", v: "1 Gbps" }], incl: ["Hardware sized to the workload", "OS install and hardening", "Quote within 2 working days"], ...std },
+        { name: "Standard", tag: "MOST QUOTED", price: "Quote", per: "", specs: [{ k: "CPU", v: "16 cores" }, { k: "RAM", v: "64 GB" }, { k: "STORAGE", v: "4 × 1.92 TB" }, { k: "UPLINK", v: "1 Gbps" }], incl: ["Virtualisation-ready", "Monitoring and alerting", "Quote within 2 working days"], ...hi },
+        { name: "Storage", tag: "DATA HEAVY", price: "Quote", per: "", specs: [{ k: "CPU", v: "16 cores" }, { k: "RAM", v: "128 GB" }, { k: "STORAGE", v: "8 × 8 TB SAS" }, { k: "UPLINK", v: "10 Gbps" }], incl: ["Archive and backup targets", "Capacity-led build", "Quote within 2 working days"], ...std }
+      ] },
+      reseller: { tag: "RESELLER", name: "Reseller Hosting", blurb: "Run your own hosting business with WHM and white-label branding.", from: "350,000", unit: "/yr", tone: "#7BE3B4", plans: [
+        { name: "Reseller 10", tag: "STARTING OUT", price: "350,000", per: "/yr", specs: [{ k: "ACCOUNTS", v: "10" }, { k: "DISK", v: "50 GB" }, { k: "BANDWIDTH", v: "500 GB" }, { k: "WHM", v: "Included" }], incl: ["White-label cPanel", "Your own nameservers", "You set retail prices"], ...std },
+        { name: "Reseller 30", tag: "MOST CHOSEN", price: "750,000", per: "/yr", specs: [{ k: "ACCOUNTS", v: "30" }, { k: "DISK", v: "150 GB" }, { k: "BANDWIDTH", v: "1.5 TB" }, { k: "WHM", v: "Included" }], incl: ["White-label cPanel", "Free bulk migration", "Engineer-to-engineer support"], ...hi },
+        { name: "Reseller 100", tag: "AT SCALE", price: "1,800,000", per: "/yr", specs: [{ k: "ACCOUNTS", v: "100" }, { k: "DISK", v: "500 GB" }, { k: "BANDWIDTH", v: "Unlimited" }, { k: "WHM", v: "Included" }], incl: ["White-label cPanel", "Free bulk migration", "Named account contact"], ...std }
+      ] },
+      design: { tag: "STUDIO", name: "Website Design", blurb: "Designed, built and maintained by our team on your hosting.", from: "250,000", unit: "/mo", tone: "#7FB4FF", plans: [
+        { name: "Brochure", tag: "5 PAGES", price: "250,000", per: "/mo", specs: [{ k: "PAGES", v: "Up to 5" }, { k: "BUILD TIME", v: "3 weeks" }, { k: "CMS", v: "WordPress" }, { k: "HOSTING", v: "Included" }], incl: ["Mobile-first responsive design", "SEO structure and analytics", "Content updates included"], ...std },
+        { name: "Business", tag: "MOST CHOSEN", price: "450,000", per: "/mo", specs: [{ k: "PAGES", v: "Up to 15" }, { k: "BUILD TIME", v: "5 weeks" }, { k: "CMS", v: "WordPress / React" }, { k: "HOSTING", v: "Included" }], incl: ["Custom design, not a template", "Training for your editor", "Monthly maintenance"], ...hi },
+        { name: "E-commerce", tag: "STORE", price: "800,000", per: "/mo", specs: [{ k: "PRODUCTS", v: "Unlimited" }, { k: "BUILD TIME", v: "8 weeks" }, { k: "CHECKOUT", v: "Mobile money + card" }, { k: "HOSTING", v: "Included" }], incl: ["Catalogue and checkout", "Delivery and payment setup", "Monthly maintenance"], ...std }
+      ] },
+      domains: { tag: "DOMAINS", name: "Domains", blurb: "Register a new domain or transfer one to us — we are the registrar.", from: "19,999", unit: "/yr", tone: "#7BE3B4", plans: [
+        { name: ".co.tz", tag: "BUSINESSES", price: "19,999", per: "/yr", specs: [{ k: "TERM", v: "1 year" }, { k: "RENEWAL", v: "Same price" }, { k: "DNS", v: "Full control" }, { k: "LOCK", v: "Included" }], incl: ["Registered directly with tzNIC", "Renewal reminders", "Free with annual hosting"], ...hi },
+        { name: ".or.tz", tag: "NGOs", price: "19,999", per: "/yr", specs: [{ k: "TERM", v: "1 year" }, { k: "RENEWAL", v: "Same price" }, { k: "DNS", v: "Full control" }, { k: "LOCK", v: "Included" }], incl: ["Registered directly with tzNIC", "Renewal reminders", "Documents checked for you"], ...std },
+        { name: ".ac.tz", tag: "INSTITUTIONS", price: "19,999", per: "/yr", specs: [{ k: "TERM", v: "1 year" }, { k: "RENEWAL", v: "Same price" }, { k: "DNS", v: "Full control" }, { k: "LOCK", v: "Included" }], incl: ["Registered directly with tzNIC", "Renewal reminders", "Documents checked for you"], ...std },
+        { name: ".tz", tag: "SECOND LEVEL", price: "95,000", per: "/yr", specs: [{ k: "TERM", v: "1 year" }, { k: "RENEWAL", v: "Same price" }, { k: "DNS", v: "Full control" }, { k: "LOCK", v: "Included" }], incl: ["Open to any registrant", "Renewal reminders", "Registrar lock included"], ...std },
+        { name: ".com", tag: "INTERNATIONAL", price: "55,000", per: "/yr", specs: [{ k: "TERM", v: "1 year" }, { k: "RENEWAL", v: "Same price" }, { k: "DNS", v: "Full control" }, { k: "PRIVACY", v: "Available" }], incl: ["WHOIS privacy available", "Renewal reminders", "Free with annual hosting"], ...std }
+      ] }
+    };
+  }
+
+  renderVals() {
+    const s = this.state;
+    const cat = this.catalogue();
+    const keys = Object.keys(cat);
+    const active = cat[s.cat];
+    const yearly = s.cycle === "yearly";
+    const chosen = s.plan ? active.plans.find((p) => p.name === s.plan) : null;
+
+    return {
+      isIndex: s.view === "index",
+      isDetail: s.view === "detail",
+      isCheckout: s.view === "checkout",
+      categories: keys.map((k) => ({ ...cat[k], on: () => this.setState({ view: "detail", cat: k, plan: null }) })),
+      backToIndex: () => this.setState({ view: "index" }),
+      backToDetail: () => this.setState({ view: "detail" }),
+      detailTag: active.tag,
+      detailName: active.name,
+      detailBlurb: active.blurb,
+      cycles: [
+        { label: "Yearly", on: () => this.setState({ cycle: "yearly" }), bg: yearly ? "#fff" : "transparent", fg: yearly ? "#0C1116" : "#9AA6A1" },
+        { label: "Monthly", on: () => this.setState({ cycle: "monthly" }), bg: yearly ? "transparent" : "#fff", fg: yearly ? "#9AA6A1" : "#0C1116" }
+      ],
+      plans: active.plans.map((p) => ({ ...p, choose: () => this.setState({ view: "checkout", plan: p.name }) })),
+      chosenName: chosen ? active.name + " " + chosen.name : "",
+      chosenPrice: chosen ? "TSh " + chosen.price : "",
+      chosenTerm: yearly ? "1 year" : "1 month",
+      domainOptions: ["have", "register", "transfer"].map((k, i) => {
+        const on = s.domainMode === k;
+        return {
+          title: ["Use a domain I already have here", "Register a new domain", "Transfer a domain to us"][i],
+          note: ["Pick from your 11 existing domains", "From TSh 19,999/yr, free with annual plans", "Free, and we add a year to the registration"][i],
+          on: () => this.setState({ domainMode: k }),
+          border: on ? "rgba(41,208,138,0.5)" : "rgba(255,255,255,0.12)",
+          bg: on ? "rgba(41,208,138,0.07)" : "transparent",
+          dotBorder: on ? "#29D08A" : "rgba(255,255,255,0.24)",
+          dotBg: on ? "#29D08A" : "transparent"
+        };
+      }),
+      payMethods: ["M-Pesa", "Tigo Pesa", "Airtel Money", "Bank transfer", "Card"].map((label) => {
+        const on = s.pay === label;
+        return {
+          label,
+          on: () => this.setState({ pay: label }),
+          border: on ? "#29D08A" : "rgba(255,255,255,0.14)",
+          bg: on ? "rgba(41,208,138,0.12)" : "transparent",
+          fg: on ? "#7BE3B4" : "#B6C0BB"
+        };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>

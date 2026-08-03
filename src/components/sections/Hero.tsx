@@ -1,166 +1,193 @@
 "use client";
 
+import { useState } from "react";
+import { Container } from "@mantine/core";
 import Link from "next/link";
-import { Container, Button } from "@mantine/core";
+import { tldPrices } from "@/data/domains";
+import { fromPrice, priceIndexRows } from "@/data/priceIndex";
 import {
-  IconRocket,
-  IconShieldCheck,
-  IconServer,
-  IconCloud,
-  IconMail,
-  IconWorldWww,
-  IconCheck,
-  IconConfetti,
-  IconArrowRight,
-} from "@tabler/icons-react";
-import { isSabaSabaActive } from "@/data/sabaSaba";
+  checkDomain,
+  domainUrl,
+  normaliseDomain,
+  type DomainCheckResult,
+} from "@/data/mobilling";
 import { useLanguage } from "@/i18n/LanguageContext";
 import classes from "./Hero.module.css";
 
-const floatingCards = [
-  {
-    icon: IconServer,
-    color: "var(--mantine-color-brand-blue-5)",
-    bg: "rgba(26, 111, 196, 0.1)",
-    titleKey: "hero.cardWebHosting",
-    subKey: "hero.cardWebHostingSub",
-  },
-  {
-    icon: IconWorldWww,
-    color: "var(--mantine-color-brand-green-5)",
-    bg: "rgba(46, 182, 125, 0.1)",
-    titleKey: "hero.cardDomainNames",
-    subKey: "hero.cardDomainNamesSub",
-  },
-  {
-    icon: IconMail,
-    color: "var(--mantine-color-brand-orange-5)",
-    bg: "rgba(245, 130, 32, 0.1)",
-    titleKey: "hero.cardEmailHosting",
-    subKey: "hero.cardEmailHostingSub",
-  },
-  {
-    icon: IconCloud,
-    color: "var(--mantine-color-brand-blue-5)",
-    bg: "rgba(26, 111, 196, 0.1)",
-    titleKey: "hero.cardVpsServers",
-    subKey: "hero.cardVpsServersSub",
-  },
-  {
-    icon: IconShieldCheck,
-    color: "var(--mantine-color-brand-green-5)",
-    bg: "rgba(46, 182, 125, 0.1)",
-    titleKey: "hero.cardSslCerts",
-    subKey: "hero.cardSslCertsSub",
-  },
-];
+/** "TSh 19,999" -> "19,999" — the rail and chips show bare digits in mono. */
+const digitsOf = (price: string) => price.replace(/[^\d,]/g, "");
 
 export function Hero() {
   const { t } = useLanguage();
-  const showSabaSaba = isSabaSabaActive();
+  const [domain, setDomain] = useState("");
+  const [result, setResult] = useState<DomainCheckResult | null>(null);
+  const [checking, setChecking] = useState(false);
+  const [error, setError] = useState(false);
+
+  // The design mocks this field with a static "mybusiness.co.tz" and a blinking
+  // cursor. We have a real public availability endpoint, so it actually works —
+  // still no sign-in needed until the customer goes to register.
+  const handleCheck = async () => {
+    if (!domain.trim() || checking) return;
+    setChecking(true);
+    setError(false);
+    setResult(null);
+    try {
+      setResult(await checkDomain(domain));
+    } catch {
+      setError(true);
+    } finally {
+      setChecking(false);
+    }
+  };
+
+  const chips = tldPrices.slice(0, 6);
+  const remaining = tldPrices.length - chips.length;
 
   return (
-    <section className={classes.hero}>
-      <Container size="xl">
-        {showSabaSaba && (
-          <Link href="/saba-saba" className={classes.sabaBanner}>
-            <IconConfetti size={20} className={classes.sabaBannerIcon} />
-            <span className={classes.sabaBannerText}>{t("saba.banner")}</span>
-            <span className={classes.sabaBannerCta}>
-              {t("saba.banner.cta")}
-              <IconArrowRight size={16} />
-            </span>
-          </Link>
-        )}
-        <div className={classes.heroInner}>
-          <div className={classes.content}>
-            <div className={classes.badge}>
-              <IconRocket size={16} />
-              {t("hero.badge")}
+    <section className={`${classes.hero} ${"dcWash"}`}>
+      <div className="dcGrid" aria-hidden="true" />
+
+      <Container size="xl" className={classes.inner}>
+        <div className={classes.main}>
+          <div className={classes.eyebrow}>
+            <span className={classes.eyebrowRule} aria-hidden="true" />
+            {t("hero.eyebrow")}
+          </div>
+
+          <h1 className={classes.title}>{t("hero.title")}</h1>
+          <p className={classes.lede}>{t("hero.lede")}</p>
+
+          {/* Terminal-style availability panel */}
+          <div className={classes.panel}>
+            <div className={classes.panelHead}>
+              <span>{t("hero.domainAvailability")}</span>
+              <span>{t("hero.registryLive")}</span>
             </div>
 
-            <h1 className={classes.title}>
-              {t("hero.titleLine1")}{" "}
-              <span className={classes.titleGradient}>{t("hero.titleHighlight")}</span>{" "}
-              {t("hero.titleLine2")}
-            </h1>
-
-            <p className={classes.subtitle}>
-              {t("hero.subtitle")}
-            </p>
-
-            <div className={classes.ctaGroup}>
-              <Button
-                component="a"
-                href="#pricing"
-                size="lg"
-                variant="gradient"
-                gradient={{ from: "brand-blue", to: "brand-green", deg: 135 }}
+            <div className={classes.searchRow}>
+              <div className={classes.field}>
+                <span className={classes.prompt} aria-hidden="true">
+                  $
+                </span>
+                <input
+                  className={classes.input}
+                  type="text"
+                  value={domain}
+                  onChange={(e) => setDomain(e.currentTarget.value)}
+                  onKeyDown={(e) => e.key === "Enter" && handleCheck()}
+                  placeholder={t("hero.domainPlaceholder")}
+                  aria-label={t("hero.domainAvailability")}
+                />
+              </div>
+              <button
+                type="button"
+                className={classes.check}
+                onClick={handleCheck}
+                disabled={checking || !domain.trim()}
               >
-                {t("hero.viewPlans")}
-              </Button>
-              <Button
-                component="a"
-                href="#domains"
-                size="lg"
-                variant="outline"
+                {checking ? t("domain.checking") : t("hero.check")}
+              </button>
+            </div>
+
+            {(error || result) && (
+              <div
+                className={`${classes.result} ${
+                  result?.offered && result.available
+                    ? classes.resultOk
+                    : classes.resultBad
+                }`}
               >
-                {t("hero.searchDomains")}
-              </Button>
-            </div>
+                {error && <span>{t("domain.error")}</span>}
+                {!error && result && !result.offered && (
+                  <span>{result.message ?? t("domain.notOffered")}</span>
+                )}
+                {!error && result?.offered && result.available === false && (
+                  <span>
+                    <strong>{result.name}</strong> {t("domain.taken")}
+                  </span>
+                )}
+                {!error && result?.offered && result.available === true && (
+                  <>
+                    <span>
+                      <strong>{result.name}</strong> {t("domain.available")}
+                      {result.pricing && (
+                        <>
+                          {" "}
+                          <span className={classes.resultPrice}>
+                            {result.pricing.register_price.toLocaleString("en-US")}
+                            <span className={classes.per}>{t("index.perYearShort")}</span>
+                          </span>
+                        </>
+                      )}
+                    </span>
+                    <a
+                      className={classes.register}
+                      href={domainUrl(normaliseDomain(domain))}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {t("domain.registerNow")}
+                    </a>
+                  </>
+                )}
+              </div>
+            )}
 
-            <div className={classes.trustBadges}>
-              <div className={classes.trustItem}>
-                <IconCheck size={16} color="var(--mantine-color-brand-green-5)" />
-                {t("hero.trustCpanel")}
-              </div>
-              <div className={classes.trustItem}>
-                <IconCheck size={16} color="var(--mantine-color-brand-green-5)" />
-                {t("hero.trustSsl")}
-              </div>
-              <div className={classes.trustItem}>
-                <IconCheck size={16} color="var(--mantine-color-brand-green-5)" />
-                {t("hero.trustUptime")}
-              </div>
-              <div className={classes.trustItem}>
-                <IconCheck size={16} color="var(--mantine-color-brand-green-5)" />
-                {t("hero.trustSupport")}
-              </div>
-            </div>
-
-            <div className={classes.statsRow}>
-              <div className={classes.statItem}>
-                <div className={classes.statNumber}>100+</div>
-                <div className={classes.statLabel}>{t("hero.statWebsites")}</div>
-              </div>
-              <div className={classes.statItem}>
-                <div className={classes.statNumber}>500+</div>
-                <div className={classes.statLabel}>{t("hero.statDomains")}</div>
-              </div>
-              <div className={classes.statItem}>
-                <div className={classes.statNumber}>200+</div>
-                <div className={classes.statLabel}>{t("hero.statClients")}</div>
-              </div>
+            <div className={classes.chips}>
+              {chips.map((tld, i) => (
+                <span
+                  key={tld.tld}
+                  className={`${classes.chip} ${i === 0 ? classes.chipLead : ""}`}
+                >
+                  {tld.tld}
+                  <span className={classes.chipPrice}>{digitsOf(tld.price)}</span>
+                </span>
+              ))}
+              {remaining > 0 && (
+                <span className={classes.chipMore}>
+                  +{remaining} {t("hero.moreTlds")}
+                </span>
+              )}
             </div>
           </div>
 
-          <div className={classes.cardsArea}>
-            {floatingCards.map((card) => (
-              <div key={card.titleKey} className={classes.floatingCard}>
-                <div
-                  className={classes.floatingCardIcon}
-                  style={{ background: card.bg }}
-                >
-                  <card.icon size={22} color={card.color} />
-                </div>
-                <div>
-                  <div className={classes.floatingCardTitle}>{t(card.titleKey)}</div>
-                  <div className={classes.floatingCardSub}>{t(card.subKey)}</div>
-                </div>
-              </div>
-            ))}
+          <div className={classes.trust}>
+            <span>{t("hero.trustMigration")}</span>
+            <span className={classes.sep} aria-hidden="true">
+              |
+            </span>
+            <span>{t("hero.trustMoneyBack")}</span>
+            <span className={classes.sep} aria-hidden="true">
+              |
+            </span>
+            <span>{t("hero.trustPay")}</span>
           </div>
         </div>
+
+        {/*
+          Price index. Every figure is derived from pricingCategories — see
+          src/data/priceIndex.ts for why these must not be retyped.
+        */}
+        <aside className={classes.index}>
+          <div className={classes.indexHead}>{t("index.title")}</div>
+          {priceIndexRows.map((row) => {
+            const price = fromPrice(row.categoryKey);
+            if (!price) return null;
+            return (
+              <Link key={row.categoryKey} href={row.href} className={classes.indexRow}>
+                <span className={classes.indexLabels}>
+                  <span className={classes.indexName}>{t(row.labelKey)}</span>
+                  <span className={classes.indexDetail}>{t(row.detailKey)}</span>
+                </span>
+                <span className={classes.indexPrice}>
+                  {price.digits}
+                  <span className={classes.per}>{t(row.periodKey)}</span>
+                </span>
+              </Link>
+            );
+          })}
+        </aside>
       </Container>
     </section>
   );

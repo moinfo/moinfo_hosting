@@ -2,8 +2,8 @@
   padding: 64px 0 48px;
   background: linear-gradient(
     135deg,
-    light-dark(#e6f9f1, #092419),
-    light-dark(#e6f2ff, #06172c)
+    var(--dc-accent-fill),
+    var(--dc-blue-fill)
   );
 }
 
@@ -48,7 +48,7 @@
   padding: 8px 16px;
   border: 2px dashed var(--mantine-color-brand-orange-5);
   border-radius: var(--mantine-radius-md);
-  background: light-dark(#fff8e1, #2a2200);
+  background: var(--dc-warning-fill);
 }
 
 .promoIcon {
@@ -58,7 +58,7 @@
 
 .promoLabel {
   font-size: var(--mantine-font-size-sm);
-  color: light-dark(var(--mantine-color-dark-6), var(--mantine-color-gray-3));
+  color: var(--dc-text-body);
 }
 
 .promoCode {
@@ -71,7 +71,7 @@
 /* How-to-order steps */
 .howto {
   padding: 56px 0;
-  background: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-8));
+  background: var(--dc-surface-alt);
 }
 
 .steps {
@@ -89,10 +89,10 @@
   padding: 14px 16px 14px 56px;
   margin-bottom: var(--mantine-spacing-sm);
   border-radius: var(--mantine-radius-md);
-  background: light-dark(var(--mantine-color-white), var(--mantine-color-dark-6));
-  border: 1px solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-4));
+  background: var(--dc-bg);
+  border: 1px solid var(--dc-border);
   font-size: var(--mantine-font-size-sm);
-  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-gray-3));
+  color: var(--dc-text-secondary);
 }
 
 .step::before {
@@ -127,7 +127,7 @@
 }
 
 .category:nth-child(even) {
-  background: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-8));
+  background: var(--dc-surface-alt);
 }
 
 .catTitle {

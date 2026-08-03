@@ -1,267 +1,367 @@
+/*
+ * Control Room hero. Two columns: the domain field is the hero (the design's
+ * point — "start with the domain"), with a price index rail hairlined off the
+ * right edge. Background is the radial brand wash plus the 80px grid texture,
+ * both from src/theme/tokens.css.
+ */
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 80px 0 60px;
-  background: light-dark(
-    linear-gradient(135deg, #f0f7ff 0%, #e8f5e9 50%, #f0f7ff 100%),
-    linear-gradient(135deg, var(--mantine-color-dark-8) 0%, var(--mantine-color-dark-7) 100%)
-  );
+  padding: 76px 0 90px;
 }
 
-.sabaBanner {
+.inner {
+  position: relative; /* sits above .dcGrid */
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 64px;
+  align-items: start;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  min-width: 0;
+}
+
+.eyebrow {
   display: flex;
   align-items: center;
-  gap: var(--mantine-spacing-sm);
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: var(--mantine-spacing-xl);
-  padding: 12px 20px;
-  border-radius: var(--mantine-radius-md);
-  background: linear-gradient(135deg, var(--mantine-color-brand-green-6), var(--mantine-color-brand-blue-6));
-  color: var(--mantine-color-white);
-  text-decoration: none;
-  box-shadow: 0 6px 20px rgba(46, 182, 125, 0.25);
-  transition: transform 150ms ease, box-shadow 150ms ease;
+  gap: 14px;
+  font-family: var(--dc-font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dc-accent-text);
 }
 
-.sabaBanner:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(46, 182, 125, 0.35);
-}
-
-.sabaBannerIcon {
+.eyebrowRule {
+  width: 28px;
+  height: 1px;
+  background: var(--dc-accent-text);
+  opacity: 0.7;
   flex-shrink: 0;
-}
-
-.sabaBannerText {
-  font-weight: 700;
-  font-size: var(--mantine-font-size-sm);
-}
-
-.sabaBannerCta {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-weight: 700;
-  font-size: var(--mantine-font-size-sm);
-  background: rgba(255, 255, 255, 0.2);
-  padding: 4px 12px;
-  border-radius: var(--mantine-radius-xl);
-}
-
-.heroInner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--mantine-spacing-xl);
-  align-items: center;
-}
-
-@media (max-width: 62em) {
-  .heroInner {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-}
-
-.content {
-  position: relative;
-  z-index: 2;
-}
-
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: light-dark(rgba(26, 111, 196, 0.1), rgba(26, 111, 196, 0.2));
-  color: var(--mantine-color-brand-blue-5);
-  padding: 6px 16px;
-  border-radius: 20px;
-  font-size: var(--mantine-font-size-sm);
-  font-weight: 600;
-  margin-bottom: var(--mantine-spacing-lg);
 }
 
 .title {
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 800;
-  line-height: 1.15;
-  margin-bottom: var(--mantine-spacing-md);
-  color: light-dark(var(--mantine-color-dark-8), var(--mantine-color-white));
+  margin: 0;
+  font-size: clamp(36px, 5.2vw, 68px);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  font-weight: 600;
+  color: var(--dc-text);
+  text-wrap: pretty;
+  max-width: 15ch;
 }
 
-.titleGradient {
-  background: linear-gradient(135deg, var(--mantine-color-brand-blue-5), var(--mantine-color-brand-green-5));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.subtitle {
-  font-size: var(--mantine-font-size-lg);
-  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-gray-4));
-  margin-bottom: var(--mantine-spacing-xl);
-  max-width: 520px;
+.lede {
+  margin: 0;
+  max-width: 52ch;
+  font-family: var(--dc-font-body);
+  font-size: 17.5px;
   line-height: 1.6;
+  color: var(--dc-text-secondary);
 }
 
-@media (max-width: 62em) {
-  .subtitle {
-    max-width: 100%;
-  }
-}
-
-.ctaGroup {
+/* ── Availability panel ─────────────────────────────────────────────── */
+.panel {
   display: flex;
-  gap: var(--mantine-spacing-md);
-  margin-bottom: var(--mantine-spacing-xl);
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  border: 1px solid var(--dc-border);
+  border-radius: var(--dc-radius-card);
+  background: var(--dc-panel-fill);
+  max-width: 680px;
 }
 
-@media (max-width: 62em) {
-  .ctaGroup {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 36em) {
-  .ctaGroup {
-    flex-direction: column;
-    align-items: stretch;
-  }
-}
-
-.trustBadges {
+.panelHead {
   display: flex;
   align-items: center;
-  gap: var(--mantine-spacing-lg);
-  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  font-family: var(--dc-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--dc-text-label);
 }
 
-@media (max-width: 62em) {
-  .trustBadges {
-    justify-content: center;
-  }
+.searchRow {
+  display: flex;
+  gap: 10px;
 }
 
-.trustItem {
+.field {
+  flex: 1;
   display: flex;
   align-items: center;
-  gap: 6px;
-  color: light-dark(var(--mantine-color-gray-6), var(--mantine-color-gray-5));
-  font-size: var(--mantine-font-size-sm);
+  gap: 10px;
+  padding: 0 16px;
+  height: 56px;
+  border: 1px solid var(--dc-border-strong);
+  border-radius: 9px;
+  background: var(--dc-field-bg);
+  min-width: 0;
 }
 
-.cardsArea {
-  position: relative;
-  min-height: 360px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* The handoff only sets outline: none on inputs — focus must stay visible. */
+.field:focus-within {
+  border-color: var(--dc-accent-line);
+  box-shadow: 0 0 0 3px rgba(41, 208, 138, 0.15);
 }
 
-@media (max-width: 62em) {
-  .cardsArea {
-    display: none;
-  }
-}
-
-.floatingCard {
-  position: absolute;
-  background: light-dark(var(--mantine-color-white), var(--mantine-color-dark-6));
-  border-radius: var(--mantine-radius-lg);
-  padding: 16px 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-  display: flex;
-  align-items: center;
-  gap: var(--mantine-spacing-sm);
-  animation: float 6s ease-in-out infinite;
-  border: 1px solid light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-4));
-}
-
-.floatingCard:nth-child(1) {
-  top: 10%;
-  left: 5%;
-  animation-delay: 0s;
-}
-
-.floatingCard:nth-child(2) {
-  top: 5%;
-  right: 5%;
-  animation-delay: 1s;
-}
-
-.floatingCard:nth-child(3) {
-  bottom: 30%;
-  left: 0%;
-  animation-delay: 2s;
-}
-
-.floatingCard:nth-child(4) {
-  bottom: 10%;
-  right: 10%;
-  animation-delay: 3s;
-}
-
-.floatingCard:nth-child(5) {
-  top: 45%;
-  right: 0%;
-  animation-delay: 1.5s;
-}
-
-.floatingCardIcon {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--mantine-radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.prompt {
+  font-family: var(--dc-font-mono);
+  font-size: 13px;
+  color: var(--dc-text-faint);
   flex-shrink: 0;
 }
 
-.floatingCardTitle {
+.input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: var(--dc-font-mono);
+  font-size: 16px;
+  color: var(--dc-text);
+}
+
+.input::placeholder {
+  color: var(--dc-text-faint);
+}
+
+.check {
+  display: grid;
+  place-items: center;
+  padding: 0 30px;
+  height: 56px;
+  border: none;
+  border-radius: 9px;
+  background: var(--dc-accent);
+  color: var(--dc-accent-deep);
+  font-family: inherit;
+  font-size: 15px;
   font-weight: 600;
-  font-size: var(--mantine-font-size-sm);
-  color: light-dark(var(--mantine-color-dark-7), var(--mantine-color-white));
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 150ms ease;
 }
 
-.floatingCardSub {
-  font-size: var(--mantine-font-size-xs);
-  color: light-dark(var(--mantine-color-gray-6), var(--mantine-color-gray-5));
+.check:hover:not(:disabled) {
+  background: var(--dc-accent-hover);
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
+.check:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
 }
 
-.statsRow {
+.result {
   display: flex;
-  gap: var(--mantine-spacing-xl);
-  margin-top: var(--mantine-spacing-xl);
-  padding-top: var(--mantine-spacing-xl);
-  border-top: 1px solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-5));
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: var(--dc-radius-button);
+  font-family: var(--dc-font-body);
+  font-size: 14px;
 }
 
-@media (max-width: 62em) {
-  .statsRow {
-    justify-content: center;
+.resultOk {
+  background: var(--dc-accent-fill);
+  border: 1px solid var(--dc-accent-line);
+  color: var(--dc-text-body);
+}
+
+.resultBad {
+  background: var(--dc-warning-fill);
+  border: 1px solid var(--dc-warning-line);
+  color: var(--dc-text-body);
+}
+
+.resultPrice {
+  font-family: var(--dc-font-mono);
+  color: var(--dc-accent-text);
+}
+
+.register {
+  padding: 8px 16px;
+  border-radius: var(--dc-radius-chip);
+  background: var(--dc-accent);
+  color: var(--dc-accent-deep);
+  font-weight: 600;
+  font-size: 13.5px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.chip {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  padding: 6px 11px;
+  border-radius: var(--dc-radius-chip);
+  background: var(--dc-chip-fill);
+  border: 1px solid var(--dc-grid-line);
+  font-family: var(--dc-font-mono);
+  font-size: 12px;
+  color: var(--dc-text-secondary);
+}
+
+/* The lead chip is the one most customers want — .co.tz. */
+.chipLead {
+  background: rgba(41, 208, 138, 0.12);
+  border-color: rgba(41, 208, 138, 0.3);
+  color: var(--dc-accent-text);
+}
+
+.chipPrice {
+  color: var(--dc-text-label);
+}
+
+.chipLead .chipPrice {
+  color: var(--dc-accent-text);
+}
+
+.chipMore {
+  display: flex;
+  align-items: center;
+  padding: 6px 11px;
+  font-family: var(--dc-font-mono);
+  font-size: 12px;
+  color: var(--dc-text-label);
+}
+
+.trust {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 26px;
+  font-family: var(--dc-font-body);
+  font-size: 14px;
+  color: var(--dc-text-muted);
+}
+
+.sep {
+  color: var(--dc-separator);
+  margin: 0 -13px;
+}
+
+/* ── Price index rail ───────────────────────────────────────────────── */
+.index {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--dc-grid-line);
+}
+
+.indexHead {
+  padding: 0 0 18px 24px;
+  font-family: var(--dc-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--dc-text-label);
+}
+
+.indexRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px 18px 24px;
+  border-top: 1px solid var(--dc-grid-line);
+  color: inherit;
+  text-decoration: none;
+  transition: background 150ms ease;
+}
+
+.indexRow:hover {
+  background: var(--dc-hover-fill);
+}
+
+.indexLabels {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.indexName {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--dc-text);
+}
+
+.indexDetail {
+  font-family: var(--dc-font-body);
+  font-size: 12.5px;
+  color: var(--dc-text-label);
+}
+
+.indexPrice {
+  font-family: var(--dc-font-mono);
+  font-size: 14px;
+  color: var(--dc-accent-text);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.per {
+  color: var(--dc-accent-text);
+  font-size: 11px;
+}
+
+/* ── Responsive — not designed; these reductions are ours. ───────────── */
+@media (max-width: 68em) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+
+  /* The rail becomes a full-width list rather than a hairlined column. */
+  .index {
+    border-left: none;
+    border-top: 1px solid var(--dc-grid-line);
+    padding-top: 20px;
+  }
+
+  .indexHead,
+  .indexRow {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
-.statItem {
-  text-align: center;
-}
+@media (max-width: 48em) {
+  .hero {
+    padding: 44px 0 64px;
+  }
 
-.statNumber {
-  font-size: var(--mantine-font-size-xl);
-  font-weight: 800;
-  color: var(--mantine-color-brand-blue-5);
-}
+  .searchRow {
+    flex-direction: column;
+  }
 
-.statLabel {
-  font-size: var(--mantine-font-size-xs);
-  color: light-dark(var(--mantine-color-gray-6), var(--mantine-color-gray-5));
+  .check {
+    height: 50px;
+  }
+
+  .trust {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .sep {
+    display: none;
+  }
 }

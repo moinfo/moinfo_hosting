@@ -1,26 +1,27 @@
-import { Title, Text, Stack } from "@mantine/core";
+import { Stack } from "@mantine/core";
+import classes from "./SectionHeader.module.css";
 
 interface SectionHeaderProps {
   title: string;
   description?: string;
+  /** Marketing sections are left-aligned in the redesign; keep centre as an opt-in. */
+  align?: "left" | "center";
 }
 
-export function SectionHeader({ title, description }: SectionHeaderProps) {
+export function SectionHeader({
+  title,
+  description,
+  align = "left",
+}: SectionHeaderProps) {
   return (
-    <Stack align="center" gap="sm" mb="xl">
-      <Title order={2} ta="center" size="h2">
-        {title}
-      </Title>
-      {description && (
-        <Text
-          c="dimmed"
-          ta="center"
-          maw={600}
-          size="lg"
-        >
-          {description}
-        </Text>
-      )}
+    <Stack
+      align={align === "center" ? "center" : "flex-start"}
+      gap="sm"
+      mb={40}
+      className={align === "center" ? classes.center : undefined}
+    >
+      <h2 className={classes.title}>{title}</h2>
+      {description && <p className={classes.description}>{description}</p>}
     </Stack>
   );
 }

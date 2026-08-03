@@ -26,6 +26,7 @@ import {
   IconHeadset,
 } from "@tabler/icons-react";
 import { tldPrices } from "@/data/domains";
+import { useLanguage } from "@/i18n/LanguageContext";
 import {
   checkDomain,
   domainUrl,
@@ -97,6 +98,7 @@ const faqs = [
 ];
 
 export function DomainsContent() {
+  const { t } = useLanguage();
   const [domain, setDomain] = useState("");
   const [result, setResult] = useState<DomainCheckResult | null>(null);
   const [checking, setChecking] = useState(false);
@@ -234,6 +236,7 @@ export function DomainsContent() {
               <Table.Thead>
                 <Table.Tr>
                   <Table.Th>Extension</Table.Th>
+                  <Table.Th>Who it&apos;s for</Table.Th>
                   <Table.Th>Registration</Table.Th>
                   <Table.Th>Renewal</Table.Th>
                   <Table.Th>Transfer</Table.Th>
@@ -242,16 +245,19 @@ export function DomainsContent() {
               <Table.Tbody>
                 {tldPrices.map((tld) => (
                   <Table.Tr key={tld.tld}>
-                    <Table.Td fw={700}>{tld.tld}</Table.Td>
-                    <Table.Td>
+                    <Table.Td fw={700} ff="var(--dc-font-mono)">{tld.tld}</Table.Td>
+                    <Table.Td c="dimmed">
+                      {tld.audienceKey ? t(tld.audienceKey) : "—"}
+                    </Table.Td>
+                    <Table.Td ff="var(--dc-font-mono)">
                       {tld.price}
                       {tld.period}
                     </Table.Td>
-                    <Table.Td>
+                    <Table.Td ff="var(--dc-font-mono)">
                       {tld.price}
                       {tld.period}
                     </Table.Td>
-                    <Table.Td>Free</Table.Td>
+                    <Table.Td c="var(--dc-accent-text)">Free</Table.Td>
                   </Table.Tr>
                 ))}
               </Table.Tbody>

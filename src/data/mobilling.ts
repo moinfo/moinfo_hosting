@@ -53,6 +53,29 @@ export async function checkDomain(input: string): Promise<DomainCheckResult> {
   return res.json();
 }
 
+export interface DomainCatalogEntry {
+  tld: string;
+  register_price: number;
+  renew_price: number;
+  transfer_price: number;
+  is_popular: boolean;
+}
+
+/**
+ * Every TLD currently on sale, with its real register/renew price — backed by
+ * GET /api/public/domains/catalog, a local table lookup (no per-request
+ * registry call, unlike checkDomain). Used by the dedicated domains pricing
+ * table so it never drifts from what MoBilling actually sells.
+ */
+export async function getDomainCatalog(): Promise<DomainCatalogEntry[]> {
+  const res = await fetch(`${MOBILLING_API}/public/domains/catalog`, {
+    headers: { Accept: "application/json" },
+  });
+  if (!res.ok) throw new Error(`Domain catalog failed (${res.status})`);
+  const body = await res.json();
+  return body.data as DomainCatalogEntry[];
+}
+
 /** "mybusiness" -> "mybusiness.co.tz"; leaves an explicit extension alone. */
 export function normaliseDomain(input: string): string {
   const cleaned = input

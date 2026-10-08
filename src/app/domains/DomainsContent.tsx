@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Container,
   Title,
@@ -14,6 +14,10 @@ import {
   List,
   Group,
   Paper,
+  TextInput,
+  Loader,
+  Center,
+  ScrollArea,
 } from "@mantine/core";
 import {
   IconCheck,
@@ -30,10 +34,23 @@ import { useLanguage } from "@/i18n/LanguageContext";
 import {
   checkDomain,
   domainUrl,
+  getDomainCatalog,
   normaliseDomain,
+  type DomainCatalogEntry,
   type DomainCheckResult,
 } from "@/data/mobilling";
 import classes from "./Domains.module.css";
+
+/** "Who it's for" copy only exists for the handful of .tz-family extensions
+ * TZNIC restricts to a registrant category — every other TLD (hundreds of
+ * open gTLDs from the Name.com catalog) has no such restriction. */
+const AUDIENCE_BY_TLD: Record<string, string> = Object.fromEntries(
+  tldPrices.map((t) => [t.tld.replace(/^\./, ""), t.audienceKey ?? ""]),
+);
+
+function formatTsh(n: number): string {
+  return `TSh ${Math.round(n).toLocaleString("en-US")}`;
+}
 
 const features = [
   {
@@ -103,6 +120,25 @@ export function DomainsContent() {
   const [result, setResult] = useState<DomainCheckResult | null>(null);
   const [checking, setChecking] = useState(false);
   const [error, setError] = useState(false);
+
+  // The full on-sale catalog (hundreds of TLDs via our Name.com + FRED
+  // integration) — live, so it can never drift from what MoBilling actually
+  // sells. Falls back to the short static list if the fetch fails, so the
+  // page still shows something rather than an empty table.
+  const [catalog, setCatalog] = useState<DomainCatalogEntry[] | null>(null);
+  const [catalogError, setCatalogError] = useState(false);
+  const [tldFilter, setTldFilter] = useState("");
+
+  useEffect(() => {
+    getDomainCatalog()
+      .then(setCatalog)
+      .catch(() => setCatalogError(true));
+  }, []);
+
+  const filterText = tldFilter.trim().toLowerCase().replace(/^\./, "");
+  const catalogRows = (catalog ?? []).filter((e) =>
+    filterText ? e.tld.toLowerCase().includes(filterText) : true,
+  );
 
   // Public check — visitors see availability and price before being asked to
   // sign in. Login happens on MoBilling only when they go to register.
@@ -228,40 +264,83 @@ export function DomainsContent() {
             Domain Pricing
           </Title>
           <Text ta="center" c="dimmed" mb="xl">
-            Affordable domain registration for Tanzanian businesses
+            {catalog
+              ? `${catalog.length} extensions available — search, register and transfer, all from one account.`
+              : "Affordable domain registration for Tanzanian businesses"}
           </Text>
 
+          <TextInput
+            placeholder="Filter by extension… e.g. tz, com, info"
+            leftSection={<IconSearch size={16} />}
+            value={tldFilter}
+            onChange={(e) => setTldFilter(e.currentTarget.value)}
+            mb="md"
+            maw={360}
+            mx="auto"
+          />
+
           <Card withBorder radius="md" padding={0}>
-            <Table striped highlightOnHover>
-              <Table.Thead>
-                <Table.Tr>
-                  <Table.Th>Extension</Table.Th>
-                  <Table.Th>Who it&apos;s for</Table.Th>
-                  <Table.Th>Registration</Table.Th>
-                  <Table.Th>Renewal</Table.Th>
-                  <Table.Th>Transfer</Table.Th>
-                </Table.Tr>
-              </Table.Thead>
-              <Table.Tbody>
-                {tldPrices.map((tld) => (
-                  <Table.Tr key={tld.tld}>
-                    <Table.Td fw={700} ff="var(--dc-font-mono)">{tld.tld}</Table.Td>
-                    <Table.Td c="dimmed">
-                      {tld.audienceKey ? t(tld.audienceKey) : "—"}
-                    </Table.Td>
-                    <Table.Td ff="var(--dc-font-mono)">
-                      {tld.price}
-                      {tld.period}
-                    </Table.Td>
-                    <Table.Td ff="var(--dc-font-mono)">
-                      {tld.price}
-                      {tld.period}
-                    </Table.Td>
-                    <Table.Td c="var(--dc-accent-text)">Free</Table.Td>
+            <ScrollArea.Autosize mah={560}>
+              <Table striped highlightOnHover stickyHeader>
+                <Table.Thead>
+                  <Table.Tr>
+                    <Table.Th>Extension</Table.Th>
+                    <Table.Th>Who it&apos;s for</Table.Th>
+                    <Table.Th>Registration</Table.Th>
+                    <Table.Th>Renewal</Table.Th>
+                    <Table.Th>Transfer</Table.Th>
                   </Table.Tr>
-                ))}
-              </Table.Tbody>
-            </Table>
+                </Table.Thead>
+                <Table.Tbody>
+                  {!catalog && !catalogError && (
+                    <Table.Tr>
+                      <Table.Td colSpan={5}>
+                        <Center py="md"><Loader size="sm" /></Center>
+                      </Table.Td>
+                    </Table.Tr>
+                  )}
+
+                  {/* Fallback: the short static list, only if the live catalog could not load. */}
+                  {catalogError && tldPrices.map((tld) => (
+                    <Table.Tr key={tld.tld}>
+                      <Table.Td fw={700} ff="var(--dc-font-mono)">{tld.tld}</Table.Td>
+                      <Table.Td c="dimmed">
+                        {tld.audienceKey ? t(tld.audienceKey) : "—"}
+                      </Table.Td>
+                      <Table.Td ff="var(--dc-font-mono)">{tld.price}{tld.period}</Table.Td>
+                      <Table.Td ff="var(--dc-font-mono)">{tld.price}{tld.period}</Table.Td>
+                      <Table.Td c="var(--dc-accent-text)">Free</Table.Td>
+                    </Table.Tr>
+                  ))}
+
+                  {catalog && catalogRows.length === 0 && (
+                    <Table.Tr>
+                      <Table.Td colSpan={5}>
+                        <Text ta="center" c="dimmed" py="md">No extension matches &quot;{tldFilter}&quot;.</Text>
+                      </Table.Td>
+                    </Table.Tr>
+                  )}
+
+                  {catalog && catalogRows.map((entry) => {
+                    const audienceKey = AUDIENCE_BY_TLD[entry.tld];
+                    return (
+                      <Table.Tr key={entry.tld}>
+                        <Table.Td fw={700} ff="var(--dc-font-mono)">
+                          .{entry.tld}
+                          {entry.is_popular && (
+                            <Badge ml={8} size="xs" variant="light" color="brand-blue">Popular</Badge>
+                          )}
+                        </Table.Td>
+                        <Table.Td c="dimmed">{audienceKey ? t(audienceKey) : "—"}</Table.Td>
+                        <Table.Td ff="var(--dc-font-mono)">{formatTsh(entry.register_price)}/yr</Table.Td>
+                        <Table.Td ff="var(--dc-font-mono)">{formatTsh(entry.renew_price)}/yr</Table.Td>
+                        <Table.Td c="var(--dc-accent-text)">Free</Table.Td>
+                      </Table.Tr>
+                    );
+                  })}
+                </Table.Tbody>
+              </Table>
+            </ScrollArea.Autosize>
           </Card>
 
           <Text ta="center" size="sm" c="dimmed" mt="md">

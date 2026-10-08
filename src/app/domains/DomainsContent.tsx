@@ -73,9 +73,9 @@ const features = [
   },
   {
     icon: IconArrowsTransferDown,
-    title: "Free Domain Transfer",
+    title: "Domain Transfer Support",
     description:
-      "Transfer your existing domain to us for free. We handle the entire migration process.",
+      "Transfer your .tz domain to us for free — fully self-service. For other extensions, our team handles the transfer for you.",
   },
   {
     icon: IconLock,
@@ -102,7 +102,7 @@ const faqs = [
   },
   {
     q: "Can I transfer my domain from another registrar?",
-    a: "Yes! We offer free domain transfers. Simply unlock your domain at your current registrar, get the EPP/transfer code, and initiate the transfer with us.",
+    a: "For .tz-family domains (.co.tz, .tz, and similar), yes — transfers are free and self-service: unlock your domain at your current registrar, get the EPP/transfer code, and initiate the transfer with us. For other extensions (.com, .net, .org, and more), contact our support team and we'll handle the transfer for you.",
   },
   {
     q: "How long does domain registration take?",
@@ -300,18 +300,25 @@ export function DomainsContent() {
                     </Table.Tr>
                   )}
 
-                  {/* Fallback: the short static list, only if the live catalog could not load. */}
-                  {catalogError && tldPrices.map((tld) => (
-                    <Table.Tr key={tld.tld}>
-                      <Table.Td fw={700} ff="var(--dc-font-mono)">{tld.tld}</Table.Td>
-                      <Table.Td c="dimmed">
-                        {tld.audienceKey ? t(tld.audienceKey) : "—"}
-                      </Table.Td>
-                      <Table.Td ff="var(--dc-font-mono)">{tld.price}{tld.period}</Table.Td>
-                      <Table.Td ff="var(--dc-font-mono)">{tld.price}{tld.period}</Table.Td>
-                      <Table.Td c="var(--dc-accent-text)">Free</Table.Td>
-                    </Table.Tr>
-                  ))}
+                  {/* Fallback: the short static list, only if the live catalog could not load.
+                      Only .tz-family extensions transfer for free — .com (the one non-.tz
+                      entry in this list) is Name.com-registered and isn't self-service. */}
+                  {catalogError && tldPrices.map((tld) => {
+                    const tzFamily = tld.tld.replace(/^\./, "").endsWith("tz");
+                    return (
+                      <Table.Tr key={tld.tld}>
+                        <Table.Td fw={700} ff="var(--dc-font-mono)">{tld.tld}</Table.Td>
+                        <Table.Td c="dimmed">
+                          {tld.audienceKey ? t(tld.audienceKey) : "—"}
+                        </Table.Td>
+                        <Table.Td ff="var(--dc-font-mono)">{tld.price}{tld.period}</Table.Td>
+                        <Table.Td ff="var(--dc-font-mono)">{tld.price}{tld.period}</Table.Td>
+                        <Table.Td c={tzFamily ? "var(--dc-accent-text)" : "dimmed"}>
+                          {tzFamily ? "Free" : "Contact us"}
+                        </Table.Td>
+                      </Table.Tr>
+                    );
+                  })}
 
                   {catalog && catalogRows.length === 0 && (
                     <Table.Tr>

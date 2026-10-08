@@ -27,6 +27,8 @@ export interface DomainCheckResult {
     tld: string;
     register_price: number;
     transfer_price: number;
+    /** False for Name.com TLDs — transfer-in isn't self-service yet, contact support. */
+    transfer_supported: boolean;
     years_min: number;
     years_max: number;
   };
@@ -58,6 +60,8 @@ export interface DomainCatalogEntry {
   register_price: number;
   renew_price: number;
   transfer_price: number;
+  /** False for Name.com TLDs — transfer-in isn't self-service yet, contact support. */
+  transfer_supported: boolean;
   is_popular: boolean;
 }
 

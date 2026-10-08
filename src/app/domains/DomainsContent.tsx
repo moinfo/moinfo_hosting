@@ -334,7 +334,13 @@ export function DomainsContent() {
                         <Table.Td c="dimmed">{audienceKey ? t(audienceKey) : "—"}</Table.Td>
                         <Table.Td ff="var(--dc-font-mono)">{formatTsh(entry.register_price)}/yr</Table.Td>
                         <Table.Td ff="var(--dc-font-mono)">{formatTsh(entry.renew_price)}/yr</Table.Td>
-                        <Table.Td c="var(--dc-accent-text)">Free</Table.Td>
+                        <Table.Td c={entry.transfer_supported ? "var(--dc-accent-text)" : "dimmed"}>
+                          {entry.transfer_supported
+                            ? entry.transfer_price > 0
+                              ? `${formatTsh(entry.transfer_price)}/yr`
+                              : "Free"
+                            : "Contact us"}
+                        </Table.Td>
                       </Table.Tr>
                     );
                   })}

@@ -144,12 +144,17 @@ export const metadata: Metadata = {
     description:
       "Premium web hosting, domain registration, email hosting, and VPS solutions for Tanzanian businesses.",
     url: SITE_URL,
+    // Stopgap: the brand logo, not a proper 1200x630 banner — better than the
+    // blank-preview links got before this, but swap for a designed banner
+    // when one exists.
+    images: [{ url: "/images/logo.png", width: 326, height: 414, alt: "Moinfo Hosting" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Moinfo Hosting — Fast & Reliable Web Hosting in Tanzania",
     description:
       "Premium web hosting, domain registration, email hosting, and VPS solutions for Tanzanian businesses.",
+    images: ["/images/logo.png"],
   },
   robots: {
     index: true,

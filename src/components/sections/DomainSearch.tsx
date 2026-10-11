@@ -20,24 +20,30 @@ function formatTsh(n: number): string {
 
 /** Live, on-sale catalog (includes Name.com gTLDs like .net/.org/.info —
  * the static tldPrices fallback below only covers the .tz family + .com),
- * most popular first. Starts from (and falls back to, on a failed fetch)
- * the static list, so the pills always show something immediately. */
-function usePricePills(limit: number) {
+ * ALL .tz-family extensions (our core TCRA-accredited identity — never
+ * trimmed, even the non-"popular" ones like .or.tz/.ac.tz) plus the top
+ * `extraGtlds` popular external ones. Starts from (and falls back to, on a
+ * failed fetch) the static list, so the pills always show something
+ * immediately. */
+function usePricePills(extraGtlds: number) {
   const [pills, setPills] = useState<{ tld: string; price: string; period: string }[]>(tldPrices);
 
   useEffect(() => {
     getDomainCatalog()
       .then((catalog) => {
-        setPills(
-          catalog
-            .slice()
-            .sort((a, b) => Number(b.is_popular) - Number(a.is_popular))
-            .slice(0, limit)
-            .map((e) => ({ tld: `.${e.tld}`, price: formatTsh(e.register_price), period: "/yr" })),
-        );
+        const toPill = (e: (typeof catalog)[number]) => ({
+          tld: `.${e.tld}`,
+          price: formatTsh(e.register_price),
+          period: "/yr",
+        });
+        const tzFamily = catalog.filter((e) => e.tld.endsWith("tz"));
+        const otherPopular = catalog
+          .filter((e) => !e.tld.endsWith("tz") && e.is_popular)
+          .slice(0, extraGtlds);
+        setPills([...tzFamily, ...otherPopular].map(toPill));
       })
       .catch(() => {});
-  }, [limit]);
+  }, [extraGtlds]);
 
   return pills;
 }
@@ -57,7 +63,7 @@ export function DomainSearch() {
   const [error, setError] = useState(false);
   const { t } = useLanguage();
   const showPromo = isPromoActive();
-  const pills = usePricePills(9);
+  const pills = usePricePills(5);
 
   // Searching is public — no account needed. Signing in only happens on
   // MoBilling once the visitor decides to register.

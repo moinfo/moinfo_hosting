@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { VpsContent } from "./VpsContent";
+import { CloudVpsPlans } from "@/components/sections/CloudVpsPlans";
 import { VpsFeatures } from "@/components/sections/VpsFeatures";
 
 export const metadata: Metadata = {
@@ -20,6 +21,7 @@ export default function VpsPage() {
   return (
     <>
       <VpsContent />
+      <CloudVpsPlans />
       <VpsFeatures />
     </>
   );

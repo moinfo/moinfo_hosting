@@ -117,6 +117,7 @@ export type OrderCategory =
   | "web-hosting"
   | "email-hosting"
   | "vps"
+  | "cloud-vps"
   | "dedicated-server"
   | "reseller-hosting"
   | "website-design"
@@ -147,6 +148,13 @@ export const PLAN_SLUG_TO_PRODUCT: Record<string, string> = {
   "vps/linux-mit-500": "Linux MIT 500",
   "vps/linux-mit-600": "Linux MIT 600",
   "vps/linux-mit-700": "Linux MIT 700",
+  "cloud-vps/cloud-1gb": "Cloud 1GB",
+  "cloud-vps/cloud-2gb": "Cloud 2GB",
+  "cloud-vps/cloud-4gb": "Cloud 4GB",
+  "cloud-vps/cloud-8gb": "Cloud 8GB",
+  "cloud-vps/cloud-16gb": "Cloud 16GB",
+  "cloud-vps/dedicated-4gb": "Dedicated 4GB",
+  "cloud-vps/dedicated-8gb": "Dedicated 8GB",
   "dedicated-server/linux-server-mit-450": "Linux Server - MIT 450",
   "dedicated-server/linux-server-mit-550": "Linux Server - MIT 550",
   "dedicated-server/linux-server-mit-650": "Linux Server - MIT 650",

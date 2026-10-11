@@ -316,6 +316,12 @@ export const en: Translations = {
   // VPS Hosting Page
   "vpsHosting.title": "VPS Hosting Plans",
   "vpsHosting.description": "High-performance virtual private servers with full root access, free SSL, and 100% uptime guarantee.",
+  "cloudVps.eyebrow": "02 · Cloud VPS",
+  "cloudVps.title": "Cloud VPS — pay monthly",
+  "cloudVps.description": "Fast SSD cloud servers on Akamai Cloud (Linode) infrastructure, with full root access. Priced in Tanzanian shillings, billed monthly.",
+  "cloudVps.sharedCpu": "Shared CPU",
+  "cloudVps.dedicatedCpu": "Dedicated CPU",
+  "cloudVps.month": "month",
   "pf.freeCpanel": "Free cPanel",
   "pf.ddosProtection": "DDoS Protection",
   "pf.whmAccess": "WHM Access",

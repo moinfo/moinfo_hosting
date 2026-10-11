@@ -317,6 +317,12 @@ export const sw: Translations = {
   // VPS Hosting Page
   "vpsHosting.title": "Mipango ya VPS Hosting",
   "vpsHosting.description": "Seva za kibinafsi za utendaji wa juu na ufikiaji kamili wa root, SSL bure, na dhamana ya 100% uptime.",
+  "cloudVps.eyebrow": "02 · Cloud VPS",
+  "cloudVps.title": "Cloud VPS — lipa kila mwezi",
+  "cloudVps.description": "Seva za cloud zenye SSD za haraka kwenye miundombinu ya Akamai Cloud (Linode), na ufikiaji kamili wa root. Bei kwa shilingi za Tanzania, malipo kila mwezi.",
+  "cloudVps.sharedCpu": "CPU ya Pamoja",
+  "cloudVps.dedicatedCpu": "CPU Maalum",
+  "cloudVps.month": "mwezi",
   "pf.freeCpanel": "cPanel Bure",
   "pf.ddosProtection": "Ulinzi wa DDoS",
   "pf.whmAccess": "Ufikiaji wa WHM",

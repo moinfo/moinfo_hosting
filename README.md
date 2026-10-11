@@ -71,6 +71,58 @@ src/
 - **Tawk.to** — Live chat widget
 - **TCRA** — Accredited .tz domain registrar badge
 
+## Cloud VPS (resold Linode / Akamai Cloud)
+
+Shown on `/vps` under the MIT plans, priced in TZS, monthly.
+
+- **Data / the only place to change prices:** `src/data/cloud-vps.ts`
+- **Component:** `src/components/sections/CloudVpsPlans.tsx`
+- **Text (EN/SW):** `cloudVps.*` keys in `src/i18n/en.ts` and `sw.ts`
+- **Ordering:** `cloudVpsOrderUrl()` deep-links to MoBilling
+  `/order/cloud-vps?plan=<slug>`. Every slug must have a matching entry in
+  `PLAN_SLUG_TO_PRODUCT` (`src/data/mobilling.ts`, keys `cloud-vps/<slug>`) and
+  a product of that name in MoBilling.
+
+**Price formula (TZS / month):**
+`ceil(usdCost x USD_TO_TZS x (1 + MARKUP) / ROUND_TO) x ROUND_TO`
+
+| Knob | Where | Meaning |
+|------|-------|---------|
+| `USD_TO_TZS` | `cloud-vps.ts` | TZS per USD. Currently 2700, a **placeholder**: set the real rate. |
+| `MARKUP` | `cloud-vps.ts` | Margin on Linode's price. Currently 0.30, a **placeholder**. |
+| `ROUND_TO` | `cloud-vps.ts` | Round up to nearest N TZS (500). |
+| `usdCost` | per plan | Linode's list price (akamai.com/cloud/pricing/cpu). Update when Linode changes it. |
+| `priceTzs` | per plan | Fixed TZS price; ignores the formula for that plan. |
+| `hidden` | per plan | Hide a plan without deleting it. |
+
+**Change prices:** the site is a static export, so there is no admin panel.
+Edit `cloud-vps.ts`, then rebuild and deploy:
+
+```bash
+cd /var/www/moinfo_hosting
+npm run build
+grep -rq "localhost:8000" out/ && echo BAD || echo clean
+rsync -a /var/www/moinfo.co.tz/ /var/backups/moinfo-$(date +%F-%H%M)/   # backup
+rsync -a --delete out/ /var/www/moinfo.co.tz/
+```
+
+**Add a plan:** add an object to `cloudVpsPlans`, add its
+`"cloud-vps/<slug>": "<Product name>"` line to `PLAN_SLUG_TO_PRODUCT`, and
+create the product in MoBilling.
+
+**Notes:** the cost does not include Linode backups or transfer overage
+($0.005/GB). The public name is "Cloud ..." (Linode is an Akamai trademark);
+the description says "Akamai Cloud (Linode)". G8 plans are billed hourly only,
+so they are not listed.
+
+## `/portal` is gone (410)
+
+The old WHMCS portal (hit by a Japanese keyword spam hack) was retired. nginx
+returns **410 Gone** for `/portal*` via `location ^~ /portal` in
+`/etc/nginx/sites-available/moinfo.co.tz`. Do not add `Disallow: /portal/` to
+`robots.txt`, so Google can see the 410. Remove old URLs in Search Console
+(Removals -> prefix `https://moinfo.co.tz/portal/`).
+
 ## Brand Colors
 
 | Color | Hex | Usage |

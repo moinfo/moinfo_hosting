@@ -36,7 +36,7 @@ export function PricingCard({ plan }: PricingCardProps) {
       <div className={classes.priceRow}>
         <span className={classes.price}>{amount}</span>
         <span className={classes.period}>
-          {currency} / {t("pricing.year")}
+          {currency} / {t(plan.periodKey ?? "pricing.year")}
         </span>
       </div>
 
@@ -64,12 +64,13 @@ export function PricingCard({ plan }: PricingCardProps) {
         </ul>
       )}
 
-      {plan.specs && (
+      {plan.specs && (plan.blurb || plan.featureKeys.length > 3) && (
         <p className={classes.blurb}>
-          {plan.featureKeys
-            .slice(3)
-            .map((key) => t(key))
-            .join(" · ")}
+          {plan.blurb ??
+            plan.featureKeys
+              .slice(3)
+              .map((key) => t(key))
+              .join(" · ")}
         </p>
       )}
 

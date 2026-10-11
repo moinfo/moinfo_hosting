@@ -203,6 +203,8 @@ export const sw: Translations = {
 
   // Plan card spec grid + tier tags
   "spec.disk": "Hifadhi",
+  "spec.ram": "RAM",
+  "spec.vcpu": "vCPU",
   "spec.bandwidth": "Bandwidth",
   "spec.mailboxes": "Barua pepe",
   "tier.entry": "Kuanzia",
@@ -218,6 +220,7 @@ export const sw: Translations = {
   "pricing.cat.wordpress": "WordPress",
   "pricing.cat.email": "Barua Pepe",
   "pricing.cat.vps": "Linux VPS",
+  "pricing.cat.cloudVps": "Cloud VPS",
   "pricing.cat.dedicated": "Dedicated Server",
   "pricing.cat.reseller": "Linux Reseller",
   "pricing.cat.ssl": "SSL",

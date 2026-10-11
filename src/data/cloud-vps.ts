@@ -12,8 +12,8 @@ import { orderUrl } from "@/data/mobilling";
  *   - usdCost      when Linode changes its own price
  */
 
-/** TZS per 1 USD. PLACEHOLDER — set to the rate you actually pay. */
-export const USD_TO_TZS = 2700;
+/** TZS per 1 USD. */
+export const USD_TO_TZS = 3000;
 
 /** Your margin on top of Linode's price. PLACEHOLDER — 0.30 means +30%. */
 export const MARKUP = 0.3;

@@ -88,7 +88,7 @@ Shown on `/vps` under the MIT plans, priced in TZS, monthly.
 
 | Knob | Where | Meaning |
 |------|-------|---------|
-| `USD_TO_TZS` | `cloud-vps.ts` | TZS per USD. Currently 2700, a **placeholder**: set the real rate. |
+| `USD_TO_TZS` | `cloud-vps.ts` | TZS per USD. Currently 3000. |
 | `MARKUP` | `cloud-vps.ts` | Margin on Linode's price. Currently 0.30, a **placeholder**. |
 | `ROUND_TO` | `cloud-vps.ts` | Round up to nearest N TZS (500). |
 | `usdCost` | per plan | Linode's list price (akamai.com/cloud/pricing/cpu). Update when Linode changes it. |

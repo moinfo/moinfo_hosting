@@ -30,7 +30,7 @@ export function CloudVpsPlans() {
 
         <div
           className={classes.grid}
-          style={{ gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))" }}
+          style={{ gridTemplateColumns: "repeat(4, minmax(0, 1fr))" }}
         >
           {plans.map((plan) => (
             <div

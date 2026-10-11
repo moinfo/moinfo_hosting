@@ -1,4 +1,10 @@
 import { enquiryUrl, orderUrl } from "@/data/mobilling";
+import {
+  cloudVpsOrderUrl,
+  cloudVpsPlans,
+  formatTzs,
+  monthlyTzs,
+} from "@/data/cloud-vps";
 
 /**
  * A headline spec shown in the card's hairline grid.
@@ -20,6 +26,10 @@ export interface PricingPlan {
   featureKeys: string[];
   orderUrl: string;
   popular?: boolean;
+  /** Translation key for the price period; defaults to "pricing.year". */
+  periodKey?: string;
+  /** Literal one-line note under the specs (used when featureKeys is empty). */
+  blurb?: string;
   /** Short mono tag on the card, e.g. ENTRY / SME / HIGH VOLUME. */
   tierKey?: string;
   /**
@@ -321,6 +331,31 @@ export const pricingCategories: PricingCategory[] = [
         orderUrl: orderUrl("vps", "linux-mit-700"),
       },
     ],
+  },
+  {
+    key: "cloud-vps",
+    labelKey: "pricing.cat.cloudVps",
+    readMoreUrl: "/vps#cloud-vps",
+    readMoreKey: "pricing.readMore.vps",
+    // Generated from src/data/cloud-vps.ts — change prices there.
+    plans: cloudVpsPlans
+      .filter((p) => !p.hidden)
+      .map((p) => ({
+        name: p.name,
+        yearlyPrice: `TSh ${formatTzs(monthlyTzs(p))}`,
+        periodKey: "cloudVps.month",
+        popular: p.popular,
+        featureKeys: [],
+        blurb: `${p.transferTb} TB Bandwidth`,
+        orderUrl: cloudVpsOrderUrl(p),
+        tierKey:
+          p.cpu === "dedicated" ? "cloudVps.dedicatedCpu" : "cloudVps.sharedCpu",
+        specs: [
+          { labelKey: "spec.ram", value: `${p.ramGb} GB` },
+          { labelKey: "spec.vcpu", value: `${p.vcpu}` },
+          { labelKey: "spec.disk", value: `${p.diskGb} GB` },
+        ],
+      })),
   },
   {
     key: "dedicated",

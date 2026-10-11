@@ -4,7 +4,7 @@ import { WebDesignContent } from "./WebDesignContent";
 export const metadata: Metadata = {
   title: "Website Design Tanzania",
   description:
-    "Professional website design services in Tanzania. WordPress, eCommerce, and static website design from TSh 250,000. SEO friendly, mobile responsive, and SSL enabled.",
+    "Professional website design in Tanzania for businesses. Responsive, SEO-ready WordPress & custom sites. From TSh 250,000. Get a quote.",
   keywords: ["website design Tanzania", "web design Tanzania", "web design Dar es Salaam", "ecommerce website Tanzania", "WordPress website Tanzania", "cheap website design Tanzania", "website design company Tanzania", "ubunifu wa tovuti"],
   alternates: { canonical: "/website-design" },
   openGraph: {

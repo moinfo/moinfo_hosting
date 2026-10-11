@@ -23,7 +23,7 @@ export const vpsFeatureSections: VpsFeatureSection[] = [
       { name: "OS", values: ["Ubuntu / Almalinux / Centos / Debian", "Ubuntu / Almalinux / Centos / Debian", "Ubuntu / Almalinux / Centos / Debian"] },
       { name: "Once per Four Weeks VHD Backup", values: ["TSh 22,500/mo", "TSh 22,500/mo", "TSh 22,500/mo"] },
       { name: "Offsite Backup Storage", values: ["TSh 45,000/mo for 50 GB", "TSh 67,500/mo for 80 GB", "TSh 112,500/mo for 160 GB"] },
-      { name: "Free Domain", values: ["✓", "✓", "✓"] },
+      { name: "Free Domain", values: ["✗", "✗", "✗"] },
       { name: "IP Address", values: ["1", "1", "1"] },
       { name: "Additional IPs (up to 3)", values: ["TSh 13,500/mo", "TSh 13,500/mo", "TSh 13,500/mo"] },
       { name: "Fully Managed", values: ["Optional", "Optional", "Optional"] },

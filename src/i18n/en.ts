@@ -354,9 +354,9 @@ export const en: Translations = {
   "features.uptimeTitle": "99.9% Uptime Guarantee",
   "features.uptimeDesc":
     "Our infrastructure ensures your website stays online with enterprise-grade reliability and redundant systems.",
-  "features.domainTitle": "Free Domain Name",
+  "features.domainTitle": "Instant Domain Registration",
   "features.domainDesc":
-    "Get a free .co.tz or .com domain with any annual hosting plan. TCRA accredited registrar.",
+    "Register and manage your .co.tz or .com domain instantly from your own account. TCRA accredited registrar.",
   "features.bandwidthTitle": "Unlimited Bandwidth",
   "features.bandwidthDesc":
     "No bandwidth limits or hidden charges. Your website can handle traffic spikes without extra costs.",

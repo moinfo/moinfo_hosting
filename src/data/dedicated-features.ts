@@ -22,7 +22,7 @@ export const dedicatedFeatureSections: DedicatedFeatureSection[] = [
       { name: "Bandwidth", values: ["Unlimited", "Unlimited", "Unlimited"] },
       { name: "Memory", values: ["8 GB RAM", "24 GB RAM", "64 GB RAM"] },
       { name: "Free SSL", values: ["✓", "✓", "✓"] },
-      { name: "Free Domain", values: ["✗", "✗", "✓"] },
+      { name: "Free Domain", values: ["✗", "✗", "✗"] },
       { name: "IP Address", values: ["1", "1", "1"] },
       { name: "Full Root Access", values: ["✓", "✓", "✓"] },
       { name: "Once per Four Weeks VHD Backup", values: ["TSh 22,500/mo", "TSh 22,500/mo", "TSh 22,500/mo"] },

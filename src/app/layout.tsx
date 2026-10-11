@@ -123,7 +123,6 @@ export const metadata: Metadata = {
     "cloud hosting Tanzania",
     "cPanel hosting Tanzania",
     "WordPress hosting Tanzania",
-    "free domain Tanzania",
     "24/7 support hosting Tanzania",
     "99.9 uptime hosting Tanzania",
     // Swahili keywords

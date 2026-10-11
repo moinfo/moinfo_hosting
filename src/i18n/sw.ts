@@ -355,9 +355,9 @@ export const sw: Translations = {
   "features.uptimeTitle": "Dhamana ya Uptime 99.9%",
   "features.uptimeDesc":
     "Miundombinu yetu inahakikisha tovuti yako inabaki mtandaoni kwa uaminifu wa kiwango cha juu na mifumo ya akiba.",
-  "features.domainTitle": "Jina la Kikoa Bure",
+  "features.domainTitle": "Usajili Rahisi wa Kikoa",
   "features.domainDesc":
-    "Pata kikoa cha .co.tz au .com bure na mpango wowote wa hosting wa mwaka. Msajili aliyeidhinishwa na TCRA.",
+    "Sajili na simamia kikoa chako cha .co.tz au .com papo hapo kupitia akaunti yako. Msajili aliyeidhinishwa na TCRA.",
   "features.bandwidthTitle": "Bandwidth Isiyo na Kikomo",
   "features.bandwidthDesc":
     "Hakuna vikwazo vya bandwidth au malipo ya siri. Tovuti yako inaweza kushughulikia msongamano bila gharama za ziada.",

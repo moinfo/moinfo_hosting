@@ -58,7 +58,7 @@ const packages = [
       "10 Images Included",
       "SSL Enabled",
       "Responsive Website Design",
-      "1 Free Domain + 1 Yr. WordPress Hosting Included",
+      "1 Yr. WordPress Hosting Included",
       "2 Design Revisions",
       "Delivery Days 5 to 7",
     ],

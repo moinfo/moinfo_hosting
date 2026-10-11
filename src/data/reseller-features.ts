@@ -19,7 +19,7 @@ export const resellerFeatureSections: FeatureSection[] = [
   {
     title: "Reseller Plan Features",
     rows: [
-      { name: "Free Domain", values: ["✗", "✗", "✓ (if paid annually)", "✓ (if paid annually)"] },
+      { name: "Free Domain", values: ["✗", "✗", "✗", "✗"] },
       { name: "WHM Control Panel", values: ["✓", "✓", "✓", "✓"] },
       { name: "cPanel", values: ["✓", "✓", "✓", "✓"] },
       { name: "cPanel 2FA", values: ["✓", "✓", "✓", "✓"] },

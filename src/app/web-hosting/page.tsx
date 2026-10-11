@@ -6,7 +6,14 @@ export const metadata: Metadata = {
   description:
     "Affordable cPanel web hosting in Tanzania from TSh 80,500/year. Free SSL, free migration, 24/7 local support, 99.9% uptime.",
   keywords: ["web hosting Tanzania", "cheap web hosting Tanzania", "best web hosting Tanzania", "cPanel hosting Tanzania", "affordable hosting Tanzania", "hosting bei nafuu"],
-  alternates: { canonical: "/web-hosting" },
+  alternates: {
+    canonical: "/web-hosting",
+    languages: {
+      en: "https://moinfo.co.tz/web-hosting",
+      sw: "https://moinfo.co.tz/sw/web-hosting",
+      "x-default": "https://moinfo.co.tz/web-hosting",
+    },
+  },
   openGraph: {
     title: "Cheap Web Hosting Plans in Tanzania — Moinfo Hosting",
     description:

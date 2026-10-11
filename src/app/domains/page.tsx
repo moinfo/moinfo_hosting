@@ -29,7 +29,14 @@ export const metadata: Metadata = {
     "transfer domain Tanzania",
     "renew domain Tanzania",
   ],
-  alternates: { canonical: "/domains" },
+  alternates: {
+    canonical: "/domains",
+    languages: {
+      en: "https://moinfo.co.tz/domains",
+      sw: "https://moinfo.co.tz/sw/domains",
+      "x-default": "https://moinfo.co.tz/domains",
+    },
+  },
   openGraph: {
     title: "Cheap Domain Registration Tanzania — Moinfo Hosting",
     description:

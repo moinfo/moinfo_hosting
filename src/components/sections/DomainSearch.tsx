@@ -1,17 +1,46 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Container } from "@mantine/core";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { tldPrices } from "@/data/domains";
 import {
   checkDomain,
   domainUrl,
+  getDomainCatalog,
   normaliseDomain,
   type DomainCheckResult,
 } from "@/data/mobilling";
 import { useLanguage } from "@/i18n/LanguageContext";
 import classes from "./DomainSearch.module.css";
+
+function formatTsh(n: number): string {
+  return `TSh ${Math.round(n).toLocaleString("en-US")}`;
+}
+
+/** Live, on-sale catalog (includes Name.com gTLDs like .net/.org/.info —
+ * the static tldPrices fallback below only covers the .tz family + .com),
+ * most popular first. Starts from (and falls back to, on a failed fetch)
+ * the static list, so the pills always show something immediately. */
+function usePricePills(limit: number) {
+  const [pills, setPills] = useState<{ tld: string; price: string; period: string }[]>(tldPrices);
+
+  useEffect(() => {
+    getDomainCatalog()
+      .then((catalog) => {
+        setPills(
+          catalog
+            .slice()
+            .sort((a, b) => Number(b.is_popular) - Number(a.is_popular))
+            .slice(0, limit)
+            .map((e) => ({ tld: `.${e.tld}`, price: formatTsh(e.register_price), period: "/yr" })),
+        );
+      })
+      .catch(() => {});
+  }, [limit]);
+
+  return pills;
+}
 
 const PROMO_START = new Date("2026-04-01T00:00:00");
 const PROMO_END = new Date("2026-06-30T23:59:59");
@@ -28,6 +57,7 @@ export function DomainSearch() {
   const [error, setError] = useState(false);
   const { t } = useLanguage();
   const showPromo = isPromoActive();
+  const pills = usePricePills(9);
 
   // Searching is public — no account needed. Signing in only happens on
   // MoBilling once the visitor decides to register.
@@ -133,7 +163,7 @@ export function DomainSearch() {
         </div>
 
         <div className={classes.pills}>
-          {tldPrices.map((tld) => (
+          {pills.map((tld) => (
             <div key={tld.tld} className={classes.pill}>
               <span className={classes.pillTld}>{tld.tld}</span>
               <span className={classes.pillPrice}>
